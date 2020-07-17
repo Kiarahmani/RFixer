@@ -1,0 +1,4 @@
+Q: How to fix java.lang.UnsatisfiedLinkError: no libz3java in java.library.path:
+A: We need to set the env variable as follows: 
+	export LD_LIBRARY_PATH=/home/kirahm/repos/RFixer/
+============================================================
