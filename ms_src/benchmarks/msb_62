@@ -1,0 +1,7 @@
+(\[\[)(.*)(\]\])
++++
+[[MyOtherText]]
+[[MyText]]
+[[ Something...[[MyText]]
+[[" for start and "]]
+---

@@ -1,0 +1,6 @@
+\b[bc]*a{3}[bc]*\b
++++
+cab
+caabaaac
+ababaccccc
+---

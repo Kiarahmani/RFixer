@@ -1,0 +1,4 @@
+(?P<name>([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6})
++++
+_tcp._sip.45.example.com
+---

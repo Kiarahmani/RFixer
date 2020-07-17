@@ -1,13 +1,14 @@
 import pandas as pd
 import time
 import ast
+import subprocess
+import glob, os
 
 # CONFIG
-input_file = 'raw/curated_benchmark_csv.csv'
-output_dir = 'ms_bench/'
-file_prefix = 'ms_bench'
-
-
+input_file =  'ms_src/curated_benchmark_csv.csv'
+output_dir =  'ms_src/benchmarks/'
+results_dir = 'ms_src/results/'
+file_prefix = 'msb'
 
 
 
@@ -20,7 +21,7 @@ def create_ms_bench():
         # read required columns
         q_regex = row[1].Q_regex
         examples = row[1].postivie_examples
-        with open(output_file, 'w', encoding="utf-16") as of:
+        with open(output_file, 'w', encoding="utf-8") as of:
             print (">> writing "+output_file)
             of.write(q_regex)
             of.write("\n")
@@ -30,26 +31,23 @@ def create_ms_bench():
             for example in ast.literal_eval(examples):
                 of.write (example)
                 of.write ("\n")
+            of.write("---")
+            of.write("\n")
         iter += 1
 
 
-
-
 def run_tests():
-    os.chdir(output_dir)
-    files = glob.glob("*")
-    os.chdir('../')
-
-
-
-
+    files = glob.glob(output_dir+"*")
+    for file in files:
+        bench_name = file.replace(output_dir,'')
+        print ('running RFixer on: '+ bench_name)
+        result_file = results_dir + bench_name + '.res'
+        with open(result_file, 'w', encoding='utf-8') as rf:
+            subprocess.run(["java", "-jar" , "target/regfixer.jar", "fix" , "--file", file])
 
 def main():
     create_ms_bench()
     run_tests()
-
-
-
 
 
 

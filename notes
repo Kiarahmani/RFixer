@@ -4,3 +4,6 @@ A: We need to set the env variable as follows:
 ============================================================
 Q: How to run the RFixer tool?
 A: java -jar target/regfixer.jar fix --file tests/experiments/ex1.txt
+============================================================
+Q: How to run the python wrapper?
+A: python3 ms_src/create_bench_files.py
