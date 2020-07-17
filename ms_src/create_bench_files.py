@@ -3,6 +3,9 @@ import time
 import ast
 import subprocess
 import glob, os
+import shlex
+from subprocess import Popen, PIPE
+from threading import Timer
 
 # CONFIG
 input_file =  'ms_src/curated_benchmark_csv.csv'
@@ -10,6 +13,19 @@ output_dir =  'ms_src/benchmarks/'
 results_dir = 'ms_src/results/'
 file_prefix = 'msb'
 
+
+
+
+def run(cmd, timeout_sec, f):
+    proc = Popen(shlex.split(cmd), stdout=PIPE, stderr=PIPE)
+    timer = Timer(timeout_sec, proc.kill)
+    try:
+        timer.start()
+        stdout, stderr = proc.communicate()
+        print (stderr)
+        f.write(stdout.decode('utf-8'))
+    finally:
+        timer.cancel()
 
 
 def create_ms_bench():
@@ -41,9 +57,17 @@ def run_tests():
     for file in files:
         bench_name = file.replace(output_dir,'')
         print ('running RFixer on: '+ bench_name)
+        if bench_name == 'msb_17':
+            continue
         result_file = results_dir + bench_name + '.res'
         with open(result_file, 'w', encoding='utf-8') as rf:
-            subprocess.run(["java", "-jar" , "target/regfixer.jar", "fix" , "--file", file])
+            
+            run ("java -jar target/regfixer.jar fix --file "+file, 10, rf)
+            #try:
+            #    #subprocess.run(["java", "-jar" , "target/regfixer.jar", "fix" , "--file", file], stdout=rf)
+            #except: 
+            #    print ("error")
+            #    rf.write("Error occured")
 
 def main():
     create_ms_bench()

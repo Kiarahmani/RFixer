@@ -1,6 +1,6 @@
-[^-\s].{8,20}
+(\d{6}|\d{7}|\d{8})
 +++
-avail...
-allowed.
-password
+CH11 2ab
+b6 7ba
+BH6 5BG
 ---

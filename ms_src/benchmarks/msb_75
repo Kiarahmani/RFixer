@@ -1,5 +1,5 @@
-s*n*o*w*
+(.*?{{){1,}
 +++
-snow
-ssssnnnowww
+{{data1}}
+{{data2}}
 ---

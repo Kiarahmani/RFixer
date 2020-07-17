@@ -1,5 +1,6 @@
-iqn\.(\d{4}-\d{2})\.([^:]+)
+https?:\/\/\S.flickr.net
 +++
-iqn.1998-01.com.vmware.iscsi:name999
-iqn.1991-05.com.microsoft:abc.com
+https://blog.flickr.net
+https://www.flickr.net
+https://flickr.net
 ---

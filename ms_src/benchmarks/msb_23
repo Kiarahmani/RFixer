@@ -1,4 +1,5 @@
-([A-z]+)[0-1]+.png
+[a-z]{8|12}
 +++
-main2.png
+solution
+repeatin
 ---

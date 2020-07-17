@@ -1,9 +1,8 @@
-[A-Z]+\b[',']\s[A-Z]{1}[a-z]+\b(\s([A-Z][a-z]+\b))?
+[0-9a-zA-Z]+
 +++
-TRUMP, Donald
-ZETA-JONES, Catherine (Kate)
-BUSH, George
-CLINTON, William (Bill)
-CARTER, James (Jimmy)
-SMITH-JONES, John
+So I
+Example of a search that is not working
+I am using
+Summer holiday
+it fails to validate
 ---

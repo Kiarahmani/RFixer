@@ -1,5 +1,7 @@
-[A-za-z]{2}[0-9]{6}
+<abc[!e]
 +++
-INM12345678
-RQ123456
+abcf
+abcd
+abc[
+abc
 ---

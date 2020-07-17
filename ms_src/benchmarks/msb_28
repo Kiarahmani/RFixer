@@ -1,4 +1,6 @@
-gtm\.*click|gtm.formSubmit
+([A-Z0-9])(?!)+
 +++
-gtm.linkClick
+A2
+D1B2C4Q3
+A1Q3
 ---

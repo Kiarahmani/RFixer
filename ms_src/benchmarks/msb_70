@@ -1,4 +1,6 @@
-/<codes 
+[^-\s].{8,20}
 +++
-/codes.
+avail...
+allowed.
+password
 ---

@@ -1,4 +1,6 @@
-\d{4}
+views/
 +++
-1/2,4/6
+views/register
+views/' upto the next '
+views/register'  something like:
 ---

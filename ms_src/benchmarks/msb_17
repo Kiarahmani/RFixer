@@ -1,6 +1,5 @@
-https?:\/\/\S.flickr.net
+(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
 +++
-https://blog.flickr.net
-https://www.flickr.net
-https://flickr.net
+git@github.com:username/MyApp.git
+https://github.com/username/MyApp.git
 ---

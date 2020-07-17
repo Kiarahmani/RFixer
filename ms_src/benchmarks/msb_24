@@ -1,5 +1,5 @@
-[a-z]{8|12}
+[0-9]*(\,)?[[:space:]]?([dDcCkKhHmMnNAu]m|m|dam)[0-9]*
 +++
-solution
-repeatin
+1,26
+100cm
 ---

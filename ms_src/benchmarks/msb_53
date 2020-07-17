@@ -1,4 +1,5 @@
-([A-Za-z\d\s]+[A-Za-z\s])+
+^(the|of) | (the|of)$| (of|the)
 +++
-12
+of
+the
 ---

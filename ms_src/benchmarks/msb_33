@@ -1,6 +1,4 @@
-\b[bc]*a{3}[bc]*\b
+ [\w]*\.[a-z]{2,}
 +++
-cab
-caabaaac
-ababaccccc
+stackoverflow.com
 ---

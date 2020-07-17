@@ -1,5 +1,4 @@
-(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
+[a-z][_][a-z]
 +++
-git@github.com:username/MyApp.git
-https://github.com/username/MyApp.git
+blah_blah
 ---

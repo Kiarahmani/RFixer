@@ -1,8 +1,8 @@
-[0-9a-zA-Z]+
+(\d[\s-]*){5,}[\W]
 +++
-So I
-Example of a search that is not working
-I am using
-Summer holiday
-it fails to validate
+123-4567-890
+12345-67890-11121
+12345 6789 123232
+12345 67890 11121
+12345-62436-223434
 ---
