@@ -17,7 +17,7 @@ file_prefix =   'msb'
 cegis       =   True
 bm_range    =   range(0,500)
 timeout     =   10
-delim       =   '%'
+delim       =   'Æ'
 
 
 def run(cmd, timeout_sec, f):
@@ -35,10 +35,12 @@ def run(cmd, timeout_sec, f):
             if ret==0:
                 f.write(str(elapsed_time))
                 f.write("\nsuccess")
+                print (">> "+str(elapsed_time))
                 print (">> success")
             else:
                 f.write(str(elapsed_time))
                 f.write("\ntimeout")
+                print (">> "+str(elapsed_time))
                 print (">> timeout")
         else:
             f.write(stderr.decode('utf-8'))
