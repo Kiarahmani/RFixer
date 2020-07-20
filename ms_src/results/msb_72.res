@@ -56,5 +56,5 @@ add negative: nn
   14     |  2     (((■)*(n)*)(o)*)(■)*    fail dotstar or empty
   15     |  2     (((■)*(n)*)(o)*)(w){■}    unsatisfiable SAT formula       
   16     |  2     (((■■)*(n)*)(o)*)(w)*     17     |  2     ((((■|■))*(n)*)(o)*)(w)*fail solve
-  18     |  2     ((((■){■})*(n)*)(o)*)(w)*10.022098064422607
+  18     |  2     ((((■){■})*(n)*)(o)*)(w)*1.0183749198913574
 timeout

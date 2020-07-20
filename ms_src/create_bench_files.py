@@ -15,8 +15,8 @@ results_dir =   'ms_src/results/'
 col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
-bm_range    =   range(0,500)
-timeout     =   10
+bm_range    =   range(0,1000)
+timeout     =   1
 delim       =   'Æ'
 
 
@@ -46,6 +46,7 @@ def run(cmd, timeout_sec, f):
             f.write(stderr.decode('utf-8'))
             f.write(str(elapsed_time))
             f.write("\nerror")
+            print (">> "+str(elapsed_time))
             print (">> error")
         timer.cancel()
 
@@ -163,13 +164,13 @@ def run_tests():
 
 def main():
     print ("\n\n####### cleaning files from previous runs")
-    #clean()
+    clean()
     print ("done.")
     print ("\n\n####### creating new benchmark files")
-    #create_bench()
+    create_bench()
     print ("done.")
     print ("\n\n####### running RFixer on benchmarks")
-    #run_tests()
+    run_tests()
     print ("done.")
     print ("\n\n####### collecting results")
     collect_results()

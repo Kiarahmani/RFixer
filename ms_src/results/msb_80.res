@@ -126,36 +126,5 @@ get a solution: #([abcdefghijklmnopqrstuvwxy0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
 add positive: #z
 get a solution: #([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])+
   #([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])+
-template: #(■)+ size: 2 holes: 1 time: 1.685863ms
-longest: #mn##(■)+#mn# size: #ms#2#ms# holes: #mh#1#mh# time: #mt#1.685863#mt#ms
-
-Computed in:
-
-  #c#749#c#ms
-
-timeSATSolver time:
-
-  #s#74#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  63   #([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])+
-
-All done
-
-last template: #t##(■)+#t#
-#num#2#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#1#t3#
-#p#53#p#
-#n#0#n#
-solution is #sol##([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])+#sol#
-before exit
-1.0462079048156738
-success
+1.0280730724334717
+timeout

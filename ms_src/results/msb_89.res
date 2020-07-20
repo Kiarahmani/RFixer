@@ -65,28 +65,5 @@ add negative: +0
   35     |  4     ((■){■}■)(■)+             unsatisfiable SAT formula       
   36     |  4     (■■)(■■)+               fail dot
   37     |  4     (■■)((■|■))+            fail solve
-  38     |  4     (■■)((■){■})+             unsatisfiable SAT formula       
-  39     |  4     (■|■)(■){■}               unsatisfiable SAT formula       
-  40     |  4     (■■|■)(■)+                unsatisfiable SAT formula       
-  41     |  4     ((■|■)|■)(■)+           fail solve
-  42     |  4     ((■){■}|■)(■)+            unsatisfiable SAT formula       
-  43     |  4     (■|■)(■■)+              fail dot
-  44     |  4     (■|■)((■|■))+           fail solve
-  45     |  4     (■|■)((■){■})+            unsatisfiable SAT formula       
-  46     |  4     (■){■}(■){■}              unsatisfiable SAT formula       
-  47     |  4     (■■){■}(■)+               unsatisfiable SAT formula       
-  48     |  4     ((■|■)){■}(■)+          fail solve
-  49     |  4     ((■){■}){■}(■)+           unsatisfiable SAT formula       
-  50     |  4     (■){■}(■■)+               unsatisfiable SAT formula       
-  51     |  4     (■){■}((■|■))+          fail solve
-  52     |  4     (■){■}((■){■})+           unsatisfiable SAT formula       
-  53     |  4     ■((■■)■)+               fail dot
-  54     |  4     ■((■|■)■)+              fail dot
-  55     |  4     ■((■){■}■)+               unsatisfiable SAT formula       
-  56     |  4     ■(■(■■))+               fail dot
-  57     |  4     ■(■(■|■))+              fail dot
-  58     |  4     ■(■(■){■})+               unsatisfiable SAT formula       
-  59     |  4     ■((■■|■))+                unsatisfiable SAT formula       
-  60     |  4     ■(((■|■)|■))+           fail solve
-  61     |  4     ■(((■){■}|■))+          10.023499965667725
+  38     |  4     (■■)((■){■})+           1.016679286956787
 timeout

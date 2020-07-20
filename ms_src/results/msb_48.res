@@ -32,22 +32,22 @@ get a solution: (([io])*[aeuio]){1,2}
 add negative: a
 get a solution: (([∅])*[aeuio]){2}
   (([∅])*[aeuio]){2}              
-template: ((■)*[aeuio]){2,} size: 3 holes: 1 time: 3.09245ms
-template: ((■)*[aeuio]){■} size: 3 holes: 3 time: 1.091972ms
-template: ((■){■}[aeuio]){2,} size: 3 holes: 3 time: 0.891252ms
-template: (([aeuio])*■){2,} size: 3 holes: 1 time: 0.632152ms
-template: (([aeuio])*[aeuio]){■} size: 4 holes: 2 time: 1.050869ms
-template: ((■)*■){2,} size: 2 holes: 2 time: 0.871338ms
-template: (([aeuio]){■}[aeuio]){2,} size: 4 holes: 2 time: 0.743819ms
-longest: #mn#((■)*[aeuio]){2,}#mn# size: #ms#3#ms# holes: #mh#1#mh# time: #mt#3.09245#mt#ms
+template: ((■)*[aeuio]){2,} size: 3 holes: 1 time: 2.754336ms
+template: ((■)*[aeuio]){■} size: 3 holes: 3 time: 1.304602ms
+template: ((■){■}[aeuio]){2,} size: 3 holes: 3 time: 0.747937ms
+template: (([aeuio])*■){2,} size: 3 holes: 1 time: 0.884729ms
+template: (([aeuio])*[aeuio]){■} size: 4 holes: 2 time: 0.836001ms
+template: ((■)*■){2,} size: 2 holes: 2 time: 0.846934ms
+template: (([aeuio]){■}[aeuio]){2,} size: 4 holes: 2 time: 0.753219ms
+longest: #mn#((■)*[aeuio]){2,}#mn# size: #ms#3#ms# holes: #mh#1#mh# time: #mt#2.754336#mt#ms
 
 Computed in:
 
-  #c#223#c#ms
+  #c#217#c#ms
 
 timeSATSolver time:
 
-  #s#12#s#ms
+  #s#11#s#ms
 
 cost:
 
@@ -69,5 +69,5 @@ last template: #t#((■)*[aeuio]){■}#t#
 #n#4#n#
 solution is #sol#(([∅])*[aeuio]){2}#sol#
 before exit
-0.5132601261138916
+0.4990229606628418
 success

@@ -140,21 +140,5 @@ add negative: REF0-----****
   97     |  3     (((UA)D){■}■)([*0-9a-zA-Z]){4}fail dot
   98     |  3     (((UA)D){■}(■■){4})([*0-9a-zA-Z]){4}fail dot
   99     |  3     (((UA)D){■}((■|■)){4})([*0-9a-zA-Z]){4}fail dot
-  100    |  3     (((UA)D){■}((■){■}){4})([*0-9a-zA-Z]){4}  unsatisfiable SAT formula       
-  101    |  3     (((UA)D){■}([*0-9a-zA-Z]){■})(■){4}fail dot
-  102    |  3     (((UA)D){■}([*0-9a-zA-Z]){■})([*0-9a-zA-Z]){■}fail dotstar or empty
-  103    |  3     (■([*0-9a-zA-Z]){■})([*0-9a-zA-Z]){4}fail dot
-  104    |  3     (((UA)D){■}([*0-9a-zA-Z]){4})(■){■}fail dotstar or empty
-  105    |  3     (■([*0-9a-zA-Z]){4})(■){4}fail dot
-  106    |  3     (((UA)D){■}([*0-9a-zA-Z]){4})■fail dotstar or empty
-  107    |  3     (■([*0-9a-zA-Z]){4})([*0-9a-zA-Z]){■}fail dot
-  108    |  3     (((UA)D){3}(■){■})(■){4}fail dotstar or empty
-  109    |  3     (((UA)D){3}(■){■})([*0-9a-zA-Z]){■}fail dotstar or empty
-  110    |  3     (((UA)D){3}(■){4})(■){■}fail dotstar or empty
-  111    |  3     (((UA)D){3}■)(■){4}     fail dotstar or empty
-  112    |  3     (((UA)D){3}(■){4})■     fail dotstar or empty
-  113    |  3     (((UA)D){3}■)([*0-9a-zA-Z]){■}fail dotstar or empty
-  114    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})(■){■}fail dotstar or empty
-  115    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})■fail dotstar or empty
-  116    |  4     (((■■)■){■}([*0-9a-zA-Z]){4})([*0-9a-zA-Z]){4}10.023478984832764
+  100    |  3     (((UA)D){■}((■){■}){4})([*0-9a-zA-Z]){4}1.0241198539733887
 timeout

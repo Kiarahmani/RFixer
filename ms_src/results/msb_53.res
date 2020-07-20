@@ -146,30 +146,5 @@ add negative: 0-0
   123    |  4     ((■){■}|((1■)0)■)         unsatisfiable SAT formula       
   124    |  4     ((■■){■}|((1■)0)0)      fail dot
   125    |  4     (((■|■)){■}|((1■)0)0)   fail solve
-  126    |  4     (((■){■}){■}|((1■)0)0)    unsatisfiable SAT formula       
-  127    |  4     ((■){■}|((1(■■))0)0)      unsatisfiable SAT formula       
-  128    |  4     ((■){■}|((1(■|■))0)0)   fail solve
-  129    |  4     ((■){■}|((1(■){■})0)0)    unsatisfiable SAT formula       
-  130    |  4     ((■){■}|((10)■)■)         unsatisfiable SAT formula       
-  131    |  4     ((■■){■}|((10)■)0)      fail dot
-  132    |  4     (((■|■)){■}|((10)■)0)   fail solve
-  133    |  4     (((■){■}){■}|((10)■)0)    unsatisfiable SAT formula       
-  134    |  4     ((■){■}|((10)(■■))0)      unsatisfiable SAT formula       
-  135    |  4     ((■){■}|((10)(■|■))0)   fail solve
-  136    |  4     ((■){■}|((10)(■){■})0)    unsatisfiable SAT formula       
-  137    |  4     ((■■){■}|((10)0)■)      fail dot
-  138    |  4     (((■|■)){■}|((10)0)■)   fail solve
-  139    |  4     (((■){■}){■}|((10)0)■)    unsatisfiable SAT formula       
-  140    |  4     ((■){■}|((10)0)(■■))      unsatisfiable SAT formula       
-  141    |  4     ((■){■}|((10)0)(■|■))   fail solve
-  142    |  4     ((■){■}|((10)0)(■){■})    unsatisfiable SAT formula       
-  143    |  4     (((■■)■){■}|((10)0)0)   fail dot
-  144    |  4     (((■|■)■){■}|((10)0)0)  fail dot
-  145    |  4     (((■){■}■){■}|((10)0)0)   unsatisfiable SAT formula       
-  146    |  4     (((■■|■)){■}|((10)0)0)    unsatisfiable SAT formula       
-  147    |  4     ((((■|■)|■)){■}|((10)0)0)fail solve
-  148    |  4     ((((■){■}|■)){■}|((10)0)0)  unsatisfiable SAT formula       
-  149    |  4     (((■■){■}){■}|((10)0)0) fail dot
-  150    |  4     ((((■|■)){■}){■}|((10)0)0)fail solve
-  151    |  4     ((((■){■}){■}){■}|((10)0)0)10.227054834365845
+  126    |  4     (((■){■}){■}|((1■)0)0)  1.0205471515655518
 timeout

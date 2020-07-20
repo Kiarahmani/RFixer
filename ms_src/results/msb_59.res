@@ -19,12 +19,12 @@ Search through possible transformations:
 ---------|--------------------------------------------------------------------
   1      |  1     ((■\[)(.)*)(\]\])       get a solution: (([\[)(.)*)(\]\])
   (([\[)(.)*)(\]\])               
-template: ((■\[)(.)*)(\]\]) size: 5 holes: 1 time: 2.75374ms
-longest: #mn#((■\[)(.)*)(\]\])#mn# size: #ms#5#ms# holes: #mh#1#mh# time: #mt#2.75374#mt#ms
+template: ((■\[)(.)*)(\]\]) size: 5 holes: 1 time: 2.951027ms
+longest: #mn#((■\[)(.)*)(\]\])#mn# size: #ms#5#ms# holes: #mh#1#mh# time: #mt#2.951027#mt#ms
 
 Computed in:
 
-  #c#112#c#ms
+  #c#127#c#ms
 
 timeSATSolver time:
 
@@ -52,5 +52,5 @@ exception while checking
 before exit
 0:0 ***ERROR*** Syntax error at end of file
 Couldn't repair and continue parse
-0.3848581314086914
+0.39992594718933105
 error

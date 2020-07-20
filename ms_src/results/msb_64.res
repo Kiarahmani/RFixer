@@ -108,34 +108,5 @@ add negative: .
 add positive: 7
 add negative: ,0
   unsatisfiable SAT formula       
-  82     |  3     (■(■■))+((\,\.)(\d)+)?  fail dot
-  83     |  3     (■(■|■))+((\,\.)(\d)+)? fail dot
-  84     |  3     (■(■){■})+((\,\.)(\d)+)?get a solution: ([1235670]([12\.3456,]){0,5})+((\,\.)(\d)+)?
-add positive: 4
-add negative: 0,
-  unsatisfiable SAT formula       
-  85     |  3     ((■■|■))+((\,\.)(\d)+)? get a solution: (([12\.345,][12\.3456,]|[12345670]))+((\,\.)(\d)+)?
-add positive: 8
-add negative: ,,
-get a solution: (([12\.345,][12\.3456]|[123456780]))+((\,\.)(\d)+)?
-add positive: 9
-add negative: 1.
-get a solution: (([12\.5,][123456]|[1234567890]))+((\,\.)(\d)+)?
-add positive: 1.0
-add negative: ,1
-get a solution: (([12\.5][123456,0]|[1234567890]))+((\,\.)(\d)+)?
-add positive: 1.7
-add negative: 1,
-  unsatisfiable SAT formula       
-  86     |  3     (((■|■)|■))+((\,\.)(\d)+)?fail solve
-  87     |  3     (((■){■}|■))+((\,\.)(\d)+)?get a solution: ((([12\.357,0]){3}|[24567890]))+((\,\.)(\d)+)?
-add positive: 1
-add negative: 0,,
-  unsatisfiable SAT formula       
-  88     |  3     ((■|■■))+((\,\.)(\d)+)?   unsatisfiable SAT formula       
-  89     |  3     ((■|(■|■)))+((\,\.)(\d)+)?fail solve
-  90     |  3     ((■|(■){■}))+((\,\.)(\d)+)?  unsatisfiable SAT formula       
-  91     |  3     ((■■){■})+((\,\.)(\d)+)?fail dot
-  92     |  3     (((■|■)){■})+((\,\.)(\d)+)?fail solve
-  93     |  3     (((■){■}){■})+((\,\.)(\d)+)?10.192986011505127
+  82     |  3     (■(■■))+((\,\.)(\d)+)?  1.0209579467773438
 timeout

@@ -49,5 +49,5 @@ Search through possible transformations:
 	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:99)
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
-0.3782682418823242
+0.3854360580444336
 error

@@ -276,39 +276,5 @@ add negative: 42.
   251    |  4     (((42)\.)[6-9])(((■|■)|■)■)fail dot
   252    |  4     (((42)\.)[6-9])(((■){■}|■)■)  unsatisfiable SAT formula       
   253    |  4     (((42)\.)[6-9])((■|■)(■■))fail dot
-  254    |  4     (((42)\.)[6-9])((■|■)(■|■))fail dot
-  255    |  4     (((42)\.)[6-9])((■|■)(■){■})  unsatisfiable SAT formula       
-  256    |  4     (((42)\.)[6-9])((■■){■}■)  unsatisfiable SAT formula       
-  257    |  4     (((42)\.)[6-9])(((■|■)){■}■)fail solve
-  258    |  4     (((42)\.)[6-9])(((■){■}){■}■)  unsatisfiable SAT formula       
-  259    |  4     (((42)\.)[6-9])((■){■}(■■))fail dot
-  260    |  4     (((42)\.)[6-9])((■){■}(■|■))fail solve
-  261    |  4     (((42)\.)[6-9])((■){■}(■){■})  unsatisfiable SAT formula       
-  262    |  4     (((42)\.)[6-9])((■■)■|■)  unsatisfiable SAT formula       
-  263    |  4     (((42)\.)[6-9])((■|■)■|■)fail solve
-  264    |  4     (((42)\.)[6-9])((■){■}■|■)  unsatisfiable SAT formula       
-  265    |  4     (((42)\.)[6-9])(■■|■■)  fail dot
-  266    |  4     (((42)\.)[6-9])(■■|(■|■))fail solve
-  267    |  4     (((42)\.)[6-9])(■■|(■){■})  unsatisfiable SAT formula       
-  268    |  4     (((42)\.)[6-9])((■■|■)|■)  unsatisfiable SAT formula       
-  269    |  4     (((42)\.)[6-9])(((■|■)|■)|■)fail solve
-  270    |  4     (((42)\.)[6-9])(((■){■}|■)|■)  unsatisfiable SAT formula       
-  271    |  4     (((42)\.)[6-9])((■|■)|■■)  unsatisfiable SAT formula       
-  272    |  4     (((42)\.)[6-9])((■|■)|(■|■))fail solve
-  273    |  4     (((42)\.)[6-9])((■|■)|(■){■})  unsatisfiable SAT formula       
-  274    |  4     (((42)\.)[6-9])((■■){■}|■)  unsatisfiable SAT formula       
-  275    |  4     (((42)\.)[6-9])(((■|■)){■}|■)fail solve
-  276    |  4     (((42)\.)[6-9])(((■){■}){■}|■)  unsatisfiable SAT formula       
-  277    |  4     (((42)\.)[6-9])((■){■}|■■)  unsatisfiable SAT formula       
-  278    |  4     (((42)\.)[6-9])((■){■}|(■|■))fail solve
-  279    |  4     (((42)\.)[6-9])((■){■}|(■){■})  unsatisfiable SAT formula       
-  280    |  4     (((42)\.)[6-9])((■■)■){■}fail dot
-  281    |  4     (((42)\.)[6-9])((■|■)■){■}fail dot
-  282    |  4     (((42)\.)[6-9])((■){■}■){■}  unsatisfiable SAT formula       
-  283    |  4     (((42)\.)[6-9])((■■|■)){■}  unsatisfiable SAT formula       
-  284    |  4     (((42)\.)[6-9])(((■|■)|■)){■}fail solve
-  285    |  4     (((42)\.)[6-9])(((■){■}|■)){■}  unsatisfiable SAT formula       
-  286    |  4     (((42)\.)[6-9])((■■){■}){■}fail dot
-  287    |  4     (((42)\.)[6-9])(((■|■)){■}){■}fail solve
-  288    |  4     (((42)\.)[6-9])(((■){■}){■}){■}10.227173805236816
+  254    |  4     (((42)\.)[6-9])((■|■)(■|■))1.0223300457000732
 timeout
