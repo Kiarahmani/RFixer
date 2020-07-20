@@ -1,4 +1,5 @@
 [a-zA-Z]*
+[a-zA-Z ]*
 +++
 but with spaces allowed between words
 t allow spaces

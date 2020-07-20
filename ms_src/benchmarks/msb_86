@@ -1,4 +1,5 @@
 views/
+(views/[^./]*)
 +++
 views/register
 views/' upto the next '

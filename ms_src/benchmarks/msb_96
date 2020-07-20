@@ -1,4 +1,5 @@
 [0-9a-zA-Z]+
+[0-9a-zA-Z ]+
 +++
 So I
 Example of a search that is not working

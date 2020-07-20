@@ -1,4 +1,5 @@
 https?:\/\/\S.flickr.net
+https?:\/\/(\S*\.)?flickr\.net
 +++
 https://blog.flickr.net
 https://www.flickr.net

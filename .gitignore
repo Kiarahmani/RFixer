@@ -32,3 +32,5 @@ results/tutor2/*
 results/tutor2base/*
 
 nohup.out
+ms_src/benchmarks/*
+ms_src/results/*

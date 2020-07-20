@@ -1,4 +1,5 @@
 1. (www\.)?(domain)(\.)(com) 2. (www\.)?([a-z]+)(\.)(domain)(\.)(com)
+(((www\.)([a-z]+))|(?!(www\.))([a-z]+))(\.)(domain)(\.)(com)
 +++
 www.user.domain.com
 ww.domain.com

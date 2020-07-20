@@ -1,4 +1,5 @@
  [\w]*\.[a-z]{2,}
+\b(\w[\w-]+\.)+[a-z]{2,}\b
 +++
 stackoverflow.com
 ---

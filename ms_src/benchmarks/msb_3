@@ -1,4 +1,5 @@
 ([0-9]+)\s+(\bseconds\b)|(\bminutes\b)
+([0-9]+)\s+((\bseconds\b)|(\bminutes\b))
 +++
 5 minutes
 ---

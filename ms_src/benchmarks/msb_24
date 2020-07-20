@@ -1,4 +1,5 @@
 [0-9]*(\,)?[[:space:]]?([dDcCkKhHmMnNAu]m|m|dam)[0-9]*
+\d*(\,)?[[:space:]]?(\d*)?([dDcCkKhHmMnNAu]m|m|dam)\d*
 +++
 1,26
 100cm

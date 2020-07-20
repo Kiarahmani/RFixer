@@ -1,4 +1,5 @@
 ^(the|of) | (the|of)$| (of|the)
+\b(of|the)\b
 +++
 of
 the

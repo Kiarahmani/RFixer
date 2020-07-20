@@ -1,4 +1,5 @@
 ([aieou]*[aieou]){2,}
+([aeiou]{2})
 +++
 oe
 oi
