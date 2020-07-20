@@ -1,5 +1,8 @@
-([A-Z][a-z]*((\\s[A-Za-z])?[a-z]*)*)
-(\b[A-Z]\w*\s*)+
+A(\w)+
+[A-Z]\w*
 +++
-To Make
+My
+Yes
+Example
+How
 ---

@@ -1,8 +1,7 @@
-(\[\[)(.*)(\]\])
-(\[\[)(.*?)(\]\])
+([a-zA-Z]{1})([0-9]{3})
+([a-zA-Z]\d{3}|\d[a-zA-Z]\d{2}|\d{2}[a-zA-Z]\d|\d{3}[a-zA-Z])
 +++
-[[MyOtherText]]
-[[MyText]]
-[[ Something...[[MyText]]
-[[" for start and "]]
+123d
+12d3
+99A9
 ---

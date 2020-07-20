@@ -1,6 +1,6 @@
-[0-6]
-(\.5|[0-5](\.5)?|6)
+[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
+ab(a|c|b+[c])*b+a
 +++
-.5
-1.5
+abccba
+abccabba
 ---

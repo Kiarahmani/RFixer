@@ -1,4 +1,8 @@
-\[Total execution Time: (.+) min
-Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
+(\[\[)(.*)(\]\])
+(\[\[)(.*?)(\]\])
 +++
+[[MyOtherText]]
+[[MyText]]
+[[ Something...[[MyText]]
+[[" for start and "]]
 ---

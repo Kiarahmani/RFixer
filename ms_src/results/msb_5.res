@@ -16,3 +16,5 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
+0.2781860828399658
+success

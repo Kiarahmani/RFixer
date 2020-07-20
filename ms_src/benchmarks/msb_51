@@ -1,8 +1,5 @@
-<abc[!e]
-\babc[^e]
+([A-Za-z\d\s]+[A-Za-z\s])+
+(?!\d+$)[a-zA-Z\d\s]+
 +++
-abcf
-abcd
-abc[
-abc
+12
 ---

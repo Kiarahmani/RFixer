@@ -1,5 +1,6 @@
-([A-Za-z\d\s]+[A-Za-z\s])+
-(?!\d+$)[a-zA-Z\d\s]+
+^(the|of) | (the|of)$| (of|the)
+\b(of|the)\b
 +++
-12
+of
+the
 ---

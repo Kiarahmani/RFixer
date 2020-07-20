@@ -1,14 +1,11 @@
 
 Given the regular expression:
 
-  A(\w)+
+  (\d){5,6}(\|)?((\d){5,6})?
 
 That that should match the strings:
 
-  ✓ (0:2)    My
-  ✓ (2:5)    Yes
-  ✓ (5:12)   Example
-  ✓ (12:15)  How
+  ✓ (0:18)   34786|235652|12876
 
 And reject the strings:
 
@@ -17,33 +14,27 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ■(\w)+                    [EHYM](\w)+                     
-template: ■(\w)+ size: 2 holes: 1 time: 2.88501ms
-longest: #mn#■(\w)+#mn# size: #ms#2#ms# holes: #mh#1#mh# time: #mt#2.88501#mt#ms
-
-Computed in:
-
-  #c#103#c#ms
-
-timeSATSolver time:
-
-  #s#3#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  4    [EHYM](\w)+
-
-All done
-
-last template: #t#■(\w)+#t#
-#num#1#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#0#t3#
-solution is #sol#[EHYM](\w)+#sol#
-before exit
+  1      |  1     ((■){5,6}(\|)?)((\d){5,6})?fail dot
+  2      |  1     ((\d){■}(\|)?)((\d){5,6})?fail dotstar or empty
+  3      |  1     ((\d){5,6}(■)?)((\d){5,6})?fail dot
+  4      |  1     ((\d){5,6}(\|){■})((\d){5,6})?fail dotstar or empty
+  5      |  1     ((\d){5,6}(\|)?)((■){5,6})?fail dot
+  6      |  1     ((\d){5,6}(\|)?)((\d){■})?fail dotstar or empty
+  7      |  1     ((\d){5,6}(\|)?)((\d){5,6}){■}fail dotstar or empty
+  8      |  2     ((■){■}(\|)?)((\d){5,6})?get a solution: (([12345678|]){14,18}(\|)?)((\d){5,6})?
+add positive: 10000
+add negative: 1|111111111111
+get a solution: (([2345678|0]){0,18}(\|)?)((\d){5,6})?
+add positive: 10000|00000
+add negative: 
+  unsatisfiable SAT formula       
+  9      |  2     ((■){5,6}(■)?)((\d){5,6})?fail dot
+  10     |  2     ((■){5,6}(\|){■})((\d){5,6})?fail dot
+  11     |  2     ((■){5,6}(\|)?)((■){5,6})?fail dot
+  12     |  2     ((■){5,6}(\|)?)((\d){■})?fail dot
+  13     |  2     ((■){5,6}(\|)?)((\d){5,6}){■}fail dot
+  14     |  2     (■(\|)?)((\d){5,6})?    fail dot
+  15     |  2     ((■■){5,6}(\|)?)((\d){5,6})?fail dot
+  16     |  2     (((■|■)){5,6}(\|)?)((\d){5,6})?fail dot
+  17     |  2     (((■){■}){5,6}(\|)?)((\d){5,6})?10.01366400718689
+timeout

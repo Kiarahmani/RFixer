@@ -1,9 +1,5 @@
-[a-zA-Z]*
-[a-zA-Z ]*
+[[0-9]{0,3}\-[0-9]{0,5}\-[0-9]{0,1}]
+\d{4}-\d{1,6}-\d{2}
 +++
-but with spaces allowed between words
-t allow spaces
-can i change it to make it allow spaces
-i have tried the following but it doesn
-t work
+2014-000000-01
 ---

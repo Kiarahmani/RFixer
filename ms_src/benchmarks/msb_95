@@ -1,10 +1,9 @@
-[A-Z]+\b[',']\s[A-Z]{1}[a-z]+\b(\s([A-Z][a-z]+\b))?
-[A-Z][A-Z' ]+(-[A-Z' ]+)*, [A-Z][a-z]+( \([A-Za-z]+\))?
+(\d[\s-]*){5,}[\W]
+\d[ \d-]{3,}\d
 +++
-TRUMP, Donald
-ZETA-JONES, Catherine (Kate)
-BUSH, George
-CLINTON, William (Bill)
-CARTER, James (Jimmy)
-SMITH-JONES, John
+123-4567-890
+12345-67890-11121
+12345 6789 123232
+12345 67890 11121
+12345-62436-223434
 ---

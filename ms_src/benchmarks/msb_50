@@ -1,6 +1,8 @@
-[A-za-z]{2}[0-9]{6}
-(RQ\d{6}|INM\d{8})
+<abc[!e]
+\babc[^e]
 +++
-INM12345678
-RQ123456
+abcf
+abcd
+abc[
+abc
 ---

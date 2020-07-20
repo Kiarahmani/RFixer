@@ -1,12 +1,11 @@
 
 Given the regular expression:
 
-  (s)*(n)*(o)*(w)*
+  ([A-Z]([a-z])*((\\s[a-zA-Z])?([a-z])*)*)
 
 That that should match the strings:
 
-  ✓ (0:4)    snow
-  ✓ (4:15)   ssssnnnowww
+  ✓ (0:7)    To Make
 
 And reject the strings:
 
@@ -15,33 +14,19 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (((■)*(n)*)(o)*)(w)*      (((s)*(n)*)(o)*)(w)*            
-template: (((■)*(n)*)(o)*)(w)* size: 7 holes: 1 time: 3.206759ms
-longest: #mn#(((■)*(n)*)(o)*)(w)*#mn# size: #ms#7#ms# holes: #mh#1#mh# time: #mt#3.206759#mt#ms
-
-Computed in:
-
-  #c#114#c#ms
-
-timeSATSolver time:
-
-  #s#3#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  1    (((s)*(n)*)(o)*)(w)*
-
-All done
-
-last template: #t#(((■)*(n)*)(o)*)(w)*#t#
-#num#1#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#0#t3#
-solution is #sol#(((s)*(n)*)(o)*)(w)*#sol#
-before exit
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at edu.wisc.regfixer.automata.Automaton.predicateFromMetaChar(Automaton.java:1066)
+	at edu.wisc.regfixer.automata.Automaton.charEscapedToAutomaton(Automaton.java:1043)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:884)
+	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
+	at edu.wisc.regfixer.automata.Automaton.plusToAutomaton(Automaton.java:1001)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:880)
+	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
+	at edu.wisc.regfixer.automata.Automaton.<init>(Automaton.java:64)
+	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
+0.3127920627593994
+error

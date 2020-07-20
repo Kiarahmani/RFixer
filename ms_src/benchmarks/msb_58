@@ -1,7 +1,9 @@
-.+([!=<>]+).+
-[^!=<>]+([!=<>]+)[^!=<>]+
+[a-zA-Z]*
+[a-zA-Z ]*
 +++
-f>=2+a
-1+2<4
-a!=2
+but with spaces allowed between words
+t allow spaces
+can i change it to make it allow spaces
+i have tried the following but it doesn
+t work
 ---

@@ -1,7 +1,6 @@
-([aieou]*[aieou]){2,}
-([aeiou]{2})
+[A-za-z]{2}[0-9]{6}
+(RQ\d{6}|INM\d{8})
 +++
-oe
-oi
-io
+INM12345678
+RQ123456
 ---

@@ -1,5 +1,5 @@
-[\\w][\\w\\,\\s\\w]
-(\S)+, (\S)+
+/<codes 
+\/codes(\/|\.|$)
 +++
-lastname, firstname
+/codes.
 ---

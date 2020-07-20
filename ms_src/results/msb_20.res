@@ -106,33 +106,55 @@ Search through possible transformations:
   90     |  3     (((UA)■){3}([*0-9a-zA-Z]){■})([*0-9a-zA-Z]){■}fail dotstar or empty
   91     |  3     (((UA)■){3}([*0-9a-zA-Z]){4})(■){■}fail dotstar or empty
   92     |  3     (((UA)■){3}([*0-9a-zA-Z]){4})■fail dotstar or empty
-  93     |  3     (((UA)D){■}(■){■})([*0-9a-zA-Z]){4}  (((UA)D){0}([A1\-2BREF]){1,9})([*0-9a-zA-Z]){4}
-template: (((UA)D){■}(■){■})([*0-9a-zA-Z]){4} size: 7 holes: 5 time: 3.520382ms
-longest: #mn#(((UA)D){■}(■){■})([*0-9a-zA-Z]){4}#mn# size: #ms#7#ms# holes: #mh#5#mh# time: #mt#3.520382#mt#ms
-
-Computed in:
-
-  #c#382#c#ms
-
-timeSATSolver time:
-
-  #s#4#s#ms
-
-cost:
-
-  #d#3#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  8    (((UA)D){0}([A1\-2BREF]){1,9})([*0-9a-zA-Z]){4}
-
-All done
-
-last template: #t#(((UA)D){■}(■){■})([*0-9a-zA-Z]){4}#t#
-#num#93#num#
-#dep#3#dep#
-#t1#0#t1#
-#t2#4#t2#
-#t3#88#t3#
-solution is #sol#(((UA)D){0}([A1\-2BREF]){1,9})([*0-9a-zA-Z]){4}#sol#
-before exit
+  93     |  3     (((UA)D){■}(■){■})([*0-9a-zA-Z]){4}get a solution: (((UA)D){0}([A1\-2BREF]){1,9})([*0-9a-zA-Z]){4}
+add positive: REF-1100-0000
+add negative: -****
+get a solution: (((UA)D){0}([1A\-2BREF0]){2,9})([*0-9a-zA-Z]){4}
+add positive: REF-3000-0000
+add negative: --****
+get a solution: (((UA)D){0}([1A\-2BR3EF0]){3,9})([*0-9a-zA-Z]){4}
+add positive: REF-0040-0000
+add negative: ---****
+get a solution: (((UA)D){0}([1A\-2BR34EF0]){4,9})([*0-9a-zA-Z]){4}
+add positive: REF-5000-0000
+add negative: RE--****
+get a solution: (((UA)D){0}([ABEF01\-2R345]){5,9})([*0-9a-zA-Z]){4}
+add positive: REF-6000-0000
+add negative: -----****
+get a solution: (((UA)D){0}([ABEF0\-12R3456]){6,9})([*0-9a-zA-Z]){4}
+add positive: REF-0070-0000
+add negative: ------****
+get a solution: (((UA)D){0}([ABEF0\-12R34567]){7,9})([*0-9a-zA-Z]){4}
+add positive: REF-0008-0000
+add negative: R------****
+get a solution: (((UA)D){0}([ABEF0\-12R345678]){8,9})([*0-9a-zA-Z]){4}
+add positive: REF-9000-0000
+add negative: R-------****
+get a solution: (((UA)D){0}([ABEF0\-12R3456789]){9})([*0-9a-zA-Z]){4}
+add positive: REF-000C-0000
+add negative: REF0-----****
+  unsatisfiable SAT formula       
+  94     |  3     (((UA)D){■}(■){4})(■){4}fail dot
+  95     |  3     (((UA)D){■}(■){4})([*0-9a-zA-Z]){■}fail dot
+  96     |  3     (■(■){4})([*0-9a-zA-Z]){4}fail dot
+  97     |  3     (((UA)D){■}■)([*0-9a-zA-Z]){4}fail dot
+  98     |  3     (((UA)D){■}(■■){4})([*0-9a-zA-Z]){4}fail dot
+  99     |  3     (((UA)D){■}((■|■)){4})([*0-9a-zA-Z]){4}fail dot
+  100    |  3     (((UA)D){■}((■){■}){4})([*0-9a-zA-Z]){4}  unsatisfiable SAT formula       
+  101    |  3     (((UA)D){■}([*0-9a-zA-Z]){■})(■){4}fail dot
+  102    |  3     (((UA)D){■}([*0-9a-zA-Z]){■})([*0-9a-zA-Z]){■}fail dotstar or empty
+  103    |  3     (■([*0-9a-zA-Z]){■})([*0-9a-zA-Z]){4}fail dot
+  104    |  3     (((UA)D){■}([*0-9a-zA-Z]){4})(■){■}fail dotstar or empty
+  105    |  3     (■([*0-9a-zA-Z]){4})(■){4}fail dot
+  106    |  3     (((UA)D){■}([*0-9a-zA-Z]){4})■fail dotstar or empty
+  107    |  3     (■([*0-9a-zA-Z]){4})([*0-9a-zA-Z]){■}fail dot
+  108    |  3     (((UA)D){3}(■){■})(■){4}fail dotstar or empty
+  109    |  3     (((UA)D){3}(■){■})([*0-9a-zA-Z]){■}fail dotstar or empty
+  110    |  3     (((UA)D){3}(■){4})(■){■}fail dotstar or empty
+  111    |  3     (((UA)D){3}■)(■){4}     fail dotstar or empty
+  112    |  3     (((UA)D){3}(■){4})■     fail dotstar or empty
+  113    |  3     (((UA)D){3}■)([*0-9a-zA-Z]){■}fail dotstar or empty
+  114    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})(■){■}fail dotstar or empty
+  115    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})■fail dotstar or empty
+  116    |  4     (((■■)■){■}([*0-9a-zA-Z]){4})([*0-9a-zA-Z]){4}10.023478984832764
+timeout
