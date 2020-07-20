@@ -1,12 +1,11 @@
 
 Given the regular expression:
 
-  \d([0-9]){2}(.|\-)\d([0-9]){2}(.|\-)\d([0-9]){4}
+  (([\-0-9a-zA-Z])+)
 
 That that should match the strings:
 
-  ✓ (0:10)   10-02-2012
-  ✓ (10:20)  10.02.2012
+  ✓ (0:12)   product_name
 
 And reject the strings:
 
@@ -15,274 +14,143 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  2      |  1     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  3      |  1     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  4      |  1     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  5      |  1     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  6      |  1     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  7      |  1     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  8      |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  9      |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  10     |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  11     |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  12     |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  13     |  1     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  14     |  2     ((((((■(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  15     |  2     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  16     |  2     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  17     |  2     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  18     |  2     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  19     |  2     ((((((■([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  20     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  21     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  22     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  23     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  24     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  25     |  2     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  26     |  2     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  27     |  2     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  28     |  2     ((((((\d(■){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  29     |  2     ((((((\d(■){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  30     |  2     ((((((\d(■){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  31     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  32     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  33     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  34     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  35     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  36     |  2     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  37     |  2     ((((((\d■)(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  38     |  2     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  39     |  2     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  40     |  2     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  41     |  2     ((((((\d([0-9]){■})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  42     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  43     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  44     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  45     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  46     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  47     |  2     ((((((\d([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  48     |  2     ((((((\d([0-9]){2})(■|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  49     |  2     ((((((\d([0-9]){2})(■|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  50     |  2     ((((((\d([0-9]){2})(■|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  51     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  52     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  53     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  54     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  55     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  56     |  2     ((((((\d([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  57     |  2     ((((((\d([0-9]){2})(.|■))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  58     |  2     ((((((\d([0-9]){2})(.|■))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  59     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  60     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  61     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  62     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  63     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  64     |  2     ((((((\d([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  65     |  2     ((((((\d([0-9]){2})(.|\-))■)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  66     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  67     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  68     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  69     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  70     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  71     |  2     ((((((\d([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  72     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  73     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  74     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  75     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  76     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)(■){4}fail dotstar or empty
-  77     |  2     ((((((\d([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  78     |  2     ((((((\d([0-9]){2})(.|\-))\d)■)(.|\-))\d)([0-9]){4}fail dotstar or empty
-  79     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  80     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(.|■))\d)([0-9]){4}fail dotstar or empty
-  81     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))■)([0-9]){4}fail dotstar or empty
-  82     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)(■){4}fail dotstar or empty
-  83     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  84     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(■|■))\d)([0-9]){4}fail dotstar or empty
-  85     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))■)([0-9]){4}fail dotstar or empty
-  86     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)(■){4}fail dotstar or empty
-  87     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){■}fail dotstar or empty
-  88     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))■)([0-9]){4}fail dotstar or empty
-  89     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)(■){4}fail dotstar or empty
-  90     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){■}fail dotstar or empty
-  91     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)(■){4}fail dotstar or empty
-  92     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){■}fail dotstar or empty
-  93     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){■}fail dotstar or empty
-  94     |  2     ((((((\d([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)■fail dotstar or empty
-  95     |  3     ((((((■(■){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  96     |  3     ((((((■(■){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  97     |  3     ((((((■(■){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  98     |  3     ((((((■(■){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  99     |  3     ((((((■(■){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  100    |  3     ((((((■(■){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  101    |  3     ((((((■(■){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  102    |  3     ((((((■(■){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  103    |  3     ((((((■(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  104    |  3     ((((((■(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  105    |  3     ((((((■■)(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  106    |  3     ((((((■([0-9]){■})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  107    |  3     ((((((■([0-9]){■})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  108    |  3     ((((((■([0-9]){■})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  109    |  3     ((((((■([0-9]){■})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  110    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  111    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  112    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  113    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  114    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  115    |  3     ((((((■([0-9]){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  116    |  3     ((((((■([0-9]){2})(■|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  117    |  3     ((((((■([0-9]){2})(■|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  118    |  3     ((((((■([0-9]){2})(■|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  119    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  120    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  121    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  122    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  123    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  124    |  3     ((((((■([0-9]){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  125    |  3     ((((((■([0-9]){2})(.|■))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  126    |  3     ((((((■([0-9]){2})(.|■))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  127    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  128    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  129    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  130    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  131    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  132    |  3     ((((((■([0-9]){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  133    |  3     ((((((■([0-9]){2})(.|\-))■)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  134    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  135    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  136    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  137    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))■)([0-9]){4}fail dot
-  138    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)(■){4}fail dot
-  139    |  3     ((((((■([0-9]){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){■}fail dot
-  140    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  141    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  142    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  143    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){2})(.|\-))■)([0-9]){4}fail dot
-  144    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)(■){4}fail dot
-  145    |  3     ((((((■([0-9]){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){■}fail dot
-  146    |  3     ((((((■([0-9]){2})(.|\-))\d)■)(.|\-))\d)([0-9]){4}fail dotstar or empty
-  147    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  148    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(.|■))\d)([0-9]){4}fail dotstar or empty
-  149    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))■)([0-9]){4}fail dot
-  150    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)(■){4}fail dot
-  151    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){■}fail dot
-  152    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(■|■))\d)([0-9]){4}fail dotstar or empty
-  153    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))■)([0-9]){4}fail dotstar or empty
-  154    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)(■){4}fail dot
-  155    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){■}fail dot
-  156    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))■)([0-9]){4}fail dotstar or empty
-  157    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)(■){4}fail dot
-  158    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){■}fail dot
-  159    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)(■){4}fail dot
-  160    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){■}fail dot
-  161    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){■}fail dotstar or empty
-  162    |  3     ((((((■([0-9]){2})(.|\-))\d)([0-9]){2})(.|\-))\d)■fail dotstar or empty
-  163    |  3     ((((((\d(■){■})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  164    |  3     ((((((\d(■){■})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  165    |  3     ((((((\d(■){■})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  166    |  3     ((((((\d(■){■})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  167    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  168    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  169    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  170    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  171    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  172    |  3     ((((((\d(■){■})(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  173    |  3     ((((((\d(■){2})(■|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  174    |  3     ((((((\d(■){2})(■|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  175    |  3     ((((((\d(■){2})(■|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  176    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  177    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  178    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  179    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  180    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  181    |  3     ((((((\d(■){2})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  182    |  3     ((((((\d■)(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  183    |  3     ((((((\d(■){2})(.|■))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  184    |  3     ((((((\d(■){2})(.|■))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  185    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  186    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  187    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  188    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  189    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  190    |  3     ((((((\d(■){2})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  191    |  3     ((((((\d■)(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  192    |  3     ((((((\d(■){2})(.|\-))■)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  193    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  194    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  195    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  196    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){2})(.|\-))■)([0-9]){4}fail dot
-  197    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){2})(.|\-))\d)(■){4}fail dot
-  198    |  3     ((((((\d(■){2})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){■}fail dot
-  199    |  3     ((((((\d■)(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  200    |  3     ((((((\d(■){2})(.|\-))\d)(■){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  201    |  3     ((((((\d(■){2})(.|\-))\d)(■){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  202    |  3     ((((((\d(■){2})(.|\-))\d)(■){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  203    |  3     ((((((\d(■){2})(.|\-))\d)(■){2})(.|\-))■)([0-9]){4}fail dot
-  204    |  3     ((((((\d(■){2})(.|\-))\d)(■){2})(.|\-))\d)(■){4}fail dot
-  205    |  3     ((((((\d(■){2})(.|\-))\d)(■){2})(.|\-))\d)([0-9]){■}get a solution: ((((((\d([\-\.0]){2})(.|\-))\d)([\-2\.]){2})(.|\-))\d)([0-9]){1}
-add positive: 01.00-0000
-add negative: 0-- 0-- 00
-  unsatisfiable SAT formula       
-  206    |  3     ((((((\d■)(.|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  207    |  3     ((((((\d(■){2})(.|\-))\d)■)(.|\-))\d)([0-9]){4}fail dotstar or empty
-  208    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  209    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(.|■))\d)([0-9]){4}fail dotstar or empty
-  210    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(.|\-))■)([0-9]){4}fail dot
-  211    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(.|\-))\d)(■){4}fail dot
-  212    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){■}get a solution: ((((((\d([1\-\.0]){2})(.|\-))\d)([0-9]){0})(.|\-))\d)([0-9]){1,3}
-add positive: 02.00-0000
-add negative: 0-- 0-00
-get a solution: ((((((\d([1\-2\.0]){2})(.|\-))\d)([0-9]){0})(.|\-))\d)([0-9]){2,3}
-add positive: 03.00-0000
-add negative: 000 0-000
-get a solution: ((((((\d([1\-2\.30]){2})(.|\-))\d)([0-9]){0})(.|\-))\d)([0-9]){3}
-add positive: 04.00-0000
-add negative: 00. 0-0000
-  unsatisfiable SAT formula       
-  213    |  3     ((((((\d■)(.|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  214    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(■|■))\d)([0-9]){4}fail dotstar or empty
-  215    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(■|\-))■)([0-9]){4}fail dotstar or empty
-  216    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(■|\-))\d)(■){4}fail dot
-  217    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){■}fail dot
-  218    |  3     ((((((\d■)(.|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  219    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|■))■)([0-9]){4}fail dotstar or empty
-  220    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|■))\d)(■){4}fail dot
-  221    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){■}fail dot
-  222    |  3     ((((((\d■)(.|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  223    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))■)(■){4}fail dot
-  224    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){■}fail dot
-  225    |  3     ((((((\d■)(.|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  226    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)(■){■}fail dotstar or empty
-  227    |  3     ((((((\d■)(.|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  228    |  3     ((((((\d(■){2})(.|\-))\d)([0-9]){2})(.|\-))\d)■fail dotstar or empty
-  229    |  3     ((((((\d■)(.|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  230    |  3     ((((((\d([0-9]){■})(■|■))\d)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  231    |  3     ((((((\d([0-9]){■})(■|\-))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  232    |  3     ((((((\d([0-9]){■})(■|\-))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  233    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  234    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  235    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  236    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  237    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  238    |  3     ((((((\d([0-9]){■})(■|\-))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  239    |  3     ((((((\d([0-9]){■})(.|■))■)([0-9]){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  240    |  3     ((((((\d([0-9]){■})(.|■))\d)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  241    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  242    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  243    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  244    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(.|\-))■)([0-9]){4}fail dotstar or empty
-  245    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(.|\-))\d)(■){4}fail dotstar or empty
-  246    |  3     ((((((\d([0-9]){■})(.|■))\d)([0-9]){2})(.|\-))\d)([0-9]){■}fail dotstar or empty
-  247    |  3     ((((((\d([0-9]){■})(.|\-))■)(■){2})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  248    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){■})(.|\-))\d)([0-9]){4}fail dotstar or empty
-  249    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(■|\-))\d)([0-9]){4}fail dotstar or empty
-  250    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(.|■))\d)([0-9]){4}fail dotstar or empty
-  251    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(.|\-))■)([0-9]){4}fail dot
-  252    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(.|\-))\d)(■){4}fail dot
-  253    |  3     ((((((\d([0-9]){■})(.|\-))■)([0-9]){2})(.|\-))\d)([0-9]){■}get a solution: ((((((\d([0-9]){0})(.|\-))[\-\.])([0-9]){2})(.|\-))\d)([0-9]){1,3}
-add negative: 0 -00-00
-get a solution: ((((((\d([0-9]){0})(.|\-))[\-\.])([0-9]){2})(.|\-))\d)([0-9]){2,3}
-add negative: 00-00-000
+  1      |  1     (■)+                    get a solution: ([acdemnoprtu_])+
+add positive: -
+get a solution: ([acdemnop\-rtu_])+
+add positive: 0
+get a solution: ([acdemno0p\-rtu_])+
+add positive: 1
+get a solution: ([acdemno0p\-1rtu_])+
+add positive: 2
+get a solution: ([acdemno0p\-12rtu_])+
+add positive: 3
+get a solution: ([acdemno0p\-12r3tu_])+
+add positive: 4
+get a solution: ([acdemno0p\-12r34tu_])+
+add positive: 5
+get a solution: ([acdemno0p\-12r34t5u_])+
+add positive: 6
+get a solution: ([acdemno0p\-12r34t5u6_])+
+add positive: 7
+get a solution: ([acdemno0p\-12r34t5u67_])+
+add positive: 8
+get a solution: ([acdemno0p\-12r34t5u678_])+
+add positive: 9
+get a solution: ([acdemno0p\-12r34t5u6789_])+
+add positive: A
+get a solution: ([acdemno0p12r34t5u6789A\-_])+
+add positive: B
+get a solution: ([acdemno0p12r34t5u6789AB\-_])+
+add positive: C
+get a solution: ([acdemno0p12r34t5u6789ABC\-_])+
+add positive: D
+get a solution: ([acdemno0p12r34t5u6789ABCD\-_])+
+add positive: E
+get a solution: ([acdemno0p12r34t5u6789ABCDE\-_])+
+add positive: F
+get a solution: ([acdemno0p12r34t5u6789ABCDEF\-_])+
+add positive: G
+get a solution: ([acdemno0p12r34t5u6789ABCDEFG\-_])+
+add positive: H
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGH\-_])+
+add positive: I
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHI\-_])+
+add positive: J
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJ\-_])+
+add positive: K
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJK\-_])+
+add positive: L
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKL\-_])+
+add positive: M
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLM\-_])+
+add positive: N
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMN\-_])+
+add positive: O
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNO\-_])+
+add positive: P
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-_])+
+add positive: Q
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-Q_])+
+add positive: R
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QR_])+
+add positive: S
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRS_])+
+add positive: T
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRST_])+
+add positive: U
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTU_])+
+add positive: V
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUV_])+
+add positive: W
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUVW_])+
+add positive: X
+get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUVWX_])+
+add positive: Y
+get a solution: ([acdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXY_])+
+add positive: Z
+get a solution: ([acdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: b
+get a solution: ([abcdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: f
+get a solution: ([abcdefmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: g
+get a solution: ([abcdefgmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: h
+get a solution: ([abcdefghmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: i
+get a solution: ([abcdefghimnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: j
+get a solution: ([abcdefghijmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: k
+get a solution: ([abcdefghijkmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: l
+get a solution: ([abcdefghijklmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: q
+get a solution: ([abcdefghijklmnopqrtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: s
+get a solution: ([abcdefghijklmnopqrstu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: v
+get a solution: ([abcdefghijklmnopqrstuv0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: w
+get a solution: ([abcdefghijklmnopqrstuvw0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: x
+get a solution: ([abcdefghijklmnopqrstuvwx0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: y
+get a solution: ([abcdefghijklmnopqrstuvwxy0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+add positive: z
+get a solution: ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+  ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+template: (■)+ size: 1 holes: 1 time: 1.780023ms
+longest: #mn#(■)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.780023#mt#ms
 
-1.0179007053375244
-timeout
+Computed in:
+
+  #c#652#c#ms
+
+timeSATSolver time:
+
+  #s#76#s#ms
+
+cost:
+
+  #d#1#d#
+
+Finds the following solutions (and the corresponding fitness):
+
+  64   ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
+
+All done
+
+last template: #t#(■)+#t#
+#num#1#num#
+#dep#1#dep#
+#t1#0#t1#
+#t2#0#t2#
+#t3#0#t3#
+#p#52#p#
+#n#0#n#
+solution is #sol#([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+#sol#
+before exit
+
+0.9446132183074951
+success

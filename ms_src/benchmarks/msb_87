@@ -1,5 +1,9 @@
-(\d{9})
-\b\d{10}\b
+[0-9a-zA-Z]+
+[0-9a-zA-Z ]+
 +++
-4901773349
+So I
+Example of a search that is not working
+I am using
+Summer holiday
+it fails to validate
 ---

@@ -1,6 +1,7 @@
-[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
-ab(a|c|b+[c])*b+a
+([a-zA-Z]{1})([0-9]{3})
+([a-zA-Z]\d{3}|\d[a-zA-Z]\d{2}|\d{2}[a-zA-Z]\d|\d{3}[a-zA-Z])
 +++
-abccba
-abccabba
+123d
+12d3
+99A9
 ---

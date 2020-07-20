@@ -16,7 +16,7 @@ col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
 bm_range    =   range(0,1000)
-timeout     =   1
+timeout     =   10
 delim       =   'Æ'
 
 

@@ -1,5 +1,6 @@
-(UAD){3}[*0-9a-zA-Z]{4}[*0-9a-zA-Z]{4}
-REF-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}
+[a-z]{8|12}
+[a-z]{8}([a-z]{4})?
 +++
-REF-12AB-1A3B
+solution
+repeatin
 ---

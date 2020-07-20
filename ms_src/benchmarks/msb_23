@@ -1,6 +1,5 @@
-[a-z]{8|12}
-[a-z]{8}([a-z]{4})?
+gtm\.*click|gtm.formSubmit
+gtm\.(click|linkClick|formSubmit)
 +++
-solution
-repeatin
+gtm.linkClick
 ---

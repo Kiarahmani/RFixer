@@ -1,5 +1,7 @@
-([A-Za-z0-9-]+)
-([A-Za-z0-9\-\_]+)
+https?:\/\/\S.flickr.net
+https?:\/\/(\S*\.)?flickr\.net
 +++
-product_name
+https://blog.flickr.net
+https://www.flickr.net
+https://flickr.net
 ---

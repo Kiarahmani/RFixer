@@ -1,5 +1,6 @@
-([A-Za-z\d\s]+[A-Za-z\s])+
-(?!\d+$)[a-zA-Z\d\s]+
+[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
+ab(a|c|b+[c])*b+a
 +++
-12
+abccba
+abccabba
 ---

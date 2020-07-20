@@ -1,5 +1,5 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
+ [\w]*\.[a-z]{2,}
+(\w[\w-]+\.)+[a-z]{2,}
 +++
-gtm.linkClick
+stackoverflow.com
 ---

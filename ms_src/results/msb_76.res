@@ -1,14 +1,11 @@
 
 Given the regular expression:
 
-  A(\w)+
+  [1-50]
 
 That that should match the strings:
 
-  ✓ (0:2)    My
-  ✓ (2:5)    Yes
-  ✓ (5:12)   Example
-  ✓ (12:15)  How
+  ✓ (0:2)    06
 
 And reject the strings:
 
@@ -17,82 +14,85 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ■(\w)+                  get a solution: [EHYM](\w)+
-add positive: A
-  2      |  1     A(■)+                   fail dotstar or empty
-  3      |  1     A(\w){■}                fail dotstar or empty
-  4      |  2     ■(■)+                   fail dot
-  5      |  2     ■(\w){■}                get a solution: [AEHYM](\w){0,6}
-add positive: B
-get a solution: [ABEHYM](\w){0,6}
-add positive: C
-get a solution: [ABCEHYM](\w){0,6}
-add positive: D
-get a solution: [ABCDEHYM](\w){0,6}
-add positive: F
-get a solution: [ABCDEFHYM](\w){0,6}
-add positive: G
-get a solution: [ABCDEFGHYM](\w){0,6}
-add positive: I
-get a solution: [ABCDEFGHIYM](\w){0,6}
-add positive: J
-get a solution: [ABCDEFGHIJMY](\w){0,6}
-add positive: K
-get a solution: [ABCDEFGHIJKMY](\w){0,6}
-add positive: L
-get a solution: [ABCDEFGHIJKLMY](\w){0,6}
-add positive: N
-get a solution: [ABCDEFGHIJKLMNY](\w){0,6}
-add positive: O
-get a solution: [ABCDEFGHIJKLMNOY](\w){0,6}
-add positive: P
-get a solution: [ABCDEFGHIJKLMNOPY](\w){0,6}
-add positive: Q
-get a solution: [ABCDEFGHIJKLMNOPQY](\w){0,6}
-add positive: R
-get a solution: [ABCDEFGHIJKLMNOPQRY](\w){0,6}
-add positive: S
-get a solution: [ABCDEFGHIJKLMNOPQRSY](\w){0,6}
-add positive: T
-get a solution: [ABCDEFGHIJKLMNOPQRSTY](\w){0,6}
-add positive: U
-get a solution: [ABCDEFGHIJKLMNOPQRSTUY](\w){0,6}
-add positive: V
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVY](\w){0,6}
-add positive: W
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWY](\w){0,6}
-add positive: X
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXY](\w){0,6}
-add positive: Z
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,6}
-add positive: A0000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,7}
-add positive: A00000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,8}
-add positive: A000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,9}
-add positive: A0000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,10}
-add positive: A00000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,11}
-add positive: A000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,12}
-add positive: A0000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,13}
-add positive: A00000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,14}
-add positive: A000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,15}
-add positive: A0000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,16}
-add positive: A00000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,17}
-add positive: A000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,18}
-add positive: A0000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,19}
-add positive: A00000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,20}
-
-1.0239999294281006
+  1      |  1     ■                       fail dot
+  2      |  2     ■■                      get a solution: 06
+add positive: 1
+  3      |  2     (■|■)                   fail dot
+  4      |  2     (■){■}                  get a solution: ([160]){1,2}
+add positive: 2
+add negative: 0
+  unsatisfiable SAT formula       
+  5      |  3     (■■)■                   fail dot
+  6      |  3     (■|■)■                  fail solve
+  7      |  3     (■){■}■                 get a solution: (0){0,1}[126]
+add positive: 3
+get a solution: (0){0,1}[1236]
+add positive: 4
+get a solution: (0){0,1}[12346]
+add positive: 5
+get a solution: (0){0,1}[123456]
+add positive: 7
+get a solution: (0){0,1}[1234567]
+add positive: 8
+get a solution: (0){0,1}[12345678]
+add positive: 9
+get a solution: (0){0,1}[123456789]
+add positive: 10
+  unsatisfiable SAT formula       
+  8      |  3     (■■|■)                  get a solution: ([10][60]|[12345789])
+add positive: 6
+add negative: 00
+  unsatisfiable SAT formula       
+  9      |  3     ((■|■)|■)               fail dot
+  10     |  3     ((■){■}|■)                unsatisfiable SAT formula       
+  11     |  3     (■■){■}                 fail dot
+  12     |  3     ((■|■)){■}              fail solve
+  13     |  3     ((■){■}){■}               unsatisfiable SAT formula       
+  14     |  4     (■)■                    fail dot
+  15     |  4     ((■■)■)■                fail dot
+  16     |  4     ((■|■)■)■               fail dot
+  17     |  4     ((■){■}■)■              fail dot
+  18     |  4     (■■)(■■)                fail dot
+  19     |  4     (■■)(■|■)               fail dot
+  20     |  4     (■■)(■){■}              fail dot
+  21     |  4     (■■|■)■                 fail dot
+  22     |  4     ((■|■)|■)■              fail solve
+  23     |  4     ((■){■}|■)■               unsatisfiable SAT formula       
+  24     |  4     (■|■)(■■)               fail dot
+  25     |  4     (■|■)(■|■)              fail solve
+  26     |  4     (■|■)(■){■}               unsatisfiable SAT formula       
+  27     |  4     (■■){■}■                fail dot
+  28     |  4     ((■|■)){■}■             fail solve
+  29     |  4     ((■){■}){■}■              unsatisfiable SAT formula       
+  30     |  4     (■){■}(■■)              fail dot
+  31     |  4     (■){■}(■|■)             fail solve
+  32     |  4     (■){■}(■){■}              unsatisfiable SAT formula       
+  33     |  4     ((■■)■|■)               fail dot
+  34     |  4     ((■|■)■|■)              fail solve
+  35     |  4     ((■){■}■|■)               unsatisfiable SAT formula       
+  36     |  4     (■■|■■)                 fail dot
+  37     |  4     (■■|(■|■))              fail solve
+  38     |  4     (■■|(■){■})               unsatisfiable SAT formula       
+  39     |  4     ((■■|■)|■)                unsatisfiable SAT formula       
+  40     |  4     (((■|■)|■)|■)           fail dot
+  41     |  4     (((■){■}|■)|■)            unsatisfiable SAT formula       
+  42     |  4     ((■|■)|■■)                unsatisfiable SAT formula       
+  43     |  4     ((■|■)|(■|■))           fail dot
+  44     |  4     ((■|■)|(■){■})            unsatisfiable SAT formula       
+  45     |  4     ((■■){■}|■)               unsatisfiable SAT formula       
+  46     |  4     (((■|■)){■}|■)          fail solve
+  47     |  4     (((■){■}){■}|■)           unsatisfiable SAT formula       
+  48     |  4     ((■){■}|■■)               unsatisfiable SAT formula       
+  49     |  4     ((■){■}|(■|■))          fail solve
+  50     |  4     ((■){■}|(■){■})           unsatisfiable SAT formula       
+  51     |  4     ((■■)■){■}              fail dot
+  52     |  4     ((■|■)■){■}             fail dot
+  53     |  4     ((■){■}■){■}              unsatisfiable SAT formula       
+  54     |  4     ((■■|■)){■}               unsatisfiable SAT formula       
+  55     |  4     (((■|■)|■)){■}          fail solve
+  56     |  4     (((■){■}|■)){■}           unsatisfiable SAT formula       
+  57     |  4     ((■■){■}){■}            fail dot
+  58     |  4     (((■|■)){■}){■}         fail solve
+  59     |  4     (((■){■}){■}){■}        
+10.234966039657593
 timeout

@@ -1,20 +1,10 @@
+1:22 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ([A-Z])+(["#(),a-zA-Z\.\t;0-9_ ])+[\.]$
-
-That that should match the strings:
-
-  ✓ (0:25)   there's a little problem.
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
-
-0.30985403060913086
+0.20438385009765625
 error

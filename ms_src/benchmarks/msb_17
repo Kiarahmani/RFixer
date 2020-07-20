@@ -1,6 +1,5 @@
-(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
-(https:\/\/|git+)@?([\da-z\.-]+)\.([a-z\.]{2,6})(:|[\/\w \.-]*)*\/?(.git)
+(UAD){3}[*0-9a-zA-Z]{4}[*0-9a-zA-Z]{4}
+REF-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}
 +++
-git@github.com:username/MyApp.git
-https://github.com/username/MyApp.git
+REF-12AB-1A3B
 ---

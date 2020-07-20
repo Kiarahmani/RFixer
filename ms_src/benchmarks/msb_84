@@ -1,7 +1,7 @@
-views/
-(views/[^./]*)
+(?!([\w-]+\.)[\w-]+@([\w-]+\.)+[\w;]+)
+#\d+;?#?
 +++
-views/register
-views/' upto the next '
-views/register'  something like:
+#32;#
+#33
+#30;#
 ---

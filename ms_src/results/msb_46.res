@@ -1,20 +1,10 @@
+1:2 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ([0-9a-z]){5,500}
-
-That that should match the strings:
-
-  ✓ (0:6)    Thanks
-  ✓ (6:15)   Supported
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-
-1.027338981628418
-timeout
+0.20703792572021484
+error

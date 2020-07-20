@@ -1,6 +1,6 @@
-[A-Za-z]+[A-Za-z]+\([0-2]\)
-([A-Za-z]+\s)+\(\d\)\s[>]\s
+(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
+(https:\/\/|git+)@?([\da-z\.-]+)\.([a-z\.]{2,6})(:|[\/\w \.-]*)*\/?(.git)
 +++
-Word Word (2) >
-Word Word (1) >
+git@github.com:username/MyApp.git
+https://github.com/username/MyApp.git
 ---
