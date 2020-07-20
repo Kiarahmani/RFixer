@@ -36,5 +36,6 @@ Search through possible transformations:
   15     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)■))?fail dotstar or empty
   16     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b)){■}fail dotstar or empty
   17     |  2     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  18     |  2     (((((((■)+■)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?1.017547607421875
+  18     |  2     (((((((■)+■)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?
+1.0155870914459229
 timeout

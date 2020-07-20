@@ -164,6 +164,6 @@ get a solution: (([abcdefghijklmnopqr]){1,4}[_])([abcdefghijklmnopqrst]){1,4}
 add positive: s_a
 get a solution: (([abcdefghijklmnopqrs]){1,4}[_])([abcdefghijklmnopqrst]){1,4}
 add positive: a_u
-get a solution: (([abcdefghijklmnopqrs]){1,4}[_])([abcdefghijklmnopqrstu]){1,4}
-1.0196647644042969
+
+1.0192151069641113
 timeout

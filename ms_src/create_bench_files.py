@@ -33,18 +33,18 @@ def run(cmd, timeout_sec, f):
         elapsed_time = time.time()-start_time
         if not stderr:
             if ret==0:
-                f.write(str(elapsed_time))
+                f.write("\n"+str(elapsed_time))
                 f.write("\nsuccess")
                 print (">> "+str(elapsed_time))
                 print (">> success")
             else:
-                f.write(str(elapsed_time))
+                f.write("\n"+str(elapsed_time))
                 f.write("\ntimeout")
                 print (">> "+str(elapsed_time))
                 print (">> timeout")
         else:
             f.write(stderr.decode('utf-8'))
-            f.write(str(elapsed_time))
+            f.write("\n"+str(elapsed_time))
             f.write("\nerror")
             print (">> "+str(elapsed_time))
             print (">> error")

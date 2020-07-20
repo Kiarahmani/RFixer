@@ -290,18 +290,6 @@ Search through possible transformations:
   272    |  3     ((((((((((((((((((■t)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
   273    |  3     ((((((((((((((((((■t)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
   274    |  3     ((((((((((((((((((■t)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
-  275    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
-  276    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
-  277    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
-  278    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
-  279    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
-  280    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
-  281    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
-  282    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
-  283    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
-  284    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
-  285    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
-  286    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
-  287    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
-  288    |  3     ((((((((((((((((((■t)t)p)(■){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)t1.0283012390136719
+  275    |  3     ((((((((((((((((((■t)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)t
+1.0228328704833984
 timeout

@@ -108,13 +108,6 @@ add negative: ..@metu.edu
   85     |  3     ((((((((((■){■}){■}@)m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
   86     |  3     (((((((((■)*■)■)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
   87     |  3     (((((((((■)*■)m)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
-  88     |  3     (((((((((■)*■)m)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
-  89     |  3     (((((((((■)*■)m)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
-  90     |  3     (((((((((■)*■)m)e)t)u)■)e)d)u  unsatisfiable SAT formula       
-  91     |  3     (((((((((■)*■)m)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
-  92     |  3     (((((((((■)*■)m)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
-  93     |  3     (((((((((■)*■)m)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
-  94     |  3     (((((((((■■)*■)m)e)t)u)\.)e)d)ufail dot
-  95     |  3     ((((((((((■|■))*■)m)e)t)u)\.)e)d)ufail solve
-  96     |  3     ((((((((((■){■})*■)m)e)t)u)\.)e)d)u1.0163929462432861
+  88     |  3     (((((((((■)*■)m)e)■)u)\.)e)d)u
+1.0205261707305908
 timeout

@@ -30,5 +30,6 @@ Exception in thread "main" java.lang.UnsupportedOperationException
 	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
-0.3342897891998291
+
+0.3237597942352295
 error

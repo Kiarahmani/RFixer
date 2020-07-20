@@ -15,5 +15,6 @@ Search through possible transformations:
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
 Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
-0.2905759811401367
+
+0.2887849807739258
 error

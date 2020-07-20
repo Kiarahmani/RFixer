@@ -176,5 +176,32 @@ add positive: ababa
 add negative: acba
   unsatisfiable SAT formula       
   152    |  3     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}  unsatisfiable SAT formula       
-  153    |  3     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}1.0242278575897217
+  153    |  3     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}  unsatisfiable SAT formula       
+  154    |  3     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}  unsatisfiable SAT formula       
+  155    |  3     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}  unsatisfiable SAT formula       
+  156    |  3     (((([a]){1}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  157    |  3     (((([a]){1}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
+  158    |  3     (((([a]){1}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  159    |  3     (((([a]){1}(■){1})■)(■){1})([a]){1}fail dot
+  160    |  3     (((([a]){1}(■){1})■)([b]){■})([a]){1}fail dot
+  161    |  3     (((([a]){1}(■){1})■)([b]){1})(■){1}fail dot
+  162    |  3     (((([a]){1}(■){1})■)([b]){1})([a]){■}fail dot
+  163    |  3     (((([a]){1}■)■)([b]){1})([a]){1}fail dot
+  164    |  3     (((([a]){1}(■■){1})■)([b]){1})([a]){1}fail dot
+  165    |  3     (((([a]){1}((■|■)){1})■)([b]){1})([a]){1}fail dot
+  166    |  3     (((([a]){1}((■){■}){1})■)([b]){1})([a]){1}  unsatisfiable SAT formula       
+  167    |  3     (((([a]){1}(■){1})(■■))([b]){1})([a]){1}fail dot
+  168    |  3     (((([a]){1}(■){1})(■|■))([b]){1})([a]){1}fail dot
+  169    |  3     (((([a]){1}(■){1})(■){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  170    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  171    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  172    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  173    |  3     (((([a]){1}■)[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  174    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  175    |  3     (((([a]){1}(■■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  176    |  3     (((([a]){1}((■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  177    |  3     (((([a]){1}((■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}  unsatisfiable SAT formula       
+  178    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  179    |  3     (((([a]){1}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}
+1.0161259174346924
 timeout

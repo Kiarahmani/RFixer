@@ -14,5 +14,6 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-0.2776651382446289
+
+0.28669214248657227
 success

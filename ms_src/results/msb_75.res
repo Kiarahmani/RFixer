@@ -83,14 +83,14 @@ get a solution: (((([12340]){0,1}[1234567890]):)[0-5])\d
 add positive: 50:00
 get a solution: (((([123450]){0,1}[1234567890]):)[0-5])\d
   (((([123450]){0,1}[1234567890]):)[0-5])\d
-template: (((■){■}:)■)\d size: 3 holes: 4 time: 0.690539ms
-template: ((\d(■){■})[0-5])\d size: 4 holes: 3 time: 0.938928ms
-template: ((((■){■}■):)[0-5])\d size: 4 holes: 4 time: 1.101072ms
-template: (((■){■}:)[0-5])\d size: 4 holes: 3 time: 0.69667ms
-template: (((■■):)[0-5])\d size: 3 holes: 2 time: 3.404122ms
-template: (((■){■}■)[0-5])\d size: 3 holes: 4 time: 1.112708ms
-template: (((■){■}:)[0-5])■ size: 3 holes: 4 time: 1.342717ms
-longest: #mn#(((■■):)[0-5])\d#mn# size: #ms#3#ms# holes: #mh#2#mh# time: #mt#3.404122#mt#ms
+template: (((■){■}:)■)\d size: 3 holes: 4 time: 0.772697ms
+template: ((\d(■){■})[0-5])\d size: 4 holes: 3 time: 1.086857ms
+template: ((((■){■}■):)[0-5])\d size: 4 holes: 4 time: 0.732297ms
+template: (((■){■}:)[0-5])\d size: 4 holes: 3 time: 1.087828ms
+template: (((■■):)[0-5])\d size: 3 holes: 2 time: 4.424984ms
+template: (((■){■}■)[0-5])\d size: 3 holes: 4 time: 1.193132ms
+template: (((■){■}:)[0-5])■ size: 3 holes: 4 time: 0.710856ms
+longest: #mn#(((■■):)[0-5])\d#mn# size: #ms#3#ms# holes: #mh#2#mh# time: #mt#4.424984#mt#ms
 
 Computed in:
 
@@ -98,7 +98,7 @@ Computed in:
 
 timeSATSolver time:
 
-  #s#21#s#ms
+  #s#22#s#ms
 
 cost:
 
@@ -120,5 +120,6 @@ last template: #t#((((■){■}■):)[0-5])\d#t#
 #n#2#n#
 solution is #sol#(((([123450]){0,1}[1234567890]):)[0-5])\d#sol#
 before exit
-0.6705939769744873
+
+0.6603729724884033
 success

@@ -108,5 +108,7 @@ add negative: 000
   84     |  3     ((\d){■}((■|■)){0,1})(\d){0,3}fail solve
   85     |  3     ((\d){■}((■){■}){0,1})(\d){0,3}  unsatisfiable SAT formula       
   86     |  3     ((\d){■}(\.){■})(■){0,3}  unsatisfiable SAT formula       
-  87     |  3     ((\d){■}(\.){■})(\d){■} 1.022831916809082
+  87     |  3     ((\d){■}(\.){■})(\d){■}   unsatisfiable SAT formula       
+  88     |  3     ((\d){■}(\.){0,1})(■){■}
+1.0280492305755615
 timeout

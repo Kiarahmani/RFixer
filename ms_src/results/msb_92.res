@@ -175,5 +175,25 @@ add negative:
   124    |  4     ((■){■}(■)*)(■(\d)+)?     unsatisfiable SAT formula       
   125    |  4     (■(■■)*)(■(\d)+)?       fail dot
   126    |  4     (■((■|■))*)(■(\d)+)?    fail solve
-  127    |  4     (■((■){■})*)(■(\d)+)?   1.022550106048584
+  127    |  4     (■((■){■})*)(■(\d)+)?     unsatisfiable SAT formula       
+  128    |  4     (■(■)*)((■■)(\d)+)?       unsatisfiable SAT formula       
+  129    |  4     (■(■)*)((■|■)(\d)+)?    fail solve
+  130    |  4     (■(■)*)((■){■}(\d)+)?     unsatisfiable SAT formula       
+  131    |  4     (■(■)*)(,(■){■})?         unsatisfiable SAT formula       
+  132    |  4     (■(■)*)(,(■)+){■}         unsatisfiable SAT formula       
+  133    |  4     ((■■)(■)*)(,(■)+)?      fail dot
+  134    |  4     ((■|■)(■)*)(,(■)+)?     fail solve
+  135    |  4     ((■){■}(■)*)(,(■)+)?      unsatisfiable SAT formula       
+  136    |  4     (■(■■)*)(,(■)+)?        fail dot
+  137    |  4     (■((■|■))*)(,(■)+)?     fail solve
+  138    |  4     (■((■){■})*)(,(■)+)?      unsatisfiable SAT formula       
+  139    |  4     (■(■)*)(,(■■)+)?          unsatisfiable SAT formula       
+  140    |  4     (■(■)*)(,((■|■))+)?     fail solve
+  141    |  4     (■(■)*)(,((■){■})+)?      unsatisfiable SAT formula       
+  142    |  4     (■(■)*)(,(\d){■}){■}      unsatisfiable SAT formula       
+  143    |  4     (■(■)*)(,■)?              unsatisfiable SAT formula       
+  144    |  4     ((■■)(■)*)(,(\d){■})?   fail dot
+  145    |  4     ((■|■)(■)*)(,(\d){■})?  fail solve
+  146    |  4     ((■){■}(■)*)(,(\d){■})? 
+1.0235011577606201
 timeout

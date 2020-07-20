@@ -65,5 +65,7 @@ add negative: +0
   35     |  4     ((■){■}■)(■)+             unsatisfiable SAT formula       
   36     |  4     (■■)(■■)+               fail dot
   37     |  4     (■■)((■|■))+            fail solve
-  38     |  4     (■■)((■){■})+           1.016679286956787
+  38     |  4     (■■)((■){■})+             unsatisfiable SAT formula       
+  39     |  4     (■|■)(■){■}             
+1.018312931060791
 timeout

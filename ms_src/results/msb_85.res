@@ -77,8 +77,6 @@ add positive: MA
 add negative: l
   unsatisfiable SAT formula       
   26     |  4     (((■|■)|■)){■}          fail solve
-  27     |  4     (((■){■}|■)){■}           unsatisfiable SAT formula       
-  28     |  4     ((■■){■}){■}            fail dot
-  29     |  4     (((■|■)){■}){■}         fail solve
-  30     |  4     (((■){■}){■}){■}        1.0237598419189453
+  27     |  4     (((■){■}|■)){■}         
+1.0190279483795166
 timeout

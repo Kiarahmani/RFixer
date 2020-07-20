@@ -108,5 +108,9 @@ add negative: .
 add positive: 7
 add negative: ,0
   unsatisfiable SAT formula       
-  82     |  3     (■(■■))+((\,\.)(\d)+)?  1.0209579467773438
+  82     |  3     (■(■■))+((\,\.)(\d)+)?  fail dot
+  83     |  3     (■(■|■))+((\,\.)(\d)+)? fail dot
+  84     |  3     (■(■){■})+((\,\.)(\d)+)?get a solution: ([1235670]([12\.3456,]){0,5})+((\,\.)(\d)+)?
+
+1.0219001770019531
 timeout

@@ -58,5 +58,6 @@ add negative: 0000
   unsatisfiable SAT formula       
   16     |  3     ((■■|■)){4}               unsatisfiable SAT formula       
   17     |  3     (((■|■)|■)){4}          fail dot
-  18     |  3     (((■){■}|■)){4}         1.0205440521240234
+  18     |  3     (((■){■}|■)){4}         
+1.0191349983215332
 timeout

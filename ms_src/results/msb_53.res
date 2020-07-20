@@ -142,9 +142,6 @@ add negative: 0-0
   119    |  4     ((■){■}|(((■■)0)0)0)      unsatisfiable SAT formula       
   120    |  4     ((■){■}|(((■|■)0)0)0)   fail solve
   121    |  4     ((■){■}|(((■){■}0)0)0)    unsatisfiable SAT formula       
-  122    |  4     ((■){■}|((1■)■)0)         unsatisfiable SAT formula       
-  123    |  4     ((■){■}|((1■)0)■)         unsatisfiable SAT formula       
-  124    |  4     ((■■){■}|((1■)0)0)      fail dot
-  125    |  4     (((■|■)){■}|((1■)0)0)   fail solve
-  126    |  4     (((■){■}){■}|((1■)0)0)  1.0205471515655518
+  122    |  4     ((■){■}|((1■)■)0)       
+1.015589952468872
 timeout

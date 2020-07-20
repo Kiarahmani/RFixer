@@ -239,5 +239,38 @@ add positive: 10M
   199    |  3     ((([0-2]){1}W|([21-1]){2}■)|([1-2]){■}■)fail dot
   200    |  3     ((([0-2]){1}W|([21-1]){2}M)|(■){■}■)fail dotstar or empty
   201    |  3     ((([0-2]){1}W|([21-1]){2}M)|■■)fail dotstar or empty
-  202    |  4     (((■){■}■|(■){2}M)|([1-2]){1}Y)1.0210018157958984
+  202    |  4     (((■){■}■|(■){2}M)|([1-2]){1}Y)  unsatisfiable SAT formula       
+  203    |  4     (((■){■}■|([21-1]){■}M)|([1-2]){1}Y)  unsatisfiable SAT formula       
+  204    |  4     (((■){■}■|([21-1]){2}■)|([1-2]){1}Y)  unsatisfiable SAT formula       
+  205    |  4     (((■){■}■|([21-1]){2}M)|(■){1}Y)fail dotstar or empty
+  206    |  4     (((■){■}■|([21-1]){2}M)|([1-2]){■}Y)fail dotstar or empty
+  207    |  4     (((■){■}■|([21-1]){2}M)|([1-2]){1}■)fail dotstar or empty
+  208    |  4     (((■){■}W|(■){■}M)|([1-2]){1}Y)  unsatisfiable SAT formula       
+  209    |  4     (((■){■}W|(■){2}■)|([1-2]){1}Y)fail dot
+  210    |  4     (((■){■}W|(■){2}M)|(■){1}Y)fail dot
+  211    |  4     (((■){■}W|(■){2}M)|([1-2]){■}Y)fail dot
+  212    |  4     (((■){■}W|(■){2}M)|([1-2]){1}■)fail dot
+  213    |  4     (((■){■}W|■M)|([1-2]){1}Y)fail dot
+  214    |  4     (((■■){■}W|(■){2}M)|([1-2]){1}Y)fail dot
+  215    |  4     ((((■|■)){■}W|(■){2}M)|([1-2]){1}Y)fail dot
+  216    |  4     ((((■){■}){■}W|(■){2}M)|([1-2]){1}Y)fail dot
+  217    |  4     (((■){■}W|(■■){2}M)|([1-2]){1}Y)fail dot
+  218    |  4     (((■){■}W|((■|■)){2}M)|([1-2]){1}Y)fail dot
+  219    |  4     (((■){■}W|((■){■}){2}M)|([1-2]){1}Y)  unsatisfiable SAT formula       
+  220    |  4     (((■){■}W|([21-1]){■}■)|([1-2]){1}Y)fail dot
+  221    |  4     (((■){■}W|([21-1]){■}M)|(■){1}Y)fail dotstar or empty
+  222    |  4     (((■){■}W|([21-1]){■}M)|([1-2]){■}Y)fail dotstar or empty
+  223    |  4     (((■){■}W|([21-1]){■}M)|([1-2]){1}■)fail dotstar or empty
+  224    |  4     (((■){■}W|([21-1]){2}■)|(■){1}Y)fail dotstar or empty
+  225    |  4     (((■){■}W|([21-1]){2}■)|([1-2]){■}Y)fail dotstar or empty
+  226    |  4     (((■){■}W|([21-1]){2}■)|([1-2]){1}■)fail dotstar or empty
+  227    |  4     (((■){■}W|([21-1]){2}M)|(■){■}Y)fail dotstar or empty
+  228    |  4     (((■){■}W|([21-1]){2}M)|(■){1}■)fail dotstar or empty
+  229    |  4     (((■){■}W|([21-1]){2}M)|■Y)fail dotstar or empty
+  230    |  4     (((■){■}W|([21-1]){2}M)|([1-2]){■}■)fail dotstar or empty
+  231    |  4     (((■){1}■|(■){■}M)|([1-2]){1}Y)get a solution: ((([12356789]){1}[WM]|([140]){1,2}M)|([1-2]){1}Y)
+add positive: 12M
+add negative: 5W
+
+1.0202891826629639
 timeout
