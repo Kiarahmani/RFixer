@@ -16,5 +16,5 @@ Search through possible transformations:
 ---------|--------------------------------------------------------------------
 Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
 
-0.3944540023803711
+0.41051292419433594
 error

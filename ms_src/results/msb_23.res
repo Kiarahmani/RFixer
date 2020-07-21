@@ -33,5 +33,5 @@ Exception in thread "main" java.util.regex.PatternSyntaxException: Unclosed char
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.4461171627044678
+0.3939659595489502
 error

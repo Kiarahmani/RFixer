@@ -9,6 +9,11 @@ That that should match the strings:
 
 And reject the strings:
 
+  ✗ (10:13)  +44
+  ✗ (13:15)  +2
+  ✗ (15:26)  +0046546543
+  ✗ (26:36)  +946546543
+  ✗ (36:38)  +1
 
 Search through possible transformations:
 
@@ -21,14 +26,8 @@ add negative: 90
   2      |  1     \+(■)+                  fail dotstar or empty
   3      |  1     \+([0-9]){■}            fail dotstar or empty
   4      |  2     ■(■)+                     unsatisfiable SAT formula       
-  5      |  2     ■([0-9]){■}             get a solution: [9+]([0-9]){2,9}
-add positive: +1000000000
-add negative: 900
-  unsatisfiable SAT formula       
-  6      |  2     (■■)([0-9])+            get a solution: ([9+][19])([0-9])+
-add positive: +20
-add negative: 910
-  unsatisfiable SAT formula       
+  5      |  2     ■([0-9]){■}               unsatisfiable SAT formula       
+  6      |  2     (■■)([0-9])+              unsatisfiable SAT formula       
   7      |  2     (■|■)([0-9])+           fail solve
   8      |  2     (■){■}([0-9])+            unsatisfiable SAT formula       
   9      |  2     \+(■){■}                fail dotstar or empty
@@ -46,13 +45,8 @@ add negative: 910
   21     |  3     (■)([0-9])+               unsatisfiable SAT formula       
   22     |  3     ((■■)■)([0-9])+         fail dot
   23     |  3     ((■|■)■)([0-9])+        fail solve
-  24     |  3     ((■){■}■)([0-9])+       get a solution: (([4569+]){0,6}[6+])([0-9])+
-add positive: 994
-add negative: 60
-  unsatisfiable SAT formula       
-  25     |  3     (■■|■)([0-9])+          get a solution: (99|+)([0-9])+
-add negative: +0
-  unsatisfiable SAT formula       
+  24     |  3     ((■){■}■)([0-9])+         unsatisfiable SAT formula       
+  25     |  3     (■■|■)([0-9])+            unsatisfiable SAT formula       
   26     |  3     ((■|■)|■)([0-9])+       fail solve
   27     |  3     ((■){■}|■)([0-9])+        unsatisfiable SAT formula       
   28     |  3     (■■){■}([0-9])+           unsatisfiable SAT formula       
@@ -79,15 +73,6 @@ add negative: +0
   49     |  4     ((■){■}){■}(■)+           unsatisfiable SAT formula       
   50     |  4     (■){■}(■■)+               unsatisfiable SAT formula       
   51     |  4     (■){■}((■|■))+          fail solve
-  52     |  4     (■){■}((■){■})+           unsatisfiable SAT formula       
-  53     |  4     ■((■■)■)+               fail dot
-  54     |  4     ■((■|■)■)+              fail dot
-  55     |  4     ■((■){■}■)+               unsatisfiable SAT formula       
-  56     |  4     ■(■(■■))+               fail dot
-  57     |  4     ■(■(■|■))+              fail dot
-  58     |  4     ■(■(■){■})+               unsatisfiable SAT formula       
-  59     |  4     ■((■■|■))+                unsatisfiable SAT formula       
-  60     |  4     ■(((■|■)|■))+           fail solve
-  61     |  4     ■(((■){■}|■))+          
-10.030823230743408
+  52     |  4     (■){■}((■){■})+         
+5.0299530029296875
 timeout

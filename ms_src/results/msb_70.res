@@ -6,5 +6,5 @@ Exception in thread "main" java.lang.RuntimeException: malformed regular express
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.26152706146240234
+0.2942657470703125
 error

@@ -63,34 +63,6 @@ add negative: A00	0A
   27     |  2     (((\d){6}|(\d){7})|(■){■})  unsatisfiable SAT formula       
   28     |  2     (((\d){6}|(\d){7})|(■■){8})fail dot
   29     |  2     (((\d){6}|(\d){7})|((■|■)){8})fail dot
-  30     |  2     (((\d){6}|(\d){7})|((■){■}){8})  unsatisfiable SAT formula       
-  31     |  3     (((■){■}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  32     |  3     (((■){■}|(\d){■})|(\d){8})  unsatisfiable SAT formula       
-  33     |  3     (((■){■}|(\d){7})|(■){8})  unsatisfiable SAT formula       
-  34     |  3     (((■){■}|(\d){7})|(\d){■})  unsatisfiable SAT formula       
-  35     |  3     (((■■){■}|(\d){7})|(\d){8})fail dot
-  36     |  3     ((((■|■)){■}|(\d){7})|(\d){8})fail solve
-  37     |  3     ((((■){■}){■}|(\d){7})|(\d){8})  unsatisfiable SAT formula       
-  38     |  3     (((■){6}|(■){■})|(\d){8})  unsatisfiable SAT formula       
-  39     |  3     (((■){6}|(■){7})|(■){8})  unsatisfiable SAT formula       
-  40     |  3     (((■){6}|(■){7})|(\d){■})fail dot
-  41     |  3     (((■■){6}|(■){7})|(\d){8})fail dot
-  42     |  3     ((((■|■)){6}|(■){7})|(\d){8})fail dot
-  43     |  3     ((((■){■}){6}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  44     |  3     (((■){6}|(■■){7})|(\d){8})fail dot
-  45     |  3     (((■){6}|((■|■)){7})|(\d){8})fail dot
-  46     |  3     (((■){6}|((■){■}){7})|(\d){8})  unsatisfiable SAT formula       
-  47     |  3     (((■){6}|(\d){■})|(■){8})fail dot
-  48     |  3     (((■){6}|(\d){■})|(\d){■})fail dot
-  49     |  3     (((■■){6}|(\d){■})|(\d){8})fail dot
-  50     |  3     ((((■|■)){6}|(\d){■})|(\d){8})fail dot
-  51     |  3     ((((■){■}){6}|(\d){■})|(\d){8})  unsatisfiable SAT formula       
-  52     |  3     (((■){6}|(\d){7})|(■){■})  unsatisfiable SAT formula       
-  53     |  3     (((■■){6}|(\d){7})|(■){8})fail dot
-  54     |  3     ((((■|■)){6}|(\d){7})|(■){8})fail dot
-  55     |  3     ((((■){■}){6}|(\d){7})|(■){8})  unsatisfiable SAT formula       
-  56     |  3     (((■){6}|(\d){7})|(■■){8})fail dot
-  57     |  3     (((■){6}|(\d){7})|((■|■)){8})fail dot
-  58     |  3     (((■){6}|(\d){7})|((■){■}){8})
-10.038371086120605
+  30     |  2     (((\d){6}|(\d){7})|((■){■}){8})
+5.024878025054932
 timeout

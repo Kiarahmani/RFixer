@@ -25,5 +25,5 @@ Exception in thread "main" java.lang.UnsupportedOperationException
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.44452404975891113
+0.3758890628814697
 error

@@ -15,9 +15,9 @@ results_dir =   'ms_src/results/'
 col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
-incluide_negatives = False
+incluide_negatives = True
 bm_range    =   range(0,1000)
-timeout     =   10
+timeout     =   5
 delim       =   'Æ'
 
 

@@ -11,6 +11,13 @@ That that should match the strings:
 
 And reject the strings:
 
+  ✗ (24:44)  t no spaces allowed.
+  ✗ (44:64)  I'm trying to create
+  ✗ (64:85)  for a password field.
+  ✗ (85:105) a Regular Expression
+  ✗ (105:126) 8 - 20 characters, bu
+  ✗ (126:146) The requirements are
+  ✗ (146:167) I've tried  to no ava
 
 Search through possible transformations:
 
@@ -50,5 +57,5 @@ Search through possible transformations:
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.46468400955200195
+0.49535703659057617
 error

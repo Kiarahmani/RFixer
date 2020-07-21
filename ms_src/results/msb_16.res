@@ -10,6 +10,8 @@ That that should match the strings:
 
 And reject the strings:
 
+  ✗ (70:76)  pp.git
+  ✗ (76:86)  github.com
 
 Search through possible transformations:
 
@@ -26,5 +28,5 @@ Search through possible transformations:
   9      |  1     (((((((((((ht)t)p)(s)?):)\/)■)?([\-\.\da-z])+)\.)([\.a-z]){2,6})(([\-\.\/\w ])*)*)(\/)?fail dotstar or empty
   10     |  1     (((((((((((ht)t)p)(s)?):)\/)\/){■}([\-\.\da-z])+)\.)([\.a-z]){2,6})(([\-\.\/\w ])*)*)(\/)?fail dotstar or empty
   11     |  1     (((((((((((ht)t)p)(s)?):)\/)\/)?(■)+)\.)([\.a-z]){2,6})(([\-\.\/\w ])*)*)(\/)?
-10.024936199188232
+5.0165040493011475
 timeout
