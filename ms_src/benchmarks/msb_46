@@ -1,5 +1,5 @@
-([A-Za-z\d\s]+[A-Za-z\s])+
-(?!\d+$)[a-zA-Z\d\s]+
+expr "abc aac bbcx" : '.*\([^ ]\+x\).*'
+.*?([^ ]+x).*?
 +++
-12
+". It should return "bbcx
 ---

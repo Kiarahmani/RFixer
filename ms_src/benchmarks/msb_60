@@ -1,5 +1,7 @@
-[\\w][\\w\\,\\s\\w]
-(\S)+, (\S)+
+if(preg_match("/ma?Ã¤?(&auml;)?rz/i", $title))     return 3;
+(Marz|MÃ¤rz|M&auml;rz)
 +++
-lastname, firstname
+MÃ¤rz
+Marz
+M&auml;rz
 ---

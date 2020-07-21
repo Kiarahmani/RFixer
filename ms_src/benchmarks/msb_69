@@ -1,5 +1,5 @@
-([A-Z][a-z]*((\\s[A-Za-z])?[a-z]*)*)
-([A-Z]\w*\s*)+
+Pattern.compile(Pattern.quote(someNotNullStringHere), Pattern.CASE_INSENSITIVE);
+PatternSyntaxException
 +++
-To Make
+PatternSyntaxException
 ---

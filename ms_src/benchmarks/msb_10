@@ -1,5 +1,5 @@
-([A-Za-z0-9-]+)
-([A-Za-z0-9\-\_]+)
+Html string.gsub( /images/([a-zA-Z0-9\-]+)/, "/images/#{replacement_method($1)}/" )
+Html string.gsub( /images/(folder)/) { |match| "/images/#{replacement_method(match)}/" }
 +++
-product_name
+match
 ---

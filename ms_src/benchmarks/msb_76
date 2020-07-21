@@ -1,5 +1,7 @@
-[1-50]
-(0?[1-9])|([1-4][0-9])|(50)
+var template_name = template.name.match('views/'+REGEXP);
+(views/[^./]*)
 +++
-06
+views/register'  something like:
+views/' upto the next '
+views/register
 ---

@@ -1,8 +1,5 @@
-1+(2-3)*(4/5)
-[0-9+*/()-]*
+aaa(\n|.)*bbb
+Ctrl+Enter
 +++
-0-9
-+-
-+)
-*/
 ---
+aaa and ending bbb

@@ -1,7 +1,5 @@
-([aieou]*[aieou]){2,}
-([aeiou]{2})
+\[Total execution Time: (.+) min
+Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
 +++
-oe
-oi
-io
 ---
+[Total execution Time: 11.05 min

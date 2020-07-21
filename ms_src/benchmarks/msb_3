@@ -1,7 +1,6 @@
-(\d{1,18})+(\.\d{1})?
-(\d{1,18})(.\d{1})?
+ValidationExpression="(^Anything Entered)$|(^Something Else)$ |(^Another String)$"
+(Anything Entered|something Else|Another String)
 +++
-1.0
-100.1
-123456789123456789.2
+"Anything Entered"
+"Another String"
 ---

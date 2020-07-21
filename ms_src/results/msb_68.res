@@ -1,10 +1,20 @@
-1:7 ***ERROR*** Syntax error
-Couldn't repair and continue parse
-Exception in thread "main" java.lang.RuntimeException: malformed regular expression
-	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
-	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.2072451114654541
+Given the regular expression:
+
+  (((\(00(\d){2}\)|\(\+(\d){2}\))|00(\d){2})|\+(\d){2})(([\. ])?)?3(\d){2}(([\-\. ])?)?(\d){2,4}(([\-\. ])?)?(\d){2,4}$
+
+That that should match the strings:
+
+  ✓ (0:15)   +39.1234.325636
+
+And reject the strings:
+
+
+Search through possible transformations:
+
+  Order  |  Cost  Template                  Solution                        
+---------|--------------------------------------------------------------------
+Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
+
+0.3926422595977783
 error

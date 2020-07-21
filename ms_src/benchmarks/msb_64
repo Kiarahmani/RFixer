@@ -1,7 +1,6 @@
-(\d{6}|\d{7}|\d{8})
-[A-Za-z][A-Za-z\d]{1,3}\s\d[A-Za-z]{2}
+Deutsch (de) English (en) PortuguÃªs (pt) Ð ÑÑÑÐºÐ¸Ð¹ (ru) íêµ­ì´ (ko)
+\((\w{2})\)
 +++
-CH11 2ab
-b6 7ba
-BH6 5BG
+(de)
+(ru)
 ---

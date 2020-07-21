@@ -1,8 +1,5 @@
-(\[\[)(.*)(\]\])
-(\[\[)(.*?)(\]\])
+/* {"orderId": ["1389104"],"orderItemId": ["7900094"], } */
+orderId: \["(.+?)"]
 +++
-[[MyOtherText]]
-[[MyText]]
-[[ Something...[[MyText]]
-[[" for start and "]]
+"orderId": ["(.+?)"]
 ---

@@ -1,5 +1,7 @@
- [\w]*\.[a-z]{2,}
-(\w[\w-]+\.)+[a-z]{2,}
+'([aieou]*[aieou]){2,}'
+([aeiou]{2})
 +++
-stackoverflow.com
+io
+oi
+oe
 ---

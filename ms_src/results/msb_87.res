@@ -1,15 +1,11 @@
 
 Given the regular expression:
 
-  ([0-9a-zA-Z])+
+  <a href="page.ashx" xref="somethingelse" title="something" class="image">
 
 That that should match the strings:
 
-  ✓ (0:4)    So I
-  ✓ (4:43)   Example of a search that is not working
-  ✓ (43:53)  I am using
-  ✓ (53:67)  Summer holiday
-  ✓ (67:87)  it fails to validate
+  ✓ (0:10)   xref="..."
 
 And reject the strings:
 
@@ -18,113 +14,54 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)+                    get a solution: ([acdefghiklmnoprstuvwxyEIS ])+
-add positive: 0
-get a solution: ([acdefghiklmno0prstuvwxyEIS ])+
-add positive: 1
-get a solution: ([acdefghiklmno0p1rstuvwxyEIS ])+
-add positive: 2
-get a solution: ([acdefghiklmno0p12rstuvwxyEIS ])+
-add positive: 3
-get a solution: ([acdefghiklmno0p12r3stuvwxyEIS ])+
-add positive: 4
-get a solution: ([acdefghiklmno0p12r3s4tuvwxyEIS ])+
-add positive: 5
-get a solution: ([acdefghiklmno0p12r3s4t5uvwxyEIS ])+
-add positive: 6
-get a solution: ([acdefghiklmno0p12r3s4t5uv6wxyEIS ])+
-add positive: 7
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wxyEIS ])+
-add positive: 8
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8yEIS ])+
-add positive: 9
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9EIS ])+
-add positive: A
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9AEIS ])+
-add positive: B
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABEIS ])+
-add positive: C
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCEIS ])+
-add positive: D
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEIS ])+
-add positive: F
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFIS ])+
-add positive: G
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGIS ])+
-add positive: H
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGHIS ])+
-add positive: J
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGHIJS ])+
-add positive: K
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGHIJKS ])+
-add positive: L
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGHIJKLS ])+
-add positive: M
-get a solution: ([acdefghiklmno0p12r3s4t5uv67wx8y9ABCDEFGHIJKLMS ])+
-add positive: N
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNS])+
-add positive: O
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOS])+
-add positive: P
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPS])+
-add positive: Q
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQS])+
-add positive: R
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRS])+
-add positive: T
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRST])+
-add positive: U
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTU])+
-add positive: V
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUV])+
-add positive: W
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVW])+
-add positive: X
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWX])+
-add positive: Y
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWXY])+
-add positive: Z
-get a solution: ([acdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-add positive: b
-get a solution: ([abcdefghiklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-add positive: j
-get a solution: ([abcdefghijklmnoprstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-add positive: q
-get a solution: ([abcdefghijklmnopqrstuvwxy 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-add positive: z
-get a solution: ([abcdefghijklmnopqrstuvwxyz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-  ([abcdefghijklmnopqrstuvwxyz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-template: (■)+ size: 1 holes: 1 time: 1.656638ms
-longest: #mn#(■)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.656638#mt#ms
-
-Computed in:
-
-  #c#565#c#ms
-
-timeSATSolver time:
-
-  #s#50#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  63   ([abcdefghijklmnopqrstuvwxyz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+
-
-All done
-
-last template: #t#(■)+#t#
-#num#1#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#0#t3#
-#p#37#p#
-#n#0#n#
-solution is #sol#([abcdefghijklmnopqrstuvwxyz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ])+#sol#
-before exit
-
-0.8606398105621338
-success
+  1      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((■a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  2      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<■) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  3      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a)■)h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  4      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )■)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  5      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)■)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  6      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)■)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  7      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)■)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  8      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)■)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  9      |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)■)p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  10     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")■)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  11     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)■)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  12     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)■)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  13     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)■).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  14     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e)■)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  15     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)■)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  16     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)■)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  17     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)■)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  18     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)■)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  19     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)■) )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  20     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)")■)x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  21     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )■)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  22     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)■)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  23     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)■)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  24     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)■)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  25     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)■)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  26     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)■)s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  27     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")■)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  28     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)■)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  29     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)■)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  30     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)■)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  31     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)■)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  32     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)■)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  33     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)■)n)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  34     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)■)g)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  35     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)■)e)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  36     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)■)l)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  37     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)■)s)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  38     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)■)e)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  39     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)■)") )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  40     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)■) )t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  41     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)")■)t)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  42     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )■)i)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  43     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)■)t)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  44     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)■)l)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  45     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)■)e)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  46     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)■)=)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  47     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)■)")s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  48     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)■)s)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>fail dotstar or empty
+  49     |  1     (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((<a) )h)r)e)f)=)")p)a)g)e).)a)s)h)x)") )x)r)e)f)=)")s)o)m)e)t)h)i)n)g)e)l)s)e)") )t)i)t)l)e)=)")■)o)m)e)t)h)i)n)g)") )c)l)a)s)s)=)")i)m)a)g)e)")>
+2.053705930709839
+timeout

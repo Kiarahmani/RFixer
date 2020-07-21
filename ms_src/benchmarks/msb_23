@@ -1,5 +1,5 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
+\S*\s\{.*?\}\S[^{\s]*
+\w+\s+\{\w+\}\s+\w+
 +++
-gtm.linkClick
+word {word} word
 ---

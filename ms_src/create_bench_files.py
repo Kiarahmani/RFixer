@@ -16,7 +16,7 @@ col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
 bm_range    =   range(0,1000)
-timeout     =   10
+timeout     =   2
 delim       =   'Æ'
 
 
@@ -73,6 +73,7 @@ def create_bench():
         q_regex = row[1].Q_regex
         a_regex = row[1].A_regex
         examples = row[1].postivie_examples
+        negatives = row[1].negative_examples
         with open(output_file, 'w', encoding="utf-8") as of:
             print ("benchmark: "+output_file)
             of.write(q_regex)
@@ -88,6 +89,9 @@ def create_bench():
                 of.write ("\n")
             of.write("---")
             of.write("\n")
+            for example in ast.literal_eval(negatives):
+                of.write (example)
+                of.write ("\n")
         iter += 1
 
 

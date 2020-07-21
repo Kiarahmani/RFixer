@@ -1,5 +1,6 @@
-\S*\s\{.*?\}\S[^{\s]*
-\w+\s+\{\w+\}\s+\w+
+u'abcde(date=\'2/xc2/xb2\',time=\'/case/test.png\')'
+s[s.find("(")+1:s.find(")")]
 +++
-word {word} word
+s.
+si
 ---

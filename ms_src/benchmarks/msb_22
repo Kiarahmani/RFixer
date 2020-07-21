@@ -1,6 +1,7 @@
-48-57(1 or more time)32(or)10(or)13(then)48(then)32(or)10(or)13(then)111981066060
-(4[8-9]|5[0-7])+(32|10|13)48(32|10|13)111981066060
+([a-zA-Z]*:[\\[a-zA-Z0-9 ._-]*]*)
+([a-zA-Z]*:[\\[a-zA-Z0-9 ._-]* ]*)
 +++
-50104810111981066060
-4850324810111981066060
 ---
+is:   But this select the
+example:   D
+D:\Main_Dir\Sub-1\test blank\bin\binary

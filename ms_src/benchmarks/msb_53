@@ -1,9 +1,6 @@
-[a-zA-Z]*
-[a-zA-Z ]*
+4.45E+11
+/012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210/
 +++
-but with spaces allowed between words
-t allow spaces
-can i change it to make it allow spaces
-i have tried the following but it doesn
-t work
+987
+123
 ---

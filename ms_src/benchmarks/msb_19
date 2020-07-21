@@ -1,5 +1,5 @@
-([A-z]+)[0-1]+.png
-([a-zA-Z]+)[0-9].png
+grep abc_source|source2_201501.csv
+grep -E abc_source.?_201501.csv
 +++
-main2.png
 ---
+source2_201501.csv

@@ -1,5 +1,6 @@
-11\d{8}
-[^0-9](11[0-9]{8})[^0-9]
+class="xyz level1 {{disabled}} what is the {{contentStyle}} result"
+\{\{(\w+)?\}\}
 +++
-t1128647953t
+{{data2}}
+{{data1}}
 ---

@@ -1,5 +1,5 @@
-(UAD){3}[*0-9a-zA-Z]{4}[*0-9a-zA-Z]{4}
-REF-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}
+gtm\.*click|gtm.formSubmit
+gtm\.(click|linkClick|formSubmit)
 +++
-REF-12AB-1A3B
+gtm.linkClick
 ---

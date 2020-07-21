@@ -1,5 +1,5 @@
-[a-z0-9]*@metu\.edu
-[a-z0-9]+[.]?[a-z0-9]+@metu\.edu
+def add_http(link)   if (link =~ /http[s]?:\/\//)     link   else     "http://#{link}"   end end
+before_save do |link|       link.url = "http://#{url}" unless link.url=~/^https?:\/\//   end
 +++
-herp.derp@metu.edu
+link
 ---

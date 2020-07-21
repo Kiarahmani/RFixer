@@ -1,6 +1,5 @@
-9-985 02564 1234-
--?\d{1,4}
+EXCLUSION_DOMAINS = %w[   example.com   test.com   asdf.com   yahoo.   gmail ]
+def excluded?(value)   EXCLUSION_DOMAINS.any? { |domain| value.include? domain } end
 +++
--9999
-9999
+domain
 ---

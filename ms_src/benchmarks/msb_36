@@ -1,5 +1,8 @@
-42\.[6-9][0-6]
-42\.(6[7-9]|7[0-9]|8[0-6])
+(set_session_email|get_session_email|send_sync_info|send_sync_purchase_info)
+/(set_session_email|get_session_email|send_sync_info|send_sync_purchase_info)/
 +++
-42.67
 ---
+set_session_email
+get_session_email
+send_sync_info
+send_sync_purchase_info

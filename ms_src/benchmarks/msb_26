@@ -1,7 +1,6 @@
-[bc]*a{3}[bc]*
-[bc]*a(([bc]*a){2})*[bc]*
+[0-9a-z]{5,500}
+[0-9A-Za-z][0-9A-Za-z-]{3,498}[0-9A-Za-z]
 +++
-cab
-caabaaac
-ababaccccc
+Supported
+Thanks
 ---

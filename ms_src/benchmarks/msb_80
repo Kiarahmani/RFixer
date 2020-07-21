@@ -1,5 +1,5 @@
-(\d{9})
-\d{10}
+<?php $string = Monday & SUNDAY 11:30 PM et/pt; //or $string = Monday 11:30 PM et/pt; ?>
+(0[0-9]|1[0-2]):[0-5]\d [AP]M
 +++
-4901773349
+11:30 PM
 ---

@@ -1,9 +1,5 @@
-[0-9a-zA-Z]+
-[0-9a-zA-Z ]+
+<a href="page.ashx" xref="somethingelse" title="something" class="image">
+xref="[^"]*"
 +++
-So I
-Example of a search that is not working
-I am using
-Summer holiday
-it fails to validate
+xref="..."
 ---

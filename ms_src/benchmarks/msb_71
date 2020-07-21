@@ -1,8 +1,5 @@
-A(\w)+
-[A-Z]\w*
+snmp-server community mytest-01 RO
+[\w+-]+\d+|(.+?)
 +++
-My
-Yes
-Example
-How
+mytest-01
 ---

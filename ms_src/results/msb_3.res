@@ -1,21 +1,10 @@
+1:43 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ((\d){1,18})+(\.(\d){1})?
-
-That that should match the strings:
-
-  ✓ (0:3)    1.0
-  ✓ (3:8)    100.1
-  ✓ (8:28)   123456789123456789.2
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-
-0.29675793647766113
-success
+0.29740095138549805
+error

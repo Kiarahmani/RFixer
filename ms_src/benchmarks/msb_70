@@ -1,5 +1,5 @@
-\d:[0-5]\d
-(([0-5][0-9])|([0-9]))(:[0-5][0-9])
+domain1.com/subfolder/index.php
+RewriteCond %{REQUEST_URI} !^/subfolder/index.php$ RewriteRule (.*) http://domain2.com/$1
 +++
-12:55
 ---
+domain1.com/subfolder/index.php
