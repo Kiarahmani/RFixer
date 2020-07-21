@@ -29,5 +29,5 @@ Exception in thread "main" java.util.regex.PatternSyntaxException: Illegal repet
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.4097929000854492
+0.3689279556274414
 error

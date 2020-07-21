@@ -105,6 +105,122 @@ add negative: 0^0
   59     |  3     (((■){■}[\-*+^/])([\d])*)([\-*+^/]([\d])*){■}fail dotstar or empty
   60     |  3     (((■)*■)(■)*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
   61     |  3     (((■)*■)([\d]){■})([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
-  62     |  3     (((■)*■)([\d])*)(■([\d])*)*
-2.0400238037109375
+  62     |  3     (((■)*■)([\d])*)(■([\d])*)*get a solution: ((([*+0])*[123456789+0])([\d])*)(0([\d])*)*
+add positive: 0-0
+add negative: +
+get a solution: ((([\-*+0])*[1\-234567890])([\d])*)(0([\d])*)*
+add positive: 0/0
+add negative: -
+get a solution: ((([\-*+/0])*[123456789/0])([\d])*)(0([\d])*)*
+add positive: 1*0
+add negative: /
+get a solution: ((([1\-*+/0])*[1234567890])([\d])*)(0([\d])*)*
+add positive: 2*0
+add negative: *0
+  unsatisfiable SAT formula       
+  63     |  3     (((■)*■)([\d])*)([\-*+^/](■)*)*  unsatisfiable SAT formula       
+  64     |  3     (((■)*■)([\d])*)([\-*+^/]([\d]){■})*  unsatisfiable SAT formula       
+  65     |  3     (((■)*■)([\d])*)([\-*+^/]([\d])*){■}  unsatisfiable SAT formula       
+  66     |  3     (((■■)*■)([\d])*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  67     |  3     ((((■|■))*■)([\d])*)([\-*+^/]([\d])*)*fail solve
+  68     |  3     ((((■){■})*■)([\d])*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  69     |  3     (((■)*(■■))([\d])*)([\-*+^/]([\d])*)*fail dot
+  70     |  3     (((■)*(■|■))([\d])*)([\-*+^/]([\d])*)*fail solve
+  71     |  3     (((■)*(■){■})([\d])*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  72     |  3     (((■)*[\-*+^/])(■){■})([\-*+^/]([\d])*)*fail dotstar or empty
+  73     |  3     (((■)*[\-*+^/])(■)*)(■([\d])*)*fail dotstar or empty
+  74     |  3     (((■)*[\-*+^/])(■)*)([\-*+^/](■)*)*fail dotstar or empty
+  75     |  3     (((■)*[\-*+^/])(■)*)([\-*+^/]([\d]){■})*fail dotstar or empty
+  76     |  3     (((■)*[\-*+^/])(■)*)([\-*+^/]([\d])*){■}fail dotstar or empty
+  77     |  3     (((■)*[\-*+^/])([\d]){■})(■([\d])*)*fail dotstar or empty
+  78     |  3     (((■)*[\-*+^/])([\d]){■})([\-*+^/](■)*)*fail dotstar or empty
+  79     |  3     (((■)*[\-*+^/])([\d]){■})([\-*+^/]([\d]){■})*fail dotstar or empty
+  80     |  3     (((■)*[\-*+^/])([\d]){■})([\-*+^/]([\d])*){■}fail dotstar or empty
+  81     |  3     (((■)*[\-*+^/])■)([\-*+^/]([\d])*)*fail dotstar or empty
+  82     |  3     (((■)*[\-*+^/])([\d])*)(■(■)*)*fail dotstar or empty
+  83     |  3     (((■)*[\-*+^/])([\d])*)(■([\d]){■})*fail dotstar or empty
+  84     |  3     (((■)*[\-*+^/])([\d])*)(■([\d])*){■}fail dotstar or empty
+  85     |  3     (((■)*[\-*+^/])([\d])*)([\-*+^/](■){■})*fail dotstar or empty
+  86     |  3     (((■)*[\-*+^/])([\d])*)([\-*+^/](■)*){■}fail dotstar or empty
+  87     |  3     (((■)*[\-*+^/])([\d])*)([\-*+^/]([\d]){■}){■}fail dotstar or empty
+  88     |  3     (((■)*[\-*+^/])([\d])*)([\-*+^/]■)*fail dotstar or empty
+  89     |  3     (((■)*[\-*+^/])([\d])*)■fail dotstar or empty
+  90     |  3     ((([\d]){■}■)(■)*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  91     |  3     ((([\d]){■}■)([\d]){■})([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  92     |  3     ((([\d]){■}■)([\d])*)(■([\d])*)*  unsatisfiable SAT formula       
+  93     |  3     ((([\d]){■}■)([\d])*)([\-*+^/](■)*)*  unsatisfiable SAT formula       
+  94     |  3     ((([\d]){■}■)([\d])*)([\-*+^/]([\d]){■})*  unsatisfiable SAT formula       
+  95     |  3     ((([\d]){■}■)([\d])*)([\-*+^/]([\d])*){■}  unsatisfiable SAT formula       
+  96     |  3     ((■■)([\d])*)([\-*+^/]([\d])*)*fail dot
+  97     |  3     ((([\d]){■}(■■))([\d])*)([\-*+^/]([\d])*)*fail dot
+  98     |  3     ((([\d]){■}(■|■))([\d])*)([\-*+^/]([\d])*)*fail solve
+  99     |  3     ((([\d]){■}(■){■})([\d])*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  100    |  3     ((([\d]){■}[\-*+^/])(■){■})([\-*+^/]([\d])*)*fail dotstar or empty
+  101    |  3     ((([\d]){■}[\-*+^/])(■)*)(■([\d])*)*fail dotstar or empty
+  102    |  3     ((([\d]){■}[\-*+^/])(■)*)([\-*+^/](■)*)*fail dotstar or empty
+  103    |  3     ((([\d]){■}[\-*+^/])(■)*)([\-*+^/]([\d]){■})*fail dotstar or empty
+  104    |  3     ((([\d]){■}[\-*+^/])(■)*)([\-*+^/]([\d])*){■}fail dotstar or empty
+  105    |  3     ((■[\-*+^/])(■)*)([\-*+^/]([\d])*)*fail dotstar or empty
+  106    |  3     ((([\d]){■}[\-*+^/])([\d]){■})(■([\d])*)*fail dotstar or empty
+  107    |  3     ((([\d]){■}[\-*+^/])([\d]){■})([\-*+^/](■)*)*fail dotstar or empty
+  108    |  3     ((([\d]){■}[\-*+^/])([\d]){■})([\-*+^/]([\d]){■})*fail dotstar or empty
+  109    |  3     ((([\d]){■}[\-*+^/])([\d]){■})([\-*+^/]([\d])*){■}fail dotstar or empty
+  110    |  3     ((■[\-*+^/])([\d]){■})([\-*+^/]([\d])*)*fail dotstar or empty
+  111    |  3     ((([\d]){■}[\-*+^/])■)([\-*+^/]([\d])*)*fail dotstar or empty
+  112    |  3     ((([\d]){■}[\-*+^/])([\d])*)(■(■)*)*fail dotstar or empty
+  113    |  3     ((([\d]){■}[\-*+^/])([\d])*)(■([\d]){■})*fail dotstar or empty
+  114    |  3     ((([\d]){■}[\-*+^/])([\d])*)(■([\d])*){■}fail dotstar or empty
+  115    |  3     ((■[\-*+^/])([\d])*)(■([\d])*)*fail dotstar or empty
+  116    |  3     ((([\d]){■}[\-*+^/])([\d])*)([\-*+^/](■){■})*fail dotstar or empty
+  117    |  3     ((([\d]){■}[\-*+^/])([\d])*)([\-*+^/](■)*){■}fail dotstar or empty
+  118    |  3     ((■[\-*+^/])([\d])*)([\-*+^/](■)*)*fail dotstar or empty
+  119    |  3     ((([\d]){■}[\-*+^/])([\d])*)([\-*+^/]([\d]){■}){■}fail dotstar or empty
+  120    |  3     ((■[\-*+^/])([\d])*)([\-*+^/]([\d]){■})*fail dotstar or empty
+  121    |  3     ((([\d]){■}[\-*+^/])([\d])*)([\-*+^/]■)*fail dotstar or empty
+  122    |  3     ((■[\-*+^/])([\d])*)([\-*+^/]([\d])*){■}fail dotstar or empty
+  123    |  3     ((([\d]){■}[\-*+^/])([\d])*)■fail dotstar or empty
+  124    |  3     ((([\d])*■)(■){■})([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  125    |  3     ((([\d])*■)(■)*)(■([\d])*)*  unsatisfiable SAT formula       
+  126    |  3     ((([\d])*■)(■)*)([\-*+^/](■)*)*  unsatisfiable SAT formula       
+  127    |  3     ((([\d])*■)(■)*)([\-*+^/]([\d]){■})*  unsatisfiable SAT formula       
+  128    |  3     ((([\d])*■)(■)*)([\-*+^/]([\d])*){■}  unsatisfiable SAT formula       
+  129    |  3     ((([\d])*(■■))(■)*)([\-*+^/]([\d])*)*fail dot
+  130    |  3     ((([\d])*(■|■))(■)*)([\-*+^/]([\d])*)*fail solve
+  131    |  3     ((([\d])*(■){■})(■)*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  132    |  3     ((([\d])*■)(■■)*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  133    |  3     ((([\d])*■)((■|■))*)([\-*+^/]([\d])*)*fail solve
+  134    |  3     ((([\d])*■)((■){■})*)([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  135    |  3     ((([\d])*■)([\d]){■})(■([\d])*)*  unsatisfiable SAT formula       
+  136    |  3     ((([\d])*■)([\d]){■})([\-*+^/](■)*)*  unsatisfiable SAT formula       
+  137    |  3     ((([\d])*■)([\d]){■})([\-*+^/]([\d]){■})*  unsatisfiable SAT formula       
+  138    |  3     ((([\d])*■)([\d]){■})([\-*+^/]([\d])*){■}  unsatisfiable SAT formula       
+  139    |  3     ((([\d])*■)■)([\-*+^/]([\d])*)*fail dot
+  140    |  3     ((([\d])*(■■))([\d]){■})([\-*+^/]([\d])*)*fail dot
+  141    |  3     ((([\d])*(■|■))([\d]){■})([\-*+^/]([\d])*)*fail solve
+  142    |  3     ((([\d])*(■){■})([\d]){■})([\-*+^/]([\d])*)*  unsatisfiable SAT formula       
+  143    |  3     ((([\d])*■)([\d])*)(■(■)*)*  unsatisfiable SAT formula       
+  144    |  3     ((([\d])*■)([\d])*)(■([\d]){■})*get a solution: ((([\d])*[1234567890])([\d])*)([\-*+/]([\d]){1,2})*
+add positive: 0*000
+get a solution: ((([\d])*[1234567890])([\d])*)([\-*+/0]([\d]){1,3})*
+add positive: 0*0110
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-*+/0]([\d]){1,4})*
+add positive: 0*02220
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-2*+/0]([\d]){1,5})*
+add positive: 0*033330
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-23*+/0]([\d]){1,2})*
+add positive: 0*040
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-234*+/0]([\d]){1,6})*
+add positive: 0*0555555
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-2345*+/0]([\d]){1,7})*
+add positive: 0*06666666
+get a solution: ((([\d])*[1234567890])([\d])*)([\-*+/]([\d]){1,8})*
+add positive: 0*000000000
+get a solution: ((([\d])*[1234567890])([\d])*)([1\-23456*+/0]([\d]){1,9})*
+add positive: 0*0777777770
+get a solution: ((([\d])*[1234567890])([\d])*)([*+/01\-234567]([\d]){1,10})*
+add positive: 0*08888888888
+get a solution: ((([\d])*[1234567890])([\d])*)([*+/0\-12345678]([\d]){1,11})*
+add positive: 0*099999999999
+
+20.162744998931885
 timeout

@@ -86,16 +86,16 @@ get a solution: ([!"#%&'()*+,:;{|<}=>?@\$\-\.[\]^_` ]){1,}
 add positive: ~
 get a solution: ([!"#%&'()*+,:;{|<}=>~?@\$\-\.[\]^_` ]){1,}
   ([!"#%&'()*+,:;{|<}=>~?@\$\-\.[\]^_` ]){1,}
-template: (■){1,} size: 1 holes: 1 time: 1.657952ms
-longest: #mn#(■){1,}#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.657952#mt#ms
+template: (■){1,} size: 1 holes: 1 time: 1.624845ms
+longest: #mn#(■){1,}#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.624845#mt#ms
 
 Computed in:
 
-  #c#600#c#ms
+  #c#596#c#ms
 
 timeSATSolver time:
 
-  #s#54#s#ms
+  #s#56#s#ms
 
 cost:
 
@@ -121,5 +121,5 @@ auto cfail positives!!!!!!!!!!!!!!!
 exception while checking
 before exit
 
-1.0218300819396973
+0.9752662181854248
 success

@@ -16,5 +16,5 @@ Search through possible transformations:
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
 
-2.0406157970428467
+20.149474143981934
 timeout

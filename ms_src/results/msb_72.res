@@ -882,6 +882,804 @@ add positive: CtrlEnter
   865    |  5     (((((((■|■)■)■)■)((\n|.))*)b)b)bfail dotstar or empty
   866    |  5     (((((((■|■)■)■)a)((■|.))*)b)b)bfail dotstar or empty
   867    |  5     (((((((■|■)■)■)a)((\n|■))*)b)b)bfail dotstar or empty
-  868    |  5     (((((((■|■)■)■)a)((\n|.)){■})b)b)b
-2.0190858840942383
+  868    |  5     (((((((■|■)■)■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  869    |  5     (((((((■|■)■)■)a)((\n|.))*)■)b)bfail dotstar or empty
+  870    |  5     (((((((■|■)■)■)a)((\n|.))*)b)■)bfail dotstar or empty
+  871    |  5     (((((((■|■)■)■)a)((\n|.))*)b)b)■fail dotstar or empty
+  872    |  5     (((((((■|■)■)a)■)((■|.))*)b)b)bfail dotstar or empty
+  873    |  5     (((((((■|■)■)a)■)((\n|■))*)b)b)bfail dotstar or empty
+  874    |  5     (((((((■|■)■)a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  875    |  5     (((((((■|■)■)a)■)((\n|.))*)■)b)bfail dotstar or empty
+  876    |  5     (((((((■|■)■)a)■)((\n|.))*)b)■)bfail dotstar or empty
+  877    |  5     (((((((■|■)■)a)■)((\n|.))*)b)b)■fail dotstar or empty
+  878    |  5     (((((((■|■)■)a)a)((■|■))*)b)b)bfail dotstar or empty
+  879    |  5     (((((((■|■)■)a)a)((■|.)){■})b)b)bfail dotstar or empty
+  880    |  5     (((((((■|■)■)a)a)((■|.))*)■)b)bfail dotstar or empty
+  881    |  5     (((((((■|■)■)a)a)((■|.))*)b)■)bfail dotstar or empty
+  882    |  5     (((((((■|■)■)a)a)((■|.))*)b)b)■fail dotstar or empty
+  883    |  5     (((((((■|■)■)a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  884    |  5     (((((((■|■)■)a)a)((\n|■))*)■)b)bfail dotstar or empty
+  885    |  5     (((((((■|■)■)a)a)((\n|■))*)b)■)bfail dotstar or empty
+  886    |  5     (((((((■|■)■)a)a)((\n|■))*)b)b)■fail dotstar or empty
+  887    |  5     (((((((■|■)■)a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  888    |  5     (((((((■|■)■)a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  889    |  5     (((((((■|■)■)a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  890    |  5     (((((((■|■)■)a)a)■)b)b)bfail dotstar or empty
+  891    |  5     (((((((■|■)■)a)a)((\n|.))*)■)■)bfail dotstar or empty
+  892    |  5     (((((((■|■)■)a)a)((\n|.))*)■)b)■fail dotstar or empty
+  893    |  5     (((((((■|■)■)a)a)((\n|.))*)b)■)■fail dotstar or empty
+  894    |  5     (((((((■■|■)■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  895    |  5     (((((((■■|■)■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  896    |  5     (((((((■■|■)■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  897    |  5     (((((((■■|■)■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  898    |  5     (((((((■■|■)■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  899    |  5     (((((((■■|■)■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  900    |  5     (((((((■■|■)■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  901    |  5     (((((((■■|■)■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  902    |  5     ((((((((■■)■|■)■)a)a)((\n|.))*)b)b)bfail dot
+  903    |  5     ((((((((■|■)■|■)■)a)a)((\n|.))*)b)b)bfail dot
+  904    |  5     ((((((((■){■}■|■)■)a)a)((\n|.))*)b)b)bfail dot
+  905    |  5     (((((((■■|■■)■)a)a)((\n|.))*)b)b)bfail dot
+  906    |  5     (((((((■■|(■|■))■)a)a)((\n|.))*)b)b)bfail dot
+  907    |  5     (((((((■■|(■){■})■)a)a)((\n|.))*)b)b)bfail dot
+  908    |  5     (((((((■■|■)(■■))a)a)((\n|.))*)b)b)bfail dot
+  909    |  5     (((((((■■|■)(■|■))a)a)((\n|.))*)b)b)bfail dot
+  910    |  5     (((((((■■|■)(■){■})a)a)((\n|.))*)b)b)bfail dot
+  911    |  5     ((((((((■|■)|■)■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  912    |  5     ((((((((■|■)|■)■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  913    |  5     ((((((((■|■)|■)■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  914    |  5     ((((((((■|■)|■)■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  915    |  5     ((((((((■|■)|■)■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  916    |  5     ((((((((■|■)|■)■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  917    |  5     ((((((((■|■)|■)■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  918    |  5     ((((((((■|■)|■)■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  919    |  5     ((((((((■■|■)|■)■)a)a)((\n|.))*)b)b)bfail dot
+  920    |  5     (((((((((■|■)|■)|■)■)a)a)((\n|.))*)b)b)bfail dot
+  921    |  5     (((((((((■){■}|■)|■)■)a)a)((\n|.))*)b)b)bfail dot
+  922    |  5     ((((((((■|■)|■■)■)a)a)((\n|.))*)b)b)bfail dot
+  923    |  5     ((((((((■|■)|(■|■))■)a)a)((\n|.))*)b)b)bfail dot
+  924    |  5     ((((((((■|■)|(■){■})■)a)a)((\n|.))*)b)b)bfail dot
+  925    |  5     ((((((((■|■)|■)(■■))a)a)((\n|.))*)b)b)bfail dot
+  926    |  5     ((((((((■|■)|■)(■|■))a)a)((\n|.))*)b)b)bfail dot
+  927    |  5     ((((((((■|■)|■)(■){■})a)a)((\n|.))*)b)b)bfail dot
+  928    |  5     ((((((((■){■}|■)■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  929    |  5     ((((((((■){■}|■)■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  930    |  5     ((((((((■){■}|■)■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  931    |  5     ((((((((■){■}|■)■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  932    |  5     ((((((((■){■}|■)■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  933    |  5     ((((((((■){■}|■)■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  934    |  5     ((((((((■){■}|■)■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  935    |  5     ((((((((■){■}|■)■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  936    |  5     ((((((((■■){■}|■)■)a)a)((\n|.))*)b)b)bfail dot
+  937    |  5     (((((((((■|■)){■}|■)■)a)a)((\n|.))*)b)b)bfail dot
+  938    |  5     (((((((((■){■}){■}|■)■)a)a)((\n|.))*)b)b)bfail dot
+  939    |  5     ((((((((■){■}|■■)■)a)a)((\n|.))*)b)b)bfail dot
+  940    |  5     ((((((((■){■}|(■|■))■)a)a)((\n|.))*)b)b)bfail dot
+  941    |  5     ((((((((■){■}|(■){■})■)a)a)((\n|.))*)b)b)bfail dot
+  942    |  5     ((((((((■){■}|■)(■■))a)a)((\n|.))*)b)b)bfail dot
+  943    |  5     ((((((((■){■}|■)(■|■))a)a)((\n|.))*)b)b)bfail dot
+  944    |  5     ((((((((■){■}|■)(■){■})a)a)((\n|.))*)b)b)bfail dot
+  945    |  5     (((((((■|■)(■■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  946    |  5     (((((((■|■)(■■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  947    |  5     (((((((■|■)(■■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  948    |  5     (((((((■|■)(■■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  949    |  5     (((((((■|■)(■■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  950    |  5     (((((((■|■)(■■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  951    |  5     (((((((■|■)(■■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  952    |  5     (((((((■|■)(■■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  953    |  5     (((((((■|■)(■))a)a)((\n|.))*)b)b)bfail dotstar or empty
+  954    |  5     (((((((■|■)(■|■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  955    |  5     (((((((■|■)(■|■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  956    |  5     (((((((■|■)(■|■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  957    |  5     (((((((■|■)(■|■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  958    |  5     (((((((■|■)(■|■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  959    |  5     (((((((■|■)(■|■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  960    |  5     (((((((■|■)(■|■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  961    |  5     (((((((■|■)(■|■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  962    |  5     (((((((■|■)(■){■})■)a)((\n|.))*)b)b)bfail dotstar or empty
+  963    |  5     (((((((■|■)(■){■})a)■)((\n|.))*)b)b)bfail dotstar or empty
+  964    |  5     (((((((■|■)(■){■})a)a)((■|.))*)b)b)bfail dotstar or empty
+  965    |  5     (((((((■|■)(■){■})a)a)((\n|■))*)b)b)bfail dotstar or empty
+  966    |  5     (((((((■|■)(■){■})a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  967    |  5     (((((((■|■)(■){■})a)a)((\n|.))*)■)b)bfail dotstar or empty
+  968    |  5     (((((((■|■)(■){■})a)a)((\n|.))*)b)■)bfail dotstar or empty
+  969    |  5     (((((((■|■)(■){■})a)a)((\n|.))*)b)b)■fail dotstar or empty
+  970    |  5     (((((((■){■}■)■)■)((\n|.))*)b)b)bfail dotstar or empty
+  971    |  5     (((((((■){■}■)■)a)((■|.))*)b)b)bfail dotstar or empty
+  972    |  5     (((((((■){■}■)■)a)((\n|■))*)b)b)bfail dotstar or empty
+  973    |  5     (((((((■){■}■)■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  974    |  5     (((((((■){■}■)■)a)((\n|.))*)■)b)bfail dotstar or empty
+  975    |  5     (((((((■){■}■)■)a)((\n|.))*)b)■)bfail dotstar or empty
+  976    |  5     (((((((■){■}■)■)a)((\n|.))*)b)b)■fail dotstar or empty
+  977    |  5     (((((((■){■}■)a)■)((■|.))*)b)b)bfail dotstar or empty
+  978    |  5     (((((((■){■}■)a)■)((\n|■))*)b)b)bfail dotstar or empty
+  979    |  5     (((((((■){■}■)a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  980    |  5     (((((((■){■}■)a)■)((\n|.))*)■)b)bfail dotstar or empty
+  981    |  5     (((((((■){■}■)a)■)((\n|.))*)b)■)bfail dotstar or empty
+  982    |  5     (((((((■){■}■)a)■)((\n|.))*)b)b)■fail dotstar or empty
+  983    |  5     (((((((■){■}■)a)a)((■|■))*)b)b)bfail dotstar or empty
+  984    |  5     (((((((■){■}■)a)a)((■|.)){■})b)b)bfail dotstar or empty
+  985    |  5     (((((((■){■}■)a)a)((■|.))*)■)b)bfail dotstar or empty
+  986    |  5     (((((((■){■}■)a)a)((■|.))*)b)■)bfail dotstar or empty
+  987    |  5     (((((((■){■}■)a)a)((■|.))*)b)b)■fail dotstar or empty
+  988    |  5     (((((((■){■}■)a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  989    |  5     (((((((■){■}■)a)a)((\n|■))*)■)b)bfail dotstar or empty
+  990    |  5     (((((((■){■}■)a)a)((\n|■))*)b)■)bfail dotstar or empty
+  991    |  5     (((((((■){■}■)a)a)((\n|■))*)b)b)■fail dotstar or empty
+  992    |  5     (((((((■){■}■)a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  993    |  5     (((((((■){■}■)a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  994    |  5     (((((((■){■}■)a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  995    |  5     (((((((■){■}■)a)a)■)b)b)bfail dotstar or empty
+  996    |  5     (((((((■){■}■)a)a)((\n|.))*)■)■)bfail dotstar or empty
+  997    |  5     (((((((■){■}■)a)a)((\n|.))*)■)b)■fail dotstar or empty
+  998    |  5     (((((((■){■}■)a)a)((\n|.))*)b)■)■fail dotstar or empty
+  999    |  5     (((((((■■){■}■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1000   |  5     (((((((■■){■}■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1001   |  5     (((((((■■){■}■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1002   |  5     (((((((■■){■}■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1003   |  5     (((((((■■){■}■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1004   |  5     (((((((■■){■}■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1005   |  5     (((((((■■){■}■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1006   |  5     (((((((■■){■}■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1007   |  5     ((((((((■■)■){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1008   |  5     ((((((((■|■)■){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1009   |  5     ((((((((■){■}■){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1010   |  5     (((((((■■){■}(■■))a)a)((\n|.))*)b)b)bfail dot
+  1011   |  5     (((((((■■){■}(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1012   |  5     (((((((■■){■}(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1013   |  5     ((((((((■|■)){■}■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1014   |  5     ((((((((■|■)){■}■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1015   |  5     ((((((((■|■)){■}■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1016   |  5     ((((((((■|■)){■}■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1017   |  5     ((((((((■|■)){■}■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1018   |  5     ((((((((■|■)){■}■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1019   |  5     ((((((((■|■)){■}■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1020   |  5     ((((((((■|■)){■}■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1021   |  5     ((((((((■■|■)){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1022   |  5     (((((((((■|■)|■)){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1023   |  5     (((((((((■){■}|■)){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1024   |  5     ((((((((■|■)){■}(■■))a)a)((\n|.))*)b)b)bfail dot
+  1025   |  5     ((((((((■|■)){■}(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1026   |  5     ((((((((■|■)){■}(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1027   |  5     ((((((((■){■}){■}■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1028   |  5     ((((((((■){■}){■}■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1029   |  5     ((((((((■){■}){■}■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1030   |  5     ((((((((■){■}){■}■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1031   |  5     ((((((((■){■}){■}■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1032   |  5     ((((((((■){■}){■}■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1033   |  5     ((((((((■){■}){■}■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1034   |  5     ((((((((■){■}){■}■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1035   |  5     ((((((((■■){■}){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1036   |  5     (((((((((■|■)){■}){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1037   |  5     (((((((((■){■}){■}){■}■)a)a)((\n|.))*)b)b)bfail dot
+  1038   |  5     ((((((((■){■}){■}(■■))a)a)((\n|.))*)b)b)bfail dot
+  1039   |  5     ((((((((■){■}){■}(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1040   |  5     ((((((((■){■}){■}(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1041   |  5     (((((((■){■}(■■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1042   |  5     (((((((■){■}(■■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1043   |  5     (((((((■){■}(■■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  1044   |  5     (((((((■){■}(■■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1045   |  5     (((((((■){■}(■■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1046   |  5     (((((((■){■}(■■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1047   |  5     (((((((■){■}(■■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1048   |  5     (((((((■){■}(■■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1049   |  5     (((((((■){■}(■))a)a)((\n|.))*)b)b)bfail dotstar or empty
+  1050   |  5     (((((((■){■}(■|■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1051   |  5     (((((((■){■}(■|■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1052   |  5     (((((((■){■}(■|■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  1053   |  5     (((((((■){■}(■|■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1054   |  5     (((((((■){■}(■|■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1055   |  5     (((((((■){■}(■|■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1056   |  5     (((((((■){■}(■|■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1057   |  5     (((((((■){■}(■|■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1058   |  5     (((((((■){■}(■){■})■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1059   |  5     (((((((■){■}(■){■})a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1060   |  5     (((((((■){■}(■){■})a)a)((■|.))*)b)b)bfail dotstar or empty
+  1061   |  5     (((((((■){■}(■){■})a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1062   |  5     (((((((■){■}(■){■})a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1063   |  5     (((((((■){■}(■){■})a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1064   |  5     (((((((■){■}(■){■})a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1065   |  5     (((((((■){■}(■){■})a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1066   |  5     ((((((■|■)■)■)((■|.))*)b)b)bfail dotstar or empty
+  1067   |  5     ((((((■|■)■)■)((\n|■))*)b)b)bfail dotstar or empty
+  1068   |  5     ((((((■|■)■)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1069   |  5     ((((((■|■)■)■)((\n|.))*)■)b)bfail dotstar or empty
+  1070   |  5     ((((((■|■)■)■)((\n|.))*)b)■)bfail dotstar or empty
+  1071   |  5     ((((((■|■)■)■)((\n|.))*)b)b)■fail dotstar or empty
+  1072   |  5     ((((((■|■)■)a)((■|■))*)b)b)bfail dotstar or empty
+  1073   |  5     ((((((■|■)■)a)((■|.)){■})b)b)bfail dotstar or empty
+  1074   |  5     ((((((■|■)■)a)((■|.))*)■)b)bfail dotstar or empty
+  1075   |  5     ((((((■|■)■)a)((■|.))*)b)■)bfail dotstar or empty
+  1076   |  5     ((((((■|■)■)a)((■|.))*)b)b)■fail dotstar or empty
+  1077   |  5     ((((((■|■)■)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1078   |  5     ((((((■|■)■)a)((\n|■))*)■)b)bfail dotstar or empty
+  1079   |  5     ((((((■|■)■)a)((\n|■))*)b)■)bfail dotstar or empty
+  1080   |  5     ((((((■|■)■)a)((\n|■))*)b)b)■fail dotstar or empty
+  1081   |  5     ((((((■|■)■)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1082   |  5     ((((((■|■)■)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1083   |  5     ((((((■|■)■)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1084   |  5     ((((((■|■)■)a)■)b)b)b   fail dotstar or empty
+  1085   |  5     ((((((■|■)■)a)((\n|.))*)■)■)bfail dotstar or empty
+  1086   |  5     ((((((■|■)■)a)((\n|.))*)■)b)■fail dotstar or empty
+  1087   |  5     ((((((■|■)■)a)((\n|.))*)b)■)■fail dotstar or empty
+  1088   |  5     ((((((■|■)a)■)((■|■))*)b)b)bfail dotstar or empty
+  1089   |  5     ((((((■|■)a)■)((■|.)){■})b)b)bfail dotstar or empty
+  1090   |  5     ((((((■|■)a)■)((■|.))*)■)b)bfail dotstar or empty
+  1091   |  5     ((((((■|■)a)■)((■|.))*)b)■)bfail dotstar or empty
+  1092   |  5     ((((((■|■)a)■)((■|.))*)b)b)■fail dotstar or empty
+  1093   |  5     ((((((■|■)a)■)((\n|■)){■})b)b)bfail dotstar or empty
+  1094   |  5     ((((((■|■)a)■)((\n|■))*)■)b)bfail dotstar or empty
+  1095   |  5     ((((((■|■)a)■)((\n|■))*)b)■)bfail dotstar or empty
+  1096   |  5     ((((((■|■)a)■)((\n|■))*)b)b)■fail dotstar or empty
+  1097   |  5     ((((((■|■)a)■)((\n|.)){■})■)b)bfail dotstar or empty
+  1098   |  5     ((((((■|■)a)■)((\n|.)){■})b)■)bfail dotstar or empty
+  1099   |  5     ((((((■|■)a)■)((\n|.)){■})b)b)■fail dotstar or empty
+  1100   |  5     ((((((■|■)a)■)■)b)b)b   fail dotstar or empty
+  1101   |  5     ((((((■|■)a)■)((\n|.))*)■)■)bfail dotstar or empty
+  1102   |  5     ((((((■|■)a)■)((\n|.))*)■)b)■fail dotstar or empty
+  1103   |  5     ((((((■|■)a)■)((\n|.))*)b)■)■fail dotstar or empty
+  1104   |  5     ((((((■|■)a)a)((■|■)){■})b)b)bfail dotstar or empty
+  1105   |  5     ((((((■|■)a)a)((■|■))*)■)b)bfail dotstar or empty
+  1106   |  5     ((((((■|■)a)a)((■|■))*)b)■)bfail dotstar or empty
+  1107   |  5     ((((((■|■)a)a)((■|■))*)b)b)■fail dotstar or empty
+  1108   |  5     ((((((■|■)a)a)(■)*)b)b)bfail dotstar or empty
+  1109   |  5     ((((((■|■)a)a)((■|.)){■})■)b)bfail dotstar or empty
+  1110   |  5     ((((((■|■)a)a)((■|.)){■})b)■)bfail dotstar or empty
+  1111   |  5     ((((((■|■)a)a)((■|.)){■})b)b)■fail dotstar or empty
+  1112   |  5     ((((((■|■)a)a)((■|.))*)■)■)bfail dotstar or empty
+  1113   |  5     ((((((■|■)a)a)((■|.))*)■)b)■fail dotstar or empty
+  1114   |  5     ((((((■|■)a)a)((■|.))*)b)■)■fail dotstar or empty
+  1115   |  5     ((((((■|■)a)a)((\n|■)){■})■)b)bfail dotstar or empty
+  1116   |  5     ((((((■|■)a)a)((\n|■)){■})b)■)bfail dotstar or empty
+  1117   |  5     ((((((■|■)a)a)((\n|■)){■})b)b)■fail dotstar or empty
+  1118   |  5     ((((((■|■)a)a)((\n|■))*)■)■)bfail dotstar or empty
+  1119   |  5     ((((((■|■)a)a)((\n|■))*)■)b)■fail dotstar or empty
+  1120   |  5     ((((((■|■)a)a)((\n|■))*)b)■)■fail dotstar or empty
+  1121   |  5     ((((((■|■)a)a)((\n|.)){■})■)■)bfail dotstar or empty
+  1122   |  5     ((((((■|■)a)a)((\n|.)){■})■)b)■fail dotstar or empty
+  1123   |  5     ((((((■|■)a)a)■)■)b)b   fail dotstar or empty
+  1124   |  5     ((((((■|■)a)a)((\n|.)){■})b)■)■fail dotstar or empty
+  1125   |  5     ((((((■|■)a)a)■)b)■)b   fail dotstar or empty
+  1126   |  5     ((((((■|■)a)a)■)b)b)■   fail dotstar or empty
+  1127   |  5     ((((((■|■)a)a)((\n|.))*)■)■)■fail dotstar or empty
+  1128   |  5     ((((((■■|■)■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1129   |  5     ((((((■■|■)■)a)((■|.))*)b)b)bfail dotstar or empty
+  1130   |  5     ((((((■■|■)■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1131   |  5     ((((((■■|■)■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1132   |  5     ((((((■■|■)■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1133   |  5     ((((((■■|■)■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1134   |  5     ((((((■■|■)■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1135   |  5     ((((((■■|■)a)■)((■|.))*)b)b)bfail dotstar or empty
+  1136   |  5     ((((((■■|■)a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1137   |  5     ((((((■■|■)a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1138   |  5     ((((((■■|■)a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1139   |  5     ((((((■■|■)a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1140   |  5     ((((((■■|■)a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1141   |  5     ((((((■■|■)a)a)((■|■))*)b)b)bfail dotstar or empty
+  1142   |  5     ((((((■■|■)a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1143   |  5     ((((((■■|■)a)a)((■|.))*)■)b)bfail dotstar or empty
+  1144   |  5     ((((((■■|■)a)a)((■|.))*)b)■)bfail dotstar or empty
+  1145   |  5     ((((((■■|■)a)a)((■|.))*)b)b)■fail dotstar or empty
+  1146   |  5     ((((((■■|■)a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1147   |  5     ((((((■■|■)a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1148   |  5     ((((((■■|■)a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1149   |  5     ((((((■■|■)a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1150   |  5     ((((((■■|■)a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1151   |  5     ((((((■■|■)a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1152   |  5     ((((((■■|■)a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1153   |  5     ((((((■■|■)a)a)■)b)b)b  fail dotstar or empty
+  1154   |  5     ((((((■■|■)a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1155   |  5     ((((((■■|■)a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1156   |  5     ((((((■■|■)a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1157   |  5     (((((((■■)■|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1158   |  5     (((((((■■)■|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1159   |  5     (((((((■■)■|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1160   |  5     (((((((■■)■|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1161   |  5     (((((((■■)■|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1162   |  5     (((((((■■)■|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1163   |  5     (((((((■■)■|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1164   |  5     (((((((■■)■|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1165   |  5     (((((((■)■|■)a)a)((\n|.))*)b)b)bfail dotstar or empty
+  1166   |  5     ((((((((■■)■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1167   |  5     ((((((((■|■)■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1168   |  5     ((((((((■){■}■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1169   |  5     (((((((■■)(■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1170   |  5     (((((((■■)(■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1171   |  5     (((((((■■)(■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1172   |  5     (((((((■■)■|■■)a)a)((\n|.))*)b)b)bfail dot
+  1173   |  5     (((((((■■)■|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1174   |  5     (((((((■■)■|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1175   |  5     (((((((■|■)■|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1176   |  5     (((((((■|■)■|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1177   |  5     (((((((■|■)■|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1178   |  5     (((((((■|■)■|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1179   |  5     (((((((■|■)■|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1180   |  5     (((((((■|■)■|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1181   |  5     (((((((■|■)■|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1182   |  5     (((((((■|■)■|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1183   |  5     (((((((■■|■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1184   |  5     ((((((((■|■)|■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1185   |  5     ((((((((■){■}|■)■|■)a)a)((\n|.))*)b)b)bfail dot
+  1186   |  5     (((((((■|■)(■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1187   |  5     (((((((■|■)(■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1188   |  5     (((((((■|■)(■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1189   |  5     (((((((■|■)■|■■)a)a)((\n|.))*)b)b)bfail dot
+  1190   |  5     (((((((■|■)■|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1191   |  5     (((((((■|■)■|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1192   |  5     (((((((■){■}■|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1193   |  5     (((((((■){■}■|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1194   |  5     (((((((■){■}■|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1195   |  5     (((((((■){■}■|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1196   |  5     (((((((■){■}■|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1197   |  5     (((((((■){■}■|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1198   |  5     (((((((■){■}■|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1199   |  5     (((((((■){■}■|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1200   |  5     (((((((■■){■}■|■)a)a)((\n|.))*)b)b)bfail dot
+  1201   |  5     ((((((((■|■)){■}■|■)a)a)((\n|.))*)b)b)bfail dot
+  1202   |  5     ((((((((■){■}){■}■|■)a)a)((\n|.))*)b)b)bfail dot
+  1203   |  5     (((((((■){■}(■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1204   |  5     (((((((■){■}(■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1205   |  5     (((((((■){■}(■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1206   |  5     (((((((■){■}■|■■)a)a)((\n|.))*)b)b)bfail dot
+  1207   |  5     (((((((■){■}■|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1208   |  5     (((((((■){■}■|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1209   |  5     ((((((■■|■■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1210   |  5     ((((((■■|■■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1211   |  5     ((((((■■|■■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1212   |  5     ((((((■■|■■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1213   |  5     ((((((■■|■■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1214   |  5     ((((((■■|■■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1215   |  5     ((((((■■|■■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1216   |  5     ((((((■■|■■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1217   |  5     ((((((■■|(■|■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1218   |  5     ((((((■■|(■|■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1219   |  5     ((((((■■|(■|■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  1220   |  5     ((((((■■|(■|■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1221   |  5     ((((((■■|(■|■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1222   |  5     ((((((■■|(■|■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1223   |  5     ((((((■■|(■|■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1224   |  5     ((((((■■|(■|■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1225   |  5     ((((((■■|(■){■})■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1226   |  5     ((((((■■|(■){■})a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1227   |  5     ((((((■■|(■){■})a)a)((■|.))*)b)b)bfail dotstar or empty
+  1228   |  5     ((((((■■|(■){■})a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1229   |  5     ((((((■■|(■){■})a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1230   |  5     ((((((■■|(■){■})a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1231   |  5     ((((((■■|(■){■})a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1232   |  5     ((((((■■|(■){■})a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1233   |  5     (((((((■|■)|■)■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1234   |  5     (((((((■|■)|■)■)a)((■|.))*)b)b)bfail dotstar or empty
+  1235   |  5     (((((((■|■)|■)■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1236   |  5     (((((((■|■)|■)■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1237   |  5     (((((((■|■)|■)■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1238   |  5     (((((((■|■)|■)■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1239   |  5     (((((((■|■)|■)■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1240   |  5     (((((((■|■)|■)a)■)((■|.))*)b)b)bfail dotstar or empty
+  1241   |  5     (((((((■|■)|■)a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1242   |  5     (((((((■|■)|■)a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1243   |  5     (((((((■|■)|■)a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1244   |  5     (((((((■|■)|■)a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1245   |  5     (((((((■|■)|■)a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1246   |  5     (((((((■|■)|■)a)a)((■|■))*)b)b)bfail dotstar or empty
+  1247   |  5     (((((((■|■)|■)a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1248   |  5     (((((((■|■)|■)a)a)((■|.))*)■)b)bfail dotstar or empty
+  1249   |  5     (((((((■|■)|■)a)a)((■|.))*)b)■)bfail dotstar or empty
+  1250   |  5     (((((((■|■)|■)a)a)((■|.))*)b)b)■fail dotstar or empty
+  1251   |  5     (((((((■|■)|■)a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1252   |  5     (((((((■|■)|■)a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1253   |  5     (((((((■|■)|■)a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1254   |  5     (((((((■|■)|■)a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1255   |  5     (((((((■|■)|■)a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1256   |  5     (((((((■|■)|■)a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1257   |  5     (((((((■|■)|■)a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1258   |  5     (((((((■|■)|■)a)a)■)b)b)bfail dotstar or empty
+  1259   |  5     (((((((■|■)|■)a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1260   |  5     (((((((■|■)|■)a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1261   |  5     (((((((■|■)|■)a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1262   |  5     (((((((■■|■)|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1263   |  5     (((((((■■|■)|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1264   |  5     (((((((■■|■)|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1265   |  5     (((((((■■|■)|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1266   |  5     (((((((■■|■)|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1267   |  5     (((((((■■|■)|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1268   |  5     (((((((■■|■)|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1269   |  5     (((((((■■|■)|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1270   |  5     ((((((((■■)■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1271   |  5     ((((((((■|■)■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1272   |  5     ((((((((■){■}■|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1273   |  5     (((((((■■|■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1274   |  5     (((((((■■|(■|■))|■)a)a)((\n|.))*)b)b)bfail dot
+  1275   |  5     (((((((■■|(■){■})|■)a)a)((\n|.))*)b)b)bfail dot
+  1276   |  5     (((((((■■|■)|■■)a)a)((\n|.))*)b)b)bfail dot
+  1277   |  5     (((((((■■|■)|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1278   |  5     (((((((■■|■)|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1279   |  5     ((((((((■|■)|■)|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1280   |  5     ((((((((■|■)|■)|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1281   |  5     ((((((((■|■)|■)|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1282   |  5     ((((((((■|■)|■)|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1283   |  5     ((((((((■|■)|■)|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1284   |  5     ((((((((■|■)|■)|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1285   |  5     ((((((((■|■)|■)|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1286   |  5     ((((((((■|■)|■)|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1287   |  5     ((((((((■■|■)|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1288   |  5     (((((((((■|■)|■)|■)|■)a)a)((\n|.))*)b)b)bfail solve
+  1289   |  5     (((((((((■){■}|■)|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1290   |  5     ((((((((■|■)|■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1291   |  5     ((((((((■|■)|(■|■))|■)a)a)((\n|.))*)b)b)bfail solve
+  1292   |  5     ((((((((■|■)|(■){■})|■)a)a)((\n|.))*)b)b)bfail dot
+  1293   |  5     ((((((((■|■)|■)|■■)a)a)((\n|.))*)b)b)bfail dot
+  1294   |  5     ((((((((■|■)|■)|(■|■))a)a)((\n|.))*)b)b)bfail solve
+  1295   |  5     ((((((((■|■)|■)|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1296   |  5     ((((((((■){■}|■)|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1297   |  5     ((((((((■){■}|■)|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1298   |  5     ((((((((■){■}|■)|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1299   |  5     ((((((((■){■}|■)|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1300   |  5     ((((((((■){■}|■)|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1301   |  5     ((((((((■){■}|■)|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1302   |  5     ((((((((■){■}|■)|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1303   |  5     ((((((((■){■}|■)|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1304   |  5     ((((((((■■){■}|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1305   |  5     (((((((((■|■)){■}|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1306   |  5     (((((((((■){■}){■}|■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1307   |  5     ((((((((■){■}|■■)|■)a)a)((\n|.))*)b)b)bfail dot
+  1308   |  5     ((((((((■){■}|(■|■))|■)a)a)((\n|.))*)b)b)bfail dot
+  1309   |  5     ((((((((■){■}|(■){■})|■)a)a)((\n|.))*)b)b)bfail dot
+  1310   |  5     ((((((((■){■}|■)|■■)a)a)((\n|.))*)b)b)bfail dot
+  1311   |  5     ((((((((■){■}|■)|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1312   |  5     ((((((((■){■}|■)|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1313   |  5     (((((((■|■)|■■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1314   |  5     (((((((■|■)|■■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1315   |  5     (((((((■|■)|■■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1316   |  5     (((((((■|■)|■■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1317   |  5     (((((((■|■)|■■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1318   |  5     (((((((■|■)|■■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1319   |  5     (((((((■|■)|■■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1320   |  5     (((((((■|■)|■■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1321   |  5     (((((((■|■)|(■|■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1322   |  5     (((((((■|■)|(■|■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1323   |  5     (((((((■|■)|(■|■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  1324   |  5     (((((((■|■)|(■|■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1325   |  5     (((((((■|■)|(■|■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1326   |  5     (((((((■|■)|(■|■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1327   |  5     (((((((■|■)|(■|■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1328   |  5     (((((((■|■)|(■|■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1329   |  5     (((((((■|■)|(■){■})■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1330   |  5     (((((((■|■)|(■){■})a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1331   |  5     (((((((■|■)|(■){■})a)a)((■|.))*)b)b)bfail dotstar or empty
+  1332   |  5     (((((((■|■)|(■){■})a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1333   |  5     (((((((■|■)|(■){■})a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1334   |  5     (((((((■|■)|(■){■})a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1335   |  5     (((((((■|■)|(■){■})a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1336   |  5     (((((((■|■)|(■){■})a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1337   |  5     (((((((■){■}|■)■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1338   |  5     (((((((■){■}|■)■)a)((■|.))*)b)b)bfail dotstar or empty
+  1339   |  5     (((((((■){■}|■)■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1340   |  5     (((((((■){■}|■)■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1341   |  5     (((((((■){■}|■)■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1342   |  5     (((((((■){■}|■)■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1343   |  5     (((((((■){■}|■)■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1344   |  5     (((((((■){■}|■)a)■)((■|.))*)b)b)bfail dotstar or empty
+  1345   |  5     (((((((■){■}|■)a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1346   |  5     (((((((■){■}|■)a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1347   |  5     (((((((■){■}|■)a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1348   |  5     (((((((■){■}|■)a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1349   |  5     (((((((■){■}|■)a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1350   |  5     (((((((■){■}|■)a)a)((■|■))*)b)b)bfail dotstar or empty
+  1351   |  5     (((((((■){■}|■)a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1352   |  5     (((((((■){■}|■)a)a)((■|.))*)■)b)bfail dotstar or empty
+  1353   |  5     (((((((■){■}|■)a)a)((■|.))*)b)■)bfail dotstar or empty
+  1354   |  5     (((((((■){■}|■)a)a)((■|.))*)b)b)■fail dotstar or empty
+  1355   |  5     (((((((■){■}|■)a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1356   |  5     (((((((■){■}|■)a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1357   |  5     (((((((■){■}|■)a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1358   |  5     (((((((■){■}|■)a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1359   |  5     (((((((■){■}|■)a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1360   |  5     (((((((■){■}|■)a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1361   |  5     (((((((■){■}|■)a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1362   |  5     (((((((■){■}|■)a)a)■)b)b)bfail dotstar or empty
+  1363   |  5     (((((((■){■}|■)a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1364   |  5     (((((((■){■}|■)a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1365   |  5     (((((((■){■}|■)a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1366   |  5     (((((((■■){■}|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1367   |  5     (((((((■■){■}|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1368   |  5     (((((((■■){■}|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1369   |  5     (((((((■■){■}|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1370   |  5     (((((((■■){■}|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1371   |  5     (((((((■■){■}|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1372   |  5     (((((((■■){■}|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1373   |  5     (((((((■■){■}|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1374   |  5     ((((((((■■)■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1375   |  5     ((((((((■|■)■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1376   |  5     ((((((((■){■}■){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1377   |  5     (((((((■■){■}|■■)a)a)((\n|.))*)b)b)bfail dot
+  1378   |  5     (((((((■■){■}|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1379   |  5     (((((((■■){■}|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1380   |  5     ((((((((■|■)){■}|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1381   |  5     ((((((((■|■)){■}|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1382   |  5     ((((((((■|■)){■}|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1383   |  5     ((((((((■|■)){■}|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1384   |  5     ((((((((■|■)){■}|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1385   |  5     ((((((((■|■)){■}|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1386   |  5     ((((((((■|■)){■}|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1387   |  5     ((((((((■|■)){■}|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1388   |  5     ((((((((■■|■)){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1389   |  5     (((((((((■|■)|■)){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1390   |  5     (((((((((■){■}|■)){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1391   |  5     ((((((((■|■)){■}|■■)a)a)((\n|.))*)b)b)bfail dot
+  1392   |  5     ((((((((■|■)){■}|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1393   |  5     ((((((((■|■)){■}|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1394   |  5     ((((((((■){■}){■}|■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1395   |  5     ((((((((■){■}){■}|■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1396   |  5     ((((((((■){■}){■}|■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1397   |  5     ((((((((■){■}){■}|■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1398   |  5     ((((((((■){■}){■}|■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1399   |  5     ((((((((■){■}){■}|■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1400   |  5     ((((((((■){■}){■}|■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1401   |  5     ((((((((■){■}){■}|■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1402   |  5     ((((((((■■){■}){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1403   |  5     (((((((((■|■)){■}){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1404   |  5     (((((((((■){■}){■}){■}|■)a)a)((\n|.))*)b)b)bfail dot
+  1405   |  5     ((((((((■){■}){■}|■■)a)a)((\n|.))*)b)b)bfail dot
+  1406   |  5     ((((((((■){■}){■}|(■|■))a)a)((\n|.))*)b)b)bfail dot
+  1407   |  5     ((((((((■){■}){■}|(■){■})a)a)((\n|.))*)b)b)bfail dot
+  1408   |  5     (((((((■){■}|■■)■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1409   |  5     (((((((■){■}|■■)a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1410   |  5     (((((((■){■}|■■)a)a)((■|.))*)b)b)bfail dotstar or empty
+  1411   |  5     (((((((■){■}|■■)a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1412   |  5     (((((((■){■}|■■)a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1413   |  5     (((((((■){■}|■■)a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1414   |  5     (((((((■){■}|■■)a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1415   |  5     (((((((■){■}|■■)a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1416   |  5     (((((((■){■}|(■|■))■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1417   |  5     (((((((■){■}|(■|■))a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1418   |  5     (((((((■){■}|(■|■))a)a)((■|.))*)b)b)bfail dotstar or empty
+  1419   |  5     (((((((■){■}|(■|■))a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1420   |  5     (((((((■){■}|(■|■))a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1421   |  5     (((((((■){■}|(■|■))a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1422   |  5     (((((((■){■}|(■|■))a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1423   |  5     (((((((■){■}|(■|■))a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1424   |  5     (((((((■){■}|(■){■})■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1425   |  5     (((((((■){■}|(■){■})a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1426   |  5     (((((((■){■}|(■){■})a)a)((■|.))*)b)b)bfail dotstar or empty
+  1427   |  5     (((((((■){■}|(■){■})a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1428   |  5     (((((((■){■}|(■){■})a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1429   |  5     (((((((■){■}|(■){■})a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1430   |  5     (((((((■){■}|(■){■})a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1431   |  5     (((((((■){■}|(■){■})a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1432   |  5     ((((((■){■}■)■)((■|.))*)b)b)bfail dotstar or empty
+  1433   |  5     ((((((■){■}■)■)((\n|■))*)b)b)bfail dotstar or empty
+  1434   |  5     ((((((■){■}■)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1435   |  5     ((((((■){■}■)■)((\n|.))*)■)b)bfail dotstar or empty
+  1436   |  5     ((((((■){■}■)■)((\n|.))*)b)■)bfail dotstar or empty
+  1437   |  5     ((((((■){■}■)■)((\n|.))*)b)b)■fail dotstar or empty
+  1438   |  5     ((((((■){■}■)a)((■|■))*)b)b)bfail dotstar or empty
+  1439   |  5     ((((((■){■}■)a)((■|.)){■})b)b)bfail dotstar or empty
+  1440   |  5     ((((((■){■}■)a)((■|.))*)■)b)bfail dotstar or empty
+  1441   |  5     ((((((■){■}■)a)((■|.))*)b)■)bfail dotstar or empty
+  1442   |  5     ((((((■){■}■)a)((■|.))*)b)b)■fail dotstar or empty
+  1443   |  5     ((((((■){■}■)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1444   |  5     ((((((■){■}■)a)((\n|■))*)■)b)bfail dotstar or empty
+  1445   |  5     ((((((■){■}■)a)((\n|■))*)b)■)bfail dotstar or empty
+  1446   |  5     ((((((■){■}■)a)((\n|■))*)b)b)■fail dotstar or empty
+  1447   |  5     ((((((■){■}■)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1448   |  5     ((((((■){■}■)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1449   |  5     ((((((■){■}■)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1450   |  5     ((((((■){■}■)a)■)b)b)b  fail dotstar or empty
+  1451   |  5     ((((((■){■}■)a)((\n|.))*)■)■)bfail dotstar or empty
+  1452   |  5     ((((((■){■}■)a)((\n|.))*)■)b)■fail dotstar or empty
+  1453   |  5     ((((((■){■}■)a)((\n|.))*)b)■)■fail dotstar or empty
+  1454   |  5     ((((((■){■}a)■)((■|■))*)b)b)bfail dotstar or empty
+  1455   |  5     ((((((■){■}a)■)((■|.)){■})b)b)bfail dotstar or empty
+  1456   |  5     ((((((■){■}a)■)((■|.))*)■)b)bfail dotstar or empty
+  1457   |  5     ((((((■){■}a)■)((■|.))*)b)■)bfail dotstar or empty
+  1458   |  5     ((((((■){■}a)■)((■|.))*)b)b)■fail dotstar or empty
+  1459   |  5     ((((((■){■}a)■)((\n|■)){■})b)b)bfail dotstar or empty
+  1460   |  5     ((((((■){■}a)■)((\n|■))*)■)b)bfail dotstar or empty
+  1461   |  5     ((((((■){■}a)■)((\n|■))*)b)■)bfail dotstar or empty
+  1462   |  5     ((((((■){■}a)■)((\n|■))*)b)b)■fail dotstar or empty
+  1463   |  5     ((((((■){■}a)■)((\n|.)){■})■)b)bfail dotstar or empty
+  1464   |  5     ((((((■){■}a)■)((\n|.)){■})b)■)bfail dotstar or empty
+  1465   |  5     ((((((■){■}a)■)((\n|.)){■})b)b)■fail dotstar or empty
+  1466   |  5     ((((((■){■}a)■)■)b)b)b  fail dotstar or empty
+  1467   |  5     ((((((■){■}a)■)((\n|.))*)■)■)bfail dotstar or empty
+  1468   |  5     ((((((■){■}a)■)((\n|.))*)■)b)■fail dotstar or empty
+  1469   |  5     ((((((■){■}a)■)((\n|.))*)b)■)■fail dotstar or empty
+  1470   |  5     ((((((■){■}a)a)((■|■)){■})b)b)bfail dotstar or empty
+  1471   |  5     ((((((■){■}a)a)((■|■))*)■)b)bfail dotstar or empty
+  1472   |  5     ((((((■){■}a)a)((■|■))*)b)■)bfail dotstar or empty
+  1473   |  5     ((((((■){■}a)a)((■|■))*)b)b)■fail dotstar or empty
+  1474   |  5     ((((((■){■}a)a)(■)*)b)b)bfail dotstar or empty
+  1475   |  5     ((((((■){■}a)a)((■|.)){■})■)b)bfail dotstar or empty
+  1476   |  5     ((((((■){■}a)a)((■|.)){■})b)■)bfail dotstar or empty
+  1477   |  5     ((((((■){■}a)a)((■|.)){■})b)b)■fail dotstar or empty
+  1478   |  5     ((((((■){■}a)a)((■|.))*)■)■)bfail dotstar or empty
+  1479   |  5     ((((((■){■}a)a)((■|.))*)■)b)■fail dotstar or empty
+  1480   |  5     ((((((■){■}a)a)((■|.))*)b)■)■fail dotstar or empty
+  1481   |  5     ((((((■){■}a)a)((\n|■)){■})■)b)bfail dotstar or empty
+  1482   |  5     ((((((■){■}a)a)((\n|■)){■})b)■)bfail dotstar or empty
+  1483   |  5     ((((((■){■}a)a)((\n|■)){■})b)b)■fail dotstar or empty
+  1484   |  5     ((((((■){■}a)a)((\n|■))*)■)■)bfail dotstar or empty
+  1485   |  5     ((((((■){■}a)a)((\n|■))*)■)b)■fail dotstar or empty
+  1486   |  5     ((((((■){■}a)a)((\n|■))*)b)■)■fail dotstar or empty
+  1487   |  5     ((((((■){■}a)a)((\n|.)){■})■)■)bfail dotstar or empty
+  1488   |  5     ((((((■){■}a)a)((\n|.)){■})■)b)■fail dotstar or empty
+  1489   |  5     ((((((■){■}a)a)■)■)b)b  fail dotstar or empty
+  1490   |  5     ((((((■){■}a)a)((\n|.)){■})b)■)■fail dotstar or empty
+  1491   |  5     ((((((■){■}a)a)■)b)■)b  fail dotstar or empty
+  1492   |  5     ((((((■){■}a)a)■)b)b)■  fail dotstar or empty
+  1493   |  5     ((((((■){■}a)a)((\n|.))*)■)■)■fail dotstar or empty
+  1494   |  5     ((((((■■){■}■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1495   |  5     ((((((■■){■}■)a)((■|.))*)b)b)bfail dotstar or empty
+  1496   |  5     ((((((■■){■}■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1497   |  5     ((((((■■){■}■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1498   |  5     ((((((■■){■}■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1499   |  5     ((((((■■){■}■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1500   |  5     ((((((■■){■}■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1501   |  5     ((((((■■){■}a)■)((■|.))*)b)b)bfail dotstar or empty
+  1502   |  5     ((((((■■){■}a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1503   |  5     ((((((■■){■}a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1504   |  5     ((((((■■){■}a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1505   |  5     ((((((■■){■}a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1506   |  5     ((((((■■){■}a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1507   |  5     ((((((■■){■}a)a)((■|■))*)b)b)bfail dotstar or empty
+  1508   |  5     ((((((■■){■}a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1509   |  5     ((((((■■){■}a)a)((■|.))*)■)b)bfail dotstar or empty
+  1510   |  5     ((((((■■){■}a)a)((■|.))*)b)■)bfail dotstar or empty
+  1511   |  5     ((((((■■){■}a)a)((■|.))*)b)b)■fail dotstar or empty
+  1512   |  5     ((((((■■){■}a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1513   |  5     ((((((■■){■}a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1514   |  5     ((((((■■){■}a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1515   |  5     ((((((■■){■}a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1516   |  5     ((((((■■){■}a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1517   |  5     ((((((■■){■}a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1518   |  5     ((((((■■){■}a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1519   |  5     ((((((■■){■}a)a)■)b)b)b fail dotstar or empty
+  1520   |  5     ((((((■■){■}a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1521   |  5     ((((((■■){■}a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1522   |  5     ((((((■■){■}a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1523   |  5     (((((((■■)■){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1524   |  5     (((((((■■)■){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1525   |  5     (((((((■■)■){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1526   |  5     (((((((■■)■){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1527   |  5     (((((((■■)■){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1528   |  5     (((((((■■)■){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1529   |  5     (((((((■■)■){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1530   |  5     (((((((■■)■){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1531   |  5     (((((((■)■){■}a)a)((\n|.))*)b)b)bfail dotstar or empty
+  1532   |  5     ((((((((■■)■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1533   |  5     ((((((((■|■)■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1534   |  5     ((((((((■){■}■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1535   |  5     (((((((■■)(■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1536   |  5     (((((((■■)(■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1537   |  5     (((((((■■)(■){■}){■}a)a)((\n|.))*)b)b)bfail dot
+  1538   |  5     (((((((■|■)■){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1539   |  5     (((((((■|■)■){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1540   |  5     (((((((■|■)■){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1541   |  5     (((((((■|■)■){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1542   |  5     (((((((■|■)■){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1543   |  5     (((((((■|■)■){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1544   |  5     (((((((■|■)■){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1545   |  5     (((((((■|■)■){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1546   |  5     (((((((■■|■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1547   |  5     ((((((((■|■)|■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1548   |  5     ((((((((■){■}|■)■){■}a)a)((\n|.))*)b)b)bfail dot
+  1549   |  5     (((((((■|■)(■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1550   |  5     (((((((■|■)(■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1551   |  5     (((((((■|■)(■){■}){■}a)a)((\n|.))*)b)b)bfail dot
+  1552   |  5     (((((((■){■}■){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1553   |  5     (((((((■){■}■){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1554   |  5     (((((((■){■}■){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1555   |  5     (((((((■){■}■){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1556   |  5     (((((((■){■}■){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1557   |  5     (((((((■){■}■){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1558   |  5     (((((((■){■}■){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1559   |  5     (((((((■){■}■){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1560   |  5     (((((((■■){■}■){■}a)a)((\n|.))*)b)b)bfail dot
+  1561   |  5     ((((((((■|■)){■}■){■}a)a)((\n|.))*)b)b)bfail dot
+  1562   |  5     ((((((((■){■}){■}■){■}a)a)((\n|.))*)b)b)bfail dot
+  1563   |  5     (((((((■){■}(■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1564   |  5     (((((((■){■}(■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1565   |  5     (((((((■){■}(■){■}){■}a)a)((\n|.))*)b)b)bfail dot
+  1566   |  5     (((((((■|■)){■}■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1567   |  5     (((((((■|■)){■}■)a)((■|.))*)b)b)bfail dotstar or empty
+  1568   |  5     (((((((■|■)){■}■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1569   |  5     (((((((■|■)){■}■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1570   |  5     (((((((■|■)){■}■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1571   |  5     (((((((■|■)){■}■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1572   |  5     (((((((■|■)){■}■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1573   |  5     (((((((■|■)){■}a)■)((■|.))*)b)b)bfail dotstar or empty
+  1574   |  5     (((((((■|■)){■}a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1575   |  5     (((((((■|■)){■}a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1576   |  5     (((((((■|■)){■}a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1577   |  5     (((((((■|■)){■}a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1578   |  5     (((((((■|■)){■}a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1579   |  5     (((((((■|■)){■}a)a)((■|■))*)b)b)bfail dotstar or empty
+  1580   |  5     (((((((■|■)){■}a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1581   |  5     (((((((■|■)){■}a)a)((■|.))*)■)b)bfail dotstar or empty
+  1582   |  5     (((((((■|■)){■}a)a)((■|.))*)b)■)bfail dotstar or empty
+  1583   |  5     (((((((■|■)){■}a)a)((■|.))*)b)b)■fail dotstar or empty
+  1584   |  5     (((((((■|■)){■}a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1585   |  5     (((((((■|■)){■}a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1586   |  5     (((((((■|■)){■}a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1587   |  5     (((((((■|■)){■}a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1588   |  5     (((((((■|■)){■}a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1589   |  5     (((((((■|■)){■}a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1590   |  5     (((((((■|■)){■}a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1591   |  5     (((((((■|■)){■}a)a)■)b)b)bfail dotstar or empty
+  1592   |  5     (((((((■|■)){■}a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1593   |  5     (((((((■|■)){■}a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1594   |  5     (((((((■|■)){■}a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1595   |  5     (((((((■■|■)){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1596   |  5     (((((((■■|■)){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1597   |  5     (((((((■■|■)){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1598   |  5     (((((((■■|■)){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1599   |  5     (((((((■■|■)){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1600   |  5     (((((((■■|■)){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1601   |  5     (((((((■■|■)){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1602   |  5     (((((((■■|■)){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1603   |  5     ((((((((■■)■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1604   |  5     ((((((((■|■)■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1605   |  5     ((((((((■){■}■|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1606   |  5     (((((((■■|■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1607   |  5     (((((((■■|(■|■))){■}a)a)((\n|.))*)b)b)bfail dot
+  1608   |  5     (((((((■■|(■){■})){■}a)a)((\n|.))*)b)b)bfail dot
+  1609   |  5     ((((((((■|■)|■)){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1610   |  5     ((((((((■|■)|■)){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1611   |  5     ((((((((■|■)|■)){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1612   |  5     ((((((((■|■)|■)){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1613   |  5     ((((((((■|■)|■)){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1614   |  5     ((((((((■|■)|■)){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1615   |  5     ((((((((■|■)|■)){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1616   |  5     ((((((((■|■)|■)){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1617   |  5     ((((((((■■|■)|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1618   |  5     (((((((((■|■)|■)|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1619   |  5     (((((((((■){■}|■)|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1620   |  5     ((((((((■|■)|■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1621   |  5     ((((((((■|■)|(■|■))){■}a)a)((\n|.))*)b)b)bfail dot
+  1622   |  5     ((((((((■|■)|(■){■})){■}a)a)((\n|.))*)b)b)bfail dot
+  1623   |  5     ((((((((■){■}|■)){■}■)a)((\n|.))*)b)b)bfail dotstar or empty
+  1624   |  5     ((((((((■){■}|■)){■}a)■)((\n|.))*)b)b)bfail dotstar or empty
+  1625   |  5     ((((((((■){■}|■)){■}a)a)((■|.))*)b)b)bfail dotstar or empty
+  1626   |  5     ((((((((■){■}|■)){■}a)a)((\n|■))*)b)b)bfail dotstar or empty
+  1627   |  5     ((((((((■){■}|■)){■}a)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1628   |  5     ((((((((■){■}|■)){■}a)a)((\n|.))*)■)b)bfail dotstar or empty
+  1629   |  5     ((((((((■){■}|■)){■}a)a)((\n|.))*)b)■)bfail dotstar or empty
+  1630   |  5     ((((((((■){■}|■)){■}a)a)((\n|.))*)b)b)■fail dotstar or empty
+  1631   |  5     ((((((((■■){■}|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1632   |  5     (((((((((■|■)){■}|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1633   |  5     (((((((((■){■}){■}|■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1634   |  5     ((((((((■){■}|■■)){■}a)a)((\n|.))*)b)b)bfail dot
+  1635   |  5     ((((((((■){■}|(■|■))){■}a)a)((\n|.))*)b)b)bfail dot
+  1636   |  5     ((((((((■){■}|(■){■})){■}a)a)((\n|.))*)b)b)bfail dot
+  1637   |  5     (((((((■){■}){■}■)■)((\n|.))*)b)b)bfail dotstar or empty
+  1638   |  5     (((((((■){■}){■}■)a)((■|.))*)b)b)bfail dotstar or empty
+  1639   |  5     (((((((■){■}){■}■)a)((\n|■))*)b)b)bfail dotstar or empty
+  1640   |  5     (((((((■){■}){■}■)a)((\n|.)){■})b)b)bfail dotstar or empty
+  1641   |  5     (((((((■){■}){■}■)a)((\n|.))*)■)b)bfail dotstar or empty
+  1642   |  5     (((((((■){■}){■}■)a)((\n|.))*)b)■)bfail dotstar or empty
+  1643   |  5     (((((((■){■}){■}■)a)((\n|.))*)b)b)■fail dotstar or empty
+  1644   |  5     (((((((■){■}){■}a)■)((■|.))*)b)b)bfail dotstar or empty
+  1645   |  5     (((((((■){■}){■}a)■)((\n|■))*)b)b)bfail dotstar or empty
+  1646   |  5     (((((((■){■}){■}a)■)((\n|.)){■})b)b)bfail dotstar or empty
+  1647   |  5     (((((((■){■}){■}a)■)((\n|.))*)■)b)bfail dotstar or empty
+  1648   |  5     (((((((■){■}){■}a)■)((\n|.))*)b)■)bfail dotstar or empty
+  1649   |  5     (((((((■){■}){■}a)■)((\n|.))*)b)b)■fail dotstar or empty
+  1650   |  5     (((((((■){■}){■}a)a)((■|■))*)b)b)bfail dotstar or empty
+  1651   |  5     (((((((■){■}){■}a)a)((■|.)){■})b)b)bfail dotstar or empty
+  1652   |  5     (((((((■){■}){■}a)a)((■|.))*)■)b)bfail dotstar or empty
+  1653   |  5     (((((((■){■}){■}a)a)((■|.))*)b)■)bfail dotstar or empty
+  1654   |  5     (((((((■){■}){■}a)a)((■|.))*)b)b)■fail dotstar or empty
+  1655   |  5     (((((((■){■}){■}a)a)((\n|■)){■})b)b)bfail dotstar or empty
+  1656   |  5     (((((((■){■}){■}a)a)((\n|■))*)■)b)bfail dotstar or empty
+  1657   |  5     (((((((■){■}){■}a)a)((\n|■))*)b)■)bfail dotstar or empty
+  1658   |  5     (((((((■){■}){■}a)a)((\n|■))*)b)b)■fail dotstar or empty
+  1659   |  5     (((((((■){■}){■}a)a)((\n|.)){■})■)b)bfail dotstar or empty
+  1660   |  5     (((((((■){■}){■}a)a)((\n|.)){■})b)■)bfail dotstar or empty
+  1661   |  5     (((((((■){■}){■}a)a)((\n|.)){■})b)b)■fail dotstar or empty
+  1662   |  5     (((((((■){■}){■}a)a)■)b)b)bfail dotstar or empty
+  1663   |  5     (((((((■){■}){■}a)a)((\n|.))*)■)■)bfail dotstar or empty
+  1664   |  5     (((((((■){■}){■}a)a)((\n|.))*)■)b)■fail dotstar or empty
+  1665   |  5     (((((((■){■}){■}a)a)((\n|.))*)b)■)■fail dotstar or empty
+  1666   |  5     (((((((■■){■}){■}■)a)((\n|.))*)b)b)b
+20.02677822113037
 timeout

@@ -16,7 +16,7 @@ col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
 bm_range    =   range(0,1000)
-timeout     =   2
+timeout     =   20
 delim       =   'Æ'
 
 
@@ -156,9 +156,11 @@ def collect_results():
 
 def run_tests():
     files = glob.glob(output_dir+"*")
+    iter = 0
     for file in files:
+        iter += 1
         bench_name = file.replace(output_dir,'')
-        print ('benchmark: '+ bench_name)
+        print (str(iter)+': benchmark '+ bench_name)
         result_file = results_dir + bench_name + '.res'
         with open(result_file, 'w', encoding='utf-8') as rf:
             if cegis:

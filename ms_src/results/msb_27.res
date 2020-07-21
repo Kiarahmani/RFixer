@@ -59,16 +59,16 @@ get a solution: ([aeio](([aeuio])*[aeuio]){0})[aeuio]
 add positive: ua
 get a solution: ([aeuio](([aeuio])*[aeuio]){0})[aeuio]
   ([aeuio](([aeuio])*[aeuio]){0})[aeuio]
-template: (■(([aeuio])*[aeuio]){■})■ size: 4 holes: 4 time: 1.126935ms
-longest: #mn#(■(([aeuio])*[aeuio]){■})■#mn# size: #ms#4#ms# holes: #mh#4#mh# time: #mt#1.126935#mt#ms
+template: (■(([aeuio])*[aeuio]){■})■ size: 4 holes: 4 time: 0.67264ms
+longest: #mn#(■(([aeuio])*[aeuio]){■})■#mn# size: #ms#4#ms# holes: #mh#4#mh# time: #mt#0.67264#mt#ms
 
 Computed in:
 
-  #c#350#c#ms
+  #c#303#c#ms
 
 timeSATSolver time:
 
-  #s#7#s#ms
+  #s#8#s#ms
 
 cost:
 
@@ -91,5 +91,5 @@ last template: #t#(■(([aeuio])*[aeuio]){■})■#t#
 solution is #sol#([aeuio](([aeuio])*[aeuio]){0})[aeuio]#sol#
 before exit
 
-0.797095775604248
+0.6600191593170166
 success

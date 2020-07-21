@@ -24,5 +24,5 @@ Exception in thread "main" java.lang.NullPointerException
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.4605519771575928
+0.4717280864715576
 error
