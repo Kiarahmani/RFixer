@@ -1,5 +1,7 @@
-[A-Z]{4}[0-9]{2}
-^(?![A-Z]{4}[0-9]{2}$).*
+([A-Z0-9])(?!)+
+([A-Z][0-9])+
 +++
-Regular expression - how to negate
+A2
+D1B2C4Q3
+A1Q3
 ---

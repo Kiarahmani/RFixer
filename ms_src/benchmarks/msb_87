@@ -1,7 +1,5 @@
-views/
-(views/[^./]*)
+(\\w*)\\2{3,}(\\w*)
+(.)\1{2}
 +++
-views/register
-views/' upto the next '
-views/register'  something like:
+sss
 ---

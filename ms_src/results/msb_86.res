@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  (\d){4}
+  ((\d){9})
 
 That that should match the strings:
 
-  ✓ (0:7)    1/2,4/6
+  ✓ (0:10)   4901773349
 
 And reject the strings:
 
@@ -14,36 +14,16 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■){4}                  fail dot
-  2      |  1     (\d){■}                 fail dotstar or empty
-  3      |  2     (■){■}                  get a solution: ([1246,/]){1,7}
-add positive: 0/0,0/0
-add negative: ,
-get a solution: ([1246,/0]){2,7}
-add positive: 3/0,0/0
-add negative: 0,
-get a solution: ([12346,/0]){3,7}
-add positive: 0/0,0/5
-add negative: 0/,
-get a solution: ([123456,/0]){4,7}
-add positive: 7/0,0/0
-add negative: ,,,,
-get a solution: ([1234567,/0]){5,7}
-add positive: 0/0,0/8
-add negative: ,,,,,
-get a solution: ([12345678,/0]){6,7}
-add positive: 9/0,0/0
-add negative: ,,,,,,
-get a solution: ([,/0123456789]){7}
-add positive: 00/0,0/0
-add negative: ,,,,,,,
-  unsatisfiable SAT formula       
-  4      |  2     ■                       fail dot
-  5      |  2     (■■){4}                 fail dot
-  6      |  2     ((■|■)){4}              fail dot
-  7      |  2     ((■){■}){4}               unsatisfiable SAT formula       
-  8      |  3     (■■){■}                 fail dot
-  9      |  3     ((■|■)){■}              fail solve
-  10     |  3     ((■){■}){■}             
-1.0147809982299805
-timeout
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at edu.wisc.regfixer.automata.Automaton.predicateFromMetaChar(Automaton.java:1066)
+	at edu.wisc.regfixer.automata.Automaton.charEscapedToAutomaton(Automaton.java:1043)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:884)
+	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
+	at edu.wisc.regfixer.automata.Automaton.<init>(Automaton.java:64)
+	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
+
+0.44452404975891113
+error

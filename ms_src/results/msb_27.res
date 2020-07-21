@@ -1,4 +1,4 @@
-1:3 ***ERROR*** Syntax error
+1:12 ***ERROR*** Syntax error
 Couldn't repair and continue parse
 Exception in thread "main" java.lang.RuntimeException: malformed regular expression
 	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
@@ -6,5 +6,5 @@ Exception in thread "main" java.lang.RuntimeException: malformed regular express
 	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.27533435821533203
+0.27142810821533203
 error

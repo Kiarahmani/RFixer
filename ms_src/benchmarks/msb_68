@@ -1,5 +1,7 @@
-[\\w][\\w\\,\\s\\w]
-(\S)+, (\S)+
+(\d{6}|\d{7}|\d{8})
+[A-Za-z][A-Za-z\d]{1,3}\s\d[A-Za-z]{2}
 +++
-lastname, firstname
+CH11 2ab
+b6 7ba
+BH6 5BG
 ---

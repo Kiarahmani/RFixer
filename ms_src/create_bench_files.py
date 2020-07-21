@@ -15,8 +15,9 @@ results_dir =   'ms_src/results/'
 col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
+incluide_negatives = False
 bm_range    =   range(0,1000)
-timeout     =   1
+timeout     =   10
 delim       =   'Æ'
 
 
@@ -89,9 +90,10 @@ def create_bench():
                 of.write ("\n")
             of.write("---")
             of.write("\n")
-            for example in ast.literal_eval(negatives):
-                of.write (example)
-                of.write ("\n")
+            if incluide_negatives:
+                for example in ast.literal_eval(negatives):
+                    of.write (example)
+                    of.write ("\n")
         iter += 1
 
 

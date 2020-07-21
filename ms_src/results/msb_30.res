@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  ([\.%+0-9a-z_])+@([0-9a-z])+(\.([a-z]){2,10}){1,2}$
+  (\d)+.(\d){0,2}
 
 That that should match the strings:
 
-  ✓ (0:10)   aa@aaa.com
+  ✓ (0:2)    10
 
 And reject the strings:
 
@@ -14,7 +14,6 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
 
-0.42458319664001465
-error
+0.4075617790222168
+success

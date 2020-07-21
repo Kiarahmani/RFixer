@@ -1,15 +1,13 @@
 
 Given the regular expression:
 
-  ([a-zA-Z])*
+  (\s)*(\d){8}(\s)*(\+)*(,(\s)*(\d){8}(,)*)?
 
 That that should match the strings:
 
-  ✓ (0:37)   but with spaces allowed between words
-  ✓ (37:51)  t allow spaces
-  ✓ (51:90)  can i change it to make it allow spaces
-  ✓ (90:129) i have tried the following but it doesn
-  ✓ (129:135) t work
+  ✓ (0:29)   12345678 , 12345678 ,12345678
+  ✓ (29:55)  12345678,12345678,12345678
+  ✓ (55:74)  12345678 , 12345678
 
 And reject the strings:
 
@@ -18,49 +16,76 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)*                    get a solution: ([abcdefghiklmnoprstuvw ])*
-add positive: A
-get a solution: ([Aabcdefghiklmnoprstuvw ])*
-add positive: B
-get a solution: ([abcdefghiklmnoprstuvwAB ])*
-add positive: C
-get a solution: ([abcdefghiklmnoprstuvwABC ])*
-add positive: D
-get a solution: ([abcdefghiklmnoprstuvwABCD ])*
-add positive: E
-get a solution: ([abcdefghiklmnoprstuvwABCDE ])*
-add positive: F
-get a solution: ([abcdefghiklmnoprstuvwABCDEF ])*
-add positive: G
-get a solution: ([abcdefghiklmnoprstuvwABCDEFG ])*
-add positive: H
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGH ])*
-add positive: I
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHI ])*
-add positive: J
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJ ])*
-add positive: K
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJK ])*
-add positive: L
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKL ])*
-add positive: M
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLM ])*
-add positive: N
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMN ])*
-add positive: O
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNO ])*
-add positive: P
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOP ])*
-add positive: Q
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQ ])*
-add positive: R
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQR ])*
-add positive: S
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRS ])*
-add positive: T
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRST ])*
-add positive: U
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTU ])*
-
-1.013242244720459
+  1      |  1     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?get a solution: (((([12345678, ])*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?
+add positive: 
+add negative: 100000000
+  2      |  1     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  3      |  1     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  4      |  1     ((((\s)*(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  5      |  1     ((((\s)*(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  6      |  1     ((((\s)*(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  7      |  1     ((((\s)*(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  8      |  1     ((((\s)*(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  9      |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  10     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dotstar or empty
+  11     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dotstar or empty
+  12     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dotstar or empty
+  13     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dotstar or empty
+  14     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dotstar or empty
+  15     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dotstar or empty
+  16     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dotstar or empty
+  17     |  2     ((((■){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  18     |  2     ((((■)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  19     |  2     ((((■)*(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?get a solution: (((([12345678, ])*(\d){0})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?
+add positive: 00000000
+add negative:  
+  unsatisfiable SAT formula       
+  20     |  2     ((((■)*(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  21     |  2     ((((■)*(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  22     |  2     ((((■)*(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  23     |  2     ((((■)*(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  24     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  25     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dotstar or empty
+  26     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dotstar or empty
+  27     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dotstar or empty
+  28     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dotstar or empty
+  29     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dotstar or empty
+  30     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dotstar or empty
+  31     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dotstar or empty
+  32     |  2     ((((■■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  33     |  2     (((((■|■))*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail solve
+  34     |  2     (((((■){■})*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  35     |  2     ((((\s){■}(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  36     |  2     ((((\s){■}(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  37     |  2     ((((\s){■}(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  38     |  2     ((((\s){■}(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  39     |  2     ((((\s){■}(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  40     |  2     ((((\s){■}(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  41     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  42     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dotstar or empty
+  43     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dotstar or empty
+  44     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dotstar or empty
+  45     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dotstar or empty
+  46     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dotstar or empty
+  47     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dotstar or empty
+  48     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dotstar or empty
+  49     |  2     (((■(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
+  50     |  2     ((((\s)*(■){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?  unsatisfiable SAT formula       
+  51     |  2     ((((\s)*(■){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  52     |  2     ((((\s)*(■){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  53     |  2     ((((\s)*(■){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  54     |  2     ((((\s)*(■){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dot
+  55     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dot
+  56     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dot
+  57     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dot
+  58     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dot
+  59     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dot
+  60     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dot
+  61     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dot
+  62     |  2     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dot
+  63     |  2     ((((\s)*■)(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  64     |  2     ((((\s)*(■■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  65     |  2     ((((\s)*((■|■)){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
+  66     |  2     ((((\s)*((■){■}){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?
+10.030773878097534
 timeout

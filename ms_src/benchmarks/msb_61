@@ -1,9 +1,7 @@
-[a-zA-Z]*
-[a-zA-Z ]*
+\s*\d{8}\s*\+*(,\s*\d{8},*)?
+(\s*\d{8}\s*[+,]?\s*)*
 +++
-but with spaces allowed between words
-t allow spaces
-can i change it to make it allow spaces
-i have tried the following but it doesn
-t work
+12345678 , 12345678 ,12345678
+12345678,12345678,12345678
+12345678 , 12345678
 ---

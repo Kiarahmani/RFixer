@@ -1,5 +1,7 @@
-(\d+)?(\W*)(\[|\()(.*)
-\d{4} - [(\[]?[\w\s]*\]?
+([aieou]*[aieou]){2,}
+([aeiou]{2})
 +++
-6130 - Office Configuration
+oe
+oi
+io
 ---

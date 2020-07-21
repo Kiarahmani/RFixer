@@ -1,5 +1,5 @@
-\S*\s\{.*?\}\S[^{\s]*
-\w+\s+\{\w+\}\s+\w+
+(\d+)?(\W*)(\[|\()(.*)
+\d{4} - [(\[]?[\w\s]*\]?
 +++
-word {word} word
+6130 - Office Configuration
 ---

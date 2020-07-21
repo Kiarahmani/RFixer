@@ -1,61 +1,61 @@
 
 Given the regular expression:
 
-  [^\-\s].{8,20}
+  (s)*(n)*(o)*(w)*
 
 That that should match the strings:
 
-  ✓ (0:8)    avail...
-  ✓ (8:16)   allowed.
-  ✓ (16:24)  password
+  ✓ (0:4)    snow
+  ✓ (4:15)   ssssnnnowww
 
 And reject the strings:
 
-  ✗ (24:44)  t no spaces allowed.
-  ✗ (44:64)  I'm trying to create
-  ✗ (64:85)  for a password field.
-  ✗ (85:105) a Regular Expression
-  ✗ (105:126) 8 - 20 characters, bu
-  ✗ (126:146) The requirements are
-  ✗ (146:167) I've tried  to no ava
 
 Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ((((((■.){)8),)2)0)}    Exception in thread "main" java.util.regex.PatternSyntaxException: Illegal repetition near index 10
-^((((((.*.){)8),)2)0)}$
-          ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.closure(Pattern.java:3157)
-	at java.util.regex.Pattern.group0(Pattern.java:2912)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at edu.wisc.regfixer.enumerate.Enumerant.toPattern(Enumerant.java:129)
-	at edu.wisc.regfixer.enumerate.Corpus.passesDotStarTest(Corpus.java:94)
-	at edu.wisc.regfixer.enumerate.Enumerants.resolveTests(Enumerants.java:214)
-	at edu.wisc.regfixer.enumerate.Enumerants.next(Enumerants.java:113)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:99)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
-
-0.5865788459777832
-error
+  1      |  1     (((■)*(n)*)(o)*)(w)*    get a solution: (((s)*(n)*)(o)*)(w)*
+add negative: 
+  2      |  1     (((s){■}(n)*)(o)*)(w)*  get a solution: (((s){1,4}(n)*)(o)*)(w)*
+add positive: sssssnow
+add negative: s
+  unsatisfiable SAT formula       
+  3      |  1     (((s)*(■)*)(o)*)(w)*    fail dotstar or empty
+  4      |  1     (((s)*(n){■})(o)*)(w)*  get a solution: (((s)*(n){1,3})(o)*)(w)*
+add positive: snnnnow
+add negative: n
+  unsatisfiable SAT formula       
+  5      |  1     (((s)*(n)*)(■)*)(w)*    fail dotstar or empty
+  6      |  1     (((s)*(n)*)(o){■})(w)*  get a solution: (((s)*(n)*)(o){1})(w)*
+add positive: snoow
+add negative: o
+  unsatisfiable SAT formula       
+  7      |  1     (((s)*(n)*)(o)*)(■)*    fail dotstar or empty
+  8      |  1     (((s)*(n)*)(o)*)(w){■}  get a solution: (((s)*(n)*)(o)*)(w){1,3}
+add positive: snowwww
+add negative: w
+  unsatisfiable SAT formula       
+  9      |  2     (((■){■}(n)*)(o)*)(w)*  get a solution: ((([swn]){2,5}(n)*)(o)*)(w)*
+add positive: ssssssnow
+add negative: sw
+get a solution: ((([swno]){3,11}(n)*)(o)*)(w)*
+add positive: ssssssssssssnow
+add negative: son
+get a solution: ((([swno]){4,15}(n)*)(o)*)(w)*
+add positive: ssssssssssssssssnow
+add negative: sonn
+get a solution: ((([sn]){2,16}(n)*)(o)*)(w)*
+add positive: sssssssssssssssssnow
+add negative: nn
+  unsatisfiable SAT formula       
+  10     |  2     (((■)*(■)*)(o)*)(w)*    fail dotstar or empty
+  11     |  2     (((■)*(n){■})(o)*)(w)*    unsatisfiable SAT formula       
+  12     |  2     (((■)*(n)*)(■)*)(w)*    fail dotstar or empty
+  13     |  2     (((■)*(n)*)(o){■})(w)*    unsatisfiable SAT formula       
+  14     |  2     (((■)*(n)*)(o)*)(■)*    fail dotstar or empty
+  15     |  2     (((■)*(n)*)(o)*)(w){■}    unsatisfiable SAT formula       
+  16     |  2     (((■■)*(n)*)(o)*)(w)*     17     |  2     ((((■|■))*(n)*)(o)*)(w)*fail solve
+  18     |  2     ((((■){■})*(n)*)(o)*)(w)*
+10.033081293106079
+timeout

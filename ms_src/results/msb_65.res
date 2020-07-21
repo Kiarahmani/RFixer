@@ -1,13 +1,11 @@
 
 Given the regular expression:
 
-  (\s)*(\d){8}(\s)*(\+)*(,(\s)*(\d){8}(,)*)?
+  ([A-Z])+(["#(),a-zA-Z\.\t;0-9_ ])+[\.]$
 
 That that should match the strings:
 
-  ✓ (0:29)   12345678 , 12345678 ,12345678
-  ✓ (29:55)  12345678,12345678,12345678
-  ✓ (55:74)  12345678 , 12345678
+  ✓ (0:24)   theres a little problem.
 
 And reject the strings:
 
@@ -16,52 +14,7 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?get a solution: (((([12345678, ])*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?
-add positive: 
-add negative: 100000000
-  2      |  1     ((((\s){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  3      |  1     ((((\s)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
-  4      |  1     ((((\s)*(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  5      |  1     ((((\s)*(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  6      |  1     ((((\s)*(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  7      |  1     ((((\s)*(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  8      |  1     ((((\s)*(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  9      |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  10     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dotstar or empty
-  11     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dotstar or empty
-  12     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dotstar or empty
-  13     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dotstar or empty
-  14     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dotstar or empty
-  15     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dotstar or empty
-  16     |  1     ((((\s)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dotstar or empty
-  17     |  2     ((((■){■}(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  18     |  2     ((((■)*(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
-  19     |  2     ((((■)*(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?get a solution: (((([12345678, ])*(\d){0})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?
-add positive: 00000000
-add negative:  
-  unsatisfiable SAT formula       
-  20     |  2     ((((■)*(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  21     |  2     ((((■)*(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  22     |  2     ((((■)*(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  23     |  2     ((((■)*(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  24     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  25     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(■)*)(\d){8})(,)*)?fail dotstar or empty
-  26     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s){■})(\d){8})(,)*)?fail dotstar or empty
-  27     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(■){8})(,)*)?fail dotstar or empty
-  28     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){■})(,)*)?fail dotstar or empty
-  29     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(■)*)?fail dotstar or empty
-  30     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,){■})?fail dotstar or empty
-  31     |  2     ((((■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*){■}fail dotstar or empty
-  32     |  2     ((((■■)*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
-  33     |  2     (((((■|■))*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail solve
-  34     |  2     (((((■){■})*(\d){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
-  35     |  2     ((((\s){■}(■){8})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dot
-  36     |  2     ((((\s){■}(\d){■})(\s)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  37     |  2     ((((\s){■}(\d){8})(■)*)(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  38     |  2     ((((\s){■}(\d){8})(\s){■})(\+)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  39     |  2     ((((\s){■}(\d){8})(\s)*)(■)*)(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  40     |  2     ((((\s){■}(\d){8})(\s)*)(\+){■})(((,(\s)*)(\d){8})(,)*)?fail dotstar or empty
-  41     |  2     ((((\s){■}(\d){8})(\s)*)(\+)*)(((■(\s)*)(\d){8})(,)*)?fail dotstar or empty
+Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
 
-1.0113530158996582
-timeout
+0.393444299697876
+error

@@ -1,7 +1,6 @@
-([aieou]*[aieou]){2,}
-([aeiou]{2})
+^(the|of) | (the|of)$| (of|the)
+\b(of|the)\b
 +++
-oe
-oi
-io
+of
+the
 ---

@@ -1,5 +1,5 @@
-(UAD){3}[*0-9a-zA-Z]{4}[*0-9a-zA-Z]{4}
-REF-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}
+([A-z]+)[0-1]+.png
+([a-zA-Z]+)[0-9].png
 +++
-REF-12AB-1A3B
+main2.png
 ---

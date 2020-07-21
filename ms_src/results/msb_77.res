@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  ([A-Z]([a-z])*((\\s[a-zA-Z])?([a-z])*)*)
+  (\d){5,6}(\|)?((\d){5,6})?
 
 That that should match the strings:
 
-  ✓ (0:7)    To Make
+  ✓ (0:18)   34786|235652|12876
 
 And reject the strings:
 
@@ -14,20 +14,28 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-Exception in thread "main" java.lang.UnsupportedOperationException
-	at edu.wisc.regfixer.automata.Automaton.predicateFromMetaChar(Automaton.java:1066)
-	at edu.wisc.regfixer.automata.Automaton.charEscapedToAutomaton(Automaton.java:1043)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:884)
-	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
-	at edu.wisc.regfixer.automata.Automaton.plusToAutomaton(Automaton.java:1001)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:880)
-	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
-	at edu.wisc.regfixer.automata.Automaton.<init>(Automaton.java:64)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
-
-0.43494224548339844
-error
+  1      |  1     ((■){5,6}(\|)?)((\d){5,6})?fail dot
+  2      |  1     ((\d){■}(\|)?)((\d){5,6})?fail dotstar or empty
+  3      |  1     ((\d){5,6}(■)?)((\d){5,6})?fail dot
+  4      |  1     ((\d){5,6}(\|){■})((\d){5,6})?fail dotstar or empty
+  5      |  1     ((\d){5,6}(\|)?)((■){5,6})?fail dot
+  6      |  1     ((\d){5,6}(\|)?)((\d){■})?fail dotstar or empty
+  7      |  1     ((\d){5,6}(\|)?)((\d){5,6}){■}fail dotstar or empty
+  8      |  2     ((■){■}(\|)?)((\d){5,6})?get a solution: (([12345678|]){14,18}(\|)?)((\d){5,6})?
+add positive: 10000
+add negative: 1|111111111111
+get a solution: (([2345678|0]){0,18}(\|)?)((\d){5,6})?
+add positive: 10000|00000
+add negative: 
+  unsatisfiable SAT formula       
+  9      |  2     ((■){5,6}(■)?)((\d){5,6})?fail dot
+  10     |  2     ((■){5,6}(\|){■})((\d){5,6})?fail dot
+  11     |  2     ((■){5,6}(\|)?)((■){5,6})?fail dot
+  12     |  2     ((■){5,6}(\|)?)((\d){■})?fail dot
+  13     |  2     ((■){5,6}(\|)?)((\d){5,6}){■}fail dot
+  14     |  2     (■(\|)?)((\d){5,6})?    fail dot
+  15     |  2     ((■■){5,6}(\|)?)((\d){5,6})?fail dot
+  16     |  2     (((■|■)){5,6}(\|)?)((\d){5,6})?fail dot
+  17     |  2     (((■){■}){5,6}(\|)?)((\d){5,6})?
+10.023350954055786
+timeout

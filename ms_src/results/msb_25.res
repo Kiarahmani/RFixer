@@ -1,37 +1,10 @@
-
-Given the regular expression:
-
-  ([0-9])*(\,)?([asce::[]p])?(([ÂcCdDhHkKmMnNµ]m|m)|dam)([0-9])*
-
-That that should match the strings:
-
-  ✓ (0:4)    1,26
-  ✓ (4:9)    100cm
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-Exception in thread "main" java.util.regex.PatternSyntaxException: Unclosed character class near index 61
-([0-9])*(\,)?([asce::[]p])?(([ÂcCdDhHkKmMnNµ]m|m)|dam)([0-9])*
-                                                             ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.clazz(Pattern.java:2548)
-	at java.util.regex.Pattern.sequence(Pattern.java:2063)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at edu.wisc.regfixer.enumerate.Corpus.getMatches(Corpus.java:122)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:76)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
+1:3 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.487213134765625
+0.259354829788208
 error

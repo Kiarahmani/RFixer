@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  ([A-Z])+(["#(),a-zA-Z\.\t;0-9_ ])+[\.]$
+  ([0-9]){4}
 
 That that should match the strings:
 
-  ✓ (0:24)   theres a little problem.
+  ✓ (0:7)    . 1900.
 
 And reject the strings:
 
@@ -16,5 +16,5 @@ Search through possible transformations:
 ---------|--------------------------------------------------------------------
 Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
 
-0.4021439552307129
+0.3944079875946045
 error

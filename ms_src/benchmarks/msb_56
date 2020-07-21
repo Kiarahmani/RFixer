@@ -1,7 +1,4 @@
-$[I-VI].[1-99].[1-99].[1-99]
-\$(I|II|III|IV|V|VI)(\.[0-9]{1,2})+
+\[Total execution Time: (.+) min
+Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
 +++
-$II.4.13
-$V.23.38.1.23
-$IV.1.1.1.1.1
 ---

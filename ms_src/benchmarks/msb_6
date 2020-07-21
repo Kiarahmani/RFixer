@@ -1,7 +1,5 @@
-1. (www\.)?(domain)(\.)(com) 2. (www\.)?([a-z]+)(\.)(domain)(\.)(com)
-(((www\.)([a-z]+))|(?!(www\.))([a-z]+))(\.)(domain)(\.)(com)
+[A-Za-z0-9]{1,30}\.[a-z]{3}((\.)[a-z]{2})?
+([A-Za-z0-9]{1,30}\.)+[a-z]{3}((\.)[a-z]{2})?
 +++
-www.user.domain.com
-ww.domain.com
+abc.abc.com.ae
 ---
-www.domain.com

@@ -1,5 +1,5 @@
-\d+.\d{0,2}
-\d+\.?\d{0,2}
+[a-z0-9]*@metu\.edu
+[a-z0-9]+[.]?[a-z0-9]+@metu\.edu
 +++
-10
+herp.derp@metu.edu
 ---

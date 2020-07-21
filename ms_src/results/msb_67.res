@@ -1,15 +1,13 @@
 
 Given the regular expression:
 
-  (\d)+(\,\.(\d)+)?
+  [^\-\s].{8,20}
 
 That that should match the strings:
 
-  ✓ (0:5)    23.45
-  ✓ (5:10)   1,156
-  ✓ (10:13)  1.1
-  ✓ (13:17)  1.24
-  ✓ (17:23)  12,523
+  ✓ (0:8)    avail...
+  ✓ (8:16)   allowed.
+  ✓ (16:24)  password
 
 And reject the strings:
 
@@ -18,61 +16,39 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)+((\,\.)(\d)+)?      get a solution: ([12\.3456,])+((\,\.)(\d)+)?
-add positive: 0
-add negative: ,
-  unsatisfiable SAT formula       
-  2      |  1     (\d){■}((\,\.)(\d)+)?   fail dotstar or empty
-  3      |  1     (\d)+((■\.)(\d)+)?      fail dotstar or empty
-  4      |  1     (\d)+((\,■)(\d)+)?      fail dotstar or empty
-  5      |  1     (\d)+((\,\.)(■)+)?      fail dotstar or empty
-  6      |  1     (\d)+((\,\.)(\d){■})?   fail dotstar or empty
-  7      |  1     (\d)+((\,\.)(\d)+){■}   fail dotstar or empty
-  8      |  2     (■){■}((\,\.)(\d)+)?      unsatisfiable SAT formula       
-  9      |  2     (■)+((■\.)(\d)+)?         unsatisfiable SAT formula       
-  10     |  2     (■)+((\,■)(\d)+)?       get a solution: ([12\.3450])+((\,[15])(\d)+)?
-add positive: 6
-add negative: .
-  unsatisfiable SAT formula       
-  11     |  2     (■)+((\,\.)(■)+)?         unsatisfiable SAT formula       
-  12     |  2     (■)+((\,\.)(\d){■})?      unsatisfiable SAT formula       
-  13     |  2     (■)+((\,\.)(\d)+){■}      unsatisfiable SAT formula       
-  14     |  2     (■■)+((\,\.)(\d)+)?     fail dot
-  15     |  2     ((■|■))+((\,\.)(\d)+)?  fail solve
-  16     |  2     ((■){■})+((\,\.)(\d)+)?   unsatisfiable SAT formula       
-  17     |  2     (\d){■}((■\.)(\d)+)?    fail dotstar or empty
-  18     |  2     (\d){■}((\,■)(\d)+)?    fail dotstar or empty
-  19     |  2     (\d){■}((\,\.)(■)+)?    fail dotstar or empty
-  20     |  2     (\d){■}((\,\.)(\d){■})? fail dotstar or empty
-  21     |  2     (\d){■}((\,\.)(\d)+){■} fail dotstar or empty
-  22     |  2     ■((\,\.)(\d)+)?         fail dot
-  23     |  2     (\d)+((■■)(\d)+)?       fail dot
-  24     |  2     (\d)+((■\.)(■)+)?       fail dotstar or empty
-  25     |  2     (\d)+((■\.)(\d){■})?    fail dotstar or empty
-  26     |  2     (\d)+((■\.)(\d)+){■}    fail dotstar or empty
-  27     |  2     (\d)+((\,■)(■)+)?       fail dotstar or empty
-  28     |  2     (\d)+((\,■)(\d){■})?    fail dotstar or empty
-  29     |  2     (\d)+((\,■)(\d)+){■}    fail dotstar or empty
-  30     |  2     (\d)+((\,\.)(■){■})?    fail dotstar or empty
-  31     |  2     (\d)+((\,\.)(■)+){■}    fail dotstar or empty
-  32     |  2     (\d)+((\,\.)(\d){■}){■} fail dotstar or empty
-  33     |  2     (\d)+((\,\.)■)?         fail dotstar or empty
-  34     |  2     (\d)+■                  fail dot
-  35     |  3     (■){■}((■\.)(\d)+)?       unsatisfiable SAT formula       
-  36     |  3     (■){■}((\,■)(\d)+)?       unsatisfiable SAT formula       
-  37     |  3     (■){■}((\,\.)(■)+)?       unsatisfiable SAT formula       
-  38     |  3     (■){■}((\,\.)(\d){■})?    unsatisfiable SAT formula       
-  39     |  3     (■){■}((\,\.)(\d)+){■}    unsatisfiable SAT formula       
-  40     |  3     (■■){■}((\,\.)(\d)+)?   fail dot
-  41     |  3     ((■|■)){■}((\,\.)(\d)+)?fail solve
-  42     |  3     ((■){■}){■}((\,\.)(\d)+)?  unsatisfiable SAT formula       
-  43     |  3     (■)+((■■)(\d)+)?          unsatisfiable SAT formula       
-  44     |  3     (■)+((■\.)(■)+)?          unsatisfiable SAT formula       
-  45     |  3     (■)+((■\.)(\d){■})?       unsatisfiable SAT formula       
-  46     |  3     (■)+((■\.)(\d)+){■}       unsatisfiable SAT formula       
-  47     |  3     (■■)+((■\.)(\d)+)?      fail dot
-  48     |  3     ((■|■))+((■\.)(\d)+)?   fail solve
-  49     |  3     ((■){■})+((■\.)(\d)+)?    unsatisfiable SAT formula       
-  50     |  3     (■)+(((■■)\.)(\d)+)?    
-1.013240098953247
-timeout
+  1      |  1     ((((((■.){)8),)2)0)}    Exception in thread "main" java.util.regex.PatternSyntaxException: Illegal repetition near index 10
+^((((((.*.){)8),)2)0)}$
+          ^
+	at java.util.regex.Pattern.error(Pattern.java:1955)
+	at java.util.regex.Pattern.closure(Pattern.java:3157)
+	at java.util.regex.Pattern.group0(Pattern.java:2912)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.group0(Pattern.java:2905)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.group0(Pattern.java:2905)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.group0(Pattern.java:2905)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.group0(Pattern.java:2905)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.group0(Pattern.java:2905)
+	at java.util.regex.Pattern.sequence(Pattern.java:2051)
+	at java.util.regex.Pattern.expr(Pattern.java:1996)
+	at java.util.regex.Pattern.compile(Pattern.java:1696)
+	at java.util.regex.Pattern.<init>(Pattern.java:1351)
+	at java.util.regex.Pattern.compile(Pattern.java:1028)
+	at edu.wisc.regfixer.enumerate.Enumerant.toPattern(Enumerant.java:129)
+	at edu.wisc.regfixer.enumerate.Corpus.passesDotStarTest(Corpus.java:94)
+	at edu.wisc.regfixer.enumerate.Enumerants.resolveTests(Enumerants.java:214)
+	at edu.wisc.regfixer.enumerate.Enumerants.next(Enumerants.java:113)
+	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:99)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
+
+0.46468400955200195
+error

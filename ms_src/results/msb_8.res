@@ -1,20 +1,10 @@
+1:6 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ([0-9a-zA-Z]){1,30}\.([a-z]){3}((\.)([a-z]){2})?
-
-That that should match the strings:
-
-  ✓ (0:14)   abc.abc.com.ae
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-  1      |  1     (((■){1,30}\.)([a-z]){3})(\.([a-z]){2})?get a solution: ((([ab\.c]){1,30}\.)([a-z]){3})(\.([a-z]){2})?
-
-1.0233440399169922
-timeout
+0.2979099750518799
+error

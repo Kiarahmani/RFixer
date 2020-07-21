@@ -1,11 +1,15 @@
 
 Given the regular expression:
 
-  [1-50]
+  ([A-Z]){2}
 
 That that should match the strings:
 
-  ✓ (0:2)    06
+  ✓ (0:5)    HeLlo
+  ✓ (5:10)   Hello
+  ✓ (10:15)  HELLo
+  ✓ (15:20)  HELLO
+  ✓ (20:25)  heLLO
 
 And reject the strings:
 
@@ -14,85 +18,68 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ■                       fail dot
-  2      |  2     ■■                      get a solution: 06
-add positive: 1
-  3      |  2     (■|■)                   fail dot
-  4      |  2     (■){■}                  get a solution: ([160]){1,2}
-add positive: 2
-add negative: 0
+  1      |  1     (■){2}                  fail dot
+  2      |  1     ([A-Z]){■}              fail dotstar or empty
+  3      |  2     (■){■}                  get a solution: ([EeHhLlOo]){1,5}
+add positive: AA
+add negative: E
+get a solution: ([AEeHhLlOo]){2,5}
+add positive: AB
+add negative: ee
   unsatisfiable SAT formula       
-  5      |  3     (■■)■                   fail dot
-  6      |  3     (■|■)■                  fail solve
-  7      |  3     (■){■}■                 get a solution: (0){0,1}[126]
-add positive: 3
-get a solution: (0){0,1}[1236]
-add positive: 4
-get a solution: (0){0,1}[12346]
-add positive: 5
-get a solution: (0){0,1}[123456]
-add positive: 7
-get a solution: (0){0,1}[1234567]
-add positive: 8
-get a solution: (0){0,1}[12345678]
-add positive: 9
-get a solution: (0){0,1}[123456789]
-add positive: 10
+  4      |  2     ■                       fail dot
+  5      |  2     (■■){2}                 fail dot
+  6      |  2     ((■|■)){2}              fail dot
+  7      |  2     ((■){■}){2}               unsatisfiable SAT formula       
+  8      |  3     (■■){■}                 fail dot
+  9      |  3     ((■|■)){■}              fail solve
+  10     |  3     ((■){■}){■}               unsatisfiable SAT formula       
+  11     |  3     ■■                      fail dot
+  12     |  3     (■|■)                   fail dot
+  13     |  3     ((■■)■){2}              fail dot
+  14     |  3     ((■|■)■){2}             fail dot
+  15     |  3     ((■){■}■){2}            get a solution: (([EeHLl]){0,3}[ABEHhloO]){2}
+add positive: LA
+add negative: Ah
+get a solution: (([EeHhLl]){0,3}[ABEHLloO]){2}
+add positive: EC
+add negative: lA
+get a solution: (([EeHhLl]){0,3}[ABCEHLoO]){2}
+add positive: AD
+add negative: Ao
   unsatisfiable SAT formula       
-  8      |  3     (■■|■)                  get a solution: ([10][60]|[12345789])
-add positive: 6
-add negative: 00
+  16     |  3     ((■■|■)){2}             fail dot
+  17     |  3     (((■|■)|■)){2}          fail dot
+  18     |  3     (((■){■}|■)){2}         get a solution: ((([EehLlOo]){2,4}|[ABCDEHL])){2}
+add positive: AF
+add negative: eeA
+get a solution: ((([EehHlLOo]){3,4}|[ABCDEFHLO])){2}
+add positive: AG
+add negative: eeeA
+get a solution: ((([EehHlLOo]){4}|[ABCDEFGHLO])){2}
+add positive: EI
+add negative: eeeeA
   unsatisfiable SAT formula       
-  9      |  3     ((■|■)|■)               fail dot
-  10     |  3     ((■){■}|■)                unsatisfiable SAT formula       
-  11     |  3     (■■){■}                 fail dot
-  12     |  3     ((■|■)){■}              fail solve
-  13     |  3     ((■){■}){■}               unsatisfiable SAT formula       
-  14     |  4     (■)■                    fail dot
-  15     |  4     ((■■)■)■                fail dot
-  16     |  4     ((■|■)■)■               fail dot
-  17     |  4     ((■){■}■)■              fail dot
-  18     |  4     (■■)(■■)                fail dot
-  19     |  4     (■■)(■|■)               fail dot
-  20     |  4     (■■)(■){■}              fail dot
-  21     |  4     (■■|■)■                 fail dot
-  22     |  4     ((■|■)|■)■              fail solve
-  23     |  4     ((■){■}|■)■               unsatisfiable SAT formula       
-  24     |  4     (■|■)(■■)               fail dot
-  25     |  4     (■|■)(■|■)              fail solve
-  26     |  4     (■|■)(■){■}               unsatisfiable SAT formula       
-  27     |  4     (■■){■}■                fail dot
-  28     |  4     ((■|■)){■}■             fail solve
-  29     |  4     ((■){■}){■}■              unsatisfiable SAT formula       
-  30     |  4     (■){■}(■■)              fail dot
-  31     |  4     (■){■}(■|■)             fail solve
-  32     |  4     (■){■}(■){■}              unsatisfiable SAT formula       
-  33     |  4     ((■■)■|■)               fail dot
-  34     |  4     ((■|■)■|■)              fail solve
-  35     |  4     ((■){■}■|■)               unsatisfiable SAT formula       
-  36     |  4     (■■|■■)                 fail dot
-  37     |  4     (■■|(■|■))              fail solve
-  38     |  4     (■■|(■){■})               unsatisfiable SAT formula       
-  39     |  4     ((■■|■)|■)                unsatisfiable SAT formula       
-  40     |  4     (((■|■)|■)|■)           fail dot
-  41     |  4     (((■){■}|■)|■)            unsatisfiable SAT formula       
-  42     |  4     ((■|■)|■■)                unsatisfiable SAT formula       
-  43     |  4     ((■|■)|(■|■))           fail dot
-  44     |  4     ((■|■)|(■){■})            unsatisfiable SAT formula       
-  45     |  4     ((■■){■}|■)               unsatisfiable SAT formula       
-  46     |  4     (((■|■)){■}|■)          fail solve
-  47     |  4     (((■){■}){■}|■)           unsatisfiable SAT formula       
-  48     |  4     ((■){■}|■■)               unsatisfiable SAT formula       
-  49     |  4     ((■){■}|(■|■))          fail solve
-  50     |  4     ((■){■}|(■){■})           unsatisfiable SAT formula       
-  51     |  4     ((■■)■){■}              fail dot
-  52     |  4     ((■|■)■){■}             fail dot
-  53     |  4     ((■){■}■){■}              unsatisfiable SAT formula       
-  54     |  4     ((■■|■)){■}               unsatisfiable SAT formula       
-  55     |  4     (((■|■)|■)){■}          fail solve
-  56     |  4     (((■){■}|■)){■}           unsatisfiable SAT formula       
-  57     |  4     ((■■){■}){■}            fail dot
-  58     |  4     (((■|■)){■}){■}         fail solve
-  59     |  4     (((■){■}){■}){■}        
-1.0238711833953857
+  19     |  3     ((■■){■}){2}            fail dot
+  20     |  3     (((■|■)){■}){2}         fail solve
+  21     |  3     (((■){■}){■}){2}          unsatisfiable SAT formula       
+  22     |  4     ((■■)■){■}              fail dot
+  23     |  4     ((■|■)■){■}             fail dot
+  24     |  4     ((■){■}■){■}              unsatisfiable SAT formula       
+  25     |  4     ((■■|■)){■}             get a solution: (([AEeHL][ABCDEFGILlO]|[BCDFGhHIloO])){1,5}
+add positive: BJ
+add negative: B
+get a solution: (([ABEeHL][ABCDEFGIJLlO]|[hHlo])){1,5}
+add positive: HK
+add negative: H
+get a solution: (([ABEHhL][ABCDeEFGIJKLl]|[CDFGIJKloO])){1,4}
+add positive: MA
+add negative: l
+  unsatisfiable SAT formula       
+  26     |  4     (((■|■)|■)){■}          fail solve
+  27     |  4     (((■){■}|■)){■}           unsatisfiable SAT formula       
+  28     |  4     ((■■){■}){■}            fail dot
+  29     |  4     (((■|■)){■}){■}         fail solve
+  30     |  4     (((■){■}){■}){■}        
+10.259140968322754
 timeout
