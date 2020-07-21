@@ -1,4 +1,4 @@
-post url,Q regex,A regex,Q length,A length,distance,distance/avg length,score,# pos examples,# neg examples,postivie examples,negative examples
+post url,Q_regex,A_regex,Q_length,A_length,distance,distance/avg length,score,# pos examples,# neg examples,postivie_examples,negative_examples
 https://stackoverflow.com/questions/8222813,"((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*","((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([, ])*)*",58,57,3,0.026086957,99.87391304,2,0,"['email1@domain.com,  email2@domain.com', 'email1@domain.com,email2@domain.com']",[]
 https://stackoverflow.com/questions/7407099,{[0-9]:[0-9]},{[0-9]+:[0-9]+},13,15,2,0.071428571,99.82857143,2,0,"['{999:999}', '{222:115}']",[]
 https://stackoverflow.com/questions/52113845,([0-9]) (0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d,([0-9]+) (0[1-9]|[12][0-9]|3[01])[ /.-](0[1-9]|1[012])[ /.-](19|20)\d\d,70,71,5,0.035460993,99.66453901,1,0,['1513592758 18/12/2017'],[]
@@ -52,7 +52,7 @@ https://stackoverflow.com/questions/7532700,SELECT * FROM `comments` WHERE detai
 https://stackoverflow.com/questions/21188249,"[A-Z]+[A-Za-z0-9_,""#;.() \t]+[.]$",[A-Z]{1}[^.]*.,33,14,25,0.531914894,99.16808511,1,0,['Any tips how to fix it?'],[]
 https://stackoverflow.com/questions/29287765,"locate --regex ""/<codes """,\/codes(\/|\.|$),25,16,22,0.536585366,99.16341463,1,0,['/codes.'],[]
 https://stackoverflow.com/questions/43718682,iqn\.(\d{4}-\d{2})\.([^:]+),"/iqn\.(\d{4}-\d{2})\.([^:]+)(:)([^,:\s']+)/g",27,44,17,0.23943662,99.16056338,0,3,[],"['iqn.2002-07.com.microsoft', 'iqn.1998-01.com.vmware.iscsi', 'iqn.1991-05.com.microsoft']"
-https://stackoverflow.com/questions/6322606,4.45124E+11,/012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210/,12,65,57,0.74025974,99.15974026,2,0,"['987', '123']",[]
+https://stackoverflow.com/questions/6322606,4.45E+11,/012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210/,12,65,57,0.74025974,99.15974026,2,0,"['987', '123']",[]
 https://stackoverflow.com/questions/45815350,"/* {""orderId"": [""1389104""],""orderItemId"": [""7900094""], } */","orderId: \[""(.+?)""]",59,21,44,0.55,99.15,1,0,"['""orderId"": [""(.+?)""]']",[]
 https://stackoverflow.com/questions/13462081,[User::RootPath],\[[^[\]]*\],16,11,15,0.555555556,99.14444444,1,0,['[a-zA-Z0-9]'],[]
 https://stackoverflow.com/questions/27250347,[0-9]{4},(^|\.)\s*([0-9]{4})\s*(\.|$),8,28,20,0.555555556,99.14444444,1,0,['. 1900.'],[]
