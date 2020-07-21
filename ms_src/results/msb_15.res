@@ -2443,5 +2443,797 @@ Search through possible transformations:
   2425   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)■)l)i)c)k)r).)n)■)tfail dotstar or empty
   2426   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)■)l)i)c)k)r).)n)e)■fail dotstar or empty
   2427   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
-5.084320068359375
+  2428   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  2429   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  2430   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  2431   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  2432   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  2433   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  2434   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  2435   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2436   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2437   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2438   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2439   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2440   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2441   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2442   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2443   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2444   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2445   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2446   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2447   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2448   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2449   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2450   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2451   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2452   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2453   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2454   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2455   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2456   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2457   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2458   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2459   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2460   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2461   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2462   |  4     ((((((((((((((((((■t)t)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2463   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2464   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2465   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2466   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)■)i)c)k)r).)n)e)tfail dot
+  2467   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)■)c)k)r).)n)e)tfail dot
+  2468   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)■)k)r).)n)e)tfail dot
+  2469   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)■)r).)n)e)tfail dot
+  2470   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)■).)n)e)tfail dot
+  2471   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r)■)n)e)tfail dot
+  2472   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)■)e)tfail dot
+  2473   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)■)tfail dot
+  2474   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)■fail dot
+  2475   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2476   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2477   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2478   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■■))■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2479   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■|■))■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2480   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■){■})■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2481   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)(■■))\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2482   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)(■|■))\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2483   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)(■){■})\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2484   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  2485   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  2486   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)■)i)c)k)r).)n)e)tfail dot
+  2487   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)■)c)k)r).)n)e)tfail dot
+  2488   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)■)k)r).)n)e)tfail dot
+  2489   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)■)r).)n)e)tfail dot
+  2490   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)■).)n)e)tfail dot
+  2491   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r)■)n)e)tfail dot
+  2492   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)■)e)tfail dot
+  2493   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)■)tfail dot
+  2494   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)■fail dot
+  2495   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2496   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2497   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2498   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■■))\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2499   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■|■))\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2500   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■){■})\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2501   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)(■■)).)f)l)i)c)k)r).)n)e)tfail dot
+  2502   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)(■|■)).)f)l)i)c)k)r).)n)e)tfail dot
+  2503   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)(■){■}).)f)l)i)c)k)r).)n)e)tfail dot
+  2504   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  2505   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)■)i)c)k)r).)n)e)tfail dot
+  2506   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)■)c)k)r).)n)e)tfail dot
+  2507   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)■)k)r).)n)e)tfail dot
+  2508   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)■)r).)n)e)tfail dot
+  2509   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)■).)n)e)tfail dot
+  2510   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r)■)n)e)tfail dot
+  2511   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)■)e)tfail dot
+  2512   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)■)tfail dot
+  2513   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)■fail dot
+  2514   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2515   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2516   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2517   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■■))\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2518   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■|■))\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2519   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■){■})\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2520   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)(■■))f)l)i)c)k)r).)n)e)tfail dot
+  2521   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)(■|■))f)l)i)c)k)r).)n)e)tfail dot
+  2522   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S)(■){■})f)l)i)c)k)r).)n)e)tfail dot
+  2523   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  2524   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)■)c)k)r).)n)e)tfail dot
+  2525   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)■)k)r).)n)e)tfail dot
+  2526   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)■)r).)n)e)tfail dot
+  2527   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)■).)n)e)tfail dot
+  2528   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r)■)n)e)tfail dot
+  2529   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)■)e)tfail dot
+  2530   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)■)tfail dot
+  2531   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)■fail dot
+  2532   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2533   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2534   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2535   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■■))\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2536   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■|■))\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2537   |  4     ((((((((((((((((((■t)t)p)(s)?):)(■){■})\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2538   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)(■■))l)i)c)k)r).)n)e)tfail dot
+  2539   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)(■|■))l)i)c)k)r).)n)e)tfail dot
+  2540   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)(■){■})l)i)c)k)r).)n)e)tfail dot
+  2541   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  2542   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  2543   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  2544   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  2545   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  2546   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  2547   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  2548   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  2549   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2550   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2551   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2552   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2553   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2554   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2555   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2556   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2557   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2558   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2559   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2560   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2561   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2562   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2563   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2564   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2565   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2566   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2567   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2568   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2569   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2570   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2571   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2572   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2573   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2574   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2575   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2576   |  4     ((((((((((((((((((■t)t)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2577   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  2578   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)■)l)i)c)k)r).)n)e)tfail dot
+  2579   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)■)i)c)k)r).)n)e)tfail dot
+  2580   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)■)c)k)r).)n)e)tfail dot
+  2581   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)■)k)r).)n)e)tfail dot
+  2582   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)■)r).)n)e)tfail dot
+  2583   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)■).)n)e)tfail dot
+  2584   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r)■)n)e)tfail dot
+  2585   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)■)e)tfail dot
+  2586   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)■)tfail dot
+  2587   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)■fail dot
+  2588   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2589   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2590   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2591   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■■))■).)f)l)i)c)k)r).)n)e)tfail dot
+  2592   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■|■))■).)f)l)i)c)k)r).)n)e)tfail dot
+  2593   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■){■})■).)f)l)i)c)k)r).)n)e)tfail dot
+  2594   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)(■■)).)f)l)i)c)k)r).)n)e)tfail dot
+  2595   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)(■|■)).)f)l)i)c)k)r).)n)e)tfail dot
+  2596   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)(■){■}).)f)l)i)c)k)r).)n)e)tfail dot
+  2597   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  2598   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)■)i)c)k)r).)n)e)tfail dot
+  2599   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)■)c)k)r).)n)e)tfail dot
+  2600   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)■)k)r).)n)e)tfail dot
+  2601   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)■)r).)n)e)tfail dot
+  2602   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)■).)n)e)tfail dot
+  2603   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r)■)n)e)tfail dot
+  2604   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)■)e)tfail dot
+  2605   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)■)tfail dot
+  2606   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)■fail dot
+  2607   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2608   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2609   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2610   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■■))\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2611   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■|■))\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2612   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■){■})\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2613   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)(■■))f)l)i)c)k)r).)n)e)tfail dot
+  2614   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)(■|■))f)l)i)c)k)r).)n)e)tfail dot
+  2615   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S)(■){■})f)l)i)c)k)r).)n)e)tfail dot
+  2616   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  2617   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)■)c)k)r).)n)e)tfail dot
+  2618   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)■)k)r).)n)e)tfail dot
+  2619   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)■)r).)n)e)tfail dot
+  2620   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)■).)n)e)tfail dot
+  2621   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r)■)n)e)tfail dot
+  2622   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)■)e)tfail dot
+  2623   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)■)tfail dot
+  2624   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)■fail dot
+  2625   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2626   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2627   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2628   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■■))\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2629   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■|■))\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2630   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)(■){■})\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2631   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)(■■))l)i)c)k)r).)n)e)tfail dot
+  2632   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)(■|■))l)i)c)k)r).)n)e)tfail dot
+  2633   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)(■){■})l)i)c)k)r).)n)e)tfail dot
+  2634   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  2635   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  2636   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  2637   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  2638   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  2639   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  2640   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  2641   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  2642   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2643   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2644   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2645   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2646   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2647   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2648   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2649   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2650   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2651   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2652   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2653   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2654   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2655   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2656   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2657   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2658   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2659   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2660   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2661   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2662   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2663   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2664   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2665   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2666   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2667   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2668   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2669   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2670   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)■)l)i)c)k)r).)n)e)tfail dot
+  2671   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)■)i)c)k)r).)n)e)tfail dot
+  2672   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)■)c)k)r).)n)e)tfail dot
+  2673   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)■)k)r).)n)e)tfail dot
+  2674   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)■)r).)n)e)tfail dot
+  2675   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)■).)n)e)tfail dot
+  2676   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r)■)n)e)tfail dot
+  2677   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)■)e)tfail dot
+  2678   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)■)tfail dot
+  2679   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)■fail dot
+  2680   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  2681   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  2682   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  2683   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■■))■)f)l)i)c)k)r).)n)e)tfail dot
+  2684   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■|■))■)f)l)i)c)k)r).)n)e)tfail dot
+  2685   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■){■})■)f)l)i)c)k)r).)n)e)tfail dot
+  2686   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)(■■))f)l)i)c)k)r).)n)e)tfail dot
+  2687   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)(■|■))f)l)i)c)k)r).)n)e)tfail dot
+  2688   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■)(■){■})f)l)i)c)k)r).)n)e)tfail dot
+  2689   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)■)i)c)k)r).)n)e)tfail dot
+  2690   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)■)c)k)r).)n)e)tfail dot
+  2691   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)■)k)r).)n)e)tfail dot
+  2692   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)■)r).)n)e)tfail dot
+  2693   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)■).)n)e)tfail dot
+  2694   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r)■)n)e)tfail dot
+  2695   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)■)e)tfail dot
+  2696   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)■)tfail dot
+  2697   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)■fail dot
+  2698   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  2699   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  2700   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  2701   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■■)).)■)l)i)c)k)r).)n)e)tfail dot
+  2702   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■|■)).)■)l)i)c)k)r).)n)e)tfail dot
+  2703   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)(■){■}).)■)l)i)c)k)r).)n)e)tfail dot
+  2704   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)(■■))l)i)c)k)r).)n)e)tfail dot
+  2705   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)(■|■))l)i)c)k)r).)n)e)tfail dot
+  2706   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)(■){■})l)i)c)k)r).)n)e)tfail dot
+  2707   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  2708   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  2709   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  2710   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  2711   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  2712   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  2713   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  2714   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  2715   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2716   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2717   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2718   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2719   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2720   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2721   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2722   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2723   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2724   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2725   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2726   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2727   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2728   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2729   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2730   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2731   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2732   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2733   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2734   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2735   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2736   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2737   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2738   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2739   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2740   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2741   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2742   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2743   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)■)i)c)k)r).)n)e)tfail dot
+  2744   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)■)c)k)r).)n)e)tfail dot
+  2745   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)■)k)r).)n)e)tfail dot
+  2746   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)■)r).)n)e)tfail dot
+  2747   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)■).)n)e)tfail dot
+  2748   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r)■)n)e)tfail dot
+  2749   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)■)e)tfail dot
+  2750   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)■)tfail dot
+  2751   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)■fail dot
+  2752   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  2753   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  2754   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  2755   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)(■■))■)l)i)c)k)r).)n)e)tfail dot
+  2756   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)(■|■))■)l)i)c)k)r).)n)e)tfail dot
+  2757   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)(■){■})■)l)i)c)k)r).)n)e)tfail dot
+  2758   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)(■■))l)i)c)k)r).)n)e)tfail dot
+  2759   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)(■|■))l)i)c)k)r).)n)e)tfail dot
+  2760   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)(■){■})l)i)c)k)r).)n)e)tfail dot
+  2761   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  2762   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  2763   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  2764   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  2765   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  2766   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  2767   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  2768   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  2769   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2770   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2771   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2772   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2773   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2774   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2775   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2776   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2777   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2778   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2779   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2780   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2781   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2782   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2783   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2784   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2785   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2786   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2787   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2788   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2789   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2790   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2791   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2792   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2793   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2794   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2795   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2796   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2797   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)■)c)k)r).)n)e)tfail dot
+  2798   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)■)k)r).)n)e)tfail dot
+  2799   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)■)r).)n)e)tfail dot
+  2800   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)■).)n)e)tfail dot
+  2801   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r)■)n)e)tfail dot
+  2802   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)■)e)tfail dot
+  2803   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)■)tfail dot
+  2804   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)■fail dot
+  2805   |  4     (((((((((((((((((((■■)t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  2806   |  4     (((((((((((((((((((■|■)t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  2807   |  4     (((((((((((((((((((■){■}t)t)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  2808   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)(■■))■)i)c)k)r).)n)e)tfail dot
+  2809   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)(■|■))■)i)c)k)r).)n)e)tfail dot
+  2810   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)(■){■})■)i)c)k)r).)n)e)tfail dot
+  2811   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)(■■))i)c)k)r).)n)e)tfail dot
+  2812   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)(■|■))i)c)k)r).)n)e)tfail dot
+  2813   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)(■){■})i)c)k)r).)n)e)tfail dot
+  2814   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)■)k)r).)n)e)tfail dotstar or empty
+  2815   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)■)r).)n)e)tfail dotstar or empty
+  2816   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)k)■).)n)e)tfail dotstar or empty
+  2817   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  2818   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)k)r).)■)e)tfail dotstar or empty
+  2819   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)k)r).)n)■)tfail dotstar or empty
+  2820   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)■)c)k)r).)n)e)■fail dotstar or empty
+  2821   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)■)r).)n)e)tfail dotstar or empty
+  2822   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)k)■).)n)e)tfail dotstar or empty
+  2823   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  2824   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)k)r).)■)e)tfail dotstar or empty
+  2825   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)k)r).)n)■)tfail dotstar or empty
+  2826   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)■)k)r).)n)e)■fail dotstar or empty
+  2827   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)■)■).)n)e)tfail dotstar or empty
+  2828   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  2829   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)■)r).)■)e)tfail dotstar or empty
+  2830   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)■)r).)n)■)tfail dotstar or empty
+  2831   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)■)r).)n)e)■fail dotstar or empty
+  2832   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  2833   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)■).)■)e)tfail dotstar or empty
+  2834   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)■).)n)■)tfail dotstar or empty
+  2835   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)■).)n)e)■fail dotstar or empty
+  2836   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  2837   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  2838   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  2839   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)■)■)tfail dotstar or empty
+  2840   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)■)e)■fail dotstar or empty
+  2841   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)■)■fail dotstar or empty
+  2842   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)■)k)r).)n)e)tfail dotstar or empty
+  2843   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)■)r).)n)e)tfail dotstar or empty
+  2844   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)k)■).)n)e)tfail dotstar or empty
+  2845   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)k)r)■)n)e)tfail dotstar or empty
+  2846   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)k)r).)■)e)tfail dotstar or empty
+  2847   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)k)r).)n)■)tfail dotstar or empty
+  2848   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)■)c)k)r).)n)e)■fail dotstar or empty
+  2849   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)■)r).)n)e)tfail dotstar or empty
+  2850   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)k)■).)n)e)tfail dotstar or empty
+  2851   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)k)r)■)n)e)tfail dotstar or empty
+  2852   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)k)r).)■)e)tfail dotstar or empty
+  2853   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)k)r).)n)■)tfail dotstar or empty
+  2854   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)■)k)r).)n)e)■fail dotstar or empty
+  2855   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)■)■).)n)e)tfail dotstar or empty
+  2856   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)■)r)■)n)e)tfail dotstar or empty
+  2857   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)■)r).)■)e)tfail dotstar or empty
+  2858   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)■)r).)n)■)tfail dotstar or empty
+  2859   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)■)r).)n)e)■fail dotstar or empty
+  2860   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)■)■)n)e)tfail dotstar or empty
+  2861   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)■).)■)e)tfail dotstar or empty
+  2862   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)■).)n)■)tfail dotstar or empty
+  2863   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)■).)n)e)■fail dotstar or empty
+  2864   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r)■)■)e)tfail dotstar or empty
+  2865   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r)■)n)■)tfail dotstar or empty
+  2866   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r)■)n)e)■fail dotstar or empty
+  2867   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)■)■)tfail dotstar or empty
+  2868   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)■)e)■fail dotstar or empty
+  2869   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)■)■fail dotstar or empty
+  2870   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)■)r).)n)e)tfail dotstar or empty
+  2871   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)k)■).)n)e)tfail dotstar or empty
+  2872   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)k)r)■)n)e)tfail dotstar or empty
+  2873   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)k)r).)■)e)tfail dotstar or empty
+  2874   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)k)r).)n)■)tfail dotstar or empty
+  2875   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)■)k)r).)n)e)■fail dotstar or empty
+  2876   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)■)■).)n)e)tfail dotstar or empty
+  2877   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)■)r)■)n)e)tfail dotstar or empty
+  2878   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)■)r).)■)e)tfail dotstar or empty
+  2879   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)■)r).)n)■)tfail dotstar or empty
+  2880   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)■)r).)n)e)■fail dotstar or empty
+  2881   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)■)■)n)e)tfail dotstar or empty
+  2882   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)■).)■)e)tfail dotstar or empty
+  2883   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)■).)n)■)tfail dotstar or empty
+  2884   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)■).)n)e)■fail dotstar or empty
+  2885   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r)■)■)e)tfail dotstar or empty
+  2886   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r)■)n)■)tfail dotstar or empty
+  2887   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r)■)n)e)■fail dotstar or empty
+  2888   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)■)■)tfail dotstar or empty
+  2889   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)■)e)■fail dotstar or empty
+  2890   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)■)■fail dotstar or empty
+  2891   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)■)■).)n)e)tfail dotstar or empty
+  2892   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)■)r)■)n)e)tfail dotstar or empty
+  2893   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)■)r).)■)e)tfail dotstar or empty
+  2894   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)■)r).)n)■)tfail dotstar or empty
+  2895   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)■)r).)n)e)■fail dotstar or empty
+  2896   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)■)■)n)e)tfail dotstar or empty
+  2897   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)■).)■)e)tfail dotstar or empty
+  2898   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)■).)n)■)tfail dotstar or empty
+  2899   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)■).)n)e)■fail dotstar or empty
+  2900   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r)■)■)e)tfail dotstar or empty
+  2901   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r)■)n)■)tfail dotstar or empty
+  2902   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r)■)n)e)■fail dotstar or empty
+  2903   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)■)■)tfail dotstar or empty
+  2904   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)■)e)■fail dotstar or empty
+  2905   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)■)■fail dotstar or empty
+  2906   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)■)■)n)e)tfail dotstar or empty
+  2907   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)■).)■)e)tfail dotstar or empty
+  2908   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)■).)n)■)tfail dotstar or empty
+  2909   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)■).)n)e)■fail dotstar or empty
+  2910   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r)■)■)e)tfail dotstar or empty
+  2911   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r)■)n)■)tfail dotstar or empty
+  2912   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r)■)n)e)■fail dotstar or empty
+  2913   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)■)■)tfail dotstar or empty
+  2914   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)■)e)■fail dotstar or empty
+  2915   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)■)■fail dotstar or empty
+  2916   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■)■)■)e)tfail dotstar or empty
+  2917   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■)■)n)■)tfail dotstar or empty
+  2918   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■)■)n)e)■fail dotstar or empty
+  2919   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)■)■)tfail dotstar or empty
+  2920   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)■)e)■fail dotstar or empty
+  2921   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)■)■fail dotstar or empty
+  2922   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)■)■)tfail dotstar or empty
+  2923   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)■)e)■fail dotstar or empty
+  2924   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)■)■fail dotstar or empty
+  2925   |  4     ((((((((((((((((((■t)t)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)■)■fail dotstar or empty
+  2926   |  4     ((((((((((((((((((h■)■)■)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2927   |  4     ((((((((((((((((((h■)■)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2928   |  4     ((((((((((((((((((h■)■)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2929   |  4     ((((((((((((((((((h■)■)■)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2930   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2931   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2932   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2933   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2934   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  2935   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  2936   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  2937   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  2938   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  2939   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  2940   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  2941   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  2942   |  4     ((((((((((((((((((h■)■)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  2943   |  4     ((((((((((((((((((h■)■)p)(■){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2944   |  4     ((((((((((((((((((h■)■)p)(■)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2945   |  4     ((((((((((((((((((h■)■)p)(■)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2946   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2947   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2948   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2949   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2950   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  2951   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  2952   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  2953   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  2954   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  2955   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  2956   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  2957   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  2958   |  4     ((((((((((((((((((h■)■)p)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  2959   |  4     ((((((((((((((((((h■)■)p)(s){■})■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2960   |  4     ((((((((((((((((((h■)■)p)(s){■}):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2961   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2962   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2963   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2964   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2965   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  2966   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  2967   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  2968   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  2969   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  2970   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  2971   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  2972   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  2973   |  4     ((((((((((((((((((h■)■)p)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  2974   |  4     ((((((((((((((((((h■)■)p)■):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2975   |  4     ((((((((((((((((((h■)■)p)(s)?)■)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2976   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2977   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2978   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2979   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  2980   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  2981   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  2982   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  2983   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  2984   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  2985   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  2986   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  2987   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  2988   |  4     ((((((((((((((((((h■)■)p)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  2989   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  2990   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  2991   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  2992   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  2993   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  2994   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  2995   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  2996   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  2997   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  2998   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  2999   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3000   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3001   |  4     ((((((((((((((((((h■)■)p)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3002   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  3003   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  3004   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  3005   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3006   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3007   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3008   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3009   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3010   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3011   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3012   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3013   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3014   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  3015   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  3016   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3017   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3018   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3019   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3020   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3021   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3022   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3023   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3024   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3025   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  3026   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3027   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3028   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3029   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3030   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3031   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3032   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3033   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3034   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3035   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  3036   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3037   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3038   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3039   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3040   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3041   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3042   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3043   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3044   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  3045   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  3046   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  3047   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  3048   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  3049   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  3050   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  3051   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  3052   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  3053   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  3054   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  3055   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  3056   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  3057   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  3058   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  3059   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  3060   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  3061   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  3062   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  3063   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  3064   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  3065   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  3066   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  3067   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  3068   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  3069   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  3070   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  3071   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  3072   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  3073   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  3074   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  3075   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  3076   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  3077   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  3078   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  3079   |  4     ((((((((((((((((((h■)■)p)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  3080   |  4     ((((((((((((((((((h■)t)■)(■){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3081   |  4     ((((((((((((((((((h■)t)■)(■)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3082   |  4     ((((((((((((((((((h■)t)■)(■)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3083   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3084   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3085   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3086   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3087   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3088   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3089   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3090   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3091   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3092   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3093   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3094   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3095   |  4     ((((((((((((((((((h■)t)■)(■)?):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3096   |  4     ((((((((((((((((((h■)t)■)(s){■})■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3097   |  4     ((((((((((((((((((h■)t)■)(s){■}):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3098   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3099   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3100   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3101   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3102   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3103   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3104   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3105   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3106   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3107   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3108   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3109   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3110   |  4     ((((((((((((((((((h■)t)■)(s){■}):)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3111   |  4     ((((((((((((((((((h■)t)■)■):)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3112   |  4     ((((((((((((((((((h■)t)■)(s)?)■)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3113   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)■)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3114   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)■).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3115   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3116   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)■)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3117   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3118   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3119   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3120   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3121   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3122   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3123   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3124   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3125   |  4     ((((((((((((((((((h■)t)■)(s)?)■)\/)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3126   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)■)\S).)f)l)i)c)k)r).)n)e)tfail dot
+  3127   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)■).)f)l)i)c)k)r).)n)e)tfail dot
+  3128   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  3129   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  3130   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3131   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3132   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3133   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3134   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3135   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3136   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3137   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3138   |  4     ((((((((((((((((((h■)t)■)(s)?):)■)\/)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3139   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)■).)f)l)i)c)k)r).)n)e)tfail dot
+  3140   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S)■)f)l)i)c)k)r).)n)e)tfail dot
+  3141   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)■)l)i)c)k)r).)n)e)tfail dot
+  3142   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3143   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3144   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3145   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3146   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3147   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3148   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3149   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3150   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)■)\S).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3151   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■)■)f)l)i)c)k)r).)n)e)tfail dot
+  3152   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)■)l)i)c)k)r).)n)e)tfail dot
+  3153   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3154   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3155   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3156   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3157   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3158   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3159   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3160   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3161   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)■).)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3162   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)■)l)i)c)k)r).)n)e)tfail dot
+  3163   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)■)i)c)k)r).)n)e)tfail dotstar or empty
+  3164   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3165   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3166   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3167   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3168   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3169   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3170   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3171   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S)■)f)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3172   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)■)i)c)k)r).)n)e)tfail dot
+  3173   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)■)c)k)r).)n)e)tfail dotstar or empty
+  3174   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)■)k)r).)n)e)tfail dotstar or empty
+  3175   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)■)r).)n)e)tfail dotstar or empty
+  3176   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)■).)n)e)tfail dotstar or empty
+  3177   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r)■)n)e)tfail dotstar or empty
+  3178   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)■)e)tfail dotstar or empty
+  3179   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)■)tfail dotstar or empty
+  3180   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)■)l)i)c)k)r).)n)e)■fail dotstar or empty
+  3181   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)■)c)k)r).)n)e)tfail dotstar or empty
+  3182   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)■)k)r).)n)e)tfail dotstar or empty
+  3183   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)■)r).)n)e)tfail dotstar or empty
+  3184   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)■).)n)e)tfail dotstar or empty
+  3185   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r)■)n)e)tfail dotstar or empty
+  3186   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)■)e)tfail dotstar or empty
+  3187   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)■)tfail dotstar or empty
+  3188   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)■)i)c)k)r).)n)e)■fail dotstar or empty
+  3189   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)■)k)r).)n)e)tfail dotstar or empty
+  3190   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)■)r).)n)e)tfail dotstar or empty
+  3191   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)■).)n)e)tfail dotstar or empty
+  3192   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r)■)n)e)tfail dotstar or empty
+  3193   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)■)e)tfail dotstar or empty
+  3194   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)■)tfail dotstar or empty
+  3195   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)■)c)k)r).)n)e)■fail dotstar or empty
+  3196   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)■)r).)n)e)tfail dotstar or empty
+  3197   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)■).)n)e)tfail dotstar or empty
+  3198   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r)■)n)e)tfail dotstar or empty
+  3199   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)■)e)tfail dotstar or empty
+  3200   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)■)tfail dotstar or empty
+  3201   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)■)k)r).)n)e)■fail dotstar or empty
+  3202   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)■).)n)e)tfail dotstar or empty
+  3203   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r)■)n)e)tfail dotstar or empty
+  3204   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)■)e)tfail dotstar or empty
+  3205   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)■)tfail dotstar or empty
+  3206   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)■)r).)n)e)■fail dotstar or empty
+  3207   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■)■)n)e)tfail dotstar or empty
+  3208   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)■)e)tfail dotstar or empty
+  3209   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)■)tfail dotstar or empty
+  3210   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)■).)n)e)■fail dotstar or empty
+  3211   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)■)e)tfail dotstar or empty
+  3212   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)■)tfail dotstar or empty
+  3213   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r)■)n)e)■fail dotstar or empty
+  3214   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)■)tfail dotstar or empty
+  3215   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)■)e)■fail dotstar or empty
+  3216   |  4     ((((((((((((((((((h■)t)■)(s)?):)\/)\/)\S).)f)l)i)c)k)r).)n)■)■fail dotstar or empty
+  3217   |  4     ((((((((((((((((((h■)t)p)(■){■})■)\/)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3218   |  4     ((((((((((((((((((h■)t)p)(■){■}):)■)\/)\S).)f)l)i)c)k)r).)n)e)tfail dotstar or empty
+  3219   |  4     ((((((((((((((((((h■)t)p)(■){■}):)\/)■)\S).)f)l)i)c)k)r).)n)e)t
+5.059242010116577
 timeout

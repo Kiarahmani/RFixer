@@ -157,5 +157,5 @@ add negative: REF0-----****
   114    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})(■){■}fail dotstar or empty
   115    |  3     (((UA)D){3}([*0-9a-zA-Z]){■})■fail dotstar or empty
   116    |  4     (((■■)■){■}([*0-9a-zA-Z]){4})([*0-9a-zA-Z]){4}
-5.027181625366211
+5.016072034835815
 timeout

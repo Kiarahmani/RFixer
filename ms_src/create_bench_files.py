@@ -17,7 +17,7 @@ file_prefix =   'msb'
 cegis       =   True
 incluide_negatives = True
 bm_range    =   range(0,1000)
-timeout     =   5
+timeout     =   3
 delim       =   'Æ'
 
 
@@ -127,7 +127,7 @@ def parse_result_file (rf):
 
 def collect_results():
     dt = pd.read_csv (input_file, encoding="iso-8859-1")
-    header = "Benchmark"+delim +"Q regex" + delim + "A regex" + delim + "Rfixer" + delim + "additional examples" + delim + "total time"
+    header = "Benchmark"+delim +"Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "additional examples" + delim + "total time"
     iter = 0
     with open(col_res, 'w', encoding='utf-8') as crf:
         crf.write(header+"\n")
@@ -150,7 +150,7 @@ def collect_results():
                 else:
                     regex = rfixer_res
                 print (">> "+regex)
-                crf.write (filename+delim+q_regex+delim+a_regex+delim+regex+delim+str(cegis_cnt)+delim+str(elapsed_time)+"\n")
+                crf.write (filename+delim+q_regex+delim+a_regex+delim+regex+delim+pos_ex+delim+str(cegis_cnt)+delim+str(elapsed_time)+"\n")
             iter += 1
 
 

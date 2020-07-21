@@ -885,5 +885,5 @@ add positive: abbcba
   857    |  4     (((([a]){1}((■■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
   858    |  4     (((([a]){1}(((■|■)){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
   859    |  4     (((([a]){1}(((■){■}){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}
-5.106698036193848
+5.087222099304199
 timeout
