@@ -50,7 +50,7 @@ https://stackoverflow.com/questions/15825714,"\s*\d{8}\s*\+*(,\s*\d{8},*)?","(\s
 https://stackoverflow.com/questions/28159136,11\d{8},[^0-9](11[0-9]{8})[^0-9],7,24,19,0.612903226,99.18709677,1,1,['t1128647953t'],['1128647953']
 https://stackoverflow.com/questions/14691719,"\d+(\,\.\d+)?","\d+([,.]\d+)?",13,13,3,0.115384615,99.18461538,5,0,"['23.45', '1,156', '1.1', '1.24', '12,523']",[]
 https://stackoverflow.com/questions/14361617,"[\\w][\\w\\,\\s\\w]","(\S)+, (\S)+",19,12,16,0.516129032,99.18387097,1,0,"['lastname, firstname']",[]
-https://stackoverflow.com/questions/29378192,"[^-\s].{8,20}","[^-\s]{8,20}",13,12,1,0.04,99.16,3,7,"['avail...', 'allowed.', 'password']",
+https://stackoverflow.com/questions/29378192,"[^-\s].{8,20}","[^-\s]{8,20}",13,12,1,0.04,99.16,3,7,"['avail...', 'allowed.', 'password']",[]
 https://stackoverflow.com/questions/39385326,(\d{6}|\d{7}|\d{8}),"[A-Za-z][A-Za-z\d]{1,3}\s\d[A-Za-z]{2}",19,38,31,0.543859649,99.15614035,3,0,"['CH11 2ab', 'b6 7ba', 'BH6 5BG']",[]
 https://stackoverflow.com/questions/27250347,[0-9]{4},\.\s*([0-9]{4})\s*\.,8,28,20,0.555555556,99.14444444,1,0,['. 1900.'],[]
 https://stackoverflow.com/questions/11851123,s*n*o*w*,s+n+o+w+,48,8,44,0.785714286,99.11428571,2,0,"['snow', 'ssssnnnowww']",['sssooooowwww']
