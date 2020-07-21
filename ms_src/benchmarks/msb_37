@@ -1,7 +1,8 @@
-([aieou]*[aieou]){2,}
-([aeiou]{2})
+abc[!e]
+abc[^e]?
 +++
-oe
-oi
-io
+abcf
+abcd
+abc[
+abc
 ---

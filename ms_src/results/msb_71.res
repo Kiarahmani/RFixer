@@ -1,11 +1,16 @@
 
 Given the regular expression:
 
-  ((\d){9})
+  ([A-Z])+\b['',]\s([A-Z]){1}([a-z])+\b(\s([A-Z]([a-z])+\b))?
 
 That that should match the strings:
 
-  ✓ (0:10)   4901773349
+  ✓ (0:13)   TRUMP, Donald
+  ✓ (13:41)  ZETA-JONES, Catherine (Kate)
+  ✓ (41:53)  BUSH, George
+  ✓ (53:76)  CLINTON, William (Bill)
+  ✓ (76:97)  CARTER, James (Jimmy)
+  ✓ (97:114) SMITH-JONES, John
 
 And reject the strings:
 
@@ -14,58 +19,28 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■){9}                  fail dot
-  2      |  1     (\d){■}                 get a solution: (\d){1,10}
-add negative: 0
-get a solution: (\d){2,10}
-add negative: 00
-get a solution: (\d){3,10}
-add negative: 000
-get a solution: (\d){4,10}
-add negative: 0000
-get a solution: (\d){5,10}
-add negative: 00000
-get a solution: (\d){6,10}
-add negative: 000000
-get a solution: (\d){7,10}
-add negative: 0000000
-get a solution: (\d){8,10}
-add negative: 00000000
-get a solution: (\d){9,10}
-add negative: 000000000
-get a solution: (\d){10}
-  (\d){10}                        
-template: (\d){■} size: 2 holes: 2 time: 1.300791ms
-longest: #mn#(\d){■}#mn# size: #ms#2#ms# holes: #mh#2#mh# time: #mt#1.300791#mt#ms
-
-Computed in:
-
-  #c#244#c#ms
-
-timeSATSolver time:
-
-  #s#13#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  0    (\d){10}
-
-All done
-
-last template: #t#(\d){■}#t#
-#num#2#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#1#t2#
-#t3#0#t3#
-#p#0#p#
-#n#9#n#
-solution is #sol#(\d){10}#sol#
-before exit
-
-0.5134730339050293
-success
+  1      |  1     (((((((■)+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  2      |  1     ((((((([A-Z]){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  3      |  1     ((((((([A-Z])+■)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  4      |  1     ((((((([A-Z])+\b)■)\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  5      |  1     ((((((([A-Z])+\b)['',])■)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  6      |  1     ((((((([A-Z])+\b)['',])\s)(■){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  7      |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){■})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  8      |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})(■)+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  9      |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  10     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  11     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  12     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■([a-z])+)\b))?fail dotstar or empty
+  13     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z](■)+)\b))?fail dotstar or empty
+  14     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z]){■})\b))?fail dotstar or empty
+  15     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)■))?fail dotstar or empty
+  16     |  1     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b)){■}fail dotstar or empty
+  17     |  2     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  18     |  2     (((((((■)+■)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  19     |  2     (((((((■)+\b)■)\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  20     |  2     (((((((■)+\b)['',])■)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  21     |  2     (((((((■)+\b)['',])\s)(■){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  22     |  2     (((((((■)+\b)['',])\s)([A-Z]){■})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
+  23     |  2     (((((((■)+\b)['',])\s)([A-Z]){1})(■)+)\b)(\s(([A-Z]([a-z])+)\b))?
+2.0133869647979736
+timeout

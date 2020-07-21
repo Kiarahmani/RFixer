@@ -1,11 +1,12 @@
 
 Given the regular expression:
 
-  ((\d)+)?((\W)*)(\[|\()((.)*)
+  ([0-9a-z]){5,500}
 
 That that should match the strings:
 
-  ✓ (0:27)   6130 - Office Configuration
+  ✓ (0:6)    Thanks
+  ✓ (6:15)   Supported
 
 And reject the strings:
 
@@ -14,6 +15,6 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ((((■)+)?(\W)*)(\[|\())(.)*
-2.0133440494537354
+
+2.050513982772827
 timeout

@@ -1,5 +1,5 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
+\d+.\d{0,2}
+\d+\.?\d{0,2}
 +++
-gtm.linkClick
+10
 ---

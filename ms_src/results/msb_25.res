@@ -1,642 +1,212 @@
 
 Given the regular expression:
 
-  ((\-)?(\d)+(\.(\d)+)?),(\s)*((\-)?(\d)+(\.(\d)+)?)
+  ([0-9a-z])*@metu\.edu
 
 That that should match the strings:
 
-  ✓ (0:10)   101.711125
-  ✓ (10:18)  3.156831
+  ✓ (0:18)   herp.derp@metu.edu
 
 And reject the strings:
 
-  ✗ (18:38)  3.156831, 101.711125
 
 Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  2      |  1     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  3      |  1     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  4      |  1     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  5      |  1     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  6      |  1     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  7      |  1     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  8      |  1     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  9      |  1     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)get a solution: (((((\-)?(\d)+)(\.(\d)+)?)\.)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)
-add negative: -0.0
-get a solution: (((((\-)?(\d)+)(\.(\d)+)?)[15])(\s)*)(((\-)?(\d)+)(\.(\d)+)?)
-add positive: 0.0
-add negative: 010
+  1      |  1     (((((((((■)*@)m)e)t)u)\.)e)d)uget a solution: ((((((((([r\.dehp])*@)m)e)t)u)\.)e)d)u
+add positive: d0@metu.edu
+add negative: @metu.edu
+  2      |  1     ((((((((([0-9a-z]){■}@)m)e)t)u)\.)e)d)ufail dotstar or empty
+  3      |  1     ((((((((([0-9a-z])*■)m)e)t)u)\.)e)d)ufail dot
+  4      |  1     ((((((((([0-9a-z])*@)■)e)t)u)\.)e)d)ufail dotstar or empty
+  5      |  1     ((((((((([0-9a-z])*@)m)■)t)u)\.)e)d)ufail dotstar or empty
+  6      |  1     ((((((((([0-9a-z])*@)m)e)■)u)\.)e)d)ufail dotstar or empty
+  7      |  1     ((((((((([0-9a-z])*@)m)e)t)■)\.)e)d)ufail dotstar or empty
+  8      |  1     ((((((((([0-9a-z])*@)m)e)t)u)■)e)d)ufail dotstar or empty
+  9      |  1     ((((((((([0-9a-z])*@)m)e)t)u)\.)■)d)ufail dotstar or empty
+  10     |  1     ((((((((([0-9a-z])*@)m)e)t)u)\.)e)■)ufail dotstar or empty
+  11     |  1     ((((((((([0-9a-z])*@)m)e)t)u)\.)e)d)■fail dotstar or empty
+  12     |  2     (((((((((■){■}@)m)e)t)u)\.)e)d)uget a solution: ((((((((([r\.deh0p]){1,9}@)m)e)t)u)\.)e)d)u
+add positive: 10@metu.edu
+add negative: .@metu.edu
+get a solution: ((((((((([1r\.deh0p]){2,9}@)m)e)t)u)\.)e)d)u
+add positive: 20@metu.edu
+add negative: ..@metu.edu
   unsatisfiable SAT formula       
-  10     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  11     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  12     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  13     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  14     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  15     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  16     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  17     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  18     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  19     |  1     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  20     |  2     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  21     |  2     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  22     |  2     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  23     |  2     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  24     |  2     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  25     |  2     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  26     |  2     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  27     |  2     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)get a solution: ((((([∅])?(\d)+)(\.(\d)+)?)\.)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)
-add negative: 0.	0
+  13     |  2     (((((((((■)*■)m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  14     |  2     (((((((((■)*@)■)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  15     |  2     (((((((((■)*@)m)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  16     |  2     (((((((((■)*@)m)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  17     |  2     (((((((((■)*@)m)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  18     |  2     (((((((((■)*@)m)e)t)u)■)e)d)u  unsatisfiable SAT formula       
+  19     |  2     (((((((((■)*@)m)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  20     |  2     (((((((((■)*@)m)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  21     |  2     (((((((((■)*@)m)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  22     |  2     (((((((((■■)*@)m)e)t)u)\.)e)d)ufail dot
+  23     |  2     ((((((((((■|■))*@)m)e)t)u)\.)e)d)ufail solve
+  24     |  2     ((((((((((■){■})*@)m)e)t)u)\.)e)d)u  25     |  2     ((((((((([0-9a-z]){■}■)m)e)t)u)\.)e)d)ufail dot
+  26     |  2     ((((((((([0-9a-z]){■}@)■)e)t)u)\.)e)d)ufail dotstar or empty
+  27     |  2     ((((((((([0-9a-z]){■}@)m)■)t)u)\.)e)d)ufail dotstar or empty
+  28     |  2     ((((((((([0-9a-z]){■}@)m)e)■)u)\.)e)d)ufail dotstar or empty
+  29     |  2     ((((((((([0-9a-z]){■}@)m)e)t)■)\.)e)d)ufail dotstar or empty
+  30     |  2     ((((((((([0-9a-z]){■}@)m)e)t)u)■)e)d)ufail dotstar or empty
+  31     |  2     ((((((((([0-9a-z]){■}@)m)e)t)u)\.)■)d)ufail dotstar or empty
+  32     |  2     ((((((((([0-9a-z]){■}@)m)e)t)u)\.)e)■)ufail dotstar or empty
+  33     |  2     ((((((((([0-9a-z]){■}@)m)e)t)u)\.)e)d)■fail dotstar or empty
+  34     |  2     ((((((((■@)m)e)t)u)\.)e)d)ufail dot
+  35     |  2     ((((((((([0-9a-z])*■)■)e)t)u)\.)e)d)ufail dot
+  36     |  2     ((((((((([0-9a-z])*■)m)■)t)u)\.)e)d)ufail dot
+  37     |  2     ((((((((([0-9a-z])*■)m)e)■)u)\.)e)d)ufail dot
+  38     |  2     ((((((((([0-9a-z])*■)m)e)t)■)\.)e)d)ufail dot
+  39     |  2     ((((((((([0-9a-z])*■)m)e)t)u)■)e)d)ufail dot
+  40     |  2     ((((((((([0-9a-z])*■)m)e)t)u)\.)■)d)ufail dot
+  41     |  2     ((((((((([0-9a-z])*■)m)e)t)u)\.)e)■)ufail dot
+  42     |  2     ((((((((([0-9a-z])*■)m)e)t)u)\.)e)d)■fail dot
+  43     |  2     ((((((((([0-9a-z])*(■■))m)e)t)u)\.)e)d)ufail dot
+  44     |  2     ((((((((([0-9a-z])*(■|■))m)e)t)u)\.)e)d)ufail dot
+  45     |  2     ((((((((([0-9a-z])*(■){■})m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  46     |  2     ((((((((([0-9a-z])*@)■)■)t)u)\.)e)d)ufail dotstar or empty
+  47     |  2     ((((((((([0-9a-z])*@)■)e)■)u)\.)e)d)ufail dotstar or empty
+  48     |  2     ((((((((([0-9a-z])*@)■)e)t)■)\.)e)d)ufail dotstar or empty
+  49     |  2     ((((((((([0-9a-z])*@)■)e)t)u)■)e)d)ufail dotstar or empty
+  50     |  2     ((((((((([0-9a-z])*@)■)e)t)u)\.)■)d)ufail dotstar or empty
+  51     |  2     ((((((((([0-9a-z])*@)■)e)t)u)\.)e)■)ufail dotstar or empty
+  52     |  2     ((((((((([0-9a-z])*@)■)e)t)u)\.)e)d)■fail dotstar or empty
+  53     |  2     ((((((((([0-9a-z])*@)m)■)■)u)\.)e)d)ufail dotstar or empty
+  54     |  2     ((((((((([0-9a-z])*@)m)■)t)■)\.)e)d)ufail dotstar or empty
+  55     |  2     ((((((((([0-9a-z])*@)m)■)t)u)■)e)d)ufail dotstar or empty
+  56     |  2     ((((((((([0-9a-z])*@)m)■)t)u)\.)■)d)ufail dotstar or empty
+  57     |  2     ((((((((([0-9a-z])*@)m)■)t)u)\.)e)■)ufail dotstar or empty
+  58     |  2     ((((((((([0-9a-z])*@)m)■)t)u)\.)e)d)■fail dotstar or empty
+  59     |  2     ((((((((([0-9a-z])*@)m)e)■)■)\.)e)d)ufail dotstar or empty
+  60     |  2     ((((((((([0-9a-z])*@)m)e)■)u)■)e)d)ufail dotstar or empty
+  61     |  2     ((((((((([0-9a-z])*@)m)e)■)u)\.)■)d)ufail dotstar or empty
+  62     |  2     ((((((((([0-9a-z])*@)m)e)■)u)\.)e)■)ufail dotstar or empty
+  63     |  2     ((((((((([0-9a-z])*@)m)e)■)u)\.)e)d)■fail dotstar or empty
+  64     |  2     ((((((((([0-9a-z])*@)m)e)t)■)■)e)d)ufail dotstar or empty
+  65     |  2     ((((((((([0-9a-z])*@)m)e)t)■)\.)■)d)ufail dotstar or empty
+  66     |  2     ((((((((([0-9a-z])*@)m)e)t)■)\.)e)■)ufail dotstar or empty
+  67     |  2     ((((((((([0-9a-z])*@)m)e)t)■)\.)e)d)■fail dotstar or empty
+  68     |  2     ((((((((([0-9a-z])*@)m)e)t)u)■)■)d)ufail dotstar or empty
+  69     |  2     ((((((((([0-9a-z])*@)m)e)t)u)■)e)■)ufail dotstar or empty
+  70     |  2     ((((((((([0-9a-z])*@)m)e)t)u)■)e)d)■fail dotstar or empty
+  71     |  2     ((((((((([0-9a-z])*@)m)e)t)u)\.)■)■)ufail dotstar or empty
+  72     |  2     ((((((((([0-9a-z])*@)m)e)t)u)\.)■)d)■fail dotstar or empty
+  73     |  2     ((((((((([0-9a-z])*@)m)e)t)u)\.)e)■)■fail dotstar or empty
+  74     |  3     (((((((((■){■}■)m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  75     |  3     (((((((((■){■}@)■)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  76     |  3     (((((((((■){■}@)m)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  77     |  3     (((((((((■){■}@)m)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  78     |  3     (((((((((■){■}@)m)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  79     |  3     (((((((((■){■}@)m)e)t)u)■)e)d)u  unsatisfiable SAT formula       
+  80     |  3     (((((((((■){■}@)m)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  81     |  3     (((((((((■){■}@)m)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  82     |  3     (((((((((■){■}@)m)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  83     |  3     (((((((((■■){■}@)m)e)t)u)\.)e)d)ufail dot
+  84     |  3     ((((((((((■|■)){■}@)m)e)t)u)\.)e)d)ufail solve
+  85     |  3     ((((((((((■){■}){■}@)m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  86     |  3     (((((((((■)*■)■)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  87     |  3     (((((((((■)*■)m)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  88     |  3     (((((((((■)*■)m)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  89     |  3     (((((((((■)*■)m)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  90     |  3     (((((((((■)*■)m)e)t)u)■)e)d)u  unsatisfiable SAT formula       
+  91     |  3     (((((((((■)*■)m)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  92     |  3     (((((((((■)*■)m)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  93     |  3     (((((((((■)*■)m)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  94     |  3     (((((((((■■)*■)m)e)t)u)\.)e)d)ufail dot
+  95     |  3     ((((((((((■|■))*■)m)e)t)u)\.)e)d)ufail solve
+  96     |  3     ((((((((((■){■})*■)m)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  97     |  3     (((((((((■)*(■■))m)e)t)u)\.)e)d)uget a solution: ((((((((([12r\.dehp])*([p0]@))m)e)t)u)\.)e)d)u
+add positive: p1@metu.edu
+add negative: 0@metu.edu
   unsatisfiable SAT formula       
-  28     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  29     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  30     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  31     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  32     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  33     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  34     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  35     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  36     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  37     |  2     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  38     |  2     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  39     |  2     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  40     |  2     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  41     |  2     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  42     |  2     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  43     |  2     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  44     |  2     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  45     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  46     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  47     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  48     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  49     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  50     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  51     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  52     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  53     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  54     |  2     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  55     |  2     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  56     |  2     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  57     |  2     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  58     |  2     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  59     |  2     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  60     |  2     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  61     |  2     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  62     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  63     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  64     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  65     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  66     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  67     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  68     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  69     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  70     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  71     |  2     (((((\-)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  72     |  2     (((((\-)?(\d){■})(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  73     |  2     (((((\-)?(\d){■})(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  74     |  2     (((((\-)?(\d){■})(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  75     |  2     (((((\-)?(\d){■})(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  76     |  2     (((((\-)?(\d){■})(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  77     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  78     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  79     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  80     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  81     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  82     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  83     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  84     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  85     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  86     |  2     (((((\-)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  87     |  2     (((((\-)?■)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  88     |  2     (((((\-)?(\d)+)(■(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  89     |  2     (((((\-)?(\d)+)(■(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  90     |  2     (((((\-)?(\d)+)(■(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  91     |  2     (((((\-)?(\d)+)(■(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  92     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  93     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  94     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  95     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  96     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  97     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  98     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  99     |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  100    |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  101    |  2     (((((\-)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  102    |  2     (((((\-)?(\d)+)(\.(■){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  103    |  2     (((((\-)?(\d)+)(\.(■)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  104    |  2     (((((\-)?(\d)+)(\.(■)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  105    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  106    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  107    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  108    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  109    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  110    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  111    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  112    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  113    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  114    |  2     (((((\-)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  115    |  2     (((((\-)?(\d)+)(\.(\d){■}){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  116    |  2     (((((\-)?(\d)+)(\.(\d){■})?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  117    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  118    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  119    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  120    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  121    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  122    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  123    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  124    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  125    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  126    |  2     (((((\-)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  127    |  2     (((((\-)?(\d)+)(\.■)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  128    |  2     (((((\-)?(\d)+)(\.(\d)+){■})■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  129    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  130    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  131    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  132    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  133    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  134    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  135    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  136    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  137    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  138    |  2     (((((\-)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  139    |  2     (((((\-)?(\d)+)■),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  140    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(■)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  141    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  142    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((■)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  143    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  144    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(■)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  145    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)  unsatisfiable SAT formula       
-  146    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(■(\d)+)?)  unsatisfiable SAT formula       
-  147    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(■)+)?)  unsatisfiable SAT formula       
-  148    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)  unsatisfiable SAT formula       
-  149    |  2     (((((\-)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})  unsatisfiable SAT formula       
-  150    |  2     (((((\-)?(\d)+)(\.(\d)+)?)(■■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dot
-  151    |  2     (((((\-)?(\d)+)(\.(\d)+)?)(■|■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail solve
-  152    |  2     (((((\-)?(\d)+)(\.(\d)+)?)(■){■})(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  153    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  154    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  155    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  156    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  157    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  158    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  159    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  160    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  161    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  162    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  163    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  164    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  165    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  166    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  167    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  168    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  169    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  170    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)■)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  171    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  172    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  173    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  174    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  175    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  176    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  177    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  178    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(■)+)(\.(\d)+)?)fail dotstar or empty
-  179    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d){■})(\.(\d)+)?)fail dotstar or empty
-  180    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(■(\d)+)?)fail dotstar or empty
-  181    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(■)+)?)fail dotstar or empty
-  182    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d){■})?)fail dotstar or empty
-  183    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+){■})fail dotstar or empty
-  184    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)((■(\d)+)(\.(\d)+)?)fail dotstar or empty
-  185    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■){■})(\.(\d)+)?)fail dotstar or empty
-  186    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(■(\d)+)?)fail dotstar or empty
-  187    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(■)+)?)fail dotstar or empty
-  188    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d){■})?)fail dotstar or empty
-  189    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+){■})fail dotstar or empty
-  190    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(■(\d)+)?)fail dotstar or empty
-  191    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(■)+)?)fail dotstar or empty
-  192    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d){■})?)fail dotstar or empty
-  193    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+){■})fail dotstar or empty
-  194    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?■)(\.(\d)+)?)fail dotstar or empty
-  195    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(■)+)?)fail dotstar or empty
-  196    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d){■})?)fail dotstar or empty
-  197    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+){■})fail dotstar or empty
-  198    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■){■})?)fail dotstar or empty
-  199    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+){■})fail dotstar or empty
-  200    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■}){■})fail dotstar or empty
-  201    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.■)?)fail dotstar or empty
-  202    |  2     (((((\-)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)■)fail dotstar or empty
-  203    |  3     (((((■){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  204    |  3     (((((■){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  205    |  3     (((((■){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  206    |  3     (((((■){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  207    |  3     (((((■){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  208    |  3     (((((■){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  209    |  3     (((((■){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  210    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  211    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  212    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  213    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  214    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  215    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  216    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  217    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  218    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  219    |  3     (((((■){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  220    |  3     (((((■)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  221    |  3     (((((■)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  222    |  3     (((((■)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  223    |  3     (((((■)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  224    |  3     (((((■)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  225    |  3     (((((■)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  226    |  3     (((((■)?(■)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  227    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  228    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  229    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  230    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  231    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  232    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  233    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  234    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  235    |  3     (((((■)?(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  236    |  3     (((((■)?(\d){■})(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  237    |  3     (((((■)?(\d){■})(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  238    |  3     (((((■)?(\d){■})(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  239    |  3     (((((■)?(\d){■})(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  240    |  3     (((((■)?(\d){■})(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  241    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  242    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  243    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  244    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  245    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  246    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  247    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  248    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  249    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  250    |  3     (((((■)?(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  251    |  3     (((((■)?■)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  252    |  3     (((((■)?(\d)+)(■(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  253    |  3     (((((■)?(\d)+)(■(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  254    |  3     (((((■)?(\d)+)(■(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  255    |  3     (((((■)?(\d)+)(■(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  256    |  3     (((((■)?(\d)+)(■(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  257    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  258    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  259    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  260    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  261    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  262    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  263    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  264    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  265    |  3     (((((■)?(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  266    |  3     (((((■)?(\d)+)(\.(■){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  267    |  3     (((((■)?(\d)+)(\.(■)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  268    |  3     (((((■)?(\d)+)(\.(■)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  269    |  3     (((((■)?(\d)+)(\.(■)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  270    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  271    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  272    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  273    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  274    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  275    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  276    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  277    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  278    |  3     (((((■)?(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  279    |  3     (((((■)?(\d)+)(\.(\d){■}){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  280    |  3     (((((■)?(\d)+)(\.(\d){■})?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  281    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  282    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  283    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  284    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  285    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  286    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  287    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  288    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  289    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  290    |  3     (((((■)?(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  291    |  3     (((((■)?(\d)+)(\.■)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  292    |  3     (((((■)?(\d)+)(\.(\d)+){■})■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  293    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  294    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  295    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  296    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  297    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  298    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  299    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  300    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  301    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  302    |  3     (((((■)?(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  303    |  3     (((((■)?(\d)+)■),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  304    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(■)*)(((\-)?(\d)+)(\.(\d)+)?)get a solution: ((((([∅])?(\d)+)(\.(\d)+)?)\.)([∅])*)(((\-)?(\d)+)(\.(\d)+)?)
-add negative: 0.-0
+  98     |  3     (((((((((■)*(■|■))m)e)t)u)\.)e)d)ufail solve
+  99     |  3     (((((((((■)*(■){■})m)e)t)u)\.)e)d)uget a solution: ((((((((([12r\.deh@0p])*([1r2dp0@]){3})m)e)t)u)\.)e)d)u
+add positive: 03@metu.edu
+add negative: 0@0metu.edu
   unsatisfiable SAT formula       
-  305    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  306    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((■)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  307    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  308    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(■)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  309    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)  unsatisfiable SAT formula       
-  310    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(■(\d)+)?)  unsatisfiable SAT formula       
-  311    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(■)+)?)  unsatisfiable SAT formula       
-  312    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)  unsatisfiable SAT formula       
-  313    |  3     (((((■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})  unsatisfiable SAT formula       
-  314    |  3     (((((■■)?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  315    |  3     ((((((■|■))?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail solve
-  316    |  3     ((((((■){■})?(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  317    |  3     (((((■)?(\d)+)(\.(\d)+)?)(■■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dot
-  318    |  3     (((((■)?(\d)+)(\.(\d)+)?)(■|■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail solve
-  319    |  3     (((((■)?(\d)+)(\.(\d)+)?)(■){■})(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  320    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  321    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  322    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  323    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  324    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  325    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  326    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  327    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  328    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  329    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  330    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  331    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  332    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  333    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  334    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  335    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  336    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  337    |  3     (((((■)?(\d)+)(\.(\d)+)?),)■)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  338    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  339    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  340    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  341    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  342    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  343    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  344    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  345    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(■)+)(\.(\d)+)?)fail dotstar or empty
-  346    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d){■})(\.(\d)+)?)fail dotstar or empty
-  347    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(■(\d)+)?)fail dotstar or empty
-  348    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(■)+)?)fail dotstar or empty
-  349    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d){■})?)fail dotstar or empty
-  350    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+){■})fail dotstar or empty
-  351    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)((■(\d)+)(\.(\d)+)?)fail dotstar or empty
-  352    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■){■})(\.(\d)+)?)fail dotstar or empty
-  353    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(■(\d)+)?)fail dotstar or empty
-  354    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(■)+)?)fail dotstar or empty
-  355    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d){■})?)fail dotstar or empty
-  356    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+){■})fail dotstar or empty
-  357    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(■(\d)+)?)fail dotstar or empty
-  358    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(■)+)?)fail dotstar or empty
-  359    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d){■})?)fail dotstar or empty
-  360    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+){■})fail dotstar or empty
-  361    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?■)(\.(\d)+)?)fail dotstar or empty
-  362    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(■)+)?)fail dotstar or empty
-  363    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d){■})?)fail dotstar or empty
-  364    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+){■})fail dotstar or empty
-  365    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■){■})?)fail dotstar or empty
-  366    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+){■})fail dotstar or empty
-  367    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■}){■})fail dotstar or empty
-  368    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.■)?)fail dotstar or empty
-  369    |  3     (((((■)?(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)■)fail dotstar or empty
-  370    |  3     (((((\-){■}(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  371    |  3     (((((\-){■}(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  372    |  3     (((((\-){■}(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  373    |  3     (((((\-){■}(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  374    |  3     (((((\-){■}(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  375    |  3     (((((\-){■}(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  376    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  377    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  378    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  379    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  380    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  381    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  382    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  383    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  384    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  385    |  3     (((((\-){■}(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  386    |  3     ((((■(■)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  387    |  3     (((((\-){■}(\d){■})(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  388    |  3     (((((\-){■}(\d){■})(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  389    |  3     (((((\-){■}(\d){■})(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  390    |  3     (((((\-){■}(\d){■})(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  391    |  3     (((((\-){■}(\d){■})(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  392    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  393    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  394    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  395    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  396    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  397    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  398    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  399    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  400    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  401    |  3     (((((\-){■}(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  402    |  3     ((((■(\d){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  403    |  3     (((((\-){■}■)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  404    |  3     (((((\-){■}(\d)+)(■(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  405    |  3     (((((\-){■}(\d)+)(■(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  406    |  3     (((((\-){■}(\d)+)(■(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  407    |  3     (((((\-){■}(\d)+)(■(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  408    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  409    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  410    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  411    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  412    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  413    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  414    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  415    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  416    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  417    |  3     (((((\-){■}(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  418    |  3     ((((■(\d)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  419    |  3     (((((\-){■}(\d)+)(\.(■){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  420    |  3     (((((\-){■}(\d)+)(\.(■)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  421    |  3     (((((\-){■}(\d)+)(\.(■)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  422    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  423    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  424    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  425    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  426    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  427    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  428    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  429    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  430    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  431    |  3     (((((\-){■}(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  432    |  3     ((((■(\d)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  433    |  3     (((((\-){■}(\d)+)(\.(\d){■}){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  434    |  3     (((((\-){■}(\d)+)(\.(\d){■})?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  435    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  436    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  437    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  438    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  439    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  440    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  441    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  442    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  443    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  444    |  3     (((((\-){■}(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  445    |  3     ((((■(\d)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  446    |  3     (((((\-){■}(\d)+)(\.■)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  447    |  3     (((((\-){■}(\d)+)(\.(\d)+){■})■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  448    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  449    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  450    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  451    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  452    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  453    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  454    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  455    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  456    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  457    |  3     (((((\-){■}(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  458    |  3     ((((■(\d)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  459    |  3     (((((\-){■}(\d)+)■),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  460    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(■)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  461    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  462    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((■)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  463    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  464    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(■)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  465    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)  unsatisfiable SAT formula       
-  466    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(■(\d)+)?)  unsatisfiable SAT formula       
-  467    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(■)+)?)  unsatisfiable SAT formula       
-  468    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)  unsatisfiable SAT formula       
-  469    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})  unsatisfiable SAT formula       
-  470    |  3     ((((■(\d)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dot
-  471    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)(■■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dot
-  472    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)(■|■))(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail solve
-  473    |  3     (((((\-){■}(\d)+)(\.(\d)+)?)(■){■})(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  474    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  475    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  476    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  477    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  478    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  479    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  480    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  481    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  482    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  483    |  3     ((((■(\d)+)(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  484    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  485    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  486    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  487    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  488    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  489    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  490    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  491    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  492    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  493    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)■)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  494    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  495    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  496    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  497    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  498    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  499    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  500    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  501    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  502    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(■)+)(\.(\d)+)?)fail dotstar or empty
-  503    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d){■})(\.(\d)+)?)fail dotstar or empty
-  504    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(■(\d)+)?)fail dotstar or empty
-  505    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(■)+)?)fail dotstar or empty
-  506    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d){■})?)fail dotstar or empty
-  507    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+){■})fail dotstar or empty
-  508    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  509    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)((■(\d)+)(\.(\d)+)?)fail dotstar or empty
-  510    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■){■})(\.(\d)+)?)fail dotstar or empty
-  511    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(■(\d)+)?)fail dotstar or empty
-  512    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(■)+)?)fail dotstar or empty
-  513    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d){■})?)fail dotstar or empty
-  514    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+){■})fail dotstar or empty
-  515    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  516    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(■(\d)+)?)fail dotstar or empty
-  517    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(■)+)?)fail dotstar or empty
-  518    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d){■})?)fail dotstar or empty
-  519    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+){■})fail dotstar or empty
-  520    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  521    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?■)(\.(\d)+)?)fail dotstar or empty
-  522    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(■)+)?)fail dotstar or empty
-  523    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d){■})?)fail dotstar or empty
-  524    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+){■})fail dotstar or empty
-  525    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  526    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■){■})?)fail dotstar or empty
-  527    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+){■})fail dotstar or empty
-  528    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  529    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■}){■})fail dotstar or empty
-  530    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  531    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.■)?)fail dotstar or empty
-  532    |  3     ((((■(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  533    |  3     (((((\-){■}(\d)+)(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)■)fail dotstar or empty
-  534    |  3     (((((\-)?(■){■})(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  535    |  3     (((((\-)?(■){■})(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  536    |  3     (((((\-)?(■){■})(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  537    |  3     (((((\-)?(■){■})(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  538    |  3     (((((\-)?(■){■})(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  539    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  540    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  541    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  542    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  543    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  544    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  545    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  546    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  547    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  548    |  3     (((((\-)?(■){■})(\.(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  549    |  3     (((((\-)?(■)+)(■(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  550    |  3     (((((\-)?(■)+)(■(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  551    |  3     (((((\-)?(■)+)(■(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  552    |  3     (((((\-)?(■)+)(■(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  553    |  3     (((((\-)?(■)+)(■(\d)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  554    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  555    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  556    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  557    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  558    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  559    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  560    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  561    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  562    |  3     (((((\-)?(■)+)(■(\d)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  563    |  3     (((((\-)?(■)+)(\.(■){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  564    |  3     (((((\-)?(■)+)(\.(■)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  565    |  3     (((((\-)?(■)+)(\.(■)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  566    |  3     (((((\-)?(■)+)(\.(■)+)?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  567    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  568    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  569    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  570    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  571    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  572    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  573    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  574    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  575    |  3     (((((\-)?(■)+)(\.(■)+)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  576    |  3     (((((\-)?(■)+)(\.(\d){■}){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  577    |  3     (((((\-)?(■)+)(\.(\d){■})?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  578    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  579    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  580    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  581    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  582    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  583    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  584    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  585    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  586    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  587    |  3     (((((\-)?(■)+)(\.(\d){■})?),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  588    |  3     (((((\-)?(■)+)(\.■)?),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  589    |  3     (((((\-)?(■)+)(\.(\d)+){■})■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  590    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(■)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  591    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  592    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((■)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  593    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)fail dotstar or empty
-  594    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(■)+)(\.(\d)+)?)fail dotstar or empty
-  595    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)fail dotstar or empty
-  596    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(■(\d)+)?)fail dotstar or empty
-  597    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(■)+)?)fail dotstar or empty
-  598    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)fail dotstar or empty
-  599    |  3     (((((\-)?(■)+)(\.(\d)+){■}),)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})fail dotstar or empty
-  600    |  3     (((((\-)?(■)+)■),)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dotstar or empty
-  601    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(■)*)(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  602    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s){■})(((\-)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  603    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((■)?(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  604    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-){■}(\d)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  605    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(■)+)(\.(\d)+)?)  unsatisfiable SAT formula       
-  606    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d){■})(\.(\d)+)?)  unsatisfiable SAT formula       
-  607    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(■(\d)+)?)  unsatisfiable SAT formula       
-  608    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(■)+)?)  unsatisfiable SAT formula       
-  609    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d){■})?)  unsatisfiable SAT formula       
-  610    |  3     (((((\-)?(■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+){■})  unsatisfiable SAT formula       
-  611    |  3     (((((\-)?(■■)+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail dot
-  612    |  3     (((((\-)?((■|■))+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)fail solve
-  613    |  3     (((((\-)?((■){■})+)(\.(\d)+)?)■)(\s)*)(((\-)?(\d)+)(\.(\d)+)?)
-2.0269761085510254
+  100    |  3     (((((((((■)*@)■)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  101    |  3     (((((((((■)*@)■)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  102    |  3     (((((((((■)*@)■)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  103    |  3     (((((((((■)*@)■)e)t)u)■)e)d)u  unsatisfiable SAT formula       
+  104    |  3     (((((((((■)*@)■)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  105    |  3     (((((((((■)*@)■)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  106    |  3     (((((((((■)*@)■)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  107    |  3     (((((((((■■)*@)■)e)t)u)\.)e)d)ufail dot
+  108    |  3     ((((((((((■|■))*@)■)e)t)u)\.)e)d)ufail solve
+  109    |  3     ((((((((((■){■})*@)■)e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  110    |  3     (((((((((■)*@)(■■))e)t)u)\.)e)d)ufail dot
+  111    |  3     (((((((((■)*@)(■|■))e)t)u)\.)e)d)ufail solve
+  112    |  3     (((((((((■)*@)(■){■})e)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  113    |  3     (((((((((■)*@)m)■)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  114    |  3     (((((((((■)*@)m)■)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  115    |  3     (((((((((■)*@)m)■)t)u)■)e)d)u  unsatisfiable SAT formula       
+  116    |  3     (((((((((■)*@)m)■)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  117    |  3     (((((((((■)*@)m)■)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  118    |  3     (((((((((■)*@)m)■)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  119    |  3     (((((((((■■)*@)m)■)t)u)\.)e)d)ufail dot
+  120    |  3     ((((((((((■|■))*@)m)■)t)u)\.)e)d)ufail solve
+  121    |  3     ((((((((((■){■})*@)m)■)t)u)\.)e)d)u  unsatisfiable SAT formula       
+  122    |  3     (((((((((■)*@)m)(■■))t)u)\.)e)d)ufail dot
+  123    |  3     (((((((((■)*@)m)(■|■))t)u)\.)e)d)ufail solve
+  124    |  3     (((((((((■)*@)m)(■){■})t)u)\.)e)d)u  unsatisfiable SAT formula       
+  125    |  3     (((((((((■)*@)m)e)■)■)\.)e)d)u  unsatisfiable SAT formula       
+  126    |  3     (((((((((■)*@)m)e)■)u)■)e)d)u  unsatisfiable SAT formula       
+  127    |  3     (((((((((■)*@)m)e)■)u)\.)■)d)u  unsatisfiable SAT formula       
+  128    |  3     (((((((((■)*@)m)e)■)u)\.)e)■)u  unsatisfiable SAT formula       
+  129    |  3     (((((((((■)*@)m)e)■)u)\.)e)d)■  unsatisfiable SAT formula       
+  130    |  3     (((((((((■■)*@)m)e)■)u)\.)e)d)ufail dot
+  131    |  3     ((((((((((■|■))*@)m)e)■)u)\.)e)d)ufail solve
+  132    |  3     ((((((((((■){■})*@)m)e)■)u)\.)e)d)u  unsatisfiable SAT formula       
+  133    |  3     (((((((((■)*@)m)e)(■■))u)\.)e)d)ufail dot
+  134    |  3     (((((((((■)*@)m)e)(■|■))u)\.)e)d)ufail solve
+  135    |  3     (((((((((■)*@)m)e)(■){■})u)\.)e)d)u  unsatisfiable SAT formula       
+  136    |  3     (((((((((■)*@)m)e)t)■)■)e)d)u  unsatisfiable SAT formula       
+  137    |  3     (((((((((■)*@)m)e)t)■)\.)■)d)u  unsatisfiable SAT formula       
+  138    |  3     (((((((((■)*@)m)e)t)■)\.)e)■)u  unsatisfiable SAT formula       
+  139    |  3     (((((((((■)*@)m)e)t)■)\.)e)d)■  unsatisfiable SAT formula       
+  140    |  3     (((((((((■■)*@)m)e)t)■)\.)e)d)ufail dot
+  141    |  3     ((((((((((■|■))*@)m)e)t)■)\.)e)d)ufail solve
+  142    |  3     ((((((((((■){■})*@)m)e)t)■)\.)e)d)u  unsatisfiable SAT formula       
+  143    |  3     (((((((((■)*@)m)e)t)(■■))\.)e)d)ufail dot
+  144    |  3     (((((((((■)*@)m)e)t)(■|■))\.)e)d)ufail solve
+  145    |  3     (((((((((■)*@)m)e)t)(■){■})\.)e)d)u  unsatisfiable SAT formula       
+  146    |  3     (((((((((■)*@)m)e)t)u)■)■)d)u  unsatisfiable SAT formula       
+  147    |  3     (((((((((■)*@)m)e)t)u)■)e)■)u  unsatisfiable SAT formula       
+  148    |  3     (((((((((■)*@)m)e)t)u)■)e)d)■  unsatisfiable SAT formula       
+  149    |  3     (((((((((■■)*@)m)e)t)u)■)e)d)ufail dot
+  150    |  3     ((((((((((■|■))*@)m)e)t)u)■)e)d)ufail solve
+  151    |  3     ((((((((((■){■})*@)m)e)t)u)■)e)d)u  unsatisfiable SAT formula       
+  152    |  3     (((((((((■)*@)m)e)t)u)(■■))e)d)ufail dot
+  153    |  3     (((((((((■)*@)m)e)t)u)(■|■))e)d)ufail solve
+  154    |  3     (((((((((■)*@)m)e)t)u)(■){■})e)d)u  unsatisfiable SAT formula       
+  155    |  3     (((((((((■)*@)m)e)t)u)\.)■)■)u  unsatisfiable SAT formula       
+  156    |  3     (((((((((■)*@)m)e)t)u)\.)■)d)■  unsatisfiable SAT formula       
+  157    |  3     (((((((((■■)*@)m)e)t)u)\.)■)d)ufail dot
+  158    |  3     ((((((((((■|■))*@)m)e)t)u)\.)■)d)ufail solve
+  159    |  3     ((((((((((■){■})*@)m)e)t)u)\.)■)d)u  unsatisfiable SAT formula       
+  160    |  3     (((((((((■)*@)m)e)t)u)\.)(■■))d)ufail dot
+  161    |  3     (((((((((■)*@)m)e)t)u)\.)(■|■))d)ufail solve
+  162    |  3     (((((((((■)*@)m)e)t)u)\.)(■){■})d)u  unsatisfiable SAT formula       
+  163    |  3     (((((((((■)*@)m)e)t)u)\.)e)■)■  unsatisfiable SAT formula       
+  164    |  3     (((((((((■■)*@)m)e)t)u)\.)e)■)ufail dot
+  165    |  3     ((((((((((■|■))*@)m)e)t)u)\.)e)■)ufail solve
+  166    |  3     ((((((((((■){■})*@)m)e)t)u)\.)e)■)u  unsatisfiable SAT formula       
+  167    |  3     (((((((((■)*@)m)e)t)u)\.)e)(■■))ufail dot
+  168    |  3     (((((((((■)*@)m)e)t)u)\.)e)(■|■))ufail solve
+  169    |  3     (((((((((■)*@)m)e)t)u)\.)e)(■){■})u  unsatisfiable SAT formula       
+  170    |  3     (((((((((■■)*@)m)e)t)u)\.)e)d)■fail dot
+  171    |  3     ((((((((((■|■))*@)m)e)t)u)\.)e)d)■fail solve
+  172    |  3     ((((((((((■){■})*@)m)e)t)u)\.)e)d)■  unsatisfiable SAT formula       
+  173    |  3     (((((((((■)*@)m)e)t)u)\.)e)d)(■■)fail dot
+  174    |  3     (((((((((■)*@)m)e)t)u)\.)e)d)(■|■)fail solve
+  175    |  3     (((((((((■)*@)m)e)t)u)\.)e)d)(■){■}  unsatisfiable SAT formula       
+  176    |  3     ((((((((((■■)■)*@)m)e)t)u)\.)e)d)ufail dot
+  177    |  3     ((((((((((■|■)■)*@)m)e)t)u)\.)e)d)ufail dot
+  178    |  3     ((((((((((■){■}■)*@)m)e)t)u)\.)e)d)u  179    |  3     (((((((((■(■■))*@)m)e)t)u)\.)e)d)ufail dot
+  180    |  3     (((((((((■(■|■))*@)m)e)t)u)\.)e)d)ufail dot
+  181    |  3     (((((((((■(■){■})*@)m)e)t)u)\.)e)d)u  182    |  3     ((((((((((■■|■))*@)m)e)t)u)\.)e)d)u  183    |  3     (((((((((((■|■)|■))*@)m)e)t)u)\.)e)d)ufail solve
+  184    |  3     (((((((((((■){■}|■))*@)m)e)t)u)\.)e)d)u
+2.0206680297851562
 timeout

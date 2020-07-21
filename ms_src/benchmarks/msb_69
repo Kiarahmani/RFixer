@@ -1,7 +1,5 @@
-views/
-(views/[^./]*)
+\*#\*0##\*13\*32\*(.*)#9##
+([0-9][0-9][0-9]+)
 +++
-views/register
-views/' upto the next '
-views/register'  something like:
+702442500
 ---

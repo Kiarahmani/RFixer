@@ -1,6 +1,5 @@
-[0-6]
-(\.5|[0-5](\.5)?|6)
+\[Total execution Time: (.+) min
+Total execution Time: ([\d.]+).*\r?.*\r?.*\[Step 1\s
 +++
-.5
-1.5
+Total execution Time: 11.05 minute(s)] [administrator] [(null)] [14] 02/19 00:48:46:762 [INFO ] [MigrationWizard] [Total number of error(s): 0] [administrator] [(null)] [14] 02/19 00:48:46:762 [INFO ] [MigrationWizard] [Step 1 
 ---

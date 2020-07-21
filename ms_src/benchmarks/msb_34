@@ -1,5 +1,6 @@
-(\d+)?(\W*)(\[|\()(.*)
-\d{4} - [(\[]?[\w\s]*\]?
+[0-9a-z]{5,500}
+[0-9A-Za-z][0-9A-Za-z-]{3,498}[0-9A-Za-z]
 +++
-6130 - Office Configuration
+Thanks
+Supported
 ---

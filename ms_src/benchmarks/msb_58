@@ -1,6 +1,8 @@
-s*n*o*w*
-s+n+o+w+
+A(\w)+
+[A-Z]\w*
 +++
-snow
-ssssnnnowww
+My
+Yes
+Example
+How
 ---

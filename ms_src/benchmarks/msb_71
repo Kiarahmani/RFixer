@@ -1,5 +1,10 @@
-(\d{9})
-\d{10}
+[A-Z]+\b[',']\s[A-Z]{1}[a-z]+\b(\s([A-Z][a-z]+\b))?
+[A-Z][A-Z' ]+(-[A-Z' ]+)*, [A-Z][a-z]+( \([A-Za-z]+\))?
 +++
-4901773349
+TRUMP, Donald
+ZETA-JONES, Catherine (Kate)
+BUSH, George
+CLINTON, William (Bill)
+CARTER, James (Jimmy)
+SMITH-JONES, John
 ---

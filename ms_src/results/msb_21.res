@@ -262,21 +262,6 @@ add positive: c0Cm
   110    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d){■}fail dot
   111    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■■)|(da)m))(\d)*fail dot
   112    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■|■))|(da)m))(\d)*fail dot
-  113    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■){■})|(da)m))(\d)*  unsatisfiable SAT formula       
-  114    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■■)m))(\d)*get a solution: ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|([,0123456789:][Cm0123456789])m))(\d)*
-add positive: [0m
-add negative: ,,0m
-  unsatisfiable SAT formula       
-  115    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)■))(\d)*fail dotstar or empty
-  116    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(■)*fail dotstar or empty
-  117    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d){■}fail dotstar or empty
-  118    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)■))(\d)*fail dotstar or empty
-  119    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(■)*fail dotstar or empty
-  120    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d){■}fail dotstar or empty
-  121    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(■)*fail dotstar or empty
-  122    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d){■}fail dotstar or empty
-  123    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■){■}fail dotstar or empty
-  124    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))■fail dotstar or empty
-  125    |  3     ((((■){■}(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*
-2.02836012840271
+  113    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■){■})|(da)m))(\d)*
+2.0275399684906006
 timeout

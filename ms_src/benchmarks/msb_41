@@ -1,7 +1,6 @@
-\$[I-VI].[1-99].[1-99].[1-99]
-\$(I|II|III|IV|V|VI)(\.[0-9]{1,2})+
+[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
+ab(a|c|b+[c])*b+a
 +++
-$II.4.13
-$V.23.38.1.23
-$IV.1.1.1.1.1
+abccba
+abccabba
 ---

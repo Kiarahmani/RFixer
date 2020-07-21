@@ -1,11 +1,13 @@
 
 Given the regular expression:
 
-  42\.[6-9][0-6]
+  (((([10])?[8-9]|20):[0-5][0-9])|21:00)
 
 That that should match the strings:
 
-  ✓ (0:5)    42.67
+  ✓ (0:5)    16:19
+  ✓ (5:10)   10:00
+  ✓ (10:15)  12:47
 
 And reject the strings:
 
@@ -14,302 +16,609 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (((■2)\.)[6-9])[0-6]    fail dotstar or empty
-  2      |  1     (((4■)\.)[6-9])[0-6]    fail dotstar or empty
-  3      |  1     (((42)■)[6-9])[0-6]     fail dotstar or empty
-  4      |  1     (((42)\.)■)[0-6]        fail dotstar or empty
-  5      |  1     (((42)\.)[6-9])■        get a solution: (((42)\.)[6-9])7
-add positive: 42.80
-add negative: 42.87
+  1      |  1     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  2      |  1     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  3      |  1     ((((([10])?■|20):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10])?[260]|20):)[0-5])[0-9]|(((21):)0)0)
+add positive: 08:00
+add negative: 0:00
   unsatisfiable SAT formula       
-  6      |  2     (((■■)\.)[6-9])[0-6]    fail dotstar or empty
-  7      |  2     (((■2)■)[6-9])[0-6]     fail dotstar or empty
-  8      |  2     (((■2)\.)■)[0-6]        fail dotstar or empty
-  9      |  2     (((■2)\.)[6-9])■          unsatisfiable SAT formula       
-  10     |  2     (((4■)■)[6-9])[0-6]     fail dotstar or empty
-  11     |  2     (((4■)\.)■)[0-6]        fail dotstar or empty
-  12     |  2     (((4■)\.)[6-9])■          unsatisfiable SAT formula       
-  13     |  2     (((42)■)■)[0-6]         fail dotstar or empty
-  14     |  2     (((42)■)[6-9])■           unsatisfiable SAT formula       
-  15     |  2     (((42)\.)■)■              unsatisfiable SAT formula       
-  16     |  2     (((42)\.)[6-9])(■■)     fail dot
-  17     |  2     (((42)\.)[6-9])(■|■)    fail solve
-  18     |  2     (((42)\.)[6-9])(■){■}     unsatisfiable SAT formula       
-  19     |  3     (((■■)■)[6-9])[0-6]     fail dotstar or empty
-  20     |  3     (((■■)\.)■)[0-6]        fail dotstar or empty
-  21     |  3     (((■■)\.)[6-9])■          unsatisfiable SAT formula       
-  22     |  3     (((■)\.)[6-9])[0-6]     fail dotstar or empty
-  23     |  3     (((■2)■)■)[0-6]         fail dotstar or empty
-  24     |  3     (((■2)■)[6-9])■           unsatisfiable SAT formula       
-  25     |  3     (((■2)\.)■)■              unsatisfiable SAT formula       
-  26     |  3     ((((■■)2)\.)[6-9])■     fail dot
-  27     |  3     ((((■|■)2)\.)[6-9])■    fail solve
-  28     |  3     ((((■){■}2)\.)[6-9])■     unsatisfiable SAT formula       
-  29     |  3     (((■2)\.)[6-9])(■■)     fail dot
-  30     |  3     (((■2)\.)[6-9])(■|■)    fail solve
-  31     |  3     (((■2)\.)[6-9])(■){■}     unsatisfiable SAT formula       
-  32     |  3     (((4■)■)■)[0-6]         fail dotstar or empty
-  33     |  3     (((4■)■)[6-9])■           unsatisfiable SAT formula       
-  34     |  3     (((4■)\.)■)■              unsatisfiable SAT formula       
-  35     |  3     (((4(■■))\.)[6-9])■     fail dot
-  36     |  3     (((4(■|■))\.)[6-9])■    fail solve
-  37     |  3     (((4(■){■})\.)[6-9])■     unsatisfiable SAT formula       
-  38     |  3     (((4■)\.)[6-9])(■■)     fail dot
-  39     |  3     (((4■)\.)[6-9])(■|■)    fail solve
-  40     |  3     (((4■)\.)[6-9])(■){■}     unsatisfiable SAT formula       
-  41     |  3     (((42)■)■)■               unsatisfiable SAT formula       
-  42     |  3     (((42)(■■))[6-9])■      fail dot
-  43     |  3     (((42)(■|■))[6-9])■     fail solve
-  44     |  3     (((42)(■){■})[6-9])■      unsatisfiable SAT formula       
-  45     |  3     (((42)■)[6-9])(■■)      fail dot
-  46     |  3     (((42)■)[6-9])(■|■)     fail solve
-  47     |  3     (((42)■)[6-9])(■){■}      unsatisfiable SAT formula       
-  48     |  3     (((42)\.)(■■))■         fail dot
-  49     |  3     (((42)\.)(■|■))■        fail solve
-  50     |  3     (((42)\.)(■){■})■         unsatisfiable SAT formula       
-  51     |  3     (((42)\.)■)(■■)         fail dot
-  52     |  3     (((42)\.)■)(■|■)        fail solve
-  53     |  3     (((42)\.)■)(■){■}         unsatisfiable SAT formula       
-  54     |  3     (((42)\.)[6-9])(■)        unsatisfiable SAT formula       
-  55     |  3     (((42)\.)[6-9])((■■)■)  fail dot
-  56     |  3     (((42)\.)[6-9])((■|■)■) fail dot
-  57     |  3     (((42)\.)[6-9])((■){■}■)  unsatisfiable SAT formula       
-  58     |  3     (((42)\.)[6-9])(■■|■)     unsatisfiable SAT formula       
-  59     |  3     (((42)\.)[6-9])((■|■)|■)fail solve
-  60     |  3     (((42)\.)[6-9])((■){■}|■)  unsatisfiable SAT formula       
-  61     |  3     (((42)\.)[6-9])(■■){■}  fail dot
-  62     |  3     (((42)\.)[6-9])((■|■)){■}fail solve
-  63     |  3     (((42)\.)[6-9])((■){■}){■}  unsatisfiable SAT formula       
-  64     |  4     (((■■)■)■)[0-6]         fail dotstar or empty
-  65     |  4     (((■■)■)[6-9])■           unsatisfiable SAT formula       
-  66     |  4     (((■)■)[6-9])[0-6]      fail dotstar or empty
-  67     |  4     (((■■)\.)■)■              unsatisfiable SAT formula       
-  68     |  4     (((■)\.)■)[0-6]         fail dotstar or empty
-  69     |  4     (((■)\.)[6-9])■         fail dot
-  70     |  4     ((((■■)■)\.)[6-9])■     fail dot
-  71     |  4     ((((■|■)■)\.)[6-9])■    fail solve
-  72     |  4     ((((■){■}■)\.)[6-9])■     unsatisfiable SAT formula       
-  73     |  4     (((■■)\.)[6-9])(■■)     fail dot
-  74     |  4     (((■■)\.)[6-9])(■|■)    fail solve
-  75     |  4     (((■■)\.)[6-9])(■){■}     unsatisfiable SAT formula       
-  76     |  4     ((■\.)[6-9])[0-6]       fail dotstar or empty
-  77     |  4     (((■2)■)■)■               unsatisfiable SAT formula       
-  78     |  4     ((((■■)2)■)[6-9])■      fail dot
-  79     |  4     ((((■|■)2)■)[6-9])■     fail solve
-  80     |  4     ((((■){■}2)■)[6-9])■      unsatisfiable SAT formula       
-  81     |  4     (((■2)(■■))[6-9])■      fail dot
-  82     |  4     (((■2)(■|■))[6-9])■     fail solve
-  83     |  4     (((■2)(■){■})[6-9])■      unsatisfiable SAT formula       
-  84     |  4     (((■2)■)[6-9])(■■)      fail dot
-  85     |  4     (((■2)■)[6-9])(■|■)     fail solve
-  86     |  4     (((■2)■)[6-9])(■){■}      unsatisfiable SAT formula       
-  87     |  4     ((((■■)2)\.)■)■         fail dot
-  88     |  4     ((((■|■)2)\.)■)■        fail solve
-  89     |  4     ((((■){■}2)\.)■)■         unsatisfiable SAT formula       
-  90     |  4     (((■2)\.)(■■))■         fail dot
-  91     |  4     (((■2)\.)(■|■))■        fail solve
-  92     |  4     (((■2)\.)(■){■})■         unsatisfiable SAT formula       
-  93     |  4     (((■2)\.)■)(■■)         fail dot
-  94     |  4     (((■2)\.)■)(■|■)        fail solve
-  95     |  4     (((■2)\.)■)(■){■}         unsatisfiable SAT formula       
-  96     |  4     ((((■)2)\.)[6-9])■        unsatisfiable SAT formula       
-  97     |  4     (((((■■)■)2)\.)[6-9])■  fail dot
-  98     |  4     (((((■|■)■)2)\.)[6-9])■ fail dot
-  99     |  4     (((((■){■}■)2)\.)[6-9])■  unsatisfiable SAT formula       
-  100    |  4     ((((■■)2)\.)[6-9])(■■)  fail dot
-  101    |  4     ((((■■)2)\.)[6-9])(■|■) fail dot
-  102    |  4     ((((■■)2)\.)[6-9])(■){■}fail dot
-  103    |  4     ((((■■|■)2)\.)[6-9])■     unsatisfiable SAT formula       
-  104    |  4     (((((■|■)|■)2)\.)[6-9])■fail solve
-  105    |  4     (((((■){■}|■)2)\.)[6-9])■  unsatisfiable SAT formula       
-  106    |  4     ((((■|■)2)\.)[6-9])(■■) fail dot
-  107    |  4     ((((■|■)2)\.)[6-9])(■|■)fail solve
-  108    |  4     ((((■|■)2)\.)[6-9])(■){■}  unsatisfiable SAT formula       
-  109    |  4     ((((■■){■}2)\.)[6-9])■  fail dot
-  110    |  4     (((((■|■)){■}2)\.)[6-9])■fail solve
-  111    |  4     (((((■){■}){■}2)\.)[6-9])■  unsatisfiable SAT formula       
-  112    |  4     ((((■){■}2)\.)[6-9])(■■)fail dot
-  113    |  4     ((((■){■}2)\.)[6-9])(■|■)fail solve
-  114    |  4     ((((■){■}2)\.)[6-9])(■){■}  unsatisfiable SAT formula       
-  115    |  4     (((■2)\.)[6-9])(■)        unsatisfiable SAT formula       
-  116    |  4     (((■2)\.)[6-9])((■■)■)  fail dot
-  117    |  4     (((■2)\.)[6-9])((■|■)■) fail dot
-  118    |  4     (((■2)\.)[6-9])((■){■}■)  unsatisfiable SAT formula       
-  119    |  4     (((■2)\.)[6-9])(■■|■)     unsatisfiable SAT formula       
-  120    |  4     (((■2)\.)[6-9])((■|■)|■)fail solve
-  121    |  4     (((■2)\.)[6-9])((■){■}|■)  unsatisfiable SAT formula       
-  122    |  4     (((■2)\.)[6-9])(■■){■}  fail dot
-  123    |  4     (((■2)\.)[6-9])((■|■)){■}fail solve
-  124    |  4     (((■2)\.)[6-9])((■){■}){■}  unsatisfiable SAT formula       
-  125    |  4     (((4■)■)■)■               unsatisfiable SAT formula       
-  126    |  4     (((4(■■))■)[6-9])■      fail dot
-  127    |  4     (((4(■|■))■)[6-9])■     fail solve
-  128    |  4     (((4(■){■})■)[6-9])■      unsatisfiable SAT formula       
-  129    |  4     (((4■)(■■))[6-9])■      fail dot
-  130    |  4     (((4■)(■|■))[6-9])■     fail solve
-  131    |  4     (((4■)(■){■})[6-9])■      unsatisfiable SAT formula       
-  132    |  4     (((4■)■)[6-9])(■■)      fail dot
-  133    |  4     (((4■)■)[6-9])(■|■)     fail solve
-  134    |  4     (((4■)■)[6-9])(■){■}      unsatisfiable SAT formula       
-  135    |  4     (((4(■■))\.)■)■         fail dot
-  136    |  4     (((4(■|■))\.)■)■        fail solve
-  137    |  4     (((4(■){■})\.)■)■         unsatisfiable SAT formula       
-  138    |  4     (((4■)\.)(■■))■         fail dot
-  139    |  4     (((4■)\.)(■|■))■        fail solve
-  140    |  4     (((4■)\.)(■){■})■         unsatisfiable SAT formula       
-  141    |  4     (((4■)\.)■)(■■)         fail dot
-  142    |  4     (((4■)\.)■)(■|■)        fail solve
-  143    |  4     (((4■)\.)■)(■){■}         unsatisfiable SAT formula       
-  144    |  4     (((4(■))\.)[6-9])■        unsatisfiable SAT formula       
-  145    |  4     (((4((■■)■))\.)[6-9])■  fail dot
-  146    |  4     (((4((■|■)■))\.)[6-9])■ fail dot
-  147    |  4     (((4((■){■}■))\.)[6-9])■  unsatisfiable SAT formula       
-  148    |  4     (((4(■■))\.)[6-9])(■■)  fail dot
-  149    |  4     (((4(■■))\.)[6-9])(■|■) fail dot
-  150    |  4     (((4(■■))\.)[6-9])(■){■}fail dot
-  151    |  4     (((4(■■|■))\.)[6-9])■     unsatisfiable SAT formula       
-  152    |  4     (((4((■|■)|■))\.)[6-9])■fail solve
-  153    |  4     (((4((■){■}|■))\.)[6-9])■  unsatisfiable SAT formula       
-  154    |  4     (((4(■|■))\.)[6-9])(■■) fail dot
-  155    |  4     (((4(■|■))\.)[6-9])(■|■)fail solve
-  156    |  4     (((4(■|■))\.)[6-9])(■){■}  unsatisfiable SAT formula       
-  157    |  4     (((4(■■){■})\.)[6-9])■  fail dot
-  158    |  4     (((4((■|■)){■})\.)[6-9])■fail solve
-  159    |  4     (((4((■){■}){■})\.)[6-9])■  unsatisfiable SAT formula       
-  160    |  4     (((4(■){■})\.)[6-9])(■■)fail dot
-  161    |  4     (((4(■){■})\.)[6-9])(■|■)fail solve
-  162    |  4     (((4(■){■})\.)[6-9])(■){■}  unsatisfiable SAT formula       
-  163    |  4     (((4■)\.)[6-9])(■)        unsatisfiable SAT formula       
-  164    |  4     (((4■)\.)[6-9])((■■)■)  fail dot
-  165    |  4     (((4■)\.)[6-9])((■|■)■) fail dot
-  166    |  4     (((4■)\.)[6-9])((■){■}■)  unsatisfiable SAT formula       
-  167    |  4     (((4■)\.)[6-9])(■■|■)     unsatisfiable SAT formula       
-  168    |  4     (((4■)\.)[6-9])((■|■)|■)fail solve
-  169    |  4     (((4■)\.)[6-9])((■){■}|■)  unsatisfiable SAT formula       
-  170    |  4     (((4■)\.)[6-9])(■■){■}  fail dot
-  171    |  4     (((4■)\.)[6-9])((■|■)){■}fail solve
-  172    |  4     (((4■)\.)[6-9])((■){■}){■}  unsatisfiable SAT formula       
-  173    |  4     (((42)(■■))■)■          fail dot
-  174    |  4     (((42)(■|■))■)■         fail solve
-  175    |  4     (((42)(■){■})■)■          unsatisfiable SAT formula       
-  176    |  4     (((42)■)(■■))■          fail dot
-  177    |  4     (((42)■)(■|■))■         fail solve
-  178    |  4     (((42)■)(■){■})■          unsatisfiable SAT formula       
-  179    |  4     (((42)■)■)(■■)          fail dot
-  180    |  4     (((42)■)■)(■|■)         fail solve
-  181    |  4     (((42)■)■)(■){■}          unsatisfiable SAT formula       
-  182    |  4     (((42)(■))[6-9])■         unsatisfiable SAT formula       
-  183    |  4     (((42)((■■)■))[6-9])■   fail dot
-  184    |  4     (((42)((■|■)■))[6-9])■  fail dot
-  185    |  4     (((42)((■){■}■))[6-9])■   unsatisfiable SAT formula       
-  186    |  4     (((42)(■■))[6-9])(■■)   fail dot
-  187    |  4     (((42)(■■))[6-9])(■|■)  fail dot
-  188    |  4     (((42)(■■))[6-9])(■){■} fail dot
-  189    |  4     (((42)(■■|■))[6-9])■      unsatisfiable SAT formula       
-  190    |  4     (((42)((■|■)|■))[6-9])■ fail solve
-  191    |  4     (((42)((■){■}|■))[6-9])■  unsatisfiable SAT formula       
-  192    |  4     (((42)(■|■))[6-9])(■■)  fail dot
-  193    |  4     (((42)(■|■))[6-9])(■|■) fail solve
-  194    |  4     (((42)(■|■))[6-9])(■){■}  unsatisfiable SAT formula       
-  195    |  4     (((42)(■■){■})[6-9])■   fail dot
-  196    |  4     (((42)((■|■)){■})[6-9])■fail solve
-  197    |  4     (((42)((■){■}){■})[6-9])■  unsatisfiable SAT formula       
-  198    |  4     (((42)(■){■})[6-9])(■■) fail dot
-  199    |  4     (((42)(■){■})[6-9])(■|■)fail solve
-  200    |  4     (((42)(■){■})[6-9])(■){■}get a solution: (((42)([\.6]){1,2})[6-9])(0){0,1}
-add positive: 42.81
-add negative: 42.9
+  4      |  1     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  5      |  1     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  6      |  1     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  7      |  1     ((((([10])?[8-9]|20):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  8      |  1     ((((([10])?[8-9]|20):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  9      |  1     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  10     |  1     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  11     |  1     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  12     |  1     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  13     |  1     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  14     |  2     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  15     |  2     (((((■)?■|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  16     |  2     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  17     |  2     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  18     |  2     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  19     |  2     (((((■)?[8-9]|20):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  20     |  2     (((((■)?[8-9]|20):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  21     |  2     (((((■)?[8-9]|20):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  22     |  2     (((((■)?[8-9]|20):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  23     |  2     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  24     |  2     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  25     |  2     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  26     |  2     ((((([10]){■}■|20):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10]){1}[2680]|20):)[0-5])[0-9]|(((21):)0)0)
+add positive: 09:00
+add negative: 00:00
   unsatisfiable SAT formula       
-  201    |  4     (((42)■)[6-9])(■)         unsatisfiable SAT formula       
-  202    |  4     (((42)■)[6-9])((■■)■)   fail dot
-  203    |  4     (((42)■)[6-9])((■|■)■)  fail dot
-  204    |  4     (((42)■)[6-9])((■){■}■)   unsatisfiable SAT formula       
-  205    |  4     (((42)■)[6-9])(■■|■)      unsatisfiable SAT formula       
-  206    |  4     (((42)■)[6-9])((■|■)|■) fail solve
-  207    |  4     (((42)■)[6-9])((■){■}|■)  unsatisfiable SAT formula       
-  208    |  4     (((42)■)[6-9])(■■){■}   fail dot
-  209    |  4     (((42)■)[6-9])((■|■)){■}fail solve
-  210    |  4     (((42)■)[6-9])((■){■}){■}  unsatisfiable SAT formula       
-  211    |  4     (((42)\.)(■))■            unsatisfiable SAT formula       
-  212    |  4     (((42)\.)((■■)■))■      fail dot
-  213    |  4     (((42)\.)((■|■)■))■     fail dot
-  214    |  4     (((42)\.)((■){■}■))■      unsatisfiable SAT formula       
-  215    |  4     (((42)\.)(■■))(■■)      fail dot
-  216    |  4     (((42)\.)(■■))(■|■)     fail dot
-  217    |  4     (((42)\.)(■■))(■){■}      unsatisfiable SAT formula       
-  218    |  4     (((42)\.)(■■|■))■         unsatisfiable SAT formula       
-  219    |  4     (((42)\.)((■|■)|■))■    fail solve
-  220    |  4     (((42)\.)((■){■}|■))■     unsatisfiable SAT formula       
-  221    |  4     (((42)\.)(■|■))(■■)     fail dot
-  222    |  4     (((42)\.)(■|■))(■|■)    fail solve
-  223    |  4     (((42)\.)(■|■))(■){■}     unsatisfiable SAT formula       
-  224    |  4     (((42)\.)(■■){■})■      fail dot
-  225    |  4     (((42)\.)((■|■)){■})■   fail solve
-  226    |  4     (((42)\.)((■){■}){■})■    unsatisfiable SAT formula       
-  227    |  4     (((42)\.)(■){■})(■■)      unsatisfiable SAT formula       
-  228    |  4     (((42)\.)(■){■})(■|■)   fail solve
-  229    |  4     (((42)\.)(■){■})(■){■}  get a solution: (((42)\.)([167]){0,2})([1680]){0,2}
-add positive: 42.82
-add negative: 42.
+  27     |  2     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  28     |  2     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  29     |  2     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  30     |  2     ((((([10]){■}[8-9]|20):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  31     |  2     ((((([10]){■}[8-9]|20):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  32     |  2     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  33     |  2     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  34     |  2     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  35     |  2     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  36     |  2     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  37     |  2     ((((■[8-9]|20):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  38     |  2     ((((([10])?■|■0):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10])?[2689]|10):)[0-5])[0-9]|(((21):)0)0)
+add positive: 20:00
+add negative: 2:00
   unsatisfiable SAT formula       
-  230    |  4     (((42)\.)■)(■)            unsatisfiable SAT formula       
-  231    |  4     (((42)\.)■)((■■)■)      fail dot
-  232    |  4     (((42)\.)■)((■|■)■)     fail dot
-  233    |  4     (((42)\.)■)((■){■}■)      unsatisfiable SAT formula       
-  234    |  4     (((42)\.)■)(■■|■)         unsatisfiable SAT formula       
-  235    |  4     (((42)\.)■)((■|■)|■)    fail solve
-  236    |  4     (((42)\.)■)((■){■}|■)     unsatisfiable SAT formula       
-  237    |  4     (((42)\.)■)(■■){■}      fail dot
-  238    |  4     (((42)\.)■)((■|■)){■}   fail solve
-  239    |  4     (((42)\.)■)((■){■}){■}    unsatisfiable SAT formula       
-  240    |  4     (((42)\.)[6-9])((■■))   fail dot
-  241    |  4     (((42)\.)[6-9])((■|■))  fail solve
-  242    |  4     (((42)\.)[6-9])((■){■})   unsatisfiable SAT formula       
-  243    |  4     (((42)\.)[6-9])((■)■)   fail dot
-  244    |  4     (((42)\.)[6-9])(((■■)■)■)fail dot
-  245    |  4     (((42)\.)[6-9])(((■|■)■)■)fail dot
-  246    |  4     (((42)\.)[6-9])(((■){■}■)■)fail dot
-  247    |  4     (((42)\.)[6-9])((■■)(■■))fail dot
-  248    |  4     (((42)\.)[6-9])((■■)(■|■))fail dot
-  249    |  4     (((42)\.)[6-9])((■■)(■){■})fail dot
-  250    |  4     (((42)\.)[6-9])((■■|■)■)fail dot
-  251    |  4     (((42)\.)[6-9])(((■|■)|■)■)fail dot
-  252    |  4     (((42)\.)[6-9])(((■){■}|■)■)  unsatisfiable SAT formula       
-  253    |  4     (((42)\.)[6-9])((■|■)(■■))fail dot
-  254    |  4     (((42)\.)[6-9])((■|■)(■|■))fail dot
-  255    |  4     (((42)\.)[6-9])((■|■)(■){■})  unsatisfiable SAT formula       
-  256    |  4     (((42)\.)[6-9])((■■){■}■)  unsatisfiable SAT formula       
-  257    |  4     (((42)\.)[6-9])(((■|■)){■}■)fail solve
-  258    |  4     (((42)\.)[6-9])(((■){■}){■}■)  unsatisfiable SAT formula       
-  259    |  4     (((42)\.)[6-9])((■){■}(■■))fail dot
-  260    |  4     (((42)\.)[6-9])((■){■}(■|■))fail solve
-  261    |  4     (((42)\.)[6-9])((■){■}(■){■})  unsatisfiable SAT formula       
-  262    |  4     (((42)\.)[6-9])((■■)■|■)  unsatisfiable SAT formula       
-  263    |  4     (((42)\.)[6-9])((■|■)■|■)fail solve
-  264    |  4     (((42)\.)[6-9])((■){■}■|■)  unsatisfiable SAT formula       
-  265    |  4     (((42)\.)[6-9])(■■|■■)  fail dot
-  266    |  4     (((42)\.)[6-9])(■■|(■|■))fail solve
-  267    |  4     (((42)\.)[6-9])(■■|(■){■})  unsatisfiable SAT formula       
-  268    |  4     (((42)\.)[6-9])((■■|■)|■)  unsatisfiable SAT formula       
-  269    |  4     (((42)\.)[6-9])(((■|■)|■)|■)fail solve
-  270    |  4     (((42)\.)[6-9])(((■){■}|■)|■)  unsatisfiable SAT formula       
-  271    |  4     (((42)\.)[6-9])((■|■)|■■)  unsatisfiable SAT formula       
-  272    |  4     (((42)\.)[6-9])((■|■)|(■|■))fail solve
-  273    |  4     (((42)\.)[6-9])((■|■)|(■){■})  unsatisfiable SAT formula       
-  274    |  4     (((42)\.)[6-9])((■■){■}|■)  unsatisfiable SAT formula       
-  275    |  4     (((42)\.)[6-9])(((■|■)){■}|■)fail solve
-  276    |  4     (((42)\.)[6-9])(((■){■}){■}|■)  unsatisfiable SAT formula       
-  277    |  4     (((42)\.)[6-9])((■){■}|■■)  unsatisfiable SAT formula       
-  278    |  4     (((42)\.)[6-9])((■){■}|(■|■))fail solve
-  279    |  4     (((42)\.)[6-9])((■){■}|(■){■})  unsatisfiable SAT formula       
-  280    |  4     (((42)\.)[6-9])((■■)■){■}fail dot
-  281    |  4     (((42)\.)[6-9])((■|■)■){■}fail dot
-  282    |  4     (((42)\.)[6-9])((■){■}■){■}  unsatisfiable SAT formula       
-  283    |  4     (((42)\.)[6-9])((■■|■)){■}  unsatisfiable SAT formula       
-  284    |  4     (((42)\.)[6-9])(((■|■)|■)){■}fail solve
-  285    |  4     (((42)\.)[6-9])(((■){■}|■)){■}  unsatisfiable SAT formula       
-  286    |  4     (((42)\.)[6-9])((■■){■}){■}fail dot
-  287    |  4     (((42)\.)[6-9])(((■|■)){■}){■}fail solve
-  288    |  4     (((42)\.)[6-9])(((■){■}){■}){■}
-2.0603199005126953
+  39     |  2     ((((([10])?■|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  40     |  2     ((((([10])?■|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  41     |  2     ((((([10])?■|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  42     |  2     ((((([10])?■|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  43     |  2     ((((([10])?■|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  44     |  2     ((((([10])?■|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  45     |  2     ((((([10])?■|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  46     |  2     ((((([10])?■|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  47     |  2     ((((([10])?■|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  48     |  2     ((((([10])?(■■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  49     |  2     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  50     |  2     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  51     |  2     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10])?[8-9]|[12][260]):)[0-5])[0-9]|(((21):)0)0)
+add positive: 11:00
+add negative: 8:00
+  52     |  2     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  53     |  2     ((((([10])?[8-9]|■0):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  54     |  2     ((((([10])?[8-9]|■0):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  55     |  2     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  56     |  2     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  57     |  2     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  58     |  2     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  59     |  2     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  60     |  2     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  61     |  2     ((((([10])?[8-9]|2■):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  62     |  2     ((((([10])?[8-9]|2■):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  63     |  2     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  64     |  2     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  65     |  2     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  66     |  2     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  67     |  2     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  68     |  2     ((((([10])?[8-9]|20)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  69     |  2     ((((([10])?[8-9]|20)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  70     |  2     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  71     |  2     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  72     |  2     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  73     |  2     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  74     |  2     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  75     |  2     ((((([10])?[8-9]|20):)■)■|(((21):)0)0)fail dotstar or empty
+  76     |  2     ((((([10])?[8-9]|20):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  77     |  2     ((((([10])?[8-9]|20):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  78     |  2     ((((([10])?[8-9]|20):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  79     |  2     ((((([10])?[8-9]|20):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  80     |  2     ((((([10])?[8-9]|20):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  81     |  2     ((((([10])?[8-9]|20):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  82     |  2     ((((([10])?[8-9]|20):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  83     |  2     ((((([10])?[8-9]|20):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  84     |  2     ((((([10])?[8-9]|20):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  85     |  2     ((((([10])?[8-9]|20):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  86     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  87     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  88     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  89     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  90     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  91     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  92     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  93     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  94     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  95     |  2     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  96     |  3     (((((■){■}■|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  97     |  3     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  98     |  3     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  99     |  3     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  100    |  3     (((((■){■}[8-9]|20):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  101    |  3     (((((■){■}[8-9]|20):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  102    |  3     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  103    |  3     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  104    |  3     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  105    |  3     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  106    |  3     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  107    |  3     (((((■)?■|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  108    |  3     (((((■)?■|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  109    |  3     (((((■)?■|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  110    |  3     (((((■)?■|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  111    |  3     (((((■)?■|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  112    |  3     (((((■)?■|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  113    |  3     (((((■)?■|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  114    |  3     (((((■)?■|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  115    |  3     (((((■)?■|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  116    |  3     (((((■)?■|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  117    |  3     (((((■■)?■|20):)[0-5])[0-9]|(((21):)0)0)fail dot
+  118    |  3     ((((((■|■))?■|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  119    |  3     ((((((■){■})?■|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  120    |  3     (((((■)?(■■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  121    |  3     (((((■)?(■|■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  122    |  3     (((((■)?(■){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  123    |  3     (((((■)?[8-9]|■■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  124    |  3     (((((■)?[8-9]|■0)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  125    |  3     (((((■)?[8-9]|■0):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  126    |  3     (((((■)?[8-9]|■0):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  127    |  3     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  128    |  3     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  129    |  3     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  130    |  3     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  131    |  3     (((((■)?[8-9]|■0):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  132    |  3     (((((■)?[8-9]|2■)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  133    |  3     (((((■)?[8-9]|2■):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  134    |  3     (((((■)?[8-9]|2■):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  135    |  3     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  136    |  3     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  137    |  3     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  138    |  3     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  139    |  3     (((((■)?[8-9]|2■):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  140    |  3     (((((■)?[8-9]|20)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  141    |  3     (((((■)?[8-9]|20)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  142    |  3     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  143    |  3     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  144    |  3     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  145    |  3     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  146    |  3     (((((■)?[8-9]|20)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  147    |  3     (((((■)?[8-9]|20):)■)■|(((21):)0)0)fail dotstar or empty
+  148    |  3     (((((■)?[8-9]|20):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  149    |  3     (((((■)?[8-9]|20):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  150    |  3     (((((■)?[8-9]|20):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  151    |  3     (((((■)?[8-9]|20):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  152    |  3     (((((■)?[8-9]|20):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  153    |  3     (((((■)?[8-9]|20):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  154    |  3     (((((■)?[8-9]|20):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  155    |  3     (((((■)?[8-9]|20):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  156    |  3     (((((■)?[8-9]|20):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  157    |  3     (((((■)?[8-9]|20):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  158    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  159    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  160    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  161    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  162    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  163    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  164    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  165    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  166    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  167    |  3     (((((■)?[8-9]|20):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  168    |  3     ((((([10]){■}■|■0):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10]){1}[12689]|[12]0):)[0-5])[0-9]|(((21):)0)0)
+add positive: 13:00
+add negative: 01:00
+  unsatisfiable SAT formula       
+  169    |  3     ((((([10]){■}■|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  170    |  3     ((((([10]){■}■|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  171    |  3     ((((([10]){■}■|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  172    |  3     ((((([10]){■}■|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  173    |  3     ((((([10]){■}■|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  174    |  3     ((((([10]){■}■|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  175    |  3     ((((([10]){■}■|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  176    |  3     ((((([10]){■}■|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  177    |  3     ((((([10]){■}■|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  178    |  3     ((((■■|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  179    |  3     ((((([10]){■}(■■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  180    |  3     ((((([10]){■}(■|■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  181    |  3     ((((([10]){■}(■){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  182    |  3     ((((([10]){■}[8-9]|■■):)[0-5])[0-9]|(((21):)0)0)get a solution: ((((([10]){1}[8-9]|[12][12360]):)[0-5])[0-9]|(((21):)0)0)
+add positive: 14:00
+add negative: 22:00
+  unsatisfiable SAT formula       
+  183    |  3     ((((([10]){■}[8-9]|■0)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  184    |  3     ((((([10]){■}[8-9]|■0):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  185    |  3     ((((([10]){■}[8-9]|■0):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  186    |  3     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  187    |  3     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  188    |  3     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  189    |  3     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  190    |  3     ((((([10]){■}[8-9]|■0):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  191    |  3     ((((■[8-9]|■0):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  192    |  3     ((((([10]){■}[8-9]|2■)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  193    |  3     ((((([10]){■}[8-9]|2■):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  194    |  3     ((((([10]){■}[8-9]|2■):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  195    |  3     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  196    |  3     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  197    |  3     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  198    |  3     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  199    |  3     ((((([10]){■}[8-9]|2■):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  200    |  3     ((((■[8-9]|2■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  201    |  3     ((((([10]){■}[8-9]|20)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  202    |  3     ((((([10]){■}[8-9]|20)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  203    |  3     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  204    |  3     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  205    |  3     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  206    |  3     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  207    |  3     ((((([10]){■}[8-9]|20)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  208    |  3     ((((■[8-9]|20)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  209    |  3     ((((([10]){■}[8-9]|20):)■)■|(((21):)0)0)fail dotstar or empty
+  210    |  3     ((((([10]){■}[8-9]|20):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  211    |  3     ((((([10]){■}[8-9]|20):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  212    |  3     ((((([10]){■}[8-9]|20):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  213    |  3     ((((([10]){■}[8-9]|20):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  214    |  3     ((((([10]){■}[8-9]|20):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  215    |  3     ((((■[8-9]|20):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  216    |  3     ((((([10]){■}[8-9]|20):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  217    |  3     ((((([10]){■}[8-9]|20):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  218    |  3     ((((([10]){■}[8-9]|20):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  219    |  3     ((((([10]){■}[8-9]|20):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  220    |  3     ((((([10]){■}[8-9]|20):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  221    |  3     ((((■[8-9]|20):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  222    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  223    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  224    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  225    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  226    |  3     ((((■[8-9]|20):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  227    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  228    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  229    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  230    |  3     ((((■[8-9]|20):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  231    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  232    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  233    |  3     ((((■[8-9]|20):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  234    |  3     ((((([10]){■}[8-9]|20):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  235    |  3     ((((■[8-9]|20):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  236    |  3     ((((■[8-9]|20):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  237    |  3     ((((([10])?■|■■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  238    |  3     ((((([10])?■|■0)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  239    |  3     ((((([10])?■|■0):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  240    |  3     ((((([10])?■|■0):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  241    |  3     ((((([10])?■|■0):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  242    |  3     ((((([10])?■|■0):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  243    |  3     ((((([10])?■|■0):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  244    |  3     ((((([10])?■|■0):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  245    |  3     ((((([10])?■|■0):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  246    |  3     ((((([10])?(■■)|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  247    |  3     ((((([10])?(■|■)|■0):)[0-5])[0-9]|(((21):)0)0)fail solve
+  248    |  3     ((((([10])?(■){■}|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  249    |  3     ((((([10])?■|(■■)0):)[0-5])[0-9]|(((21):)0)0)fail dot
+  250    |  3     ((((([10])?■|(■|■)0):)[0-5])[0-9]|(((21):)0)0)fail solve
+  251    |  3     ((((([10])?■|(■){■}0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  252    |  3     ((((([10])?■|2■)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  253    |  3     ((((([10])?■|2■):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  254    |  3     ((((([10])?■|2■):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  255    |  3     ((((([10])?■|2■):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  256    |  3     ((((([10])?■|2■):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  257    |  3     ((((([10])?■|2■):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  258    |  3     ((((([10])?■|2■):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  259    |  3     ((((([10])?■|2■):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  260    |  3     ((((([10])?(■■)|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  261    |  3     ((((([10])?(■|■)|2■):)[0-5])[0-9]|(((21):)0)0)fail solve
+  262    |  3     ((((([10])?(■){■}|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  263    |  3     ((((([10])?■|2(■■)):)[0-5])[0-9]|(((21):)0)0)fail dot
+  264    |  3     ((((([10])?■|2(■|■)):)[0-5])[0-9]|(((21):)0)0)fail solve
+  265    |  3     ((((([10])?■|2(■){■}):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  266    |  3     ((((([10])?■|20)■)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  267    |  3     ((((([10])?■|20)■)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  268    |  3     ((((([10])?■|20)■)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  269    |  3     ((((([10])?■|20)■)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  270    |  3     ((((([10])?■|20)■)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  271    |  3     ((((([10])?■|20)■)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  272    |  3     ((((([10])?■|20)■)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  273    |  3     ((((([10])?(■■)|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  274    |  3     ((((([10])?(■|■)|20)■)[0-5])[0-9]|(((21):)0)0)fail solve
+  275    |  3     ((((([10])?(■){■}|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  276    |  3     ((((([10])?■|20)(■■))[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  277    |  3     ((((([10])?■|20)(■|■))[0-5])[0-9]|(((21):)0)0)fail solve
+  278    |  3     ((((([10])?■|20)(■){■})[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  279    |  3     ((((([10])?■|20):)■)■|(((21):)0)0)  unsatisfiable SAT formula       
+  280    |  3     ((((([10])?■|20):)■)[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  281    |  3     ((((([10])?■|20):)■)[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  282    |  3     ((((([10])?■|20):)■)[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  283    |  3     ((((([10])?■|20):)■)[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  284    |  3     ((((([10])?■|20):)■)[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  285    |  3     ((((([10])?(■■)|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  286    |  3     ((((([10])?(■|■)|20):)■)[0-9]|(((21):)0)0)fail solve
+  287    |  3     ((((([10])?(■){■}|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  288    |  3     ((((([10])?■|20):)(■■))[0-9]|(((21):)0)0)fail dot
+  289    |  3     ((((([10])?■|20):)(■|■))[0-9]|(((21):)0)0)fail solve
+  290    |  3     ((((([10])?■|20):)(■){■})[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  291    |  3     ((((([10])?■|20):)[0-5])■|(((■1):)0)0)  unsatisfiable SAT formula       
+  292    |  3     ((((([10])?■|20):)[0-5])■|(((2■):)0)0)  unsatisfiable SAT formula       
+  293    |  3     ((((([10])?■|20):)[0-5])■|(((21)■)0)0)  unsatisfiable SAT formula       
+  294    |  3     ((((([10])?■|20):)[0-5])■|(((21):)■)0)  unsatisfiable SAT formula       
+  295    |  3     ((((([10])?■|20):)[0-5])■|(((21):)0)■)  unsatisfiable SAT formula       
+  296    |  3     ((((([10])?(■■)|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  297    |  3     ((((([10])?(■|■)|20):)[0-5])■|(((21):)0)0)fail solve
+  298    |  3     ((((([10])?(■){■}|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  299    |  3     ((((([10])?■|20):)[0-5])(■■)|(((21):)0)0)fail dot
+  300    |  3     ((((([10])?■|20):)[0-5])(■|■)|(((21):)0)0)fail solve
+  301    |  3     ((((([10])?■|20):)[0-5])(■){■}|(((21):)0)0)  unsatisfiable SAT formula       
+  302    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((■■):)0)0)  unsatisfiable SAT formula       
+  303    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((■1)■)0)0)  unsatisfiable SAT formula       
+  304    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((■1):)■)0)  unsatisfiable SAT formula       
+  305    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((■1):)0)■)  unsatisfiable SAT formula       
+  306    |  3     ((((([10])?(■■)|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  307    |  3     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((■1):)0)0)fail solve
+  308    |  3     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  309    |  3     ((((([10])?■|20):)[0-5])[0-9]|((((■■)1):)0)0)  unsatisfiable SAT formula       
+  310    |  3     ((((([10])?■|20):)[0-5])[0-9]|((((■|■)1):)0)0)fail solve
+  311    |  3     ((((([10])?■|20):)[0-5])[0-9]|((((■){■}1):)0)0)  unsatisfiable SAT formula       
+  312    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2■)■)0)0)  unsatisfiable SAT formula       
+  313    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2■):)■)0)  unsatisfiable SAT formula       
+  314    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2■):)0)■)  unsatisfiable SAT formula       
+  315    |  3     ((((([10])?(■■)|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  316    |  3     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((2■):)0)0)fail solve
+  317    |  3     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  318    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2(■■)):)0)0)  unsatisfiable SAT formula       
+  319    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2(■|■)):)0)0)fail solve
+  320    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((2(■){■}):)0)0)  unsatisfiable SAT formula       
+  321    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21)■)■)0)  unsatisfiable SAT formula       
+  322    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21)■)0)■)  unsatisfiable SAT formula       
+  323    |  3     ((((([10])?(■■)|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  324    |  3     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((21)■)0)0)fail solve
+  325    |  3     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  326    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21)(■■))0)0)  unsatisfiable SAT formula       
+  327    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21)(■|■))0)0)fail solve
+  328    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21)(■){■})0)0)  unsatisfiable SAT formula       
+  329    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)■)■)  unsatisfiable SAT formula       
+  330    |  3     ((((([10])?(■■)|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  331    |  3     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((21):)■)0)fail solve
+  332    |  3     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  333    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)(■■))0)  unsatisfiable SAT formula       
+  334    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)(■|■))0)fail solve
+  335    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)(■){■})0)  unsatisfiable SAT formula       
+  336    |  3     ((((([10])?(■■)|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  337    |  3     ((((([10])?(■|■)|20):)[0-5])[0-9]|(((21):)0)■)fail solve
+  338    |  3     ((((([10])?(■){■}|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  339    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)0)(■■))  unsatisfiable SAT formula       
+  340    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)0)(■|■))fail solve
+  341    |  3     ((((([10])?■|20):)[0-5])[0-9]|(((21):)0)(■){■})  unsatisfiable SAT formula       
+  342    |  3     ((((([10])?(■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  343    |  3     ((((([10])?((■■)■)|20):)[0-5])[0-9]|(((21):)0)0)fail dot
+  344    |  3     ((((([10])?((■|■)■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  345    |  3     ((((([10])?((■){■}■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  346    |  3     ((((([10])?(■■|■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  347    |  3     ((((([10])?((■|■)|■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  348    |  3     ((((([10])?((■){■}|■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  349    |  3     ((((([10])?(■■){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  350    |  3     ((((([10])?((■|■)){■}|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  351    |  3     ((((([10])?((■){■}){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  352    |  3     ((((([10])?[8-9]|■■)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  353    |  3     ((((([10])?[8-9]|■■):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  354    |  3     ((((([10])?[8-9]|■■):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  355    |  3     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  356    |  3     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  357    |  3     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  358    |  3     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  359    |  3     ((((([10])?[8-9]|■■):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  360    |  3     ((((([10])?[8-9]|■):)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  361    |  3     ((((([10])?[8-9]|(■■)■):)[0-5])[0-9]|(((21):)0)0)fail dot
+  362    |  3     ((((([10])?[8-9]|(■|■)■):)[0-5])[0-9]|(((21):)0)0)fail solve
+  363    |  3     ((((([10])?[8-9]|(■){■}■):)[0-5])[0-9]|(((21):)0)0)  364    |  3     ((((([10])?[8-9]|■0)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  365    |  3     ((((([10])?[8-9]|■0)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  366    |  3     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  367    |  3     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  368    |  3     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  369    |  3     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  370    |  3     ((((([10])?[8-9]|■0)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  371    |  3     ((((([10])?[8-9]|■0):)■)■|(((21):)0)0)fail dotstar or empty
+  372    |  3     ((((([10])?[8-9]|■0):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  373    |  3     ((((([10])?[8-9]|■0):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  374    |  3     ((((([10])?[8-9]|■0):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  375    |  3     ((((([10])?[8-9]|■0):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  376    |  3     ((((([10])?[8-9]|■0):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  377    |  3     ((((([10])?[8-9]|■0):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  378    |  3     ((((([10])?[8-9]|■0):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  379    |  3     ((((([10])?[8-9]|■0):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  380    |  3     ((((([10])?[8-9]|■0):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  381    |  3     ((((([10])?[8-9]|■0):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  382    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  383    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  384    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  385    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  386    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  387    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  388    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  389    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  390    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  391    |  3     ((((([10])?[8-9]|■0):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  392    |  3     ((((([10])?[8-9]|2■)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  393    |  3     ((((([10])?[8-9]|2■)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  394    |  3     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  395    |  3     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  396    |  3     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  397    |  3     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  398    |  3     ((((([10])?[8-9]|2■)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  399    |  3     ((((([10])?[8-9]|2■):)■)■|(((21):)0)0)fail dotstar or empty
+  400    |  3     ((((([10])?[8-9]|2■):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  401    |  3     ((((([10])?[8-9]|2■):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  402    |  3     ((((([10])?[8-9]|2■):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  403    |  3     ((((([10])?[8-9]|2■):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  404    |  3     ((((([10])?[8-9]|2■):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  405    |  3     ((((([10])?[8-9]|2■):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  406    |  3     ((((([10])?[8-9]|2■):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  407    |  3     ((((([10])?[8-9]|2■):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  408    |  3     ((((([10])?[8-9]|2■):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  409    |  3     ((((([10])?[8-9]|2■):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  410    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  411    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  412    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  413    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  414    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  415    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  416    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  417    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  418    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  419    |  3     ((((([10])?[8-9]|2■):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  420    |  3     ((((([10])?[8-9]|20)■)■)■|(((21):)0)0)fail dotstar or empty
+  421    |  3     ((((([10])?[8-9]|20)■)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  422    |  3     ((((([10])?[8-9]|20)■)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  423    |  3     ((((([10])?[8-9]|20)■)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  424    |  3     ((((([10])?[8-9]|20)■)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  425    |  3     ((((([10])?[8-9]|20)■)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  426    |  3     ((((([10])?[8-9]|20)■)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  427    |  3     ((((([10])?[8-9]|20)■)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  428    |  3     ((((([10])?[8-9]|20)■)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  429    |  3     ((((([10])?[8-9]|20)■)[0-5])■|(((21):)■)0)fail dotstar or empty
+  430    |  3     ((((([10])?[8-9]|20)■)[0-5])■|(((21):)0)■)fail dotstar or empty
+  431    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  432    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  433    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  434    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  435    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  436    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  437    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  438    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  439    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  440    |  3     ((((([10])?[8-9]|20)■)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  441    |  3     ((((([10])?[8-9]|20):)■)■|(((■1):)0)0)fail dotstar or empty
+  442    |  3     ((((([10])?[8-9]|20):)■)■|(((2■):)0)0)fail dotstar or empty
+  443    |  3     ((((([10])?[8-9]|20):)■)■|(((21)■)0)0)fail dotstar or empty
+  444    |  3     ((((([10])?[8-9]|20):)■)■|(((21):)■)0)fail dotstar or empty
+  445    |  3     ((((([10])?[8-9]|20):)■)■|(((21):)0)■)fail dotstar or empty
+  446    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((■■):)0)0)fail dotstar or empty
+  447    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((■1)■)0)0)fail dotstar or empty
+  448    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((■1):)■)0)fail dotstar or empty
+  449    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((■1):)0)■)fail dotstar or empty
+  450    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((2■)■)0)0)fail dotstar or empty
+  451    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((2■):)■)0)fail dotstar or empty
+  452    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((2■):)0)■)fail dotstar or empty
+  453    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((21)■)■)0)fail dotstar or empty
+  454    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((21)■)0)■)fail dotstar or empty
+  455    |  3     ((((([10])?[8-9]|20):)■)[0-9]|(((21):)■)■)fail dotstar or empty
+  456    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((■■):)0)0)fail dotstar or empty
+  457    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((■1)■)0)0)fail dotstar or empty
+  458    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((■1):)■)0)fail dotstar or empty
+  459    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((■1):)0)■)fail dotstar or empty
+  460    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((2■)■)0)0)fail dotstar or empty
+  461    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((2■):)■)0)fail dotstar or empty
+  462    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((2■):)0)■)fail dotstar or empty
+  463    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((21)■)■)0)fail dotstar or empty
+  464    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((21)■)0)■)fail dotstar or empty
+  465    |  3     ((((([10])?[8-9]|20):)[0-5])■|(((21):)■)■)fail dotstar or empty
+  466    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■■)■)0)0)fail dotstar or empty
+  467    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■■):)■)0)fail dotstar or empty
+  468    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■■):)0)■)fail dotstar or empty
+  469    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■):)0)0)fail dotstar or empty
+  470    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1)■)■)0)fail dotstar or empty
+  471    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1)■)0)■)fail dotstar or empty
+  472    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((■1):)■)■)fail dotstar or empty
+  473    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■)■)■)0)fail dotstar or empty
+  474    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■)■)0)■)fail dotstar or empty
+  475    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((2■):)■)■)fail dotstar or empty
+  476    |  3     ((((([10])?[8-9]|20):)[0-5])[0-9]|(((21)■)■)■)fail dotstar or empty
+  477    |  4     (((((■){■}■|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  478    |  4     (((((■){■}■|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  479    |  4     (((((■){■}■|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  480    |  4     (((((■){■}■|20):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  481    |  4     (((((■){■}■|20):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  482    |  4     (((((■){■}■|20):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  483    |  4     (((((■){■}■|20):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  484    |  4     (((((■){■}■|20):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  485    |  4     (((((■){■}■|20):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  486    |  4     (((((■){■}■|20):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  487    |  4     (((((■■){■}■|20):)[0-5])[0-9]|(((21):)0)0)fail dot
+  488    |  4     ((((((■|■)){■}■|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  489    |  4     ((((((■){■}){■}■|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  490    |  4     (((((■){■}(■■)|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  491    |  4     (((((■){■}(■|■)|20):)[0-5])[0-9]|(((21):)0)0)fail solve
+  492    |  4     (((((■){■}(■){■}|20):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  493    |  4     (((((■){■}[8-9]|■■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  494    |  4     (((((■){■}[8-9]|■0)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  495    |  4     (((((■){■}[8-9]|■0):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  496    |  4     (((((■){■}[8-9]|■0):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  497    |  4     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  498    |  4     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  499    |  4     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  500    |  4     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  501    |  4     (((((■){■}[8-9]|■0):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  502    |  4     (((((■){■}[8-9]|2■)■)[0-5])[0-9]|(((21):)0)0)fail dotstar or empty
+  503    |  4     (((((■){■}[8-9]|2■):)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  504    |  4     (((((■){■}[8-9]|2■):)[0-5])■|(((21):)0)0)fail dotstar or empty
+  505    |  4     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  506    |  4     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  507    |  4     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  508    |  4     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  509    |  4     (((((■){■}[8-9]|2■):)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  510    |  4     (((((■){■}[8-9]|20)■)■)[0-9]|(((21):)0)0)fail dotstar or empty
+  511    |  4     (((((■){■}[8-9]|20)■)[0-5])■|(((21):)0)0)fail dotstar or empty
+  512    |  4     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((■1):)0)0)fail dotstar or empty
+  513    |  4     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((2■):)0)0)fail dotstar or empty
+  514    |  4     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((21)■)0)0)fail dotstar or empty
+  515    |  4     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((21):)■)0)fail dotstar or empty
+  516    |  4     (((((■){■}[8-9]|20)■)[0-5])[0-9]|(((21):)0)■)fail dotstar or empty
+  517    |  4     (((((■){■}[8-9]|20):)■)■|(((21):)0)0)fail dotstar or empty
+  518    |  4     (((((■){■}[8-9]|20):)■)[0-9]|(((■1):)0)0)fail dotstar or empty
+  519    |  4     (((((■){■}[8-9]|20):)■)[0-9]|(((2■):)0)0)fail dotstar or empty
+  520    |  4     (((((■){■}[8-9]|20):)■)[0-9]|(((21)■)0)0)fail dotstar or empty
+  521    |  4     (((((■){■}[8-9]|20):)■)[0-9]|(((21):)■)0)fail dotstar or empty
+  522    |  4     (((((■){■}[8-9]|20):)■)[0-9]|(((21):)0)■)fail dotstar or empty
+  523    |  4     (((((■){■}[8-9]|20):)[0-5])■|(((■1):)0)0)fail dotstar or empty
+  524    |  4     (((((■){■}[8-9]|20):)[0-5])■|(((2■):)0)0)fail dotstar or empty
+  525    |  4     (((((■){■}[8-9]|20):)[0-5])■|(((21)■)0)0)fail dotstar or empty
+  526    |  4     (((((■){■}[8-9]|20):)[0-5])■|(((21):)■)0)fail dotstar or empty
+  527    |  4     (((((■){■}[8-9]|20):)[0-5])■|(((21):)0)■)fail dotstar or empty
+  528    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((■■):)0)0)fail dotstar or empty
+  529    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((■1)■)0)0)fail dotstar or empty
+  530    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((■1):)■)0)fail dotstar or empty
+  531    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((■1):)0)■)fail dotstar or empty
+  532    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((2■)■)0)0)fail dotstar or empty
+  533    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((2■):)■)0)fail dotstar or empty
+  534    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((2■):)0)■)fail dotstar or empty
+  535    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21)■)■)0)fail dotstar or empty
+  536    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21)■)0)■)fail dotstar or empty
+  537    |  4     (((((■){■}[8-9]|20):)[0-5])[0-9]|(((21):)■)■)fail dotstar or empty
+  538    |  4     (((((■)?■|■■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  539    |  4     (((((■)?■|■0)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  540    |  4     (((((■)?■|■0):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  541    |  4     (((((■)?■|■0):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  542    |  4     (((((■)?■|■0):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  543    |  4     (((((■)?■|■0):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  544    |  4     (((((■)?■|■0):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  545    |  4     (((((■)?■|■0):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  546    |  4     (((((■)?■|■0):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  547    |  4     (((((■■)?■|■0):)[0-5])[0-9]|(((21):)0)0)fail dot
+  548    |  4     ((((((■|■))?■|■0):)[0-5])[0-9]|(((21):)0)0)fail solve
+  549    |  4     ((((((■){■})?■|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  550    |  4     (((((■)?(■■)|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  551    |  4     (((((■)?(■|■)|■0):)[0-5])[0-9]|(((21):)0)0)fail solve
+  552    |  4     (((((■)?(■){■}|■0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  553    |  4     (((((■)?■|(■■)0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  554    |  4     (((((■)?■|(■|■)0):)[0-5])[0-9]|(((21):)0)0)fail solve
+  555    |  4     (((((■)?■|(■){■}0):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  556    |  4     (((((■)?■|2■)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  557    |  4     (((((■)?■|2■):)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  558    |  4     (((((■)?■|2■):)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  559    |  4     (((((■)?■|2■):)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  560    |  4     (((((■)?■|2■):)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  561    |  4     (((((■)?■|2■):)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  562    |  4     (((((■)?■|2■):)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  563    |  4     (((((■)?■|2■):)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  564    |  4     (((((■■)?■|2■):)[0-5])[0-9]|(((21):)0)0)fail dot
+  565    |  4     ((((((■|■))?■|2■):)[0-5])[0-9]|(((21):)0)0)fail solve
+  566    |  4     ((((((■){■})?■|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  567    |  4     (((((■)?(■■)|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  568    |  4     (((((■)?(■|■)|2■):)[0-5])[0-9]|(((21):)0)0)fail solve
+  569    |  4     (((((■)?(■){■}|2■):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  570    |  4     (((((■)?■|2(■■)):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  571    |  4     (((((■)?■|2(■|■)):)[0-5])[0-9]|(((21):)0)0)fail solve
+  572    |  4     (((((■)?■|2(■){■}):)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  573    |  4     (((((■)?■|20)■)■)[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  574    |  4     (((((■)?■|20)■)[0-5])■|(((21):)0)0)  unsatisfiable SAT formula       
+  575    |  4     (((((■)?■|20)■)[0-5])[0-9]|(((■1):)0)0)  unsatisfiable SAT formula       
+  576    |  4     (((((■)?■|20)■)[0-5])[0-9]|(((2■):)0)0)  unsatisfiable SAT formula       
+  577    |  4     (((((■)?■|20)■)[0-5])[0-9]|(((21)■)0)0)  unsatisfiable SAT formula       
+  578    |  4     (((((■)?■|20)■)[0-5])[0-9]|(((21):)■)0)  unsatisfiable SAT formula       
+  579    |  4     (((((■)?■|20)■)[0-5])[0-9]|(((21):)0)■)  unsatisfiable SAT formula       
+  580    |  4     (((((■■)?■|20)■)[0-5])[0-9]|(((21):)0)0)fail dot
+  581    |  4     ((((((■|■))?■|20)■)[0-5])[0-9]|(((21):)0)0)fail solve
+  582    |  4     ((((((■){■})?■|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  583    |  4     (((((■)?(■■)|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  584    |  4     (((((■)?(■|■)|20)■)[0-5])[0-9]|(((21):)0)0)fail solve
+  585    |  4     (((((■)?(■){■}|20)■)[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  586    |  4     (((((■)?■|20)(■■))[0-5])[0-9]|(((21):)0)0)  unsatisfiable SAT formula       
+  587    |  4     (((((■)?■|20)(■|■))[0-5])[0-9]|(((21):)0)0)fail solve
+  588    |  4     (((((■)?■|20)(■){■})[0-5])[0-9]|(((21):)0)0)
+2.026512861251831
 timeout

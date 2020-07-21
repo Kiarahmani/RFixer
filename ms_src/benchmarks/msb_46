@@ -1,9 +1,7 @@
-[a-zA-Z]*
-[a-zA-Z ]*
+([a-zA-Z]{1})([0-9]{3})
+([a-zA-Z]\d{3}|\d[a-zA-Z]\d{2}|\d{2}[a-zA-Z]\d|\d{3}[a-zA-Z])
 +++
-but with spaces allowed between words
-t allow spaces
-can i change it to make it allow spaces
-i have tried the following but it doesn
-t work
+123d
+12d3
+99A9
 ---

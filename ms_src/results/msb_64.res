@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  (\d){5,6}(\|)?((\d){5,6})?
+  (\d){4}
 
 That that should match the strings:
 
-  ✓ (0:18)   34786|235652|12876
+  ✓ (0:7)    1/2,4/6
 
 And reject the strings:
 
@@ -14,28 +14,53 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ((■){5,6}(\|)?)((\d){5,6})?fail dot
-  2      |  1     ((\d){■}(\|)?)((\d){5,6})?fail dotstar or empty
-  3      |  1     ((\d){5,6}(■)?)((\d){5,6})?fail dot
-  4      |  1     ((\d){5,6}(\|){■})((\d){5,6})?fail dotstar or empty
-  5      |  1     ((\d){5,6}(\|)?)((■){5,6})?fail dot
-  6      |  1     ((\d){5,6}(\|)?)((\d){■})?fail dotstar or empty
-  7      |  1     ((\d){5,6}(\|)?)((\d){5,6}){■}fail dotstar or empty
-  8      |  2     ((■){■}(\|)?)((\d){5,6})?get a solution: (([12345678|]){14,18}(\|)?)((\d){5,6})?
-add positive: 10000
-add negative: 1|111111111111
-get a solution: (([2345678|0]){0,18}(\|)?)((\d){5,6})?
-add positive: 10000|00000
-add negative: 
+  1      |  1     (■){4}                  fail dot
+  2      |  1     (\d){■}                 fail dotstar or empty
+  3      |  2     (■){■}                  get a solution: ([1246,/]){1,7}
+add positive: 0/0,0/0
+add negative: ,
+get a solution: ([1246,/0]){2,7}
+add positive: 3/0,0/0
+add negative: 0,
+get a solution: ([12346,/0]){3,7}
+add positive: 0/0,0/5
+add negative: 0/,
+get a solution: ([123456,/0]){4,7}
+add positive: 7/0,0/0
+add negative: ,,,,
+get a solution: ([1234567,/0]){5,7}
+add positive: 0/0,0/8
+add negative: ,,,,,
+get a solution: ([12345678,/0]){6,7}
+add positive: 9/0,0/0
+add negative: ,,,,,,
+get a solution: ([,/0123456789]){7}
+add positive: 00/0,0/0
+add negative: ,,,,,,,
   unsatisfiable SAT formula       
-  9      |  2     ((■){5,6}(■)?)((\d){5,6})?fail dot
-  10     |  2     ((■){5,6}(\|){■})((\d){5,6})?fail dot
-  11     |  2     ((■){5,6}(\|)?)((■){5,6})?fail dot
-  12     |  2     ((■){5,6}(\|)?)((\d){■})?fail dot
-  13     |  2     ((■){5,6}(\|)?)((\d){5,6}){■}fail dot
-  14     |  2     (■(\|)?)((\d){5,6})?    fail dot
-  15     |  2     ((■■){5,6}(\|)?)((\d){5,6})?fail dot
-  16     |  2     (((■|■)){5,6}(\|)?)((\d){5,6})?fail dot
-  17     |  2     (((■){■}){5,6}(\|)?)((\d){5,6})?
-2.0211219787597656
+  4      |  2     ■                       fail dot
+  5      |  2     (■■){4}                 fail dot
+  6      |  2     ((■|■)){4}              fail dot
+  7      |  2     ((■){■}){4}               unsatisfiable SAT formula       
+  8      |  3     (■■){■}                 fail dot
+  9      |  3     ((■|■)){■}              fail solve
+  10     |  3     ((■){■}){■}               unsatisfiable SAT formula       
+  11     |  3     ■■                      fail dot
+  12     |  3     (■|■)                   fail dot
+  13     |  3     ((■■)■){4}              fail dot
+  14     |  3     ((■|■)■){4}             fail dot
+  15     |  3     ((■){■}■){4}            get a solution: (([1239,/0]){0,2}[45678/0]){4}
+add positive: 0/4,0/1
+add negative: ////
+get a solution: (([,/0]){0,1}[1234567890]){4}
+add positive: 10/0,0/0
+add negative: 0000
+  unsatisfiable SAT formula       
+  16     |  3     ((■■|■)){4}               unsatisfiable SAT formula       
+  17     |  3     (((■|■)|■)){4}          fail dot
+  18     |  3     (((■){■}|■)){4}           unsatisfiable SAT formula       
+  19     |  3     ((■■){■}){4}            fail dot
+  20     |  3     (((■|■)){■}){4}         fail solve
+  21     |  3     (((■){■}){■}){4}        
+2.023259162902832
 timeout
