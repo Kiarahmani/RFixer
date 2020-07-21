@@ -1,7 +1,5 @@
-(www\.)?([a-z]+)(\.)(domain)(\.)(com)
-(((www\.)([a-z]+))|(?!(www\.))([a-z]+))(\.)(domain)(\.)(com)
+((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*
+((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([, ])*)*
 +++
-www.user.domain.com
-ww.domain.com
+email1@domain.com,  email2@domain.com
 ---
-www.domain.com

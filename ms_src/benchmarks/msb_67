@@ -1,14 +1,5 @@
-[^-\s].{8,20}
-[^-\s]{8,20}
+[1-50]
+(0?[1-9])|([1-4][0-9])|(50)
 +++
-avail...
-allowed.
-password
+06
 ---
-t no spaces allowed.
-I'm trying to create
-for a password field.
-a Regular Expression
-8 - 20 characters, bu
-The requirements are
-I've tried  to no ava

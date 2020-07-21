@@ -1,14 +1,12 @@
 
 Given the regular expression:
 
-  A(\w)+
+  [1-9](\d)*(,(\d)+)?
 
 That that should match the strings:
 
-  ✓ (0:2)    My
-  ✓ (2:5)    Yes
-  ✓ (5:12)   Example
-  ✓ (12:15)  How
+  ✓ (0:4)    0,01
+  ✓ (4:9)    0,001
 
 And reject the strings:
 
@@ -17,154 +15,232 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     ■(\w)+                  get a solution: [EHYM](\w)+
-add positive: A
-  2      |  1     A(■)+                   fail dotstar or empty
-  3      |  1     A(\w){■}                fail dotstar or empty
-  4      |  2     ■(■)+                   fail dot
-  5      |  2     ■(\w){■}                get a solution: [AEHYM](\w){0,6}
-add positive: B
-get a solution: [ABEHYM](\w){0,6}
-add positive: C
-get a solution: [ABCEHYM](\w){0,6}
-add positive: D
-get a solution: [ABCDEHYM](\w){0,6}
-add positive: F
-get a solution: [ABCDEFHYM](\w){0,6}
-add positive: G
-get a solution: [ABCDEFGHYM](\w){0,6}
-add positive: I
-get a solution: [ABCDEFGHIYM](\w){0,6}
-add positive: J
-get a solution: [ABCDEFGHIJMY](\w){0,6}
-add positive: K
-get a solution: [ABCDEFGHIJKMY](\w){0,6}
-add positive: L
-get a solution: [ABCDEFGHIJKLMY](\w){0,6}
-add positive: N
-get a solution: [ABCDEFGHIJKLMNY](\w){0,6}
-add positive: O
-get a solution: [ABCDEFGHIJKLMNOY](\w){0,6}
-add positive: P
-get a solution: [ABCDEFGHIJKLMNOPY](\w){0,6}
-add positive: Q
-get a solution: [ABCDEFGHIJKLMNOPQY](\w){0,6}
-add positive: R
-get a solution: [ABCDEFGHIJKLMNOPQRY](\w){0,6}
-add positive: S
-get a solution: [ABCDEFGHIJKLMNOPQRSY](\w){0,6}
-add positive: T
-get a solution: [ABCDEFGHIJKLMNOPQRSTY](\w){0,6}
-add positive: U
-get a solution: [ABCDEFGHIJKLMNOPQRSTUY](\w){0,6}
-add positive: V
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVY](\w){0,6}
-add positive: W
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWY](\w){0,6}
-add positive: X
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXY](\w){0,6}
-add positive: Z
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,6}
-add positive: A0000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,7}
-add positive: A00000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,8}
-add positive: A000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,9}
-add positive: A0000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,10}
-add positive: A00000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,11}
-add positive: A000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,12}
-add positive: A0000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,13}
-add positive: A00000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,14}
-add positive: A000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,15}
-add positive: A0000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,16}
-add positive: A00000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,17}
-add positive: A000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,18}
-add positive: A0000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,19}
-add positive: A00000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,20}
-add positive: A000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,21}
-add positive: A0000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,22}
-add positive: A00000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,23}
-add positive: A000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,24}
-add positive: A0000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,25}
-add positive: A00000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,26}
-add positive: A000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,27}
-add positive: A0000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,28}
-add positive: A00000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,29}
-add positive: A000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,30}
-add positive: A0000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,31}
-add positive: A00000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,32}
-add positive: A000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,33}
-add positive: A0000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,34}
-add positive: A00000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,35}
-add positive: A000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,36}
-add positive: A0000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,37}
-add positive: A00000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,38}
-add positive: A000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,39}
-add positive: A0000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,40}
-add positive: A00000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,41}
-add positive: A000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,42}
-add positive: A0000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,43}
-add positive: A00000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,44}
-add positive: A000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,45}
-add positive: A0000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,46}
-add positive: A00000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,47}
-add positive: A000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,48}
-add positive: A0000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,49}
-add positive: A00000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,50}
-add positive: A000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,51}
-add positive: A0000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,52}
-add positive: A00000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,53}
-add positive: A000000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,54}
-add positive: A0000000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,55}
-add positive: A00000000000000000000000000000000000000000000000000000000
-get a solution: [ABCDEFGHIJKLMNOPQRSTUVWXYZ](\w){0,56}
-
-5.082891941070557
+  1      |  1     (■(\d)*)(,(\d)+)?       get a solution: (0(\d)*)(,(\d)+)?
+add positive: 1
+get a solution: ([10](\d)*)(,(\d)+)?
+add positive: 2
+get a solution: ([120](\d)*)(,(\d)+)?
+add positive: 3
+get a solution: ([1230](\d)*)(,(\d)+)?
+add positive: 4
+get a solution: ([12340](\d)*)(,(\d)+)?
+add positive: 5
+get a solution: ([123450](\d)*)(,(\d)+)?
+add positive: 6
+get a solution: ([1234560](\d)*)(,(\d)+)?
+add positive: 7
+get a solution: ([12345670](\d)*)(,(\d)+)?
+add positive: 8
+get a solution: ([123456780](\d)*)(,(\d)+)?
+add positive: 9
+get a solution: ([1234567890](\d)*)(,(\d)+)?
+add positive: +0
+get a solution: ([123456789+0](\d)*)(,(\d)+)?
+add positive: -0
+add negative: +
+  unsatisfiable SAT formula       
+  2      |  1     ([1-9](■)*)(,(\d)+)?    fail dotstar or empty
+  3      |  1     ([1-9](\d){■})(,(\d)+)? fail dotstar or empty
+  4      |  1     ([1-9](\d)*)(■(\d)+)?   fail dotstar or empty
+  5      |  1     ([1-9](\d)*)(,(■)+)?    fail dotstar or empty
+  6      |  1     ([1-9](\d)*)(,(\d){■})? fail dotstar or empty
+  7      |  1     ([1-9](\d)*)(,(\d)+){■} fail dotstar or empty
+  8      |  2     (■(■)*)(,(\d)+)?          unsatisfiable SAT formula       
+  9      |  2     (■(\d){■})(,(\d)+)?       unsatisfiable SAT formula       
+  10     |  2     (■(\d)*)(■(\d)+)?         unsatisfiable SAT formula       
+  11     |  2     (■(\d)*)(,(■)+)?          unsatisfiable SAT formula       
+  12     |  2     (■(\d)*)(,(\d){■})?       unsatisfiable SAT formula       
+  13     |  2     (■(\d)*)(,(\d)+){■}       unsatisfiable SAT formula       
+  14     |  2     ((■■)(\d)*)(,(\d)+)?    fail dot
+  15     |  2     ((■|■)(\d)*)(,(\d)+)?   fail solve
+  16     |  2     ((■){■}(\d)*)(,(\d)+)?    unsatisfiable SAT formula       
+  17     |  2     ([1-9](■){■})(,(\d)+)?  fail dotstar or empty
+  18     |  2     ([1-9](■)*)(■(\d)+)?    fail dotstar or empty
+  19     |  2     ([1-9](■)*)(,(■)+)?     fail dotstar or empty
+  20     |  2     ([1-9](■)*)(,(\d){■})?  fail dotstar or empty
+  21     |  2     ([1-9](■)*)(,(\d)+){■}  fail dotstar or empty
+  22     |  2     ([1-9](\d){■})(■(\d)+)? fail dotstar or empty
+  23     |  2     ([1-9](\d){■})(,(■)+)?  fail dotstar or empty
+  24     |  2     ([1-9](\d){■})(,(\d){■})?fail dotstar or empty
+  25     |  2     ([1-9](\d){■})(,(\d)+){■}fail dotstar or empty
+  26     |  2     ([1-9]■)(,(\d)+)?       fail dotstar or empty
+  27     |  2     ([1-9](\d)*)(■(■)+)?    fail dotstar or empty
+  28     |  2     ([1-9](\d)*)(■(\d){■})? fail dotstar or empty
+  29     |  2     ([1-9](\d)*)(■(\d)+){■} fail dotstar or empty
+  30     |  2     ([1-9](\d)*)(,(■){■})?  fail dotstar or empty
+  31     |  2     ([1-9](\d)*)(,(■)+){■}  fail dotstar or empty
+  32     |  2     ([1-9](\d)*)(,(\d){■}){■}fail dotstar or empty
+  33     |  2     ([1-9](\d)*)(,■)?       fail dotstar or empty
+  34     |  2     ([1-9](\d)*)■           fail dotstar or empty
+  35     |  3     (■(■)*)(■(\d)+)?          unsatisfiable SAT formula       
+  36     |  3     (■(■)*)(,(■)+)?           unsatisfiable SAT formula       
+  37     |  3     (■(■)*)(,(\d){■})?        unsatisfiable SAT formula       
+  38     |  3     (■(■)*)(,(\d)+){■}        unsatisfiable SAT formula       
+  39     |  3     ((■■)(■)*)(,(\d)+)?     fail dot
+  40     |  3     ((■|■)(■)*)(,(\d)+)?    fail solve
+  41     |  3     ((■){■}(■)*)(,(\d)+)?     unsatisfiable SAT formula       
+  42     |  3     (■(■■)*)(,(\d)+)?       fail dot
+  43     |  3     (■((■|■))*)(,(\d)+)?    fail solve
+  44     |  3     (■((■){■})*)(,(\d)+)?     unsatisfiable SAT formula       
+  45     |  3     (■(\d){■})(■(\d)+)?       unsatisfiable SAT formula       
+  46     |  3     (■(\d){■})(,(■)+)?        unsatisfiable SAT formula       
+  47     |  3     (■(\d){■})(,(\d){■})?     unsatisfiable SAT formula       
+  48     |  3     (■(\d){■})(,(\d)+){■}     unsatisfiable SAT formula       
+  49     |  3     (■■)(,(\d)+)?           fail dot
+  50     |  3     ((■■)(\d){■})(,(\d)+)?  fail dot
+  51     |  3     ((■|■)(\d){■})(,(\d)+)? fail solve
+  52     |  3     ((■){■}(\d){■})(,(\d)+)?get a solution: (([\-8+,0]){0,4}(\d){1,3})(,(\d)+)?
+add positive: 1000
+add negative: ++0
+get a solution: (([1\-+0]){0,1}(\d){1,4})(,(\d)+)?
+add positive: ,0
+get a solution: (([1\-+,]){0,1}(\d){1,4})(,(\d)+)?
+add positive: +,0
+add negative: ,0,0
+  unsatisfiable SAT formula       
+  53     |  3     (■(\d)*)(■(■)+)?          unsatisfiable SAT formula       
+  54     |  3     (■(\d)*)(■(\d){■})?       unsatisfiable SAT formula       
+  55     |  3     (■(\d)*)(■(\d)+){■}       unsatisfiable SAT formula       
+  56     |  3     ((■■)(\d)*)(■(\d)+)?    fail dot
+  57     |  3     ((■|■)(\d)*)(■(\d)+)?   fail solve
+  58     |  3     ((■){■}(\d)*)(■(\d)+)?    unsatisfiable SAT formula       
+  59     |  3     (■(\d)*)((■■)(\d)+)?    fail dot
+  60     |  3     (■(\d)*)((■|■)(\d)+)?   fail solve
+  61     |  3     (■(\d)*)((■){■}(\d)+)?    unsatisfiable SAT formula       
+  62     |  3     (■(\d)*)(,(■){■})?        unsatisfiable SAT formula       
+  63     |  3     (■(\d)*)(,(■)+){■}        unsatisfiable SAT formula       
+  64     |  3     ((■■)(\d)*)(,(■)+)?     fail dot
+  65     |  3     ((■|■)(\d)*)(,(■)+)?    fail solve
+  66     |  3     ((■){■}(\d)*)(,(■)+)?     unsatisfiable SAT formula       
+  67     |  3     (■(\d)*)(,(■■)+)?       fail dot
+  68     |  3     (■(\d)*)(,((■|■))+)?    fail solve
+  69     |  3     (■(\d)*)(,((■){■})+)?     unsatisfiable SAT formula       
+  70     |  3     (■(\d)*)(,(\d){■}){■}     unsatisfiable SAT formula       
+  71     |  3     (■(\d)*)(,■)?           fail dot
+  72     |  3     ((■■)(\d)*)(,(\d){■})?  fail dot
+  73     |  3     ((■|■)(\d)*)(,(\d){■})? fail solve
+  74     |  3     ((■){■}(\d)*)(,(\d){■})?  unsatisfiable SAT formula       
+  75     |  3     (■(\d)*)■               fail dot
+  76     |  3     ((■■)(\d)*)(,(\d)+){■}  fail dot
+  77     |  3     ((■|■)(\d)*)(,(\d)+){■} fail solve
+  78     |  3     ((■){■}(\d)*)(,(\d)+){■}  unsatisfiable SAT formula       
+  79     |  3     ((■)(\d)*)(,(\d)+)?       unsatisfiable SAT formula       
+  80     |  3     (((■■)■)(\d)*)(,(\d)+)? fail dot
+  81     |  3     (((■|■)■)(\d)*)(,(\d)+)?fail dot
+  82     |  3     (((■){■}■)(\d)*)(,(\d)+)?  unsatisfiable SAT formula       
+  83     |  3     ((■■|■)(\d)*)(,(\d)+)?    unsatisfiable SAT formula       
+  84     |  3     (((■|■)|■)(\d)*)(,(\d)+)?fail solve
+  85     |  3     (((■){■}|■)(\d)*)(,(\d)+)?  unsatisfiable SAT formula       
+  86     |  3     ((■■){■}(\d)*)(,(\d)+)? get a solution: (([\-+][,0]){0,1}(\d)*)(,(\d)+)?
+add positive: +1
+add negative: 
+  unsatisfiable SAT formula       
+  87     |  3     (((■|■)){■}(\d)*)(,(\d)+)?fail solve
+  88     |  3     (((■){■}){■}(\d)*)(,(\d)+)?  unsatisfiable SAT formula       
+  89     |  3     ([1-9](■){■})(■(\d)+)?  fail dotstar or empty
+  90     |  3     ([1-9](■){■})(,(■)+)?   fail dotstar or empty
+  91     |  3     ([1-9](■){■})(,(\d){■})?fail dotstar or empty
+  92     |  3     ([1-9](■){■})(,(\d)+){■}fail dotstar or empty
+  93     |  3     ([1-9](■)*)(■(■)+)?     fail dotstar or empty
+  94     |  3     ([1-9](■)*)(■(\d){■})?  fail dotstar or empty
+  95     |  3     ([1-9](■)*)(■(\d)+){■}  fail dotstar or empty
+  96     |  3     ([1-9](■)*)(,(■){■})?   fail dotstar or empty
+  97     |  3     ([1-9](■)*)(,(■)+){■}   fail dotstar or empty
+  98     |  3     ([1-9](■)*)(,(\d){■}){■}fail dotstar or empty
+  99     |  3     ([1-9](■)*)(,■)?        fail dotstar or empty
+  100    |  3     ([1-9](■)*)■            fail dotstar or empty
+  101    |  3     ([1-9](\d){■})(■(■)+)?  fail dotstar or empty
+  102    |  3     ([1-9](\d){■})(■(\d){■})?fail dotstar or empty
+  103    |  3     ([1-9](\d){■})(■(\d)+){■}fail dotstar or empty
+  104    |  3     ([1-9]■)(■(\d)+)?       fail dotstar or empty
+  105    |  3     ([1-9](\d){■})(,(■){■})?fail dotstar or empty
+  106    |  3     ([1-9](\d){■})(,(■)+){■}fail dotstar or empty
+  107    |  3     ([1-9]■)(,(■)+)?        fail dotstar or empty
+  108    |  3     ([1-9](\d){■})(,(\d){■}){■}fail dotstar or empty
+  109    |  3     ([1-9]■)(,(\d){■})?     fail dotstar or empty
+  110    |  3     ([1-9](\d){■})(,■)?     fail dotstar or empty
+  111    |  3     ([1-9]■)(,(\d)+){■}     fail dotstar or empty
+  112    |  3     ([1-9](\d){■})■         fail dotstar or empty
+  113    |  3     ([1-9](\d)*)(■(■){■})?  fail dotstar or empty
+  114    |  3     ([1-9](\d)*)(■(■)+){■}  fail dotstar or empty
+  115    |  3     ([1-9](\d)*)(■(\d){■}){■}fail dotstar or empty
+  116    |  3     ([1-9](\d)*)(■■)?       fail dotstar or empty
+  117    |  3     ([1-9](\d)*)(,(■){■}){■}fail dotstar or empty
+  118    |  3     ([1-9](\d)*)(,■){■}     fail dotstar or empty
+  119    |  4     (■(■)*)(■(■)+)?           unsatisfiable SAT formula       
+  120    |  4     (■(■)*)(■(\d){■})?        unsatisfiable SAT formula       
+  121    |  4     (■(■)*)(■(\d)+){■}        unsatisfiable SAT formula       
+  122    |  4     ((■■)(■)*)(■(\d)+)?     fail dot
+  123    |  4     ((■|■)(■)*)(■(\d)+)?    fail solve
+  124    |  4     ((■){■}(■)*)(■(\d)+)?     unsatisfiable SAT formula       
+  125    |  4     (■(■■)*)(■(\d)+)?       fail dot
+  126    |  4     (■((■|■))*)(■(\d)+)?    fail solve
+  127    |  4     (■((■){■})*)(■(\d)+)?     unsatisfiable SAT formula       
+  128    |  4     (■(■)*)((■■)(\d)+)?       unsatisfiable SAT formula       
+  129    |  4     (■(■)*)((■|■)(\d)+)?    fail solve
+  130    |  4     (■(■)*)((■){■}(\d)+)?     unsatisfiable SAT formula       
+  131    |  4     (■(■)*)(,(■){■})?         unsatisfiable SAT formula       
+  132    |  4     (■(■)*)(,(■)+){■}         unsatisfiable SAT formula       
+  133    |  4     ((■■)(■)*)(,(■)+)?      fail dot
+  134    |  4     ((■|■)(■)*)(,(■)+)?     fail solve
+  135    |  4     ((■){■}(■)*)(,(■)+)?      unsatisfiable SAT formula       
+  136    |  4     (■(■■)*)(,(■)+)?        fail dot
+  137    |  4     (■((■|■))*)(,(■)+)?     fail solve
+  138    |  4     (■((■){■})*)(,(■)+)?      unsatisfiable SAT formula       
+  139    |  4     (■(■)*)(,(■■)+)?          unsatisfiable SAT formula       
+  140    |  4     (■(■)*)(,((■|■))+)?     fail solve
+  141    |  4     (■(■)*)(,((■){■})+)?      unsatisfiable SAT formula       
+  142    |  4     (■(■)*)(,(\d){■}){■}      unsatisfiable SAT formula       
+  143    |  4     (■(■)*)(,■)?              unsatisfiable SAT formula       
+  144    |  4     ((■■)(■)*)(,(\d){■})?   fail dot
+  145    |  4     ((■|■)(■)*)(,(\d){■})?  fail solve
+  146    |  4     ((■){■}(■)*)(,(\d){■})?   unsatisfiable SAT formula       
+  147    |  4     (■(■■)*)(,(\d){■})?     fail dot
+  148    |  4     (■((■|■))*)(,(\d){■})?  fail solve
+  149    |  4     (■((■){■})*)(,(\d){■})?   unsatisfiable SAT formula       
+  150    |  4     (■(■)*)■                fail dot
+  151    |  4     ((■■)(■)*)(,(\d)+){■}   fail dot
+  152    |  4     ((■|■)(■)*)(,(\d)+){■}  fail solve
+  153    |  4     ((■){■}(■)*)(,(\d)+){■}   unsatisfiable SAT formula       
+  154    |  4     (■(■■)*)(,(\d)+){■}     fail dot
+  155    |  4     (■((■|■))*)(,(\d)+){■}  fail solve
+  156    |  4     (■((■){■})*)(,(\d)+){■}   unsatisfiable SAT formula       
+  157    |  4     ((■■)(■){■})(,(\d)+)?   fail dot
+  158    |  4     ((■)(■)*)(,(\d)+)?        unsatisfiable SAT formula       
+  159    |  4     (((■■)■)(■)*)(,(\d)+)?  fail dot
+  160    |  4     (((■|■)■)(■)*)(,(\d)+)? fail dot
+  161    |  4     (((■){■}■)(■)*)(,(\d)+)?  unsatisfiable SAT formula       
+  162    |  4     ((■■)(■■)*)(,(\d)+)?    fail dot
+  163    |  4     ((■■)((■|■))*)(,(\d)+)? fail dot
+  164    |  4     ((■■)((■){■})*)(,(\d)+)?fail dot
+  165    |  4     ((■|■)(■){■})(,(\d)+)?    unsatisfiable SAT formula       
+  166    |  4     ((■■|■)(■)*)(,(\d)+)?     unsatisfiable SAT formula       
+  167    |  4     (((■|■)|■)(■)*)(,(\d)+)?fail solve
+  168    |  4     (((■){■}|■)(■)*)(,(\d)+)?  unsatisfiable SAT formula       
+  169    |  4     ((■|■)(■■)*)(,(\d)+)?   fail dot
+  170    |  4     ((■|■)((■|■))*)(,(\d)+)?fail solve
+  171    |  4     ((■|■)((■){■})*)(,(\d)+)?  unsatisfiable SAT formula       
+  172    |  4     ((■){■}(■){■})(,(\d)+)?   unsatisfiable SAT formula       
+  173    |  4     ((■■){■}(■)*)(,(\d)+)?    unsatisfiable SAT formula       
+  174    |  4     (((■|■)){■}(■)*)(,(\d)+)?fail solve
+  175    |  4     (((■){■}){■}(■)*)(,(\d)+)?  unsatisfiable SAT formula       
+  176    |  4     ((■){■}(■■)*)(,(\d)+)?    unsatisfiable SAT formula       
+  177    |  4     ((■){■}((■|■))*)(,(\d)+)?fail solve
+  178    |  4     ((■){■}((■){■})*)(,(\d)+)?  unsatisfiable SAT formula       
+  179    |  4     (■((■■)■)*)(,(\d)+)?    fail dot
+  180    |  4     (■((■|■)■)*)(,(\d)+)?   fail dot
+  181    |  4     (■((■){■}■)*)(,(\d)+)?    unsatisfiable SAT formula       
+  182    |  4     (■(■(■■))*)(,(\d)+)?    fail dot
+  183    |  4     (■(■(■|■))*)(,(\d)+)?   fail dot
+  184    |  4     (■(■(■){■})*)(,(\d)+)?    unsatisfiable SAT formula       
+  185    |  4     (■((■■|■))*)(,(\d)+)?     unsatisfiable SAT formula       
+  186    |  4     (■(((■|■)|■))*)(,(\d)+)?fail solve
+  187    |  4     (■(((■){■}|■))*)(,(\d)+)?  unsatisfiable SAT formula       
+  188    |  4     (■((■|■■))*)(,(\d)+)?     unsatisfiable SAT formula       
+  189    |  4     (■((■|(■|■)))*)(,(\d)+)?fail solve
+  190    |  4     (■((■|(■){■}))*)(,(\d)+)?  unsatisfiable SAT formula       
+  191    |  4     (■((■■){■})*)(,(\d)+)?  fail dot
+  192    |  4     (■(((■|■)){■})*)(,(\d)+)?fail solve
+  193    |  4     (■(((■){■}){■})*)(,(\d)+)?
+2.072288990020752
 timeout

@@ -1,8 +1,6 @@
-(\[\[)(.*)(\]\])
-(\[\[)(.*?)(\]\])
+s*n*o*w*
+s+n+o+w+
 +++
-[[MyOtherText]]
-[[MyText]]
-[[ Something...[[MyText]]
-[[" for start and "]]
+snow
+ssssnnnowww
 ---

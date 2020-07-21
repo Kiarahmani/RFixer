@@ -1,6 +1,5 @@
-9-985 02564 1234-
--?\d{1,4}
+\[Total execution Time: (.+) min
+Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
 +++
--9999
-9999
 ---
+[Total execution Time: 11.05 min

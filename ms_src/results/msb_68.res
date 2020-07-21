@@ -1,13 +1,11 @@
 
 Given the regular expression:
 
-  (((\d){6}|(\d){7})|(\d){8})
+  (\d){4}
 
 That that should match the strings:
 
-  ✓ (0:8)    CH11 2ab
-  ✓ (8:14)   b6 7ba
-  ✓ (14:21)  BH6 5BG
+  ✓ (0:7)    1/2,4/6
 
 And reject the strings:
 
@@ -16,69 +14,53 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (((■){6}|(\d){7})|(\d){8})fail dot
-  2      |  1     (((\d){■}|(\d){7})|(\d){8})fail dotstar or empty
-  3      |  1     (((\d){6}|(■){7})|(\d){8})fail dot
-  4      |  1     (((\d){6}|(\d){■})|(\d){8})fail dotstar or empty
-  5      |  1     (((\d){6}|(\d){7})|(■){8})fail dot
-  6      |  1     (((\d){6}|(\d){7})|(\d){■})fail dotstar or empty
-  7      |  2     (((■){■}|(\d){7})|(\d){8})get a solution: ((([abBCGH12567 ]){1,8}|(\d){7})|(\d){8})
-add positive: A0	0AA
-add negative:  
-get a solution: ((([AabBCGH	012567 ]){2,8}|(\d){7})|(\d){8})
-add positive: D0	0AA
-add negative: 		
-get a solution: ((([AabBCDGH	012567 ]){3,8}|(\d){7})|(\d){8})
-add positive: A0	3AA
-add negative: A00
-get a solution: ((([AabBCDGH	0123567 ]){4,8}|(\d){7})|(\d){8})
-add positive: E0	0AA
-add negative: A0		
-get a solution: ((([AabBCDEGH	0123567 ]){5,8}|(\d){7})|(\d){8})
-add positive: A0	4AA
-add negative: A0			
-get a solution: ((([AabBCDEGH	01234567 ]){6,8}|(\d){7})|(\d){8})
-add positive: A8	0AA
-add negative: A00	0A
+  1      |  1     (■){4}                  fail dot
+  2      |  1     (\d){■}                 fail dotstar or empty
+  3      |  2     (■){■}                  get a solution: ([1246,/]){1,7}
+add positive: 0/0,0/0
+add negative: ,
+get a solution: ([1246,/0]){2,7}
+add positive: 3/0,0/0
+add negative: 0,
+get a solution: ([12346,/0]){3,7}
+add positive: 0/0,0/5
+add negative: 0/,
+get a solution: ([123456,/0]){4,7}
+add positive: 7/0,0/0
+add negative: ,,,,
+get a solution: ([1234567,/0]){5,7}
+add positive: 0/0,0/8
+add negative: ,,,,,
+get a solution: ([12345678,/0]){6,7}
+add positive: 9/0,0/0
+add negative: ,,,,,,
+get a solution: ([,/0123456789]){7}
+add positive: 00/0,0/0
+add negative: ,,,,,,,
   unsatisfiable SAT formula       
-  8      |  2     (((■){6}|(■){7})|(\d){8})fail dot
-  9      |  2     (((■){6}|(\d){■})|(\d){8})fail dot
-  10     |  2     (((■){6}|(\d){7})|(■){8})fail dot
-  11     |  2     (((■){6}|(\d){7})|(\d){■})fail dot
-  12     |  2     (((■■){6}|(\d){7})|(\d){8})fail dot
-  13     |  2     ((((■|■)){6}|(\d){7})|(\d){8})fail dot
-  14     |  2     ((((■){■}){6}|(\d){7})|(\d){8})  unsatisfiable SAT formula       
-  15     |  2     (((\d){■}|(■){7})|(\d){8})fail dot
-  16     |  2     (((\d){■}|(\d){■})|(\d){8})fail dotstar or empty
-  17     |  2     (((\d){■}|(\d){7})|(■){8})fail dot
-  18     |  2     (((\d){■}|(\d){7})|(\d){■})fail dotstar or empty
-  19     |  2     (((\d){6}|(■){■})|(\d){8})  unsatisfiable SAT formula       
-  20     |  2     (((\d){6}|(■){7})|(■){8})fail dot
-  21     |  2     (((\d){6}|(■){7})|(\d){■})fail dot
-  22     |  2     (((\d){6}|(■■){7})|(\d){8})fail dot
-  23     |  2     (((\d){6}|((■|■)){7})|(\d){8})fail dot
-  24     |  2     (((\d){6}|((■){■}){7})|(\d){8})  unsatisfiable SAT formula       
-  25     |  2     (((\d){6}|(\d){■})|(■){8})fail dot
-  26     |  2     (((\d){6}|(\d){■})|(\d){■})fail dotstar or empty
-  27     |  2     (((\d){6}|(\d){7})|(■){■})  unsatisfiable SAT formula       
-  28     |  2     (((\d){6}|(\d){7})|(■■){8})fail dot
-  29     |  2     (((\d){6}|(\d){7})|((■|■)){8})fail dot
-  30     |  2     (((\d){6}|(\d){7})|((■){■}){8})  unsatisfiable SAT formula       
-  31     |  3     (((■){■}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  32     |  3     (((■){■}|(\d){■})|(\d){8})  unsatisfiable SAT formula       
-  33     |  3     (((■){■}|(\d){7})|(■){8})  unsatisfiable SAT formula       
-  34     |  3     (((■){■}|(\d){7})|(\d){■})  unsatisfiable SAT formula       
-  35     |  3     (((■■){■}|(\d){7})|(\d){8})fail dot
-  36     |  3     ((((■|■)){■}|(\d){7})|(\d){8})fail solve
-  37     |  3     ((((■){■}){■}|(\d){7})|(\d){8})  unsatisfiable SAT formula       
-  38     |  3     (((■){6}|(■){■})|(\d){8})  unsatisfiable SAT formula       
-  39     |  3     (((■){6}|(■){7})|(■){8})  unsatisfiable SAT formula       
-  40     |  3     (((■){6}|(■){7})|(\d){■})fail dot
-  41     |  3     (((■■){6}|(■){7})|(\d){8})fail dot
-  42     |  3     ((((■|■)){6}|(■){7})|(\d){8})fail dot
-  43     |  3     ((((■){■}){6}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  44     |  3     (((■){6}|(■■){7})|(\d){8})fail dot
-  45     |  3     (((■){6}|((■|■)){7})|(\d){8})fail dot
-  46     |  3     (((■){6}|((■){■}){7})|(\d){8})
-5.024600028991699
+  4      |  2     ■                       fail dot
+  5      |  2     (■■){4}                 fail dot
+  6      |  2     ((■|■)){4}              fail dot
+  7      |  2     ((■){■}){4}               unsatisfiable SAT formula       
+  8      |  3     (■■){■}                 fail dot
+  9      |  3     ((■|■)){■}              fail solve
+  10     |  3     ((■){■}){■}               unsatisfiable SAT formula       
+  11     |  3     ■■                      fail dot
+  12     |  3     (■|■)                   fail dot
+  13     |  3     ((■■)■){4}              fail dot
+  14     |  3     ((■|■)■){4}             fail dot
+  15     |  3     ((■){■}■){4}            get a solution: (([1239,/0]){0,2}[45678/0]){4}
+add positive: 0/4,0/1
+add negative: ////
+get a solution: (([,/0]){0,1}[1234567890]){4}
+add positive: 10/0,0/0
+add negative: 0000
+  unsatisfiable SAT formula       
+  16     |  3     ((■■|■)){4}               unsatisfiable SAT formula       
+  17     |  3     (((■|■)|■)){4}          fail dot
+  18     |  3     (((■){■}|■)){4}           unsatisfiable SAT formula       
+  19     |  3     ((■■){■}){4}            fail dot
+  20     |  3     (((■|■)){■}){4}         fail solve
+  21     |  3     (((■){■}){■}){4}        
+2.0193731784820557
 timeout

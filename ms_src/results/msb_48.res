@@ -1,14 +1,11 @@
 
 Given the regular expression:
 
-  <abc[!e]
+  ([0-9]){0,3}\-([0-9]){0,5}\-([0-9]){0,1}
 
 That that should match the strings:
 
-  ✓ (0:4)    abcf
-  ✓ (4:8)    abcd
-  ✓ (8:12)   abc[
-  ✓ (12:15)  abc
+  ✓ (0:14)   2014-000000-01
 
 And reject the strings:
 
@@ -17,16 +14,151 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-Exception in thread "main" java.lang.UnsupportedOperationException
-	at edu.wisc.regfixer.automata.Automaton.predicateFromMetaChar(Automaton.java:1066)
-	at edu.wisc.regfixer.automata.Automaton.charEscapedToAutomaton(Automaton.java:1043)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:884)
-	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
-	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
-	at edu.wisc.regfixer.automata.Automaton.<init>(Automaton.java:64)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
+  1      |  1     ((((■){0,3}\-)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  2      |  1     (((([0-9]){■}\-)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  3      |  1     (((([0-9]){0,3}■)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  4      |  1     (((([0-9]){0,3}\-)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  5      |  1     (((([0-9]){0,3}\-)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  6      |  1     (((([0-9]){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}fail dotstar or empty
+  7      |  1     (((([0-9]){0,3}\-)([0-9]){0,5})\-)(■){0,1}fail dotstar or empty
+  8      |  1     (((([0-9]){0,3}\-)([0-9]){0,5})\-)([0-9]){■}fail dotstar or empty
+  9      |  2     ((((■){■}\-)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  10     |  2     ((((■){0,3}■)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  11     |  2     ((((■){0,3}\-)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  12     |  2     ((((■){0,3}\-)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  13     |  2     ((((■){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  14     |  2     ((((■){0,3}\-)([0-9]){0,5})\-)(■){0,1}fail dotstar or empty
+  15     |  2     ((((■){0,3}\-)([0-9]){0,5})\-)([0-9]){■}fail dotstar or empty
+  16     |  2     (((■\-)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  17     |  2     (((([0-9]){■}■)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  18     |  2     (((([0-9]){■}\-)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  19     |  2     (((([0-9]){■}\-)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  20     |  2     (((([0-9]){■}\-)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  21     |  2     (((([0-9]){■}\-)([0-9]){0,5})\-)(■){0,1}fail dotstar or empty
+  22     |  2     (((([0-9]){■}\-)([0-9]){0,5})\-)([0-9]){■}fail dotstar or empty
+  23     |  2     (((([0-9]){0,3}■)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  24     |  2     (((([0-9]){0,3}■)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  25     |  2     (((([0-9]){0,3}■)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  26     |  2     (((([0-9]){0,3}■)([0-9]){0,5})\-)(■){0,1}fail dot
+  27     |  2     (((([0-9]){0,3}■)([0-9]){0,5})\-)([0-9]){■}fail dot
+  28     |  2     (((([0-9]){0,3}\-)(■){■})\-)([0-9]){0,1}fail dotstar or empty
+  29     |  2     (((([0-9]){0,3}\-)(■){0,5})■)([0-9]){0,1}fail dotstar or empty
+  30     |  2     (((([0-9]){0,3}\-)(■){0,5})\-)(■){0,1}fail dotstar or empty
+  31     |  2     (((([0-9]){0,3}\-)(■){0,5})\-)([0-9]){■}fail dotstar or empty
+  32     |  2     (((([0-9]){0,3}\-)■)\-)([0-9]){0,1}fail dotstar or empty
+  33     |  2     (((([0-9]){0,3}\-)([0-9]){■})■)([0-9]){0,1}fail dotstar or empty
+  34     |  2     (((([0-9]){0,3}\-)([0-9]){■})\-)(■){0,1}fail dotstar or empty
+  35     |  2     (((([0-9]){0,3}\-)([0-9]){■})\-)([0-9]){■}fail dotstar or empty
+  36     |  2     (((([0-9]){0,3}\-)([0-9]){0,5})■)(■){0,1}fail dotstar or empty
+  37     |  2     (((([0-9]){0,3}\-)([0-9]){0,5})■)([0-9]){■}fail dotstar or empty
+  38     |  2     (((([0-9]){0,3}\-)([0-9]){0,5})\-)(■){■}fail dotstar or empty
+  39     |  2     (((([0-9]){0,3}\-)([0-9]){0,5})\-)■fail dotstar or empty
+  40     |  3     ((((■){■}■)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  41     |  3     ((((■){■}\-)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  42     |  3     ((((■){■}\-)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  43     |  3     ((((■){■}\-)([0-9]){0,5})■)([0-9]){0,1}get a solution: (((([1\-240]){1,11}\-)([0-9]){0,5})0)([0-9]){0,1}
+add positive: 3000-0-00
+add negative: 0-0
+get a solution: (((([1\-2340]){2,11}\-)([0-9]){0,5})[10])([0-9]){0,1}
+add positive: 5000-0-00
+add negative: 00-0
+get a solution: (((([1\-23450]){3,11}\-)([0-9]){0,5})[10])([0-9]){0,1}
+add positive: 0600-0-00
+add negative: 0---0
+get a solution: (((([1\-234560]){4,11}\-)([0-9]){0,5})[10])([0-9]){0,1}
+add positive: 7000-0-00
+add negative: -----0
+get a solution: (((([1\-2345670]){5,11}\-)([0-9]){0,5})[10])([0-9]){0,1}
+add positive: 0800-0-00
+add negative: 00000-0
+get a solution: (((([1\-23456780]){6,11}\-)([0-9]){0,5})[10])([0-9]){0,1}
+add positive: 0900-0-00
+add negative: 0------0
+  unsatisfiable SAT formula       
+  44     |  3     ((((■){■}\-)([0-9]){0,5})\-)(■){0,1}fail dotstar or empty
+  45     |  3     ((((■){■}\-)([0-9]){0,5})\-)([0-9]){■}fail dotstar or empty
+  46     |  3     ((((■){0,3}■)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  47     |  3     ((((■){0,3}■)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  48     |  3     ((((■){0,3}■)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  49     |  3     ((((■){0,3}■)([0-9]){0,5})\-)(■){0,1}fail dot
+  50     |  3     ((((■){0,3}■)([0-9]){0,5})\-)([0-9]){■}fail dot
+  51     |  3     (((■■)([0-9]){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  52     |  3     ((((■){0,3}\-)(■){■})\-)([0-9]){0,1}fail dotstar or empty
+  53     |  3     ((((■){0,3}\-)(■){0,5})■)([0-9]){0,1}fail dot
+  54     |  3     ((((■){0,3}\-)(■){0,5})\-)(■){0,1}fail dot
+  55     |  3     ((((■){0,3}\-)(■){0,5})\-)([0-9]){■}fail dot
+  56     |  3     (((■\-)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  57     |  3     ((((■){0,3}\-)■)\-)([0-9]){0,1}fail dotstar or empty
+  58     |  3     ((((■){0,3}\-)([0-9]){■})■)([0-9]){0,1}fail dot
+  59     |  3     ((((■){0,3}\-)([0-9]){■})\-)(■){0,1}fail dot
+  60     |  3     ((((■){0,3}\-)([0-9]){■})\-)([0-9]){■}fail dot
+  61     |  3     (((■\-)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  62     |  3     ((((■){0,3}\-)([0-9]){0,5})■)(■){0,1}fail dot
+  63     |  3     ((((■){0,3}\-)([0-9]){0,5})■)([0-9]){■}fail dot
+  64     |  3     (((■\-)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  65     |  3     ((((■■){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  66     |  3     (((((■|■)){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  67     |  3     (((((■){■}){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}  unsatisfiable SAT formula       
+  68     |  3     ((((■){0,3}\-)([0-9]){0,5})(■■))([0-9]){0,1}fail dot
+  69     |  3     ((((■){0,3}\-)([0-9]){0,5})(■|■))([0-9]){0,1}fail dot
+  70     |  3     ((((■){0,3}\-)([0-9]){0,5})(■){■})([0-9]){0,1}fail dot
+  71     |  3     ((((■){0,3}\-)([0-9]){0,5})\-)(■){■}fail dotstar or empty
+  72     |  3     (((■\-)([0-9]){0,5})\-)(■){0,1}fail dotstar or empty
+  73     |  3     ((((■){0,3}\-)([0-9]){0,5})\-)■fail dotstar or empty
+  74     |  3     (((■\-)([0-9]){0,5})\-)([0-9]){■}fail dotstar or empty
+  75     |  3     (((([0-9]){■}■)(■){0,5})\-)([0-9]){0,1}fail dotstar or empty
+  76     |  3     (((([0-9]){■}■)([0-9]){■})\-)([0-9]){0,1}fail dotstar or empty
+  77     |  3     (((([0-9]){■}■)([0-9]){0,5})■)([0-9]){0,1}fail dot
+  78     |  3     (((([0-9]){■}■)([0-9]){0,5})\-)(■){0,1}fail dot
+  79     |  3     (((([0-9]){■}■)([0-9]){0,5})\-)([0-9]){■}fail dot
+  80     |  3     (((([0-9]){■}\-)(■){■})\-)([0-9]){0,1}fail dotstar or empty
+  81     |  3     (((([0-9]){■}\-)(■){0,5})■)([0-9]){0,1}fail dot
+  82     |  3     (((([0-9]){■}\-)(■){0,5})\-)(■){0,1}fail dot
+  83     |  3     (((([0-9]){■}\-)(■){0,5})\-)([0-9]){■}fail dot
+  84     |  3     (((([0-9]){■}\-)■)\-)([0-9]){0,1}fail dotstar or empty
+  85     |  3     (((([0-9]){■}\-)([0-9]){■})■)([0-9]){0,1}fail dot
+  86     |  3     (((([0-9]){■}\-)([0-9]){■})\-)(■){0,1}fail dot
+  87     |  3     (((([0-9]){■}\-)([0-9]){■})\-)([0-9]){■}get a solution: (((([0-9]){1,4}\-)([0-9]){1,6})\-)([0-9]){1,2}
+add negative: 0-0-0
+get a solution: (((([0-9]){2,4}\-)([0-9]){1,6})\-)([0-9]){2}
+add negative: 00-0-00
+get a solution: (((([0-9]){3,4}\-)([0-9]){1,6})\-)([0-9]){2}
+add negative: 000-0-00
+get a solution: (((([0-9]){4}\-)([0-9]){1,6})\-)([0-9]){2}
+  (((([0-9]){4}\-)([0-9]){1,6})\-)([0-9]){2}
+template: (((((■){■}){0,3}\-)([0-9]){0,5})■)([0-9]){0,1} size: 7 holes: 4 time: 2.323313ms
+template: ((((■){■}\-)([0-9]){0,5})■)([0-9]){0,1} size: 6 holes: 4 time: 1.278029ms
+template: (((([0-9]){■}\-)([0-9]){■})\-)([0-9]){■} size: 8 holes: 6 time: 1.424684ms
+longest: #mn#(((((■){■}){0,3}\-)([0-9]){0,5})■)([0-9]){0,1}#mn# size: #ms#7#ms# holes: #mh#4#mh# time: #mt#2.323313#mt#ms
 
-0.2838449478149414
-error
+Computed in:
+
+  #c#837#c#ms
+
+timeSATSolver time:
+
+  #s#20#s#ms
+
+cost:
+
+  #d#3#d#
+
+Finds the following solutions (and the corresponding fitness):
+
+  0    (((([0-9]){4}\-)([0-9]){1,6})\-)([0-9]){2}
+
+All done
+
+last template: #t#(((([0-9]){■}\-)([0-9]){■})\-)([0-9]){■}#t#
+#num#87#num#
+#dep#3#dep#
+#t1#0#t1#
+#t2#30#t2#
+#t3#54#t3#
+#p#6#p#
+#n#9#n#
+solution is #sol#(((([0-9]){4}\-)([0-9]){1,6})\-)([0-9]){2}#sol#
+before exit
+
+1.1409969329833984
+success

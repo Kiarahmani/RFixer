@@ -1,15 +1,11 @@
 
 Given the regular expression:
 
-  ([a-zA-Z])*
+  ([0-9]){4}
 
 That that should match the strings:
 
-  ✓ (0:37)   but with spaces allowed between words
-  ✓ (37:51)  t allow spaces
-  ✓ (51:90)  can i change it to make it allow spaces
-  ✓ (90:129) i have tried the following but it doesn
-  ✓ (129:135) t work
+  ✓ (0:7)    . 1900.
 
 And reject the strings:
 
@@ -18,101 +14,62 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)*                    get a solution: ([abcdefghiklmnoprstuvw ])*
-add positive: A
-get a solution: ([Aabcdefghiklmnoprstuvw ])*
-add positive: B
-get a solution: ([abcdefghiklmnoprstuvwAB ])*
-add positive: C
-get a solution: ([abcdefghiklmnoprstuvwABC ])*
-add positive: D
-get a solution: ([abcdefghiklmnoprstuvwABCD ])*
-add positive: E
-get a solution: ([abcdefghiklmnoprstuvwABCDE ])*
-add positive: F
-get a solution: ([abcdefghiklmnoprstuvwABCDEF ])*
-add positive: G
-get a solution: ([abcdefghiklmnoprstuvwABCDEFG ])*
-add positive: H
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGH ])*
-add positive: I
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHI ])*
-add positive: J
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJ ])*
-add positive: K
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJK ])*
-add positive: L
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKL ])*
-add positive: M
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLM ])*
-add positive: N
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMN ])*
-add positive: O
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNO ])*
-add positive: P
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOP ])*
-add positive: Q
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQ ])*
-add positive: R
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQR ])*
-add positive: S
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRS ])*
-add positive: T
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRST ])*
-add positive: U
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTU ])*
-add positive: V
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTUV ])*
-add positive: W
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTUVW ])*
-add positive: X
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTUVWX ])*
-add positive: Y
-get a solution: ([abcdefghiklmnoprstuvwABCDEFGHIJKLMNOPQRSTUVWXY ])*
-add positive: Z
-get a solution: ([abcdefghiklmnoprstuvw ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-add positive: j
-get a solution: ([abcdefghijklmnoprstuvw ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-add positive: q
-get a solution: ([abcdefghijklmnopqrstuvw ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-add positive: x
-get a solution: ([abcdefghijklmnopqrstuvwx ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-add positive: y
-get a solution: ([abcdefghijklmnopqrstuvwxy ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-add positive: z
-get a solution: ([abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-  ([abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-template: (■)* size: 1 holes: 1 time: 1.414031ms
-longest: #mn#(■)*#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.414031#mt#ms
-
-Computed in:
-
-  #c#488#c#ms
-
-timeSATSolver time:
-
-  #s#46#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  53   ([abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ])*
-
-All done
-
-last template: #t#(■)*#t#
-#num#1#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#0#t3#
-#p#31#p#
-#n#0#n#
-solution is #sol#([abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ])*#sol#
-before exit
-
-0.7831227779388428
-success
+  1      |  1     (■){4}                  fail dot
+  2      |  1     ([0-9]){■}              fail dotstar or empty
+  3      |  2     (■){■}                  get a solution: ([1\.90 ]){1,7}
+add positive: .2000.
+add negative:  
+get a solution: ([12\.90 ]){2,7}
+add positive: .3000.
+add negative:   
+get a solution: ([12\.390 ]){3,7}
+add positive: .4000.
+add negative: . .
+get a solution: ([12\.3490 ]){4,7}
+add positive: .5000.
+add negative:     
+get a solution: ([12\.34590 ]){5,7}
+add positive: .0060.
+add negative: ..   
+get a solution: ([12\.345690 ]){6,7}
+add positive: .0070.
+add negative:       
+  unsatisfiable SAT formula       
+  4      |  2     ■                       fail dot
+  5      |  2     (■■){4}                 fail dot
+  6      |  2     ((■|■)){4}              fail dot
+  7      |  2     ((■){■}){4}               unsatisfiable SAT formula       
+  8      |  3     (■■){■}                 fail dot
+  9      |  3     ((■|■)){■}              fail solve
+  10     |  3     ((■){■}){■}               unsatisfiable SAT formula       
+  11     |  3     ■■                      fail dot
+  12     |  3     (■|■)                   fail dot
+  13     |  3     ((■■)■){4}              fail dot
+  14     |  3     ((■|■)■){4}             fail dot
+  15     |  3     ((■){■}■){4}            get a solution: (([12\.3456790 ]){0,3}[12\.3456790]){4}
+add positive: .8000.
+add negative: .000
+  unsatisfiable SAT formula       
+  16     |  3     ((■■|■)){4}             get a solution: (([1\.90][2\.345890 ]|[1670])){4}
+add positive: .1000.
+add negative: 0000
+get a solution: (([12\.345780][\.90 ]|[12\.345678])){4}
+add positive: .9616.
+add negative: .1..
+get a solution: (([12\.3456780][1\.690 ]|[2\.3456789])){4}
+add positive: .0999.
+add negative: .222
+get a solution: (([012\.3456789 ][1\.690 ]|[\.3456789])){4}
+add positive: .6322.
+add negative: 3...
+get a solution: (([012\.3456789 ][12\.390 ]|[\.456789])){4}
+add positive: .4444.
+add negative: ....
+  unsatisfiable SAT formula       
+  17     |  3     (((■|■)|■)){4}          fail dot
+  18     |  3     (((■){■}|■)){4}           unsatisfiable SAT formula       
+  19     |  3     ((■■){■}){4}            fail dot
+  20     |  3     (((■|■)){■}){4}         fail solve
+  21     |  3     (((■){■}){■}){4}        
+2.022891044616699
+timeout

@@ -1,6 +1,5 @@
-s*n*o*w*
-s+n+o+w+
+(\d{9})
+\d{10}
 +++
-snow
-ssssnnnowww
+4901773349
 ---

@@ -1,6 +1,6 @@
-/\d+[\d \]\/\|o,\'.]*\s*
-[\d']+\.\d+(?!\s%|%)
+[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
+ab(a|c|b+[c])*b+a
 +++
-5'067.00
-7.7
+abccba
+abccabba
 ---

@@ -1,12 +1,11 @@
 
 Given the regular expression:
 
-  (s)*(n)*(o)*(w)*
+  ((\d){9})
 
 That that should match the strings:
 
-  ✓ (0:4)    snow
-  ✓ (4:15)   ssssnnnowww
+  ✓ (0:10)   4901773349
 
 And reject the strings:
 
@@ -15,47 +14,58 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (((■)*(n)*)(o)*)(w)*    get a solution: (((s)*(n)*)(o)*)(w)*
-add negative: 
-  2      |  1     (((s){■}(n)*)(o)*)(w)*  get a solution: (((s){1,4}(n)*)(o)*)(w)*
-add positive: sssssnow
-add negative: s
-  unsatisfiable SAT formula       
-  3      |  1     (((s)*(■)*)(o)*)(w)*    fail dotstar or empty
-  4      |  1     (((s)*(n){■})(o)*)(w)*  get a solution: (((s)*(n){1,3})(o)*)(w)*
-add positive: snnnnow
-add negative: n
-  unsatisfiable SAT formula       
-  5      |  1     (((s)*(n)*)(■)*)(w)*    fail dotstar or empty
-  6      |  1     (((s)*(n)*)(o){■})(w)*  get a solution: (((s)*(n)*)(o){1})(w)*
-add positive: snoow
-add negative: o
-  unsatisfiable SAT formula       
-  7      |  1     (((s)*(n)*)(o)*)(■)*    fail dotstar or empty
-  8      |  1     (((s)*(n)*)(o)*)(w){■}  get a solution: (((s)*(n)*)(o)*)(w){1,3}
-add positive: snowwww
-add negative: w
-  unsatisfiable SAT formula       
-  9      |  2     (((■){■}(n)*)(o)*)(w)*  get a solution: ((([swn]){2,5}(n)*)(o)*)(w)*
-add positive: ssssssnow
-add negative: sw
-get a solution: ((([swno]){3,11}(n)*)(o)*)(w)*
-add positive: ssssssssssssnow
-add negative: son
-get a solution: ((([swno]){4,15}(n)*)(o)*)(w)*
-add positive: ssssssssssssssssnow
-add negative: sonn
-get a solution: ((([sn]){2,16}(n)*)(o)*)(w)*
-add positive: sssssssssssssssssnow
-add negative: nn
-  unsatisfiable SAT formula       
-  10     |  2     (((■)*(■)*)(o)*)(w)*    fail dotstar or empty
-  11     |  2     (((■)*(n){■})(o)*)(w)*    unsatisfiable SAT formula       
-  12     |  2     (((■)*(n)*)(■)*)(w)*    fail dotstar or empty
-  13     |  2     (((■)*(n)*)(o){■})(w)*    unsatisfiable SAT formula       
-  14     |  2     (((■)*(n)*)(o)*)(■)*    fail dotstar or empty
-  15     |  2     (((■)*(n)*)(o)*)(w){■}    unsatisfiable SAT formula       
-  16     |  2     (((■■)*(n)*)(o)*)(w)*     17     |  2     ((((■|■))*(n)*)(o)*)(w)*fail solve
-  18     |  2     ((((■){■})*(n)*)(o)*)(w)*
-5.017972946166992
-timeout
+  1      |  1     (■){9}                  fail dot
+  2      |  1     (\d){■}                 get a solution: (\d){1,10}
+add negative: 0
+get a solution: (\d){2,10}
+add negative: 00
+get a solution: (\d){3,10}
+add negative: 000
+get a solution: (\d){4,10}
+add negative: 0000
+get a solution: (\d){5,10}
+add negative: 00000
+get a solution: (\d){6,10}
+add negative: 000000
+get a solution: (\d){7,10}
+add negative: 0000000
+get a solution: (\d){8,10}
+add negative: 00000000
+get a solution: (\d){9,10}
+add negative: 000000000
+get a solution: (\d){10}
+  (\d){10}                        
+template: (\d){■} size: 2 holes: 2 time: 1.300791ms
+longest: #mn#(\d){■}#mn# size: #ms#2#ms# holes: #mh#2#mh# time: #mt#1.300791#mt#ms
+
+Computed in:
+
+  #c#244#c#ms
+
+timeSATSolver time:
+
+  #s#13#s#ms
+
+cost:
+
+  #d#1#d#
+
+Finds the following solutions (and the corresponding fitness):
+
+  0    (\d){10}
+
+All done
+
+last template: #t#(\d){■}#t#
+#num#2#num#
+#dep#1#dep#
+#t1#0#t1#
+#t2#1#t2#
+#t3#0#t3#
+#p#0#p#
+#n#9#n#
+solution is #sol#(\d){10}#sol#
+before exit
+
+0.5134730339050293
+success

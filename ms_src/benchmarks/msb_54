@@ -1,6 +1,5 @@
-[a]{1}[b]{1}[abc|cab|bca|acb|ac|ca|ab|bc|cb][b]{1}[a]{1}
-ab(a|c|b+[c])*b+a
+[A-Z]+[A-Za-z0-9_,"#;.() \t]+[.]
+[A-Z]{1}[^.]*.
 +++
-abccba
-abccabba
+theres a little problem.
 ---

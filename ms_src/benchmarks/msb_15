@@ -1,7 +1,5 @@
-https?:\/\/\S.flickr.net
-https?:\/\/(\S*\.)?flickr\.net
+[a-z][_][a-z]
+[a-z]+_[a-z]+
 +++
-https://blog.flickr.net
-https://www.flickr.net
-https://flickr.net
+blah_blah
 ---

@@ -1,156 +1,73 @@
 
 Given the regular expression:
 
-  (([\-0-9a-zA-Z])+)
+  iqn\.((\d){4}\-(\d){2})\.(([^:])+)
 
 That that should match the strings:
 
-  ✓ (0:12)   product_name
+  ✓ (0:36)   iqn.1998-01.com.vmware.iscsi:name999
+  ✓ (36:69)  iqn.1991-05.com.microsoft:abc.com
 
 And reject the strings:
 
+  ✗ (69:94)  iqn.1991-05.com.microsoft
+  ✗ (94:119) iqn.2002-07.com.microsoft
+  ✗ (119:147) iqn.1998-01.com.vmware.iscsi
 
 Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)+                    get a solution: ([acdemnoprtu_])+
-add positive: -
-get a solution: ([acdemnop\-rtu_])+
-add positive: 0
-get a solution: ([acdemno0p\-rtu_])+
-add positive: 1
-get a solution: ([acdemno0p\-1rtu_])+
-add positive: 2
-get a solution: ([acdemno0p\-12rtu_])+
-add positive: 3
-get a solution: ([acdemno0p\-12r3tu_])+
-add positive: 4
-get a solution: ([acdemno0p\-12r34tu_])+
-add positive: 5
-get a solution: ([acdemno0p\-12r34t5u_])+
-add positive: 6
-get a solution: ([acdemno0p\-12r34t5u6_])+
-add positive: 7
-get a solution: ([acdemno0p\-12r34t5u67_])+
-add positive: 8
-get a solution: ([acdemno0p\-12r34t5u678_])+
-add positive: 9
-get a solution: ([acdemno0p\-12r34t5u6789_])+
-add positive: A
-get a solution: ([acdemno0p12r34t5u6789A\-_])+
-add positive: B
-get a solution: ([acdemno0p12r34t5u6789AB\-_])+
-add positive: C
-get a solution: ([acdemno0p12r34t5u6789ABC\-_])+
-add positive: D
-get a solution: ([acdemno0p12r34t5u6789ABCD\-_])+
-add positive: E
-get a solution: ([acdemno0p12r34t5u6789ABCDE\-_])+
-add positive: F
-get a solution: ([acdemno0p12r34t5u6789ABCDEF\-_])+
-add positive: G
-get a solution: ([acdemno0p12r34t5u6789ABCDEFG\-_])+
-add positive: H
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGH\-_])+
-add positive: I
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHI\-_])+
-add positive: J
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJ\-_])+
-add positive: K
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJK\-_])+
-add positive: L
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKL\-_])+
-add positive: M
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLM\-_])+
-add positive: N
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMN\-_])+
-add positive: O
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNO\-_])+
-add positive: P
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-_])+
-add positive: Q
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-Q_])+
-add positive: R
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QR_])+
-add positive: S
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRS_])+
-add positive: T
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRST_])+
-add positive: U
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTU_])+
-add positive: V
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUV_])+
-add positive: W
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUVW_])+
-add positive: X
-get a solution: ([acdemno0p12r34t5u6789ABCDEFGHIJKLMNOP\-QRSTUVWX_])+
-add positive: Y
-get a solution: ([acdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXY_])+
-add positive: Z
-get a solution: ([acdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: b
-get a solution: ([abcdemnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: f
-get a solution: ([abcdefmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: g
-get a solution: ([abcdefgmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: h
-get a solution: ([abcdefghmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: i
-get a solution: ([abcdefghimnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: j
-get a solution: ([abcdefghijmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: k
-get a solution: ([abcdefghijkmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: l
-get a solution: ([abcdefghijklmnoprtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: q
-get a solution: ([abcdefghijklmnopqrtu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: s
-get a solution: ([abcdefghijklmnopqrstu0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: v
-get a solution: ([abcdefghijklmnopqrstuv0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: w
-get a solution: ([abcdefghijklmnopqrstuvw0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: x
-get a solution: ([abcdefghijklmnopqrstuvwx0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: y
-get a solution: ([abcdefghijklmnopqrstuvwxy0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-add positive: z
-get a solution: ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-  ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-template: (■)+ size: 1 holes: 1 time: 0.986245ms
-longest: #mn#(■)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#0.986245#mt#ms
-
-Computed in:
-
-  #c#642#c#ms
-
-timeSATSolver time:
-
-  #s#70#s#ms
-
-cost:
-
-  #d#1#d#
-
-Finds the following solutions (and the corresponding fitness):
-
-  64   ([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+
-
-All done
-
-last template: #t#(■)+#t#
-#num#1#num#
-#dep#1#dep#
-#t1#0#t1#
-#t2#0#t2#
-#t3#0#t3#
-#p#52#p#
-#n#0#n#
-solution is #sol#([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ_])+#sol#
-before exit
-
-0.9508600234985352
-success
+  1      |  1     (((((■q)n)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  2      |  1     (((((i■)n)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  3      |  1     (((((iq)■)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  4      |  1     (((((iq)n)■)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  5      |  1     (((((iq)n)\.)(((■){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  6      |  1     (((((iq)n)\.)(((\d){■}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  7      |  1     (((((iq)n)\.)(((\d){4}■)(\d){2}))\.)([^:])+fail dotstar or empty
+  8      |  1     (((((iq)n)\.)(((\d){4}\-)(■){2}))\.)([^:])+fail dotstar or empty
+  9      |  1     (((((iq)n)\.)(((\d){4}\-)(\d){■}))\.)([^:])+fail dotstar or empty
+  10     |  1     (((((iq)n)\.)(((\d){4}\-)(\d){2}))■)([^:])+fail dot
+  11     |  1     (((((iq)n)\.)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
+  12     |  1     (((((iq)n)\.)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
+  13     |  2     (((((■■)n)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  14     |  2     (((((■q)■)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  15     |  2     (((((■q)n)■)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  16     |  2     (((((■q)n)\.)(((■){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  17     |  2     (((((■q)n)\.)(((\d){■}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  18     |  2     (((((■q)n)\.)(((\d){4}■)(\d){2}))\.)([^:])+fail dotstar or empty
+  19     |  2     (((((■q)n)\.)(((\d){4}\-)(■){2}))\.)([^:])+fail dotstar or empty
+  20     |  2     (((((■q)n)\.)(((\d){4}\-)(\d){■}))\.)([^:])+fail dotstar or empty
+  21     |  2     (((((■q)n)\.)(((\d){4}\-)(\d){2}))■)([^:])+fail dot
+  22     |  2     (((((■q)n)\.)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
+  23     |  2     (((((■q)n)\.)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
+  24     |  2     (((((i■)■)\.)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  25     |  2     (((((i■)n)■)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  26     |  2     (((((i■)n)\.)(((■){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  27     |  2     (((((i■)n)\.)(((\d){■}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  28     |  2     (((((i■)n)\.)(((\d){4}■)(\d){2}))\.)([^:])+fail dotstar or empty
+  29     |  2     (((((i■)n)\.)(((\d){4}\-)(■){2}))\.)([^:])+fail dotstar or empty
+  30     |  2     (((((i■)n)\.)(((\d){4}\-)(\d){■}))\.)([^:])+fail dotstar or empty
+  31     |  2     (((((i■)n)\.)(((\d){4}\-)(\d){2}))■)([^:])+fail dot
+  32     |  2     (((((i■)n)\.)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
+  33     |  2     (((((i■)n)\.)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
+  34     |  2     (((((iq)■)■)(((\d){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  35     |  2     (((((iq)■)\.)(((■){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  36     |  2     (((((iq)■)\.)(((\d){■}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  37     |  2     (((((iq)■)\.)(((\d){4}■)(\d){2}))\.)([^:])+fail dotstar or empty
+  38     |  2     (((((iq)■)\.)(((\d){4}\-)(■){2}))\.)([^:])+fail dotstar or empty
+  39     |  2     (((((iq)■)\.)(((\d){4}\-)(\d){■}))\.)([^:])+fail dotstar or empty
+  40     |  2     (((((iq)■)\.)(((\d){4}\-)(\d){2}))■)([^:])+fail dot
+  41     |  2     (((((iq)■)\.)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
+  42     |  2     (((((iq)■)\.)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
+  43     |  2     (((((iq)n)■)(((■){4}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  44     |  2     (((((iq)n)■)(((\d){■}\-)(\d){2}))\.)([^:])+fail dotstar or empty
+  45     |  2     (((((iq)n)■)(((\d){4}■)(\d){2}))\.)([^:])+fail dotstar or empty
+  46     |  2     (((((iq)n)■)(((\d){4}\-)(■){2}))\.)([^:])+fail dotstar or empty
+  47     |  2     (((((iq)n)■)(((\d){4}\-)(\d){■}))\.)([^:])+fail dotstar or empty
+  48     |  2     (((((iq)n)■)(((\d){4}\-)(\d){2}))■)([^:])+fail dot
+  49     |  2     (((((iq)n)■)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
+  50     |  2     (((((iq)n)■)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
+  51     |  2     (((((iq)n)\.)(((■){■}\-)(\d){2}))\.)([^:])+
+2.013427972793579
+timeout

@@ -1,7 +1,0 @@
-views/
-(views/[^./]*)
-+++
-views/register
-views/' upto the next '
-views/register'  something like:
----

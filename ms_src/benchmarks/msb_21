@@ -1,5 +1,6 @@
-([A-z]+)[0-1]+.png
-([a-zA-Z]+)[0-9].png
+\d*(\,)?[\[:space:\]]?([dDcCkKhHmMn]m|m|dam)\d*
+\d*(\,)?[\[:space:\]]?(\d*)?([dDcCkKhHmMn]m|m|dam)\d*
 +++
-main2.png
+1,26m
+100cm
 ---

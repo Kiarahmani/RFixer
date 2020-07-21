@@ -1,5 +1,7 @@
-[0-9]{4}
-(^|\.)\s*([0-9]{4})\s*(\.|$)
+views/
+(views/[^./]*)
 +++
-. 1900.
+views/register
+views/' upto the next '
+views/register'  something like:
 ---

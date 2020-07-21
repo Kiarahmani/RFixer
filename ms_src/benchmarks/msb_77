@@ -1,5 +1,9 @@
-\d{5,6}\|?\d{5,6}?
-\d{5,6}(\|\d{5,6})*
+[0-9a-zA-Z]+
+[0-9a-zA-Z ]+
 +++
-34786|235652|12876
+So I
+Example of a search that is not working
+I am using
+Summer holiday
+it fails to validate
 ---

@@ -1,6 +1,5 @@
-[0-9]*(\,)?[[:space:]]?([dDcCkKhHmMnNÂµ]m|m|dam)[0-9]*
-\d*(\,)?[[:space:]]?(\d*)?([dDcCkKhHmMnNÂµ]m|m|dam)\d*
+gtm\.*click|gtm.formSubmit
+gtm\.(click|linkClick|formSubmit)
 +++
-1,26
-100cm
+gtm.linkClick
 ---

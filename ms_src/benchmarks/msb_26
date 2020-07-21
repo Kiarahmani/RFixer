@@ -1,5 +1,5 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
+[a-z0-9]*@metu\.edu
+[a-z0-9]+[.]?[a-z0-9]+@metu\.edu
 +++
-gtm.linkClick
+herp.derp@metu.edu
 ---

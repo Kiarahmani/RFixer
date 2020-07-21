@@ -1,9 +1,0 @@
-[A-Z]{2}
-(.*?[A-Z]){2}
-+++
-HeLlo
-Hello
-HELLo
-HELLO
-heLLO
----
