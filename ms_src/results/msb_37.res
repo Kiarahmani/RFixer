@@ -1,10 +1,172 @@
-1:12 ***ERROR*** Syntax error
-Couldn't repair and continue parse
-Exception in thread "main" java.lang.RuntimeException: malformed regular expression
-	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
-	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.2977306842803955
-error
+Given the regular expression:
+
+  (([0-1])?\d|2[0-3]):(([0-5])?\d):(([0-5])?\d)
+
+That that should match the strings:
+
+  ✓ (0:8)    06:03 pm
+  ✓ (8:16)   6:3:5 AM
+  ✓ (16:27)  06:03:05 AM
+
+And reject the strings:
+
+  ✗ (27:32)  6:3:5
+  ✗ (32:40)  06:03:05
+
+Search through possible transformations:
+
+  Order  |  Cost  Template                  Solution                        
+---------|--------------------------------------------------------------------
+  1      |  1     (((((■)?\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  2      |  1     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  3      |  1     ((((([0-1])?■|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  4      |  1     ((((([0-1])?\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  5      |  1     ((((([0-1])?\d|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  6      |  1     ((((([0-1])?\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  7      |  1     ((((([0-1])?\d|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  8      |  1     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  9      |  1     ((((([0-1])?\d|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  10     |  1     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  11     |  1     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  12     |  1     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  13     |  1     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  14     |  2     (((((■){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  15     |  2     (((((■)?■|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  16     |  2     (((((■)?\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  17     |  2     (((((■)?\d|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  18     |  2     (((((■)?\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  19     |  2     (((((■)?\d|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  20     |  2     (((((■)?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  21     |  2     (((((■)?\d|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  22     |  2     (((((■)?\d|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  23     |  2     (((((■)?\d|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  24     |  2     (((((■)?\d|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  25     |  2     (((((■)?\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  26     |  2     ((((([0-1]){■}■|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  27     |  2     ((((([0-1]){■}\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  28     |  2     ((((([0-1]){■}\d|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  29     |  2     ((((([0-1]){■}\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  30     |  2     ((((([0-1]){■}\d|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  31     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  32     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  33     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  34     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  35     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  36     |  2     ((((([0-1]){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  37     |  2     ((((■\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  38     |  2     ((((([0-1])?■|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  39     |  2     ((((([0-1])?■|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  40     |  2     ((((([0-1])?■|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  41     |  2     ((((([0-1])?■|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  42     |  2     ((((([0-1])?■|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  43     |  2     ((((([0-1])?■|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  44     |  2     ((((([0-1])?■|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  45     |  2     ((((([0-1])?■|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  46     |  2     ((((([0-1])?■|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  47     |  2     ((((([0-1])?■|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  48     |  2     ((((([0-1])?\d|■■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  49     |  2     ((((([0-1])?\d|■[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  50     |  2     ((((([0-1])?\d|■[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  51     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  52     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  53     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  54     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  55     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  56     |  2     ((((([0-1])?\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  57     |  2     ((((([0-1])?\d|2■)■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  58     |  2     ((((([0-1])?\d|2■):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  59     |  2     ((((([0-1])?\d|2■):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  60     |  2     ((((([0-1])?\d|2■):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  61     |  2     ((((([0-1])?\d|2■):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  62     |  2     ((((([0-1])?\d|2■):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  63     |  2     ((((([0-1])?\d|2■):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  64     |  2     ((((([0-1])?\d|2■):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  65     |  2     ((((([0-1])?\d|2[0-3])■)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  66     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  67     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  68     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  69     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  70     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  71     |  2     ((((([0-1])?\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?■)fail dot
+  72     |  2     ((((([0-1])?\d|2[0-3]):)((■){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  73     |  2     ((((([0-1])?\d|2[0-3]):)((■)?■)):)(([0-5])?\d)fail dotstar or empty
+  74     |  2     ((((([0-1])?\d|2[0-3]):)((■)?\d))■)(([0-5])?\d)fail dotstar or empty
+  75     |  2     ((((([0-1])?\d|2[0-3]):)((■)?\d)):)((■)?\d)fail dotstar or empty
+  76     |  2     ((((([0-1])?\d|2[0-3]):)((■)?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  77     |  2     ((((([0-1])?\d|2[0-3]):)((■)?\d)):)(([0-5])?■)fail dotstar or empty
+  78     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}■)):)(([0-5])?\d)fail dotstar or empty
+  79     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}\d))■)(([0-5])?\d)fail dotstar or empty
+  80     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}\d)):)((■)?\d)fail dotstar or empty
+  81     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5]){■}\d)fail dotstar or empty
+  82     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?■)fail dotstar or empty
+  83     |  2     ((((([0-1])?\d|2[0-3]):)(■\d)):)(([0-5])?\d)fail dotstar or empty
+  84     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?■))■)(([0-5])?\d)fail dotstar or empty
+  85     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?■)):)((■)?\d)fail dotstar or empty
+  86     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?■)):)(([0-5]){■}\d)fail dotstar or empty
+  87     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?■)):)(([0-5])?■)fail dotstar or empty
+  88     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d))■)((■)?\d)fail dotstar or empty
+  89     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d))■)(([0-5]){■}\d)fail dotstar or empty
+  90     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d))■)(([0-5])?■)fail dot
+  91     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)((■){■}\d)fail dotstar or empty
+  92     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)((■)?■)fail dotstar or empty
+  93     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}■)fail dotstar or empty
+  94     |  2     ((((([0-1])?\d|2[0-3]):)(([0-5])?\d)):)(■\d)fail dotstar or empty
+  95     |  3     (((((■){■}■|2[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  96     |  3     (((((■){■}\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  97     |  3     (((((■){■}\d|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  98     |  3     (((((■){■}\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  99     |  3     (((((■){■}\d|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  100    |  3     (((((■){■}\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  101    |  3     (((((■){■}\d|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  102    |  3     (((((■){■}\d|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  103    |  3     (((((■){■}\d|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  104    |  3     (((((■){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  105    |  3     (((((■){■}\d|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  106    |  3     (((((■)?■|■[0-3]):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  107    |  3     (((((■)?■|2■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  108    |  3     (((((■)?■|2[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  109    |  3     (((((■)?■|2[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  110    |  3     (((((■)?■|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  111    |  3     (((((■)?■|2[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  112    |  3     (((((■)?■|2[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  113    |  3     (((((■)?■|2[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  114    |  3     (((((■)?■|2[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  115    |  3     (((((■)?■|2[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  116    |  3     (((((■)?\d|■■):)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  117    |  3     (((((■)?\d|■[0-3])■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  118    |  3     (((((■)?\d|■[0-3]):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  119    |  3     (((((■)?\d|■[0-3]):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  120    |  3     (((((■)?\d|■[0-3]):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  121    |  3     (((((■)?\d|■[0-3]):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  122    |  3     (((((■)?\d|■[0-3]):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  123    |  3     (((((■)?\d|■[0-3]):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  124    |  3     (((((■)?\d|■[0-3]):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  125    |  3     (((((■)?\d|2■)■)(([0-5])?\d)):)(([0-5])?\d)fail dotstar or empty
+  126    |  3     (((((■)?\d|2■):)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  127    |  3     (((((■)?\d|2■):)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  128    |  3     (((((■)?\d|2■):)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  129    |  3     (((((■)?\d|2■):)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  130    |  3     (((((■)?\d|2■):)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  131    |  3     (((((■)?\d|2■):)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  132    |  3     (((((■)?\d|2■):)(([0-5])?\d)):)(([0-5])?■)fail dotstar or empty
+  133    |  3     (((((■)?\d|2[0-3])■)((■)?\d)):)(([0-5])?\d)fail dotstar or empty
+  134    |  3     (((((■)?\d|2[0-3])■)(([0-5]){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  135    |  3     (((((■)?\d|2[0-3])■)(([0-5])?■)):)(([0-5])?\d)fail dotstar or empty
+  136    |  3     (((((■)?\d|2[0-3])■)(([0-5])?\d))■)(([0-5])?\d)fail dotstar or empty
+  137    |  3     (((((■)?\d|2[0-3])■)(([0-5])?\d)):)((■)?\d)fail dotstar or empty
+  138    |  3     (((((■)?\d|2[0-3])■)(([0-5])?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  139    |  3     (((((■)?\d|2[0-3])■)(([0-5])?\d)):)(([0-5])?■)fail dot
+  140    |  3     (((((■)?\d|2[0-3]):)((■){■}\d)):)(([0-5])?\d)fail dotstar or empty
+  141    |  3     (((((■)?\d|2[0-3]):)((■)?■)):)(([0-5])?\d)fail dotstar or empty
+  142    |  3     (((((■)?\d|2[0-3]):)((■)?\d))■)(([0-5])?\d)fail dotstar or empty
+  143    |  3     (((((■)?\d|2[0-3]):)((■)?\d)):)((■)?\d)fail dotstar or empty
+  144    |  3     (((((■)?\d|2[0-3]):)((■)?\d)):)(([0-5]){■}\d)fail dotstar or empty
+  145    |  3     (((((■)?\d|2[0-3]):)((■)?\d)):)(([0-5])?■)fail dotstar or empty
+  146    |  3     (((((■)?\d|2[0-3]):)(([0-5]){■}■)):)(([0-5])?\d)fail dotstar or empty
+  147    |  3     (((((■)?\d|2[0-3]):)(([0-5]){■}\d))■)(([0-5])?\d)fail dotstar or empty
+  148    |  3     (((((■)?\d|2[0-3]):)(([0-5]){■}\d)):)((■)?\d)fail dotstar or empty
+  149    |  3     (((((■)?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5]){■}\d)fail dotstar or empty
+  150    |  3     (((((■)?\d|2[0-3]):)(([0-5]){■}\d)):)(([0-5])?■)
+1.0256829261779785
+timeout

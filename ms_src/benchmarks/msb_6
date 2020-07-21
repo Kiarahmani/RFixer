@@ -1,6 +1,7 @@
-/\d[0-9]{2}(.|-)\d[0-9]{2}(.|-)\d[0-9]{4}/
-\d{2}(\.|-)\d{2}(\.|-)\d{4}
+1. (www\.)?(domain)(\.)(com) 2. (www\.)?([a-z]+)(\.)(domain)(\.)(com)
+(((www\.)([a-z]+))|(?!(www\.))([a-z]+))(\.)(domain)(\.)(com)
 +++
-10-02-2012
-10.02.2012
+www.user.domain.com
+ww.domain.com
 ---
+www.domain.com

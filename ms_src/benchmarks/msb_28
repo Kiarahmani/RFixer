@@ -1,6 +1,5 @@
-\w[\w\s\t]*
-(.+?)
+gtm\.*click|gtm.formSubmit
+gtm\.(click|linkClick|formSubmit)
 +++
-"@test"
-"@#"
+gtm.linkClick
 ---

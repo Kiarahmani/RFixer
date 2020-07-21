@@ -1,5 +1,8 @@
-\(?\d{3}\)?(-|\s)\d{3}-\d{4}
-(\(\d{3}\)|\d{3})(-|\s)\d{3}-\d{4}
+(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
+(https:\/\/|git+)@?([\da-z\.-]+)\.([a-z\.]{2,6})(:|[\/\w \.-]*)*\/?(.git)
 +++
+git@github.com:username/MyApp.git
+https://github.com/username/MyApp.git
 ---
-(217-244-2424
+pp.git
+github.com

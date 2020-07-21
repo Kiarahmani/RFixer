@@ -1,5 +1,6 @@
-locate --regex "/<codes "
-\/codes(\/|\.|$)
+[A-za-z]{2}[0-9]{6}
+(RQ\d{6}|INM\d{8})
 +++
-/codes.
+INM12345678
+RQ123456
 ---

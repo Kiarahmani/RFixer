@@ -1,7 +1,5 @@
-if(preg_match("/ma?Ã¤?(&auml;)?rz/i", $title))     return 3;
-(Marz|MÃ¤rz|M&auml;rz)
+\[Total execution Time: (.+) min
+Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
 +++
-MÃ¤rz
-Marz
-M&auml;rz
 ---
+[Total execution Time: 11.05 min

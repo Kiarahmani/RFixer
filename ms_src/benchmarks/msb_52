@@ -1,7 +1,8 @@
-iqn\.(\d{4}-\d{2})\.([^:]+)
-/iqn\.(\d{4}-\d{2})\.([^:]+)(:)([^,:\s']+)/g
+<abc[!e]
+\babc[^e]
 +++
+abcf
+abcd
+abc[
+abc
 ---
-iqn.2002-07.com.microsoft
-iqn.1998-01.com.vmware.iscsi
-iqn.1991-05.com.microsoft

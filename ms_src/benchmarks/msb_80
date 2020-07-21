@@ -1,5 +1,8 @@
-<?php $string = Monday & SUNDAY 11:30 PM et/pt; //or $string = Monday 11:30 PM et/pt; ?>
-(0[0-9]|1[0-2]):[0-5]\d [AP]M
+1+(2-3)*(4/5)
+[0-9+*/()-]*
 +++
-11:30 PM
+0-9
++-
++)
+*/
 ---

@@ -1,5 +1,5 @@
-Pattern.compile(Pattern.quote(someNotNullStringHere), Pattern.CASE_INSENSITIVE);
-PatternSyntaxException
+[A-Z]+[A-Za-z0-9_,"#;.() \t]+[.]$
+[A-Z]{1}[^.]*.
 +++
-PatternSyntaxException
+theres a little problem.
 ---

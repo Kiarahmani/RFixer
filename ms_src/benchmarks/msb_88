@@ -1,5 +1,9 @@
->>> re.match( '"(\d+)"|\'(\d+)\'', "'123'" ).groups() (None, '123')
-groups()
+[A-Z]{2}
+(.*?[A-Z]){2}
 +++
-groups
+HeLlo
+Hello
+HELLo
+HELLO
+heLLO
 ---

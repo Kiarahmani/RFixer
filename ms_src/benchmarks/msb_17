@@ -1,5 +1,7 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
+https?:\/\/\S.flickr.net
+https?:\/\/(\S*\.)?flickr\.net
 +++
-gtm.linkClick
+https://blog.flickr.net
+https://www.flickr.net
+https://flickr.net
 ---

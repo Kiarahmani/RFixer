@@ -1,8 +1,5 @@
-(set_session_email|get_session_email|send_sync_info|send_sync_purchase_info)
-/(set_session_email|get_session_email|send_sync_info|send_sync_purchase_info)/
+[a-z0-9]*@metu\.edu
+[a-z0-9]+[.]?[a-z0-9]+@metu\.edu
 +++
+herp.derp@metu.edu
 ---
-set_session_email
-get_session_email
-send_sync_info
-send_sync_purchase_info

@@ -1,5 +1,7 @@
-def add_http(link)   if (link =~ /http[s]?:\/\//)     link   else     "http://#{link}"   end end
-before_save do |link|       link.url = "http://#{url}" unless link.url=~/^https?:\/\//   end
+([A-Z0-9])(?!)+
+([A-Z][0-9])+
 +++
-link
+A2
+D1B2C4Q3
+A1Q3
 ---

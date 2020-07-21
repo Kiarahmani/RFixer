@@ -1,5 +1,7 @@
-<a href="page.ashx" xref="somethingelse" title="something" class="image">
-xref="[^"]*"
+views/
+(views/[^./]*)
 +++
-xref="..."
+views/register
+views/' upto the next '
+views/register'  something like:
 ---

@@ -1,5 +1,5 @@
-\[Total execution Time: (.+) min
-Total execution Time: ([\d.]+).*\r?\n.*\r?\n.*\[Step 1\s
+42\.[6-9][0-6]
+42\.(6[7-9]|7[0-9]|8[0-6])
 +++
+42.67
 ---
-[Total execution Time: 11.05 min

@@ -1,5 +1,5 @@
-domain1.com/subfolder/index.php
-RewriteCond %{REQUEST_URI} !^/subfolder/index.php$ RewriteRule (.*) http://domain2.com/$1
+/<codes 
+\/codes(\/|\.|$)
 +++
+/codes.
 ---
-domain1.com/subfolder/index.php

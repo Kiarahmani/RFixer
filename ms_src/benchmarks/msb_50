@@ -1,5 +1,7 @@
-[A-Z]+[A-Za-z0-9_,"#;.() \t]+[.]$
-[A-Z]{1}[^.]*.
+([aieou]*[aieou]){2,}
+([aeiou]{2})
 +++
-Any tips how to fix it?
+oe
+oi
+io
 ---

@@ -1,20 +1,10 @@
+1:36 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ^([^%*_\\\\\\]){1}([^%*_\\\\\\]){1}
-
-That that should match the strings:
-
-
-And reject the strings:
-
-  ✗ (0:2)    Th
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
-
-0.40813612937927246
+0.3203110694885254
 error

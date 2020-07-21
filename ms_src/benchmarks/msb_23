@@ -1,5 +1,5 @@
-\S*\s\{.*?\}\S[^{\s]*
-\w+\s+\{\w+\}\s+\w+
+([A-z]+)[0-1]+.png
+([a-zA-Z]+)[0-9].png
 +++
-word {word} word
+main2.png
 ---

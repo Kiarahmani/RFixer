@@ -1,6 +1,8 @@
-([Version]+)\.([.0-9A-Za-z]+)
-(version.*\.zip)
+(\[\[)(.*)(\]\])
+(\[\[)(.*?)(\]\])
 +++
+[[MyOtherText]]
+[[MyText]]
+[[ Something...[[MyText]]
+[[" for start and "]]
 ---
-Version.2.1.4.zip
-e.axd

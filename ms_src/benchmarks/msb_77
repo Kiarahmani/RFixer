@@ -1,5 +1,5 @@
-HeLlo HEllo HELLo HELLO heLLO
-(.*?[A-Z]){2}
+([A-Z][a-z]*((\\s[A-Za-z])?[a-z]*)*)
+(\b[A-Z]\w*\s*)+
 +++
-]{2}   But I
+To Make
 ---

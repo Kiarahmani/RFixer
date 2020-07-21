@@ -1,5 +1,5 @@
-grep abc_source|source2_201501.csv
-grep -E abc_source.?_201501.csv
+[a-z][_][a-z]
+[a-z]+_[a-z]+
 +++
+blah_blah
 ---
-source2_201501.csv

@@ -1,11 +1,11 @@
 
 Given the regular expression:
 
-  {\id\":\"21432413214_124533451397\"}"
+  (\d){5,6}(\|)?((\d){5,6})?
 
 That that should match the strings:
 
-  ✓ (0:24)   21432413214_124533451397
+  ✓ (0:18)   34786|235652|12876
 
 And reject the strings:
 
@@ -14,19 +14,28 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-Exception in thread "main" java.util.regex.PatternSyntaxException: Illegal repetition
-{\id\":\"21432413214_124533451397\"}"
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.closure(Pattern.java:3157)
-	at java.util.regex.Pattern.sequence(Pattern.java:2134)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at edu.wisc.regfixer.enumerate.Corpus.getMatches(Corpus.java:122)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:76)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
-
-0.4510350227355957
-error
+  1      |  1     ((■){5,6}(\|)?)((\d){5,6})?fail dot
+  2      |  1     ((\d){■}(\|)?)((\d){5,6})?fail dotstar or empty
+  3      |  1     ((\d){5,6}(■)?)((\d){5,6})?fail dot
+  4      |  1     ((\d){5,6}(\|){■})((\d){5,6})?fail dotstar or empty
+  5      |  1     ((\d){5,6}(\|)?)((■){5,6})?fail dot
+  6      |  1     ((\d){5,6}(\|)?)((\d){■})?fail dotstar or empty
+  7      |  1     ((\d){5,6}(\|)?)((\d){5,6}){■}fail dotstar or empty
+  8      |  2     ((■){■}(\|)?)((\d){5,6})?get a solution: (([12345678|]){14,18}(\|)?)((\d){5,6})?
+add positive: 10000
+add negative: 1|111111111111
+get a solution: (([2345678|0]){0,18}(\|)?)((\d){5,6})?
+add positive: 10000|00000
+add negative: 
+  unsatisfiable SAT formula       
+  9      |  2     ((■){5,6}(■)?)((\d){5,6})?fail dot
+  10     |  2     ((■){5,6}(\|){■})((\d){5,6})?fail dot
+  11     |  2     ((■){5,6}(\|)?)((■){5,6})?fail dot
+  12     |  2     ((■){5,6}(\|)?)((\d){■})?fail dot
+  13     |  2     ((■){5,6}(\|)?)((\d){5,6}){■}fail dot
+  14     |  2     (■(\|)?)((\d){5,6})?    fail dot
+  15     |  2     ((■■){5,6}(\|)?)((\d){5,6})?fail dot
+  16     |  2     (((■|■)){5,6}(\|)?)((\d){5,6})?fail dot
+  17     |  2     (((■){■}){5,6}(\|)?)((\d){5,6})?
+1.0251877307891846
+timeout

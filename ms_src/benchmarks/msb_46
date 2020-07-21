@@ -1,5 +1,5 @@
-expr "abc aac bbcx" : '.*\([^ ]\+x\).*'
-.*?([^ ]+x).*?
+(\d+)?(\W*)(\[|\()(.*)
+\d{4} - [(\[]?[\w\s]*\]?
 +++
-". It should return "bbcx
+6130 - Office Configuration
 ---

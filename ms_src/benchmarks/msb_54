@@ -1,5 +1,6 @@
-/* {"orderId": ["1389104"],"orderItemId": ["7900094"], } */
-orderId: \["(.+?)"]
+^(the|of) | (the|of)$| (of|the)
+\b(of|the)\b
 +++
-"orderId": ["(.+?)"]
+of
+the
 ---

@@ -1,7 +1,5 @@
-([a-zA-Z]*:[\\[a-zA-Z0-9 ._-]*]*)
-([a-zA-Z]*:[\\[a-zA-Z0-9 ._-]* ]*)
+([0-9]){0,2}\.([0-9]){0,2}
+[0-9]{0,2}(\.[0-9]{1,2})?
 +++
+00
 ---
-is:   But this select the
-example:   D
-D:\Main_Dir\Sub-1\test blank\bin\binary

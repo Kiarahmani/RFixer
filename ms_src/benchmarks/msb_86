@@ -1,5 +1,5 @@
-someword !!anotherword someotherword
-!+[a-z0-9]*
+\d{4}
+([0-9]+\/[0-9]+)\,([0-9]+\/[0-9]+)
 +++
-!!anotherword
+1/2,4/6
 ---

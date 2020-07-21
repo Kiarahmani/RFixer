@@ -1,6 +1,6 @@
-ValidationExpression="(^Anything Entered)$|(^Something Else)$ |(^Another String)$"
-(Anything Entered|something Else|Another String)
+([0-9]+)\s+(\bseconds\b)|(\bminutes\b)
+([0-9]+)\s+((\bseconds\b)|(\bminutes\b))
 +++
-"Anything Entered"
-"Another String"
+5 minutes
 ---
+minutes

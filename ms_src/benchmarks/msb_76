@@ -1,7 +1,6 @@
-var template_name = template.name.match('views/'+REGEXP);
-(views/[^./]*)
+(.*?{{){1,}
+\{\{(\w+)?\}\}
 +++
-views/register'  something like:
-views/' upto the next '
-views/register
+{{data1}}
+{{data2}}
 ---

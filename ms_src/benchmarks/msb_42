@@ -1,5 +1,5 @@
-EXCLUSION_DOMAINS = %w[   example.com   test.com   asdf.com   yahoo.   gmail ]
-def excluded?(value)   EXCLUSION_DOMAINS.any? { |domain| value.include? domain } end
+\S*\s\{.*?\}\S[^{\s]*
+\w+\s+\{\w+\}\s+\w+
 +++
-domain
+word {word} word
 ---

@@ -1,12 +1,11 @@
 
 Given the regular expression:
 
-  ^((\-)?(\d)+(\.(\d)+)?),(\s)*((\-)?(\d)+(\.(\d)+)?)$
+  ([\.%+0-9a-z_])+@([0-9a-z])+(\.([a-z]){2,10}){1,2}$
 
 That that should match the strings:
 
-  ✓ (0:10)   101.711125
-  ✓ (10:18)  3.156831
+  ✓ (0:10)   aa@aaa.com
 
 And reject the strings:
 
@@ -17,5 +16,5 @@ Search through possible transformations:
 ---------|--------------------------------------------------------------------
 Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
 
-0.36739516258239746
+0.42458319664001465
 error

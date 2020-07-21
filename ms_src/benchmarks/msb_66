@@ -1,6 +1,6 @@
-(['"])(.*?)\1|([^'"]+)
-(god)|(adam)&(eve)
+11\d{8}
+[^0-9](11[0-9]{8})[^0-9]
 +++
+t1128647953t
 ---
-'re in an optional part that don'
-t match, but what about when they
+1128647953

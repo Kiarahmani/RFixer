@@ -1,5 +1,5 @@
-Html string.gsub( /images/([a-zA-Z0-9\-]+)/, "/images/#{replacement_method($1)}/" )
-Html string.gsub( /images/(folder)/) { |match| "/images/#{replacement_method(match)}/" }
+M?'(?!,|\))
+M\?'(?!,|\))
 +++
-match
+M?'
 ---

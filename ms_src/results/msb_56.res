@@ -1,20 +1,10 @@
+1:2 ***ERROR*** Syntax error
+Couldn't repair and continue parse
+Exception in thread "main" java.lang.RuntimeException: malformed regular expression
+	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
+	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-Given the regular expression:
-
-  ([0-9]){4}
-
-That that should match the strings:
-
-  ✓ (0:7)    . 1900.
-
-And reject the strings:
-
-
-Search through possible transformations:
-
-  Order  |  Cost  Template                  Solution                        
----------|--------------------------------------------------------------------
-Unknown AST class: edu.wisc.regfixer.parser.AnchorNode
-
-0.4125208854675293
+0.2720491886138916
 error

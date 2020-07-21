@@ -1,12 +1,12 @@
 
 Given the regular expression:
 
-  {[0-9]:[0-9]}
+  (19|20)\d\d[\-\./ ](0[1-9]|1[120])[\-\./ ]((0[1-9]|[12][0-9])|3[10])
 
 That that should match the strings:
 
-  ✓ (0:9)    {999:999}
-  ✓ (9:18)   {222:115}
+  ✓ (0:10)   3000-01-01
+  ✓ (10:20)  5000-01-01
 
 And reject the strings:
 
@@ -15,19 +15,32 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-Exception in thread "main" java.util.regex.PatternSyntaxException: Illegal repetition
-{[0-9]:[0-9]}
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.closure(Pattern.java:3157)
-	at java.util.regex.Pattern.sequence(Pattern.java:2134)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at edu.wisc.regfixer.enumerate.Corpus.getMatches(Corpus.java:122)
-	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:76)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
-	at edu.wisc.regfixer.CLI.main(CLI.java:242)
+  1      |  1     ((((((■9|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  2      |  1     ((((((1■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  3      |  1     ((((((19|■0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])get a solution: ((((((19|[35]0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 3100 10 30
+  4      |  1     ((((((19|2■)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  5      |  1     ((((((19|20)■)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  6      |  1     ((((((19|20)\d)■)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  7      |  1     ((((((19|20)\d)\d)■)(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  8      |  1     ((((((19|20)\d)\d)[\-\./ ])(■[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  9      |  1     ((((((19|20)\d)\d)[\-\./ ])(0■|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  10     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|■[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  11     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1■))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  12     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))■)((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  13     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((■[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  14     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0■|[12][0-9])|3[10])fail dotstar or empty
+  15     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|■[0-9])|3[10])fail dotstar or empty
+  16     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12]■)|3[10])fail dotstar or empty
+  17     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|■[10])fail dotstar or empty
+  18     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3■)fail dotstar or empty
+  19     |  2     ((((((■■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])get a solution: (((((([35][10]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 3200 10 30
+get a solution: (((((([35][120]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0000 01 30
+get a solution: (((((([350][120]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0300 10 30
+get a solution: (((((([350][1230]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
 
-0.3689279556274414
-error
+1.0238077640533447
+timeout

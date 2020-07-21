@@ -1,5 +1,14 @@
-snmp-server community mytest-01 RO
-[\w+-]+\d+|(.+?)
+[^-\s].{8,20}
+[^-\s]{8,20}
 +++
-mytest-01
+avail...
+allowed.
+password
 ---
+t no spaces allowed.
+I'm trying to create
+for a password field.
+a Regular Expression
+8 - 20 characters, bu
+The requirements are
+I've tried  to no ava

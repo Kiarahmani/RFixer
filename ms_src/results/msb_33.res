@@ -1,10 +1,31 @@
-1:19 ***ERROR*** Syntax error
-Couldn't repair and continue parse
-Exception in thread "main" java.lang.RuntimeException: malformed regular expression
-	at edu.wisc.regfixer.enumerate.Job.<init>(Job.java:55)
-	at edu.wisc.regfixer.enumerate.Benchmark.readFromFile(Benchmark.java:40)
-	at edu.wisc.regfixer.CLI.handleFix(CLI.java:398)
+
+Given the regular expression:
+
+  \b([bc])*(a){3}([bc])*\b
+
+That that should match the strings:
+
+  ✓ (0:3)    cab
+  ✓ (3:11)   caabaaac
+  ✓ (11:21)  ababaccccc
+
+And reject the strings:
+
+
+Search through possible transformations:
+
+  Order  |  Cost  Template                  Solution                        
+---------|--------------------------------------------------------------------
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at edu.wisc.regfixer.automata.Automaton.predicateFromMetaChar(Automaton.java:1066)
+	at edu.wisc.regfixer.automata.Automaton.charEscapedToAutomaton(Automaton.java:1043)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:884)
+	at edu.wisc.regfixer.automata.Automaton.concatToAutomaton(Automaton.java:897)
+	at edu.wisc.regfixer.automata.Automaton.nodeToAutomaton(Automaton.java:875)
+	at edu.wisc.regfixer.automata.Automaton.<init>(Automaton.java:64)
+	at edu.wisc.regfixer.RegFixer.fix(RegFixer.java:92)
+	at edu.wisc.regfixer.CLI.handleFix(CLI.java:433)
 	at edu.wisc.regfixer.CLI.main(CLI.java:242)
 
-0.26636624336242676
+0.5454161167144775
 error

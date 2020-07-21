@@ -1,6 +1,7 @@
-Deutsch (de) English (en) PortuguÃªs (pt) Ð ÑÑÑÐºÐ¸Ð¹ (ru) íêµ­ì´ (ko)
-\((\w{2})\)
+([a-zA-Z]{1})([0-9]{3})
+([a-zA-Z]\d{3}|\d[a-zA-Z]\d{2}|\d{2}[a-zA-Z]\d|\d{3}[a-zA-Z])
 +++
-(de)
-(ru)
+123d
+12d3
+99A9
 ---
