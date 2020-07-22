@@ -17,8 +17,8 @@ col_res = 'ms_src/collected_results.csv'
 file_prefix = 'msb'
 cegis = True
 incluide_negatives = True
-bm_range = range(0,10)
-timeout = 1
+bm_range = range(0,101)
+timeout = 2
 delim = 'Æ'
 
 
