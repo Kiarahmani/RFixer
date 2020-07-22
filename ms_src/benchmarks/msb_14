@@ -1,8 +1,0 @@
-(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?
-(https:\/\/|git+)@?([\da-z\.-]+)\.([a-z\.]{2,6})(:|[\/\w \.-]*)*\/?(.git)
-+++
-git@github.com:username/MyApp.git
-https://github.com/username/MyApp.git
----
-pp.git
-github.com

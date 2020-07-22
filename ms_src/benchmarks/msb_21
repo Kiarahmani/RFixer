@@ -1,6 +1,0 @@
-\d*(\,)?[\[:space:\]]?([dDcCkKhHmMn]m|m|dam)\d*
-\d*(\,)?[\[:space:\]]?(\d*)?([dDcCkKhHmMn]m|m|dam)\d*
-+++
-1,26m
-100cm
----

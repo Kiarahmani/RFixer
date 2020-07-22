@@ -1,12 +1,12 @@
 
 Given the regular expression:
 
-  ([0-9A-Z])+
+  (19|20)\d\d[\-\./ ](0[1-9]|1[120])[\-\./ ]((0[1-9]|[12][0-9])|3[10])
 
 That that should match the strings:
 
-  ✓ (0:5)    A-59#
-  ✓ (5:10)   A453#
+  ✓ (0:10)   3000-01-01
+  ✓ (10:20)  5000-01-01
 
 And reject the strings:
 
@@ -15,101 +15,91 @@ Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
-  1      |  1     (■)+                    get a solution: ([A\-3#459])+
-add positive: 0
-get a solution: ([A\-3#4590])+
-add positive: 1
-get a solution: ([A1\-3#4590])+
-add positive: 2
-get a solution: ([A1\-23#4590])+
-add positive: 6
-get a solution: ([A1\-23#45690])+
-add positive: 7
-get a solution: ([A#01\-2345679])+
-add positive: 8
-get a solution: ([A#0\-123456789])+
-add positive: B
-get a solution: ([AB#0\-123456789])+
-add positive: C
-get a solution: ([AB#C0\-123456789])+
-add positive: D
-get a solution: ([AB#CD0\-123456789])+
-add positive: E
-get a solution: ([AB#CDE0\-123456789])+
-add positive: F
-get a solution: ([AB#CDEF0\-123456789])+
-add positive: G
-get a solution: ([AB#CDEFG0\-123456789])+
-add positive: H
-get a solution: ([AB#CDEFGH0\-123456789])+
-add positive: I
-get a solution: ([AB#CDEFGHI0\-123456789])+
-add positive: J
-get a solution: ([AB#CDEFGHIJ0\-123456789])+
-add positive: K
-get a solution: ([AB#CDEFGHIJK0\-123456789])+
-add positive: L
-get a solution: ([#0123456789ABCDEFGHIJKL\-])+
-add positive: M
-get a solution: ([#0123456789ABCDEFGHIJKLM\-])+
-add positive: N
-get a solution: ([#0123456789ABCDEFGHIJKLMN\-])+
-add positive: O
-get a solution: ([#0123456789ABCDEFGHIJKLMNO\-])+
-add positive: P
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-])+
-add positive: Q
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-Q])+
-add positive: R
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QR])+
-add positive: S
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRS])+
-add positive: T
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRST])+
-add positive: U
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTU])+
-add positive: V
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUV])+
-add positive: W
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVW])+
-add positive: X
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWX])+
-add positive: Y
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXY])+
-add positive: Z
-get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+
-  ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+
-template: (■)+ size: 1 holes: 1 time: 1.362931ms
-longest: #mn#(■)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.362931#mt#ms
+  1      |  1     ((((((■9|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  2      |  1     ((((((1■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  3      |  1     ((((((19|■0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])get a solution: ((((((19|[35]0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 3100 10 30
+  4      |  1     ((((((19|2■)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  5      |  1     ((((((19|20)■)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  6      |  1     ((((((19|20)\d)■)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  7      |  1     ((((((19|20)\d)\d)■)(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  8      |  1     ((((((19|20)\d)\d)[\-\./ ])(■[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  9      |  1     ((((((19|20)\d)\d)[\-\./ ])(0■|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  10     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|■[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  11     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1■))[\-\./ ])((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  12     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))■)((0[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  13     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((■[1-9]|[12][0-9])|3[10])fail dotstar or empty
+  14     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0■|[12][0-9])|3[10])fail dotstar or empty
+  15     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|■[0-9])|3[10])fail dotstar or empty
+  16     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12]■)|3[10])fail dotstar or empty
+  17     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|■[10])fail dotstar or empty
+  18     |  1     ((((((19|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3■)fail dotstar or empty
+  19     |  2     ((((((■■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])get a solution: (((((([35][10]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 3200 10 30
+get a solution: (((((([35][120]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0000 01 30
+get a solution: (((((([350][120]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0300 10 30
+get a solution: (((((([350][1230]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 2100 10 30
+get a solution: (((((([2350][1230]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 2400 10 30
+get a solution: (((((([2350][12340]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 1000 01 30
+get a solution: (((((([12350][12340]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0500 10 30
+get a solution: (((((([12350][123450]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 0600 01 30
+get a solution: (((((([12350][1234560]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 2700 10 30
+get a solution: (((((([12350][12345670]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 4000 01 30
+get a solution: (((((([123450][12345670]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 2800 01 30
+get a solution: (((((([123450][123456780]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 6000 01 30
+get a solution: (((((([1234560][123456780]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 2900 10 30
+get a solution: (((((([1234560][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 7000 10 30
+get a solution: (((((([12345670][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 8000 01 30
+get a solution: (((((([123456780][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+add positive: 9000 10 30
+get a solution: (((((([1234567890][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+  (((((([1234567890][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
+template: ((((((■■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10]) size: 20 holes: 2 time: 1.006895ms
+template: ((((((19|■0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10]) size: 21 holes: 1 time: 3.021467ms
+longest: #mn#((((((19|■0)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])#mn# size: #ms#21#ms# holes: #mh#1#mh# time: #mt#3.021467#mt#ms
 
 Computed in:
 
-  #c#400#c#ms
+  #c#538#c#ms
 
 timeSATSolver time:
 
-  #s#39#s#ms
+  #s#20#s#ms
 
 cost:
 
-  #d#1#d#
+  #d#2#d#
 
 Finds the following solutions (and the corresponding fitness):
 
-  38   ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+
+  20   (((((([1234567890][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])
 
 All done
 
-last template: #t#(■)+#t#
-#num#1#num#
-#dep#1#dep#
+last template: #t#((((((■■|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])#t#
+#num#19#num#
+#dep#2#dep#
 #t1#0#t1#
 #t2#0#t2#
-#t3#0#t3#
-#p#31#p#
+#t3#17#t3#
+#p#17#p#
 #n#0#n#
-solution is #sol#([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+#sol#
+solution is #sol#(((((([1234567890][1234567890]|20)\d)\d)[\-\./ ])(0[1-9]|1[120]))[\-\./ ])((0[1-9]|[12][0-9])|3[10])#sol#
 before exit
 
-0.666856050491333
+0.8209421634674072
 success

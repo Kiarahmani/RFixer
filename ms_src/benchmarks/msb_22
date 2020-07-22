@@ -1,5 +1,0 @@
-gtm\.*click|gtm.formSubmit
-gtm\.(click|linkClick|formSubmit)
-+++
-gtm.linkClick
----

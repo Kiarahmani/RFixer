@@ -1,5 +1,0 @@
-[\\w][\\w\\,\\s\\w]
-(\S)+, (\S)+
-+++
-lastname, firstname
----

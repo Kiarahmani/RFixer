@@ -1,8 +1,0 @@
-abc[!e]
-abc[^e]?
-+++
-abcf
-abcd
-abc[
-abc
----

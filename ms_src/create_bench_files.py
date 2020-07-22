@@ -16,9 +16,10 @@ col_res     =   'ms_src/collected_results.csv'
 file_prefix =   'msb'
 cegis       =   True
 incluide_negatives = True
-bm_range    =   range(0,1000)
-timeout     =   3
+bm_range    =   range(0,10)
+timeout     =   1
 delim       =   'Æ'
+
 
 
 def run(cmd, timeout_sec, f):
@@ -63,13 +64,12 @@ def clean():
 
 def create_bench():
     dt = pd.read_csv (input_file, encoding="iso-8859-1")
-    iter = 0
     for row in dt.iterrows():
-        if not iter in bm_range:
-            iter += 1
+        msb_no  = row[1].msb
+        if not msb_no in bm_range:
             continue
         # define the output file
-        output_file = output_dir + file_prefix + "_" + str(iter)
+        output_file = output_dir + file_prefix + "_" + str(msb_no)
         # read required columns
         q_regex = row[1].Q_regex
         a_regex = row[1].A_regex
@@ -94,7 +94,6 @@ def create_bench():
                 for example in ast.literal_eval(negatives):
                     of.write (example)
                     of.write ("\n")
-        iter += 1
 
 
 
@@ -127,18 +126,19 @@ def parse_result_file (rf):
 
 def collect_results():
     dt = pd.read_csv (input_file, encoding="iso-8859-1")
-    header = "Benchmark"+delim +"Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "additional examples" + delim + "total time"
-    iter = 0
+    header = "Benchmark"+delim + "url"+delim+"Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "negative examples" + delim + "additional examples" + delim + "total time"
     with open(col_res, 'w', encoding='utf-8') as crf:
         crf.write(header+"\n")
         for row in dt.iterrows():
-            if not iter in bm_range:
-                iter += 1
+            msb     = row[1].msb
+            if not msb in bm_range:
                 continue
             q_regex = row[1].Q_regex
+            url     = row[1].post_url
             a_regex = row[1].A_regex
             pos_ex  = row[1].postivie_examples
-            filename = file_prefix + "_" + str(iter)
+            neg_ex  = row[1].negative_examples
+            filename = file_prefix + "_" + str(msb)
             with open (results_dir + filename + '.res', 'r', encoding='utf-8') as rf:
                 print ("result file: "+filename)
                 rfixer_res, cegis_cnt, elapsed_time = parse_result_file(rf)
@@ -150,8 +150,7 @@ def collect_results():
                 else:
                     regex = rfixer_res
                 print (">> "+regex)
-                crf.write (filename+delim+q_regex+delim+a_regex+delim+regex+delim+pos_ex+delim+str(cegis_cnt)+delim+str(elapsed_time)+"\n")
-            iter += 1
+                crf.write (filename+delim+url+delim+q_regex+delim+a_regex+delim+regex+delim+pos_ex+delim+neg_ex+delim+str(cegis_cnt)+delim+str(elapsed_time)+"\n")
 
 
 
