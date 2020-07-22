@@ -18,7 +18,7 @@ file_prefix = 'msb'
 cegis = True
 incluide_negatives = True
 bm_range = range(0,101)
-timeout = 20
+timeout = 2
 delim = 'Æ'
 
 
