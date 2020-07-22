@@ -157,7 +157,7 @@ def collect_results():
                 else:
                     regex = rfixer_res
                 print(">> " + regex)
-                crf.write(filename + delim + url + delim + q_regex + delim + a_regex + delim + regex + delim + ea + delim + ea + delim + ec + delim + str(cegis_cnt) + delim + str(elapsed_time) + "\n")
+                crf.write(filename + delim + url + delim + q_regex + delim + a_regex + delim + regex + delim + eq + delim + ea + delim + ec + delim + str(cegis_cnt) + delim + str(elapsed_time) + "\n")
 
 
 
@@ -178,13 +178,13 @@ def run_tests():
 
 def main():
     print("\n\n####### cleaning files from previous runs")
-    clean()
+    #clean()
     print("done.")
     print("\n\n####### creating new benchmark files")
-    create_bench()
+    #create_bench()
     print("done.")
     print("\n\n####### running RFixer on benchmarks")
-    run_tests()
+    #run_tests()
     print("done.")
     print("\n\n####### collecting results")
     collect_results()
