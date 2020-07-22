@@ -3,22 +3,23 @@ import re
 import time
 import ast
 import subprocess
-import glob, os
+import glob
+import os
 import shlex
 from subprocess import Popen, PIPE
 from threading import Timer
 
 # CONFIG
-input_file  =   'ms_src/curated_benchmark_csv.csv'
-output_dir  =   'ms_src/benchmarks/'
-results_dir =   'ms_src/results/'
-col_res     =   'ms_src/collected_results.csv'
-file_prefix =   'msb'
-cegis       =   True
+input_file = 'ms_src/curated_benchmark_csv.csv'
+output_dir = 'ms_src/benchmarks/'
+results_dir = 'ms_src/results/'
+col_res = 'ms_src/collected_results.csv'
+file_prefix = 'msb'
+cegis = True
 incluide_negatives = True
-bm_range    =   range(0,10)
-timeout     =   1
-delim       =   'Æ'
+bm_range = range(0,10)
+timeout = 1
+delim = 'Æ'
 
 
 
@@ -32,40 +33,40 @@ def run(cmd, timeout_sec, f):
         ret = proc.returncode
         f.write(stdout.decode('utf-8'))
     finally:
-        elapsed_time = time.time()-start_time
+        elapsed_time = time.time() - start_time
         if not stderr:
-            if ret==0:
-                f.write("\n"+str(elapsed_time))
+            if ret == 0:
+                f.write("\n" + str(elapsed_time))
                 f.write("\nsuccess")
-                print (">> "+str(elapsed_time))
-                print (">> success")
+                print(">> " + str(elapsed_time))
+                print(">> success")
             else:
-                f.write("\n"+str(elapsed_time))
+                f.write("\n" + str(elapsed_time))
                 f.write("\ntimeout")
-                print (">> "+str(elapsed_time))
-                print (">> timeout")
+                print(">> " + str(elapsed_time))
+                print(">> timeout")
         else:
             f.write(stderr.decode('utf-8'))
-            f.write("\n"+str(elapsed_time))
+            f.write("\n" + str(elapsed_time))
             f.write("\nerror")
-            print (">> "+str(elapsed_time))
-            print (">> error")
+            print(">> " + str(elapsed_time))
+            print(">> error")
         timer.cancel()
 
 # remove benchmarks and results from previous runs
 def clean():
-    files = glob.glob(output_dir+"*")
+    files = glob.glob(output_dir + "*")
     for file in files:
         os.remove(file)
-    files = glob.glob(results_dir+"*")
+    files = glob.glob(results_dir + "*")
     for file in files:
         os.remove(file)
 
 
 def create_bench():
-    dt = pd.read_csv (input_file, encoding="iso-8859-1")
+    dt = pd.read_csv(input_file, encoding="iso-8859-1")
     for row in dt.iterrows():
-        msb_no  = row[1].msb
+        msb_no = row[1].msb
         if not msb_no in bm_range:
             continue
         # define the output file
@@ -76,7 +77,7 @@ def create_bench():
         examples = row[1].postivie_examples
         negatives = row[1].negative_examples
         with open(output_file, 'w', encoding="utf-8") as of:
-            print ("benchmark: "+output_file)
+            print("benchmark: " + output_file)
             of.write(q_regex)
             of.write("\n")
             if cegis:
@@ -84,22 +85,22 @@ def create_bench():
                 of.write("\n")
             of.write("+++")
             of.write("\n")
-            # iterate over examples 
+            # iterate over examples
             for example in ast.literal_eval(examples):
-                of.write (example)
-                of.write ("\n")
+                of.write(example)
+                of.write("\n")
             of.write("---")
             of.write("\n")
             if incluide_negatives:
                 for example in ast.literal_eval(negatives):
-                    of.write (example)
-                    of.write ("\n")
+                    of.write(example)
+                    of.write("\n")
 
 
 
-def parse_result_file (rf):
+def parse_result_file(rf):
     res = rf.read()
-    lines  = res.strip().split("\n")
+    lines = res.strip().split("\n")
     ret_msg = lines[-1]
     time = lines[-2]
     ln = 0 # line number containing the synthesized regex
@@ -125,63 +126,63 @@ def parse_result_file (rf):
 
 
 def collect_results():
-    dt = pd.read_csv (input_file, encoding="iso-8859-1")
-    header = "Benchmark"+delim + "url"+delim+"Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "negative examples" + delim + "additional examples" + delim + "total time"
+    dt = pd.read_csv(input_file, encoding="iso-8859-1")
+    header = "Benchmark" + delim + "url" + delim + "Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "negative examples" + delim + "additional examples" + delim + "total time"
     with open(col_res, 'w', encoding='utf-8') as crf:
-        crf.write(header+"\n")
+        crf.write(header + "\n")
         for row in dt.iterrows():
-            msb     = row[1].msb
+            msb = row[1].msb
             if not msb in bm_range:
                 continue
             q_regex = row[1].Q_regex
-            url     = row[1].post_url
+            url = row[1].post_url
             a_regex = row[1].A_regex
-            pos_ex  = row[1].postivie_examples
-            neg_ex  = row[1].negative_examples
+            pos_ex = row[1].postivie_examples
+            neg_ex = row[1].negative_examples
             filename = file_prefix + "_" + str(msb)
-            with open (results_dir + filename + '.res', 'r', encoding='utf-8') as rf:
-                print ("result file: "+filename)
+            with open(results_dir + filename + '.res', 'r', encoding='utf-8') as rf:
+                print("result file: " + filename)
                 rfixer_res, cegis_cnt, elapsed_time = parse_result_file(rf)
                 if rfixer_res != 'error' and rfixer_res != 'timeout':
-                    if rfixer_res=="":
+                    if rfixer_res == "":
                         regex = q_regex
                     else:
                         regex = re.findall(r'\s+\d+\s+(.*)',rfixer_res)[0]
                 else:
                     regex = rfixer_res
-                print (">> "+regex)
-                crf.write (filename+delim+url+delim+q_regex+delim+a_regex+delim+regex+delim+pos_ex+delim+neg_ex+delim+str(cegis_cnt)+delim+str(elapsed_time)+"\n")
+                print(">> " + regex)
+                crf.write(filename + delim + url + delim + q_regex + delim + a_regex + delim + regex + delim + pos_ex + delim + neg_ex + delim + str(cegis_cnt) + delim + str(elapsed_time) + "\n")
 
 
 
 
 def run_tests():
-    files = glob.glob(output_dir+"*")
+    files = glob.glob(output_dir + "*")
     iter = 0
     for file in files:
         iter += 1
         bench_name = file.replace(output_dir,'')
-        print (str(iter)+': benchmark '+ bench_name)
+        print(str(iter) + ': benchmark ' + bench_name)
         result_file = results_dir + bench_name + '.res'
         with open(result_file, 'w', encoding='utf-8') as rf:
             if cegis:
-                run ("java -jar target/regfixer.jar --cegis fix --file " + file, timeout, rf)
+                run("java -jar target/regfixer.jar --cegis fix --file " + file, timeout, rf)
             else:
-                run ("java -jar target/regfixer.jar fix --file " + file, timeout, rf)
+                run("java -jar target/regfixer.jar fix --file " + file, timeout, rf)
 
 def main():
-    print ("\n\n####### cleaning files from previous runs")
+    print("\n\n####### cleaning files from previous runs")
     clean()
-    print ("done.")
-    print ("\n\n####### creating new benchmark files")
+    print("done.")
+    print("\n\n####### creating new benchmark files")
     create_bench()
-    print ("done.")
-    print ("\n\n####### running RFixer on benchmarks")
+    print("done.")
+    print("\n\n####### running RFixer on benchmarks")
     run_tests()
-    print ("done.")
-    print ("\n\n####### collecting results")
+    print("done.")
+    print("\n\n####### collecting results")
     collect_results()
-    print ("done.")
+    print("done.")
 
 
 
