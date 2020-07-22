@@ -164,36 +164,36 @@ get a solution: ((((\{\{)([abcdefghijklmnopqrstuvwxy0123456789ABCDEFGHIJKLMNOPQR
 add positive: {{z}}
 get a solution: ((((\{\{)([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])*)\})\}){1}
   ((((\{\{)([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])*)\})\}){1}
-template: ((((\{■)(■)*)\})\})+ size: 5 holes: 2 time: 0.857027ms
-template: ((((\{■)(.)*)\})\})+ size: 6 holes: 1 time: 0.782526ms
-template: ((((\{■)(.){■})\})\})+ size: 6 holes: 3 time: 0.970733ms
-template: ((((\{\{)(.)*)■)\})+ size: 6 holes: 1 time: 0.71502ms
-template: ((((\{\{)(■)*)■)\})+ size: 5 holes: 2 time: 0.853552ms
-template: ((((\{\{)(■)*)\})\})+ size: 6 holes: 1 time: 0.948417ms
-template: ((((\{\{)(.){■})\})\})+ size: 7 holes: 2 time: 0.772651ms
-template: ((((\{\{)(■)*)\})■)+ size: 5 holes: 2 time: 0.85844ms
-template: ((((■\{)(.){■})\})\})+ size: 6 holes: 3 time: 0.674243ms
-template: ((((■\{)(.)*)\})\})+ size: 6 holes: 1 time: 0.87009ms
-template: ((((\{\{)(■)*)\})\}){■} size: 6 holes: 3 time: 1.843485ms
-template: (((((■){■}\{)(.)*)\})\})+ size: 7 holes: 3 time: 1.02577ms
-template: ((((\{\{)(.)*)\})■)+ size: 6 holes: 1 time: 0.703146ms
-template: ((((\{(■){■})(.)*)\})\})+ size: 7 holes: 3 time: 1.639115ms
-template: ((((\{\{)(.)*)\})\}){■} size: 7 holes: 2 time: 0.710909ms
-template: ((((\{(■■))(.)*)\})\})+ size: 6 holes: 2 time: 0.833926ms
-template: ((((\{\{)(■){■})\})\})+ size: 6 holes: 3 time: 1.148798ms
-template: ((((■\{)(.)*)\})\}){■} size: 6 holes: 3 time: 0.947432ms
-template: ((((■■)(.)*)\})\})+ size: 5 holes: 2 time: 0.82737ms
-template: ((((■\{)(■)*)\})\})+ size: 5 holes: 2 time: 0.943137ms
-template: ((((\{■)(.)*)■)\})+ size: 5 holes: 2 time: 0.914615ms
-template: ((((\{■)(.)*)\})\}){■} size: 6 holes: 3 time: 0.90536ms
-template: ((((\{■)(.)*)\})■)+ size: 5 holes: 2 time: 0.93469ms
-template: ((((■\{)(.)*)■)\})+ size: 5 holes: 2 time: 0.519943ms
-template: ((((■\{)(.)*)\})■)+ size: 5 holes: 2 time: 0.823561ms
-longest: #mn#((((\{\{)(■)*)\})\}){■}#mn# size: #ms#6#ms# holes: #mh#3#mh# time: #mt#1.843485#mt#ms
+template: ((((\{■)(■)*)\})\})+ size: 5 holes: 2 time: 0.733384ms
+template: ((((\{■)(.)*)\})\})+ size: 6 holes: 1 time: 0.764841ms
+template: ((((\{■)(.){■})\})\})+ size: 6 holes: 3 time: 0.894316ms
+template: ((((\{\{)(.)*)■)\})+ size: 6 holes: 1 time: 0.717205ms
+template: ((((\{\{)(■)*)■)\})+ size: 5 holes: 2 time: 0.701132ms
+template: ((((\{\{)(■)*)\})\})+ size: 6 holes: 1 time: 0.830171ms
+template: ((((\{\{)(.){■})\})\})+ size: 7 holes: 2 time: 0.989969ms
+template: ((((\{\{)(■)*)\})■)+ size: 5 holes: 2 time: 0.643474ms
+template: ((((■\{)(.){■})\})\})+ size: 6 holes: 3 time: 0.822315ms
+template: ((((■\{)(.)*)\})\})+ size: 6 holes: 1 time: 0.735284ms
+template: ((((\{\{)(■)*)\})\}){■} size: 6 holes: 3 time: 2.125213ms
+template: (((((■){■}\{)(.)*)\})\})+ size: 7 holes: 3 time: 0.927956ms
+template: ((((\{\{)(.)*)\})■)+ size: 6 holes: 1 time: 0.709893ms
+template: ((((\{(■){■})(.)*)\})\})+ size: 7 holes: 3 time: 1.450009ms
+template: ((((\{\{)(.)*)\})\}){■} size: 7 holes: 2 time: 0.728683ms
+template: ((((\{(■■))(.)*)\})\})+ size: 6 holes: 2 time: 0.805854ms
+template: ((((\{\{)(■){■})\})\})+ size: 6 holes: 3 time: 0.632159ms
+template: ((((■\{)(.)*)\})\}){■} size: 6 holes: 3 time: 0.671835ms
+template: ((((■■)(.)*)\})\})+ size: 5 holes: 2 time: 0.901867ms
+template: ((((■\{)(■)*)\})\})+ size: 5 holes: 2 time: 0.598544ms
+template: ((((\{■)(.)*)■)\})+ size: 5 holes: 2 time: 0.82507ms
+template: ((((\{■)(.)*)\})\}){■} size: 6 holes: 3 time: 0.972802ms
+template: ((((\{■)(.)*)\})■)+ size: 5 holes: 2 time: 0.87712ms
+template: ((((■\{)(.)*)■)\})+ size: 5 holes: 2 time: 0.734552ms
+template: ((((■\{)(.)*)\})■)+ size: 5 holes: 2 time: 0.577817ms
+longest: #mn#((((\{\{)(■)*)\})\}){■}#mn# size: #ms#6#ms# holes: #mh#3#mh# time: #mt#2.125213#mt#ms
 
 Computed in:
 
-  #c#933#c#ms
+  #c#926#c#ms
 
 timeSATSolver time:
 
@@ -220,5 +220,5 @@ last template: #t#((((\{\{)(■)*)\})\}){■}#t#
 solution is #sol#((((\{\{)([abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_])*)\})\}){1}#sol#
 before exit
 
-1.2350451946258545
+1.2837250232696533
 success

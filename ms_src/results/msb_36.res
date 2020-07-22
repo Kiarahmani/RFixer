@@ -76,6 +76,35 @@ add negative: II000000
   29     |  3     ((■){■}){2}(■){6}         unsatisfiable SAT formula       
   30     |  3     (■){2}(■■){6}           fail dot
   31     |  3     (■){2}((■|■)){6}        fail dot
-  32     |  3     (■){2}((■){■}){6}       
-2.017650842666626
+  32     |  3     (■){2}((■){■}){6}         unsatisfiable SAT formula       
+  33     |  3     ■([0-9]){■}             fail dot
+  34     |  3     (■■){2}([0-9]){■}         unsatisfiable SAT formula       
+  35     |  3     ((■|■)){2}([0-9]){■}    fail dot
+  36     |  3     ((■){■}){2}([0-9]){■}     unsatisfiable SAT formula       
+  37     |  3     (■■)([0-9]){6}          fail dot
+  38     |  3     (■|■)([0-9]){6}         fail dot
+  39     |  3     ((■■)■){2}([0-9]){6}    fail dot
+  40     |  3     ((■|■)■){2}([0-9]){6}   fail dot
+  41     |  3     ((■){■}■){2}([0-9]){6}  get a solution: (([13IMN0]){0,3}[Q2RN0]){2}([0-9]){6}
+add positive: INM40000000
+add negative: 00000000
+  unsatisfiable SAT formula       
+  42     |  3     ((■■|■)){2}([0-9]){6}   fail dot
+  43     |  3     (((■|■)|■)){2}([0-9]){6}fail dot
+  44     |  3     (((■){■}|■)){2}([0-9]){6}get a solution: ((([Q1R34IMN0]){2,4}|[QR2])){2}([0-9]){6}
+add positive: INM50000000
+add negative: R2000000
+get a solution: ((([Q12R345IMN0]){2,3}|[QR])){2}([0-9]){6}
+add positive: INM06000000
+add negative: RR000000
+  unsatisfiable SAT formula       
+  45     |  3     ((■■){■}){2}([0-9]){6}  fail dot
+  46     |  3     (((■|■)){■}){2}([0-9]){6}fail solve
+  47     |  3     (((■){■}){■}){2}([0-9]){6}  unsatisfiable SAT formula       
+  48     |  3     ([a-zA-z]){■}(■){■}       unsatisfiable SAT formula       
+  49     |  3     ([a-zA-z]){■}■          fail dot
+  50     |  3     ([a-zA-z]){■}(■■){6}    fail dot
+  51     |  3     ([a-zA-z]){■}((■|■)){6} fail dot
+  52     |  3     ([a-zA-z]){■}((■){■}){6}
+5.017746210098267
 timeout

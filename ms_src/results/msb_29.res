@@ -52,6 +52,8 @@ get a solution: ([1+]9){0,2}([0-9])*
 add negative: +9
   unsatisfiable SAT formula       
   29     |  3     ((■|■)){■}([0-9])*      fail solve
-  30     |  3     ((■){■}){■}([0-9])*     
-2.0169830322265625
+  30     |  3     ((■){■}){■}([0-9])*     get a solution: (([189+0]){3}){0,1}([0-9])*
+add negative: +++
+
+5.0206708908081055
 timeout

@@ -262,6 +262,185 @@ add positive: c0Cm
   110    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d){■}fail dot
   111    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■■)|(da)m))(\d)*fail dot
   112    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■|■))|(da)m))(\d)*fail dot
-  113    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■){■})|(da)m))(\d)*
-2.0275399684906006
+  113    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■){■})|(da)m))(\d)*  unsatisfiable SAT formula       
+  114    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■■)m))(\d)*get a solution: ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|([,0123456789:][Cm0123456789])m))(\d)*
+add positive: [0m
+add negative: ,,0m
+  unsatisfiable SAT formula       
+  115    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)■))(\d)*fail dotstar or empty
+  116    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(■)*fail dotstar or empty
+  117    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d){■}fail dotstar or empty
+  118    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)■))(\d)*fail dotstar or empty
+  119    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(■)*fail dotstar or empty
+  120    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d){■}fail dotstar or empty
+  121    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(■)*fail dotstar or empty
+  122    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d){■}fail dotstar or empty
+  123    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■){■}fail dotstar or empty
+  124    |  2     ((((\d)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))■fail dotstar or empty
+  125    |  3     ((((■){■}(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  126    |  3     ((((■){■}(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  127    |  3     ((((■){■}(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  128    |  3     ((((■){■}(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  129    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  130    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  131    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  132    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  133    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  134    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  135    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  136    |  3     ((((■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  137    |  3     ((((■■){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  138    |  3     (((((■|■)){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  139    |  3     (((((■){■}){■}(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  140    |  3     ((((■)*(■){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  141    |  3     ((((■)*(■)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  142    |  3     ((((■)*(■)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  143    |  3     ((((■)*(■)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  144    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  145    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  146    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  147    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  148    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  149    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  150    |  3     ((((■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  151    |  3     ((((■■)*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  152    |  3     (((((■|■))*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  153    |  3     (((((■){■})*(■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  154    |  3     ((((■)*(■■)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  155    |  3     ((((■)*((■|■))?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  156    |  3     ((((■)*((■){■})?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  157    |  3     ((((■)*(\,){■})(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  158    |  3     ((((■)*(\,){■})([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  159    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  160    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  161    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  162    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  163    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  164    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  165    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  166    |  3     ((((■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  167    |  3     ((((■)*■)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  168    |  3     ((((■■)*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  169    |  3     (((((■|■))*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  170    |  3     (((((■){■})*(\,){■})([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  171    |  3     ((((■)*(\,)?)(■){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  172    |  3     ((((■)*(\,)?)(■)?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  173    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  174    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  175    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  176    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  177    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  178    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  179    |  3     ((((■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  180    |  3     ((((■■)*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*get a solution: (((([12c:[][CDdHk,M0123456789])*(\,)?)([ae0p1s3456789:[]])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*
+add positive: 2m
+add negative: c,m
+  unsatisfiable SAT formula       
+  181    |  3     (((((■|■))*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  182    |  3     (((((■){■})*(\,)?)(■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  183    |  3     ((((■)*(\,)?)(■■)?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  184    |  3     ((((■)*(\,)?)((■|■))?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  185    |  3     ((((■)*(\,)?)((■){■})?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  186    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  187    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  188    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  189    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  190    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  191    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  192    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  193    |  3     ((((■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  194    |  3     ((((■)*(\,)?)■)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  195    |  3     ((((■■)*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  196    |  3     (((((■|■))*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  197    |  3     (((((■){■})*(\,)?)([a\]sce::\[p]){■})(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  198    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  199    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  200    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  201    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  202    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  203    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  204    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  205    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  206    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*fail solve
+  207    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)((■m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  208    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(((■■)m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  209    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(((■|■)m|m)|(da)m))(\d)*fail solve
+  210    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(((■){■}m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  211    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  212    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  213    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  214    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  215    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  216    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  217    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*fail dot
+  218    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*fail solve
+  219    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]■|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  220    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn](■■)|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  221    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn](■|■)|m)|(da)m))(\d)*fail solve
+  222    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn](■){■}|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  223    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  224    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  225    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)■))(\d)*  unsatisfiable SAT formula       
+  226    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(■)*  unsatisfiable SAT formula       
+  227    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  228    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*fail dot
+  229    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*fail solve
+  230    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  231    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|■■)|(da)m))(\d)*  unsatisfiable SAT formula       
+  232    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■|■))|(da)m))(\d)*fail solve
+  233    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|(■){■})|(da)m))(\d)*  unsatisfiable SAT formula       
+  234    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■■)m))(\d)*  unsatisfiable SAT formula       
+  235    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)■))(\d)*  unsatisfiable SAT formula       
+  236    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(■)*  unsatisfiable SAT formula       
+  237    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d){■}  unsatisfiable SAT formula       
+  238    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*fail dot
+  239    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*fail solve
+  240    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(■a)m))(\d)*  unsatisfiable SAT formula       
+  241    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|((■■)a)m))(\d)*  unsatisfiable SAT formula       
+  242    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|((■|■)a)m))(\d)*fail solve
+  243    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|((■){■}a)m))(\d)*  unsatisfiable SAT formula       
+  244    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)■))(\d)*  unsatisfiable SAT formula       
+  245    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(■)*  unsatisfiable SAT formula       
+  246    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d){■}  unsatisfiable SAT formula       
+  247    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*fail dot
+  248    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*fail solve
+  249    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d■)m))(\d)*  unsatisfiable SAT formula       
+  250    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d(■■))m))(\d)*  unsatisfiable SAT formula       
+  251    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d(■|■))m))(\d)*fail solve
+  252    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(d(■){■})m))(\d)*  unsatisfiable SAT formula       
+  253    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(■)*  unsatisfiable SAT formula       
+  254    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d){■}  unsatisfiable SAT formula       
+  255    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*fail dot
+  256    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*fail solve
+  257    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)■))(\d)*  unsatisfiable SAT formula       
+  258    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)(■■)))(\d)*  unsatisfiable SAT formula       
+  259    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)(■|■)))(\d)*fail solve
+  260    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)(■){■}))(\d)*  unsatisfiable SAT formula       
+  261    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■){■}  unsatisfiable SAT formula       
+  262    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*fail dot
+  263    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*fail solve
+  264    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■)*  unsatisfiable SAT formula       
+  265    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(■■)*  unsatisfiable SAT formula       
+  266    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))((■|■))*fail solve
+  267    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))((■){■})*  unsatisfiable SAT formula       
+  268    |  3     ((((■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))■fail dot
+  269    |  3     ((((■■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}fail dot
+  270    |  3     (((((■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}fail solve
+  271    |  3     (((((■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d){■}  unsatisfiable SAT formula       
+  272    |  3     (((((■■)■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  273    |  3     (((((■|■)■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  274    |  3     (((((■){■}■)*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  275    |  3     ((((■(■■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  276    |  3     ((((■(■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  277    |  3     ((((■(■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  278    |  3     (((((■■|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  279    |  3     ((((((■|■)|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  280    |  3     ((((((■){■}|■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  281    |  3     (((((■|■■))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  282    |  3     (((((■|(■|■)))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  283    |  3     (((((■|(■){■}))*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*  unsatisfiable SAT formula       
+  284    |  3     (((((■■){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail dot
+  285    |  3     ((((((■|■)){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*fail solve
+  286    |  3     ((((((■){■}){■})*(\,)?)([a\]sce::\[p])?)(([cCdDhHkKmMn]m|m)|(da)m))(\d)*
+5.084102153778076
 timeout

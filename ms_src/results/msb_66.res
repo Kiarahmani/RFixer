@@ -35,12 +35,12 @@ get a solution: (\d){9,10}
 add negative: 000000000
 get a solution: (\d){10}
   (\d){10}                        
-template: (\d){■} size: 2 holes: 2 time: 1.112218ms
-longest: #mn#(\d){■}#mn# size: #ms#2#ms# holes: #mh#2#mh# time: #mt#1.112218#mt#ms
+template: (\d){■} size: 2 holes: 2 time: 1.129078ms
+longest: #mn#(\d){■}#mn# size: #ms#2#ms# holes: #mh#2#mh# time: #mt#1.129078#mt#ms
 
 Computed in:
 
-  #c#235#c#ms
+  #c#239#c#ms
 
 timeSATSolver time:
 
@@ -67,5 +67,5 @@ last template: #t#(\d){■}#t#
 solution is #sol#(\d){10}#sol#
 before exit
 
-0.5173180103302002
+0.509519100189209
 success

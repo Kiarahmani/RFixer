@@ -69,5 +69,5 @@ Search through possible transformations:
   49     |  2     (((((iq)n)■)(((\d){4}\-)(\d){2}))\.)(■)+  unsatisfiable SAT formula       
   50     |  2     (((((iq)n)■)(((\d){4}\-)(\d){2}))\.)([^:]){■}fail dotstar or empty
   51     |  2     (((((iq)n)\.)(((■){■}\-)(\d){2}))\.)([^:])+
-2.014843225479126
+5.011749982833862
 timeout

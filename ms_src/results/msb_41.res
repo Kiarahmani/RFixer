@@ -595,6 +595,295 @@ add positive: abbcba
   567    |  4     ((((((■){■}){■}){1}([b]){1})■)([b]){1})([a]){1}fail dot
   568    |  4     (((((■){■}){1}([b]){1})(■■))([b]){1})([a]){1}fail dot
   569    |  4     (((((■){■}){1}([b]){1})(■|■))([b]){1})([a]){1}fail dot
-  570    |  4     (((((■){■}){1}([b]){1})(■){■})([b]){1})([a]){1}
-2.0254039764404297
+  570    |  4     (((((■){■}){1}([b]){1})(■){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  571    |  4     ((((■){1}([b]){1})(■))([b]){1})([a]){1}fail dot
+  572    |  4     ((((■){1}([b]){1})((■■)■))([b]){1})([a]){1}fail dot
+  573    |  4     ((((■){1}([b]){1})((■|■)■))([b]){1})([a]){1}fail dot
+  574    |  4     ((((■){1}([b]){1})((■){■}■))([b]){1})([a]){1}fail dot
+  575    |  4     ((((■){1}([b]){1})(■■|■))([b]){1})([a]){1}fail dot
+  576    |  4     ((((■){1}([b]){1})((■|■)|■))([b]){1})([a]){1}fail dot
+  577    |  4     ((((■){1}([b]){1})((■){■}|■))([b]){1})([a]){1}  unsatisfiable SAT formula       
+  578    |  4     ((((■){1}([b]){1})(■■){■})([b]){1})([a]){1}fail dot
+  579    |  4     ((((■){1}([b]){1})((■|■)){■})([b]){1})([a]){1}fail solve
+  580    |  4     ((((■){1}([b]){1})((■){■}){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  581    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})(■){1}  unsatisfiable SAT formula       
+  582    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){■}  unsatisfiable SAT formula       
+  583    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  584    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}fail dot
+  585    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}fail solve
+  586    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  587    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){■})([a]){1}fail dot
+  588    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){■})([a]){1}fail solve
+  589    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){■})([a]){1}  unsatisfiable SAT formula       
+  590    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){■}  unsatisfiable SAT formula       
+  591    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  592    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)(■){1}fail dot
+  593    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})■fail dot
+  594    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  595    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  596    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  597    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})(■){1}fail dot
+  598    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})(■){1}fail dot
+  599    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})(■){1}  unsatisfiable SAT formula       
+  600    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■■){1}fail dot
+  601    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})((■|■)){1}fail dot
+  602    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})((■){■}){1}  unsatisfiable SAT formula       
+  603    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  604    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){■}fail dot
+  605    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  606    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  607    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  608    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){■}fail dot
+  609    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){■}fail dot
+  610    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){■}  unsatisfiable SAT formula       
+  611    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  612    |  4     ((((■■)([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  613    |  4     ((((■|■)([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  614    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  615    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  616    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  617    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  618    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  619    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  620    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■))([a]){1}fail dot
+  621    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■|■))([a]){1}fail dot
+  622    |  4     (((((■■)■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  623    |  4     (((((■|■)■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  624    |  4     (((((■){■}■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  625    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  626    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  627    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}fail dot
+  628    |  4     (((((■■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  629    |  4     ((((((■|■)|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  630    |  4     ((((((■){■}|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  631    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  632    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  633    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  634    |  4     (((((■■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  635    |  4     ((((((■|■)){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  636    |  4     ((((((■){■}){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  637    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  638    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  639    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  640    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■)■){1})([a]){1}fail dot
+  641    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)■){1})([a]){1}fail dot
+  642    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}■){1})([a]){1}fail dot
+  643    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■|■)){1})([a]){1}fail dot
+  644    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■|■)|■)){1})([a]){1}fail dot
+  645    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■){■}|■)){1})([a]){1}  unsatisfiable SAT formula       
+  646    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■){■}){1})([a]){1}fail dot
+  647    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■|■)){■}){1})([a]){1}fail solve
+  648    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■){■}){■}){1})([a]){1}  unsatisfiable SAT formula       
+  649    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){■}  unsatisfiable SAT formula       
+  650    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  651    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})■fail dot
+  652    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  653    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  654    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  655    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■■){1}fail dot
+  656    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})((■|■)){1}fail dot
+  657    |  4     ((((■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})((■){■}){1}  unsatisfiable SAT formula       
+  658    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}fail dot
+  659    |  4     ((((■■){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}fail dot
+  660    |  4     (((((■|■)){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}fail dot
+  661    |  4     (((((■){■}){1}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}  unsatisfiable SAT formula       
+  662    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){■}fail dotstar or empty
+  663    |  4     (((■([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})■fail dotstar or empty
+  664    |  4     (((([a]){■}(■){■})■)([b]){1})([a]){1}  unsatisfiable SAT formula       
+  665    |  4     (((([a]){■}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}  unsatisfiable SAT formula       
+  666    |  4     (((([a]){■}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}  unsatisfiable SAT formula       
+  667    |  4     (((([a]){■}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}  unsatisfiable SAT formula       
+  668    |  4     (((([a]){■}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}  unsatisfiable SAT formula       
+  669    |  4     (((([a]){■}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  670    |  4     (((([a]){■}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
+  671    |  4     (((([a]){■}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  672    |  4     (((([a]){■}(■){1})■)(■){1})([a]){1}fail dot
+  673    |  4     (((([a]){■}(■){1})■)([b]){■})([a]){1}fail dot
+  674    |  4     (((([a]){■}(■){1})■)([b]){1})(■){1}fail dot
+  675    |  4     (((([a]){■}(■){1})■)([b]){1})([a]){■}fail dot
+  676    |  4     (((([a]){■}■)■)([b]){1})([a]){1}fail dot
+  677    |  4     (((([a]){■}(■■){1})■)([b]){1})([a]){1}fail dot
+  678    |  4     (((([a]){■}((■|■)){1})■)([b]){1})([a]){1}fail dot
+  679    |  4     (((([a]){■}((■){■}){1})■)([b]){1})([a]){1}  unsatisfiable SAT formula       
+  680    |  4     (((([a]){■}(■){1})(■■))([b]){1})([a]){1}fail dot
+  681    |  4     (((([a]){■}(■){1})(■|■))([b]){1})([a]){1}fail dot
+  682    |  4     (((([a]){■}(■){1})(■){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  683    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  684    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  685    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  686    |  4     (((([a]){■}■)[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  687    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  688    |  4     (((([a]){■}(■■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  689    |  4     (((([a]){■}((■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  690    |  4     (((([a]){■}((■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}  unsatisfiable SAT formula       
+  691    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  692    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  693    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  694    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  695    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}fail dot
+  696    |  4     (((([a]){■}■)[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}fail dot
+  697    |  4     (((([a]){■}(■■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}fail dot
+  698    |  4     (((([a]){■}((■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}fail dot
+  699    |  4     (((([a]){■}((■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}  unsatisfiable SAT formula       
+  700    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){■}fail dot
+  701    |  4     (((([a]){■}■)[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}fail dot
+  702    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})■fail dot
+  703    |  4     (((([a]){■}(■■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}fail dot
+  704    |  4     (((([a]){■}((■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}fail dot
+  705    |  4     (((([a]){■}((■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}  unsatisfiable SAT formula       
+  706    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■■){1}fail dot
+  707    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■|■)){1}fail dot
+  708    |  4     (((([a]){■}(■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■){■}){1}fail dot
+  709    |  4     (((([a]){■}■)[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}fail dot
+  710    |  4     (((([a]){■}(■■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}fail dot
+  711    |  4     (((([a]){■}((■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}fail dot
+  712    |  4     (((([a]){■}((■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}  unsatisfiable SAT formula       
+  713    |  4     (((([a]){■}(■■))[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  714    |  4     (((([a]){■}(■|■))[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  715    |  4     (((([a]){■}((■■)■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  716    |  4     (((([a]){■}((■|■)■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  717    |  4     (((([a]){■}((■){■}■){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  718    |  4     (((([a]){■}((■■|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  719    |  4     (((([a]){■}(((■|■)|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  720    |  4     (((([a]){■}(((■){■}|■)){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  721    |  4     (((([a]){■}((■■){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  722    |  4     (((([a]){■}(((■|■)){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
+  723    |  4     (((([a]){■}(((■){■}){■}){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  724    |  4     (((([a]){■}([b]){■})■)(■){1})([a]){1}fail dot
+  725    |  4     (((([a]){■}([b]){■})■)([b]){■})([a]){1}fail dot
+  726    |  4     (((([a]){■}([b]){■})■)([b]){1})(■){1}fail dot
+  727    |  4     (((([a]){■}([b]){■})■)([b]){1})([a]){■}fail dot
+  728    |  4     (((([a]){■}([b]){■})(■■))([b]){1})([a]){1}fail dot
+  729    |  4     (((([a]){■}([b]){■})(■|■))([b]){1})([a]){1}fail dot
+  730    |  4     (((([a]){■}([b]){■})(■){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  731    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  732    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}fail dot
+  733    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}fail dot
+  734    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}fail dot
+  735    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  736    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail dot
+  737    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  738    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}fail dot
+  739    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}fail dotstar or empty
+  740    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){■}  unsatisfiable SAT formula       
+  741    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})■fail dot
+  742    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■■){1}fail dot
+  743    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■|■)){1}fail dot
+  744    |  4     (((([a]){■}([b]){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■){■}){1}  unsatisfiable SAT formula       
+  745    |  4     (((([a]){■}([b]){1})■)(■){■})([a]){1}  unsatisfiable SAT formula       
+  746    |  4     (((([a]){■}([b]){1})■)(■){1})(■){1}fail dot
+  747    |  4     (((([a]){■}([b]){1})■)(■){1})([a]){■}fail dot
+  748    |  4     (((([a]){■}([b]){1})■)■)([a]){1}fail dot
+  749    |  4     (((([a]){■}([b]){1})(■■))(■){1})([a]){1}fail dot
+  750    |  4     (((([a]){■}([b]){1})(■|■))(■){1})([a]){1}fail dot
+  751    |  4     (((([a]){■}([b]){1})(■){■})(■){1})([a]){1}  unsatisfiable SAT formula       
+  752    |  4     (((([a]){■}([b]){1})■)(■■){1})([a]){1}fail dot
+  753    |  4     (((([a]){■}([b]){1})■)((■|■)){1})([a]){1}fail dot
+  754    |  4     (((([a]){■}([b]){1})■)((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  755    |  4     (((([a]){■}([b]){1})■)([b]){■})(■){1}fail dot
+  756    |  4     (((([a]){■}([b]){1})■)([b]){■})([a]){■}fail dot
+  757    |  4     (((([a]){■}([b]){1})(■■))([b]){■})([a]){1}fail dot
+  758    |  4     (((([a]){■}([b]){1})(■|■))([b]){■})([a]){1}fail dot
+  759    |  4     (((([a]){■}([b]){1})(■){■})([b]){■})([a]){1}  unsatisfiable SAT formula       
+  760    |  4     (((([a]){■}([b]){1})■)([b]){1})(■){■}fail dot
+  761    |  4     (((([a]){■}([b]){1})■)([b]){1})■fail dot
+  762    |  4     (((([a]){■}([b]){1})(■■))([b]){1})(■){1}fail dot
+  763    |  4     (((([a]){■}([b]){1})(■|■))([b]){1})(■){1}fail dot
+  764    |  4     (((([a]){■}([b]){1})(■){■})([b]){1})(■){1}  unsatisfiable SAT formula       
+  765    |  4     (((([a]){■}([b]){1})■)([b]){1})(■■){1}fail dot
+  766    |  4     (((([a]){■}([b]){1})■)([b]){1})((■|■)){1}fail dot
+  767    |  4     (((([a]){■}([b]){1})■)([b]){1})((■){■}){1}fail dot
+  768    |  4     (((([a]){■}([b]){1})(■■))([b]){1})([a]){■}fail dot
+  769    |  4     (((([a]){■}([b]){1})(■|■))([b]){1})([a]){■}fail dot
+  770    |  4     (((([a]){■}([b]){1})(■){■})([b]){1})([a]){■}  unsatisfiable SAT formula       
+  771    |  4     (((([a]){■}([b]){1})(■))([b]){1})([a]){1}fail dot
+  772    |  4     (((([a]){■}([b]){1})((■■)■))([b]){1})([a]){1}fail dot
+  773    |  4     (((([a]){■}([b]){1})((■|■)■))([b]){1})([a]){1}fail dot
+  774    |  4     (((([a]){■}([b]){1})((■){■}■))([b]){1})([a]){1}fail dot
+  775    |  4     (((([a]){■}([b]){1})(■■|■))([b]){1})([a]){1}fail dot
+  776    |  4     (((([a]){■}([b]){1})((■|■)|■))([b]){1})([a]){1}fail dot
+  777    |  4     (((([a]){■}([b]){1})((■){■}|■))([b]){1})([a]){1}  unsatisfiable SAT formula       
+  778    |  4     (((([a]){■}([b]){1})(■■){■})([b]){1})([a]){1}fail dot
+  779    |  4     (((([a]){■}([b]){1})((■|■)){■})([b]){1})([a]){1}fail solve
+  780    |  4     (((([a]){■}([b]){1})((■){■}){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  781    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})(■){1}  unsatisfiable SAT formula       
+  782    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){■}  unsatisfiable SAT formula       
+  783    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){■})([a]){1}fail dot
+  784    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){■})([a]){1}fail solve
+  785    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){■})([a]){1}  unsatisfiable SAT formula       
+  786    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){■}  unsatisfiable SAT formula       
+  787    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)(■){1}fail dot
+  788    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})■fail dot
+  789    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})(■){1}fail dot
+  790    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})(■){1}fail dot
+  791    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})(■){1}  unsatisfiable SAT formula       
+  792    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■■){1}fail dot
+  793    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})((■|■)){1}fail dot
+  794    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})((■){■}){1}  unsatisfiable SAT formula       
+  795    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){■}fail dot
+  796    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){■}fail dot
+  797    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){■}fail dot
+  798    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){■}  unsatisfiable SAT formula       
+  799    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■■))([a]){1}fail dot
+  800    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(■|■))([a]){1}fail dot
+  801    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■)■){1})([a]){1}fail dot
+  802    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)■){1})([a]){1}fail dot
+  803    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}■){1})([a]){1}fail dot
+  804    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■|■)){1})([a]){1}fail dot
+  805    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■|■)|■)){1})([a]){1}fail dot
+  806    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■){■}|■)){1})([a]){1}  unsatisfiable SAT formula       
+  807    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])((■■){■}){1})([a]){1}fail dot
+  808    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■|■)){■}){1})([a]){1}fail solve
+  809    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])(((■){■}){■}){1})([a]){1}  unsatisfiable SAT formula       
+  810    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){■}  unsatisfiable SAT formula       
+  811    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})■fail dot
+  812    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■■){1}fail dot
+  813    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})((■|■)){1}fail dot
+  814    |  4     (((([a]){■}([b]){1})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})((■){■}){1}  unsatisfiable SAT formula       
+  815    |  4     (((([a]){1}(■){■})■)(■){1})([a]){1}  unsatisfiable SAT formula       
+  816    |  4     (((([a]){1}(■){■})■)([b]){■})([a]){1}  unsatisfiable SAT formula       
+  817    |  4     (((([a]){1}(■){■})■)([b]){1})(■){1}  unsatisfiable SAT formula       
+  818    |  4     (((([a]){1}(■){■})■)([b]){1})([a]){■}  unsatisfiable SAT formula       
+  819    |  4     (((([a]){1}(■■){■})■)([b]){1})([a]){1}fail dot
+  820    |  4     (((([a]){1}((■|■)){■})■)([b]){1})([a]){1}fail solve
+  821    |  4     (((([a]){1}((■){■}){■})■)([b]){1})([a]){1}  unsatisfiable SAT formula       
+  822    |  4     (((([a]){1}(■){■})(■■))([b]){1})([a]){1}fail dot
+  823    |  4     (((([a]){1}(■){■})(■|■))([b]){1})([a]){1}fail solve
+  824    |  4     (((([a]){1}(■){■})(■){■})([b]){1})([a]){1}  unsatisfiable SAT formula       
+  825    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){■})([a]){1}  unsatisfiable SAT formula       
+  826    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})(■){1}  unsatisfiable SAT formula       
+  827    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){■}  unsatisfiable SAT formula       
+  828    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])■)([a]){1}  unsatisfiable SAT formula       
+  829    |  4     (((([a]){1}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail dot
+  830    |  4     (((([a]){1}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}fail solve
+  831    |  4     (((([a]){1}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])(■){1})([a]){1}  unsatisfiable SAT formula       
+  832    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])(■■){1})([a]){1}fail dot
+  833    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])((■|■)){1})([a]){1}fail solve
+  834    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])((■){■}){1})([a]){1}  unsatisfiable SAT formula       
+  835    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})(■){1}  unsatisfiable SAT formula       
+  836    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){■}  unsatisfiable SAT formula       
+  837    |  4     (((([a]){1}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}  unsatisfiable SAT formula       
+  838    |  4     (((([a]){1}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}fail solve
+  839    |  4     (((([a]){1}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){■})([a]){1}  unsatisfiable SAT formula       
+  840    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){■}  unsatisfiable SAT formula       
+  841    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})■  unsatisfiable SAT formula       
+  842    |  4     (((([a]){1}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}fail dot
+  843    |  4     (((([a]){1}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}fail solve
+  844    |  4     (((([a]){1}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■){1}  unsatisfiable SAT formula       
+  845    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})(■■){1}fail dot
+  846    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■|■)){1}fail solve
+  847    |  4     (((([a]){1}(■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})((■){■}){1}  unsatisfiable SAT formula       
+  848    |  4     (((([a]){1}(■■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}fail dot
+  849    |  4     (((([a]){1}((■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}fail solve
+  850    |  4     (((([a]){1}((■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){■}  unsatisfiable SAT formula       
+  851    |  4     (((([a]){1}((■■)■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  852    |  4     (((([a]){1}((■|■)■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  853    |  4     (((([a]){1}((■){■}■){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  854    |  4     (((([a]){1}((■■|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  855    |  4     (((([a]){1}(((■|■)|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
+  856    |  4     (((([a]){1}(((■){■}|■)){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}  unsatisfiable SAT formula       
+  857    |  4     (((([a]){1}((■■){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail dot
+  858    |  4     (((([a]){1}(((■|■)){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}fail solve
+  859    |  4     (((([a]){1}(((■){■}){■}){■})[aaaaaaabbbbbbbcccccccc||||||||])([b]){1})([a]){1}
+5.0834801197052
 timeout
