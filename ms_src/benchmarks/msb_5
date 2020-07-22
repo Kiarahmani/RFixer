@@ -2,4 +2,5 @@
 ((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([, ])*)*
 +++
 email1@domain.com,  email2@domain.com
+email1@domain.com,email2@domain.com
 ---

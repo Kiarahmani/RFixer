@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 from threading import Timer
 
 # CONFIG
-input_file = 'ms_src/curated_benchmark_csv.csv'
+input_file = 'ms_src/ds1_auto.csv'
 output_dir = 'ms_src/benchmarks/'
 results_dir = 'ms_src/results/'
 col_res = 'ms_src/collected_results.csv'
@@ -18,7 +18,7 @@ file_prefix = 'msb'
 cegis = True
 incluide_negatives = True
 bm_range = range(0,101)
-timeout = 10
+timeout = 2
 delim = 'Æ'
 
 
@@ -64,7 +64,8 @@ def clean():
 
 
 def create_bench():
-    dt = pd.read_csv(input_file, encoding="iso-8859-1")
+    dt = pd.read_csv(input_file, encoding="utf-8")
+    print (dt)
     for row in dt.iterrows():
         msb_no = row[1].msb
         if not msb_no in bm_range:
@@ -74,8 +75,9 @@ def create_bench():
         # read required columns
         q_regex = row[1].Q_regex
         a_regex = row[1].A_regex
-        examples = row[1].postivie_examples
-        negatives = row[1].negative_examples
+        ea = row[1].Ea
+        ec = row[1].Ec
+        eq = row[1].Eq
         with open(output_file, 'w', encoding="utf-8") as of:
             print("benchmark: " + output_file)
             of.write(q_regex)
@@ -86,13 +88,16 @@ def create_bench():
             of.write("+++")
             of.write("\n")
             # iterate over examples
-            for example in ast.literal_eval(examples):
+            for example in ast.literal_eval(ea):
+                of.write(example)
+                of.write("\n")
+            for example in ast.literal_eval(ec):
                 of.write(example)
                 of.write("\n")
             of.write("---")
             of.write("\n")
             if incluide_negatives:
-                for example in ast.literal_eval(negatives):
+                for example in ast.literal_eval(eq):
                     of.write(example)
                     of.write("\n")
 
@@ -126,8 +131,8 @@ def parse_result_file(rf):
 
 
 def collect_results():
-    dt = pd.read_csv(input_file, encoding="iso-8859-1")
-    header = "Benchmark" + delim + "url" + delim + "Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "positive examples" + delim + "negative examples" + delim + "additional examples" + delim + "total time"
+    dt = pd.read_csv(input_file, encoding="utf-8")
+    header = "Benchmark" + delim + "url" + delim + "Q_regex" + delim + "A_regex" + delim + "Rfixer" + delim + "Eq" + delim + "Ea" + delim + "Ec" + delim + "additional examples" + delim + "total time"
     with open(col_res, 'w', encoding='utf-8') as crf:
         crf.write(header + "\n")
         for row in dt.iterrows():
@@ -137,8 +142,9 @@ def collect_results():
             q_regex = row[1].Q_regex
             url = row[1].post_url
             a_regex = row[1].A_regex
-            pos_ex = row[1].postivie_examples
-            neg_ex = row[1].negative_examples
+            eq = row[1].Eq
+            ea = row[1].Ea
+            ec = row[1].Ec
             filename = file_prefix + "_" + str(msb)
             with open(results_dir + filename + '.res', 'r', encoding='utf-8') as rf:
                 print("result file: " + filename)
@@ -151,7 +157,7 @@ def collect_results():
                 else:
                     regex = rfixer_res
                 print(">> " + regex)
-                crf.write(filename + delim + url + delim + q_regex + delim + a_regex + delim + regex + delim + pos_ex + delim + neg_ex + delim + str(cegis_cnt) + delim + str(elapsed_time) + "\n")
+                crf.write(filename + delim + url + delim + q_regex + delim + a_regex + delim + regex + delim + ea + delim + ea + delim + ec + delim + str(cegis_cnt) + delim + str(elapsed_time) + "\n")
 
 
 
