@@ -96,5 +96,5 @@ add negative: nnnw
   50     |  3     (((■■){■}(n)*)(o)*)(w)*   unsatisfiable SAT formula       
   51     |  3     ((((■|■)){■}(n)*)(o)*)(w)*fail solve
   52     |  3     ((((■){■}){■}(n)*)(o)*)(w)*
-5.027034044265747
+3.0181989669799805
 timeout

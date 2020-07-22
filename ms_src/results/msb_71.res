@@ -132,46 +132,6 @@ Search through possible transformations:
   111    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})■)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
   112    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(■(([A-Z]([a-z])+)\b))?fail dotstar or empty
   113    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s((■([a-z])+)\b))?fail dotstar or empty
-  114    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z](■)+)\b))?fail dotstar or empty
-  115    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z]([a-z]){■})\b))?fail dotstar or empty
-  116    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z]([a-z])+)■))?fail dotstar or empty
-  117    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z]([a-z])+)\b)){■}fail dotstar or empty
-  118    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})■)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  119    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(■(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  120    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s((■([a-z])+)\b))?fail dotstar or empty
-  121    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z](■)+)\b))?fail dotstar or empty
-  122    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z]([a-z]){■})\b))?fail dotstar or empty
-  123    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z]([a-z])+)■))?fail dotstar or empty
-  124    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z]([a-z])+)\b)){■}fail dotstar or empty
-  125    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■((■([a-z])+)\b))?fail dotstar or empty
-  126    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z](■)+)\b))?fail dotstar or empty
-  127    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z]([a-z]){■})\b))?fail dotstar or empty
-  128    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z]([a-z])+)■))?fail dotstar or empty
-  129    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z]([a-z])+)\b)){■}fail dotstar or empty
-  130    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■(■)+)\b))?fail dotstar or empty
-  131    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■([a-z]){■})\b))?fail dotstar or empty
-  132    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■([a-z])+)■))?fail dotstar or empty
-  133    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■([a-z])+)\b)){■}fail dotstar or empty
-  134    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z](■){■})\b))?fail dotstar or empty
-  135    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z](■)+)■))?fail dotstar or empty
-  136    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z](■)+)\b)){■}fail dotstar or empty
-  137    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z]){■})■))?fail dotstar or empty
-  138    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z]){■})\b)){■}fail dotstar or empty
-  139    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]■)\b))?fail dotstar or empty
-  140    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)■)){■}fail dotstar or empty
-  141    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z])+)\b)■fail dotstar or empty
-  142    |  3     (((((((■){■}■)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  143    |  3     (((((((■){■}\b)■)\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  144    |  3     (((((((■){■}\b)['',])■)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  145    |  3     (((((((■){■}\b)['',])\s)(■){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  146    |  3     (((((((■){■}\b)['',])\s)([A-Z]){■})([a-z])+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  147    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})(■)+)\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  148    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  149    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)■)(\s(([A-Z]([a-z])+)\b))?fail dot
-  150    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(■(([A-Z]([a-z])+)\b))?fail dotstar or empty
-  151    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s((■([a-z])+)\b))?fail dotstar or empty
-  152    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z](■)+)\b))?fail dotstar or empty
-  153    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z]){■})\b))?fail dotstar or empty
-  154    |  3     (((((((■){■}\b)['',])\s)([A-Z]){1})([a-z])+)\b)(\s(([A-Z]([a-z])+)■))?
-5.012732982635498
+  114    |  2     ((((((([A-Z])+\b)['',])\s)([A-Z]){1})([a-z]){■})\b)(\s(([A-Z](■)+)\b))?
+3.0199320316314697
 timeout

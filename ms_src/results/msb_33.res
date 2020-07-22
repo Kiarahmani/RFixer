@@ -15,5 +15,5 @@ Search through possible transformations:
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
   1      |  1     ((((■)+)?(\W)*)(\[|\())(.)*
-5.016551971435547
+3.01053524017334
 timeout

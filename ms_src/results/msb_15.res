@@ -283,40 +283,6 @@ add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaa_a
 get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,27}[_])([abcdefghijklmnopqrstuvwxyz]){1,26}
 add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaa
 get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,27}[_])([abcdefghijklmnopqrstuvwxyz]){1,27}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,28}[_])([abcdefghijklmnopqrstuvwxyz]){1,27}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,28}[_])([abcdefghijklmnopqrstuvwxyz]){1,28}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,29}[_])([abcdefghijklmnopqrstuvwxyz]){1,28}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,29}[_])([abcdefghijklmnopqrstuvwxyz]){1,29}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,30}[_])([abcdefghijklmnopqrstuvwxyz]){1,29}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,30}[_])([abcdefghijklmnopqrstuvwxyz]){1,30}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,31}[_])([abcdefghijklmnopqrstuvwxyz]){1,30}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,31}[_])([abcdefghijklmnopqrstuvwxyz]){1,31}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,32}[_])([abcdefghijklmnopqrstuvwxyz]){1,31}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,32}[_])([abcdefghijklmnopqrstuvwxyz]){1,32}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,33}[_])([abcdefghijklmnopqrstuvwxyz]){1,32}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,33}[_])([abcdefghijklmnopqrstuvwxyz]){1,33}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,34}[_])([abcdefghijklmnopqrstuvwxyz]){1,33}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,34}[_])([abcdefghijklmnopqrstuvwxyz]){1,34}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,35}[_])([abcdefghijklmnopqrstuvwxyz]){1,34}
-add positive: a_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,35}[_])([abcdefghijklmnopqrstuvwxyz]){1,35}
-add positive: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_a
-get a solution: (([abcdefghijklmnopqrstuvwxyz]){1,36}[_])([abcdefghijklmnopqrstuvwxyz]){1,35}
 
-5.070145130157471
+3.0375099182128906
 timeout

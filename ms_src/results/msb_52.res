@@ -63,22 +63,6 @@ add negative: A00	0A
   27     |  2     (((\d){6}|(\d){7})|(■){■})  unsatisfiable SAT formula       
   28     |  2     (((\d){6}|(\d){7})|(■■){8})fail dot
   29     |  2     (((\d){6}|(\d){7})|((■|■)){8})fail dot
-  30     |  2     (((\d){6}|(\d){7})|((■){■}){8})  unsatisfiable SAT formula       
-  31     |  3     (((■){■}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  32     |  3     (((■){■}|(\d){■})|(\d){8})  unsatisfiable SAT formula       
-  33     |  3     (((■){■}|(\d){7})|(■){8})  unsatisfiable SAT formula       
-  34     |  3     (((■){■}|(\d){7})|(\d){■})  unsatisfiable SAT formula       
-  35     |  3     (((■■){■}|(\d){7})|(\d){8})fail dot
-  36     |  3     ((((■|■)){■}|(\d){7})|(\d){8})fail solve
-  37     |  3     ((((■){■}){■}|(\d){7})|(\d){8})  unsatisfiable SAT formula       
-  38     |  3     (((■){6}|(■){■})|(\d){8})  unsatisfiable SAT formula       
-  39     |  3     (((■){6}|(■){7})|(■){8})  unsatisfiable SAT formula       
-  40     |  3     (((■){6}|(■){7})|(\d){■})fail dot
-  41     |  3     (((■■){6}|(■){7})|(\d){8})fail dot
-  42     |  3     ((((■|■)){6}|(■){7})|(\d){8})fail dot
-  43     |  3     ((((■){■}){6}|(■){7})|(\d){8})  unsatisfiable SAT formula       
-  44     |  3     (((■){6}|(■■){7})|(\d){8})fail dot
-  45     |  3     (((■){6}|((■|■)){7})|(\d){8})fail dot
-  46     |  3     (((■){6}|((■){■}){7})|(\d){8})
-5.018410921096802
+  30     |  2     (((\d){6}|(\d){7})|((■){■}){8})
+3.0203850269317627
 timeout

@@ -26,21 +26,21 @@ Search through possible transformations:
   6      |  2     ((■)*■){2,}               unsatisfiable SAT formula       
   7      |  2     ((■)*[aeuio]){■}        get a solution: (([∅])*[aeuio]){2}
   (([∅])*[aeuio]){2}              
-template: ((■)*[aeuio]){■} size: 3 holes: 3 time: 1.106351ms
-template: ((■){■}[aeuio]){2,} size: 3 holes: 3 time: 0.945128ms
-template: (([aeuio])*■){2,} size: 3 holes: 1 time: 0.956721ms
-template: (([aeuio])*[aeuio]){■} size: 4 holes: 2 time: 0.822549ms
-template: ((■)*■){2,} size: 2 holes: 2 time: 0.886388ms
-template: (([aeuio]){■}[aeuio]){2,} size: 4 holes: 2 time: 2.129554ms
-longest: #mn#(([aeuio]){■}[aeuio]){2,}#mn# size: #ms#4#ms# holes: #mh#2#mh# time: #mt#2.129554#mt#ms
+template: ((■)*[aeuio]){■} size: 3 holes: 3 time: 0.982248ms
+template: ((■){■}[aeuio]){2,} size: 3 holes: 3 time: 0.955597ms
+template: (([aeuio])*■){2,} size: 3 holes: 1 time: 0.927604ms
+template: (([aeuio])*[aeuio]){■} size: 4 holes: 2 time: 0.768429ms
+template: ((■)*■){2,} size: 2 holes: 2 time: 0.805518ms
+template: (([aeuio]){■}[aeuio]){2,} size: 4 holes: 2 time: 2.023502ms
+longest: #mn#(([aeuio]){■}[aeuio]){2,}#mn# size: #ms#4#ms# holes: #mh#2#mh# time: #mt#2.023502#mt#ms
 
 Computed in:
 
-  #c#169#c#ms
+  #c#155#c#ms
 
 timeSATSolver time:
 
-  #s#7#s#ms
+  #s#6#s#ms
 
 cost:
 
@@ -63,5 +63,5 @@ last template: #t#((■)*[aeuio]){■}#t#
 solution is #sol#(([∅])*[aeuio]){2}#sol#
 before exit
 
-0.4436500072479248
+0.4242687225341797
 success

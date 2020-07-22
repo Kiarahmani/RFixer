@@ -66,5 +66,5 @@ Search through possible transformations:
   50     |  2     ((((((((((((((((((((((((((■T)o)t)a)l) )e)x)e)c)u)t)i)o)n) )T)i)m)e)■) )(.)+) )m)i)nfail dotstar or empty
   51     |  2     ((((((((((((((((((((((((((■T)o)t)a)l) )e)x)e)c)u)t)i)o)n) )T)i)m)e):)■)(.)+) )m)i)nfail dotstar or empty
   52     |  2     ((((((((((((((((((((((((((■T)o)t)a)l) )e)x)e)c)u)t)i)o)n) )T)i)m)e):) )(■)+) )m)i)n
-5.012446880340576
+3.0172410011291504
 timeout
