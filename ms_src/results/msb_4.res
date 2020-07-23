@@ -13,13 +13,11 @@ That that should match the strings:
 
 And reject the strings:
 
-  ? (48:67)  1234567891234567891
-  ? (67:88)  1234567891234567891.0
 
 Search through possible transformations:
 
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
   1      |  1     ((?){1,18})+(\.(\d){1})?
-2.0202901363372803
+2.0190019607543945
 timeout
