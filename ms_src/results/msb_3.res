@@ -79,16 +79,16 @@ get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXY])+
 add positive: Z
 get a solution: ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+
   ([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+
-template: (?)+ size: 1 holes: 1 time: 1.010477ms
-longest: #mn#(?)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.010477#mt#ms
+template: (?)+ size: 1 holes: 1 time: 1.26256ms
+longest: #mn#(?)+#mn# size: #ms#1#ms# holes: #mh#1#mh# time: #mt#1.26256#mt#ms
 
 Computed in:
 
-  #c#419#c#ms
+  #c#399#c#ms
 
 timeSATSolver time:
 
-  #s#41#s#ms
+  #s#43#s#ms
 
 cost:
 
@@ -111,5 +111,5 @@ last template: #t#(?)+#t#
 solution is #sol#([#0123456789ABCDEFGHIJKLMNOP\-QRSTUVWXYZ])+#sol#
 before exit
 
-0.694390058517456
+0.6722681522369385
 success

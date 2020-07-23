@@ -16,7 +16,9 @@ results_dir = 'ms_src/results/'
 col_res = 'ms_src/collected_results.csv'
 file_prefix = 'msb'
 cegis = True
-incluide_negatives = True
+include_eq = True
+include_ec = True
+include_ea = True
 bm_range = range(0,101)
 timeout = 2
 delim = 'Æ'
@@ -88,15 +90,17 @@ def create_bench():
             of.write("+++")
             of.write("\n")
             # iterate over examples
-            for example in ast.literal_eval(ea):
-                of.write(example)
-                of.write("\n")
-            for example in ast.literal_eval(ec):
-                of.write(example)
-                of.write("\n")
+            if include_ea:    
+                for example in ast.literal_eval(ea):
+                    of.write(example)
+                    of.write("\n")
+            if include_ec:
+                for example in ast.literal_eval(ec):
+                    of.write(example)
+                    of.write("\n")
             of.write("---")
             of.write("\n")
-            if incluide_negatives:
+            if include_eq:
                 for example in ast.literal_eval(eq):
                     of.write(example)
                     of.write("\n")
