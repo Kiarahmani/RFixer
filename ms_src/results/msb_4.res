@@ -21,5 +21,5 @@ Search through possible transformations:
   Order  |  Cost  Template                  Solution                        
 ---------|--------------------------------------------------------------------
   1      |  1     ((?){1,18})+(\.(\d){1})?
-2.01951003074646
+2.020555019378662
 timeout

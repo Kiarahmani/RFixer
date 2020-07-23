@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 from threading import Timer
 
 # CONFIG
-input_file = 'ms_src/ds1_auto.csv'
+input_file = 'ms_src/ds1.csv'
 output_dir = 'ms_src/benchmarks/'
 results_dir = 'ms_src/results/'
 col_res = 'ms_src/collected_results.csv'
@@ -178,13 +178,13 @@ def run_tests():
 
 def main():
     print("\n\n####### cleaning files from previous runs")
-    #clean()
+    clean()
     print("done.")
     print("\n\n####### creating new benchmark files")
-    #create_bench()
+    create_bench()
     print("done.")
     print("\n\n####### running RFixer on benchmarks")
-    #run_tests()
+    run_tests()
     print("done.")
     print("\n\n####### collecting results")
     collect_results()
