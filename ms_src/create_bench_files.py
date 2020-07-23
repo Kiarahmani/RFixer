@@ -16,11 +16,11 @@ results_dir = 'ms_src/results/'
 col_res = 'ms_src/collected_results.csv'
 file_prefix = 'msb'
 cegis = True
-include_eq = False
-include_ec = False
+include_eq = True
+include_ec = True
 include_ea = True
 bm_range = range(0,101)
-timeout = 2
+timeout = 30
 delim = 'Æ'
 
 

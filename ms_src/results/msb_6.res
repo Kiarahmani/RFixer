@@ -6,6 +6,8 @@ Given the regular expression:
 That that should match the strings:
 
   ? (0:14)   abc.abc.com.ae
+  ? (14:24)  abc.com.ae
+  ? (24:31)  abc.com
 
 And reject the strings:
 
@@ -38,5 +40,5 @@ add negative: ..aaa
   19     |  2     (((??){1,30}\.)([a-z]){3})(\.([a-z]){2})?fail dot
   20     |  2     ((((?|?)){1,30}\.)([a-z]){3})(\.([a-z]){2})?fail solve
   21     |  2     ((((?){?}){1,30}\.)([a-z]){3})(\.([a-z]){2})?
-2.0252151489257812
+30.05122423171997
 timeout
