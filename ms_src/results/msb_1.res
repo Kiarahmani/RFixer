@@ -7,8 +7,6 @@ That that should match the strings:
 
   ? (0:9)    {222:115}
   ? (9:18)   {999:999}
-  ? (18:23)  {4:3}
-  ? (23:28)  {4:2}
 
 And reject the strings:
 
@@ -36,6 +34,9 @@ Search through possible transformations:
   17     |  2     (((\{[0-9])(?){?})[0-9])\}get a solution: (((\{[0-9])([129:]){1,5})[0-9])\}
 add positive: {00:0}
 add negative: {010}
+get a solution: (((\{[0-9])([129:0]){2,5})[0-9])\}
+add positive: {0:0}
+add negative: {0::0}
   unsatisfiable SAT formula       
   18     |  2     (((\{[0-9]):)?)?        fail dotstar or empty
   19     |  3     (((??)?)[0-9])\}        fail dot
@@ -90,10 +91,7 @@ add negative: {010}
   68     |  3     (((\{[0-9])(?){?})?)\}    unsatisfiable SAT formula       
   69     |  3     (((\{[0-9])?)(??))\}    fail dot
   70     |  3     (((\{[0-9])?)(?|?))\}   fail dot
-  71     |  3     (((\{[0-9])?)(?){?})\}  get a solution: (((\{[0-9])[29:0])([12359:0]){1,5})\}
-add positive: {0:4}
-add negative: {000}
-  unsatisfiable SAT formula       
+  71     |  3     (((\{[0-9])?)(?){?})\}    unsatisfiable SAT formula       
   72     |  3     (((\{[0-9])(??))[0-9])? fail dot
   73     |  3     (((\{[0-9])(?|?))[0-9])?fail dot
   74     |  3     (((\{[0-9])(?){?})[0-9])?  unsatisfiable SAT formula       
@@ -106,10 +104,7 @@ add negative: {000}
   81     |  3     (((\{[0-9])((?){?}?))[0-9])\}  unsatisfiable SAT formula       
   82     |  3     (((\{[0-9])(??|?))[0-9])\}fail dot
   83     |  3     (((\{[0-9])((?|?)|?))[0-9])\}fail dot
-  84     |  3     (((\{[0-9])((?){?}|?))[0-9])\}get a solution: (((\{[0-9])(([129:0]){2,5}|:))[0-9])\}
-add positive: {03:0}
-add negative: {0::0}
-  unsatisfiable SAT formula       
+  84     |  3     (((\{[0-9])((?){?}|?))[0-9])\}  unsatisfiable SAT formula       
   85     |  3     (((\{[0-9])(??){?})[0-9])\}fail dot
   86     |  3     (((\{[0-9])((?|?)){?})[0-9])\}fail solve
   87     |  3     (((\{[0-9])((?){?}){?})[0-9])\}  unsatisfiable SAT formula       
@@ -213,8 +208,8 @@ add negative: {0::0}
   185    |  4     (((((?){?}){?}[0-9]):)?)\}fail dot
   186    |  4     ((((?){?}[0-9]):)(??))\}fail dot
   187    |  4     ((((?){?}[0-9]):)(?|?))\}fail dot
-  188    |  4     ((((?){?}[0-9]):)(?){?})\}get a solution: (((([29{0]){1,3}[0-9]):)([1234590]){1,3})\}
-add positive: {0:6}
+  188    |  4     ((((?){?}[0-9]):)(?){?})\}get a solution: (((([29{0]){1,3}[0-9]):)([1590]){1,3})\}
+add positive: {1:2}
 add negative: 00:0}
   unsatisfiable SAT formula       
   189    |  4     (((?[0-9]):)(?))\}      fail dot
@@ -331,16 +326,24 @@ add negative: 00:0}
   300    |  4     (((\{((?){?}){?}):)?)\} fail dot
   301    |  4     (((\{(?){?}):)(??))\}   fail dot
   302    |  4     (((\{(?){?}):)(?|?))\}  fail dot
-  303    |  4     (((\{(?){?}):)(?){?})\} get a solution: (((\{([23490]){1,3}):)([12345690]){1,3})\}
+  303    |  4     (((\{(?){?}):)(?){?})\} get a solution: (((\{([1290]){1,3}):)([12590]){1,3})\}
+add positive: {0:3}
+get a solution: (((\{([1290]){1,3}):)([123590]){1,3})\}
+add positive: {0:4}
+get a solution: (((\{([1290]){1,3}):)([1234590]){1,3})\}
+add positive: {3:0}
+get a solution: (((\{([12390]){1,3}):)([1234590]){1,3})\}
+add positive: {0:6}
+get a solution: (((\{([12390]){1,3}):)([12345690]){1,3})\}
 add positive: {0:7}
-get a solution: (((\{([23490]){1,3}):)([123456790]){1,3})\}
-add positive: {1:0}
+get a solution: (((\{([12390]){1,3}):)([123456790]){1,3})\}
+add positive: {4:0}
 get a solution: (((\{([123490]){1,3}):)([123456790]){1,3})\}
-add positive: {5:0}
-get a solution: (((\{([1234590]){1,3}):)([123456790]){1,3})\}
-add positive: {6:0}
-get a solution: (((\{([12345690]){1,3}):)([123456790]){1,3})\}
 add positive: {0:8}
+get a solution: (((\{([123490]){1,3}):)([1234567890]){1,3})\}
+add positive: {5:0}
+get a solution: (((\{([1234590]){1,3}):)([1234567890]){1,3})\}
+add positive: {6:0}
 get a solution: (((\{([12345690]){1,3}):)([1234567890]){1,3})\}
 add positive: {7:0}
 get a solution: (((\{([123456790]){1,3}):)([1234567890]){1,3})\}
@@ -413,5 +416,5 @@ get a solution: (((\{([1234567890]){1,19}):)([1234567890]){1,18})\}
 add positive: {0:0000000000000000000}
 get a solution: (((\{([1234567890]){1,19}):)([1234567890]){1,19})\}
 
-2.0225369930267334
+2.026505947113037
 timeout
